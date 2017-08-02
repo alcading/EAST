@@ -1,5 +1,0 @@
-package=resource.bean.report
-databaseUrl=jdbc:informix-sqli://168.7.62.49:5559/east:INFORMIXSERVER=cib_dbs;user=gdxy;password=gdxy
-driver=com.informix.jdbc.IfxDriver
-username=sa
-SourceLocation=\\TopReport1.1\\resources.report.hbm

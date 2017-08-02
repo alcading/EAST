@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<META>
-	<Query id="biExecConfirmed" path="/fpages/workconfirmed/xml/BiExecConfirmed.xml" />
-	<Query id="biExecConfirmedDetail" path="/fpages/workconfirmed/xml/BiExecConfirmedDetail.xml" />
-	<Query id="genReportFile" path="/fpages/workconfirmed/xml/GenReportFile.xml" />
-</META>
