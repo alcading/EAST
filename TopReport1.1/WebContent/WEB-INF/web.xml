@@ -129,7 +129,7 @@
 		<filter-name>transfilter</filter-name>
 		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
-	<filter-mapping>
+	<filter-mapping> 
 		<filter-name>addHeaderFilter</filter-name>
 		<url-pattern>*.gzjs</url-pattern>
 	</filter-mapping>
