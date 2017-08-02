@@ -11,6 +11,20 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import com.huateng.common.log.HtLog;
+import com.huateng.common.log.HtLogFactory;
+import com.huateng.ebank.business.common.GlobalInfo;
+import com.huateng.ebank.business.common.service.BctlService;
+import com.huateng.ebank.framework.exceptions.CommonException;
+import com.huateng.ebank.framework.report.common.ReportConstant;
+import com.huateng.ebank.framework.util.ApplicationContextUtils;
+import com.huateng.ebank.framework.util.DateUtil;
+import com.huateng.report.common.bean.UndoConfirmTaskBean;
+import com.huateng.report.constants.TopReportConstants;
+import com.huateng.report.imports.bean.ReportFeedBackBean;
+import com.huateng.report.utils.ReportEnum;
+import com.huateng.report.utils.ReportUtils;
+
 import resource.bean.pub.Bctl;
 import resource.bean.pub.DataDic;
 import resource.bean.report.BiBusiNoConf;
@@ -30,20 +44,6 @@ import resource.bean.report.SysParamsPK;
 import resource.report.dao.ROOTDAO;
 import resource.report.dao.ROOTDAOUtils;
 
-import com.huateng.common.log.HtLog;
-import com.huateng.common.log.HtLogFactory;
-import com.huateng.ebank.business.common.GlobalInfo;
-import com.huateng.ebank.business.common.service.BctlService;
-import com.huateng.ebank.framework.exceptions.CommonException;
-import com.huateng.ebank.framework.report.common.ReportConstant;
-import com.huateng.ebank.framework.util.ApplicationContextUtils;
-import com.huateng.ebank.framework.util.DateUtil;
-import com.huateng.report.common.bean.UndoConfirmTaskBean;
-import com.huateng.report.constants.TopReportConstants;
-import com.huateng.report.imports.bean.ReportFeedBackBean;
-import com.huateng.report.utils.ReportEnum;
-import com.huateng.report.utils.ReportUtils;
-
 public class ReportCommonService {
 	private static final HtLog htlog = HtLogFactory.getLogger(ReportCommonService.class);
 
@@ -58,16 +58,19 @@ public class ReportCommonService {
 	public synchronized static ReportCommonService getInstance() {
 		return (ReportCommonService) ApplicationContextUtils.getBean(ReportCommonService.class.getName());
 	}
-	public DataDic getDataDic(int dataTypeNo,String dataNo) throws CommonException{
+
+	public DataDic getDataDic(int dataTypeNo, String dataNo) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		String hql = " from DataDic model where model.dataTypeNo=" + dataTypeNo+" and model.dataNo='" + dataNo.trim() + "'";
+		String hql = " from DataDic model where model.dataTypeNo=" + dataTypeNo + " and model.dataNo='" + dataNo.trim()
+				+ "'";
 		List<DataDic> list = rootdao.queryByQL2List(hql);
-		if (list.size()==1) {
+		if (list.size() == 1) {
 			return list.get(0);
 		}
 		return null;
 	}
-		public List<DataDic> getDataDic(int dataTypeNo) throws CommonException{
+
+	public List<DataDic> getDataDic(int dataTypeNo) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
 		String hql = " from DataDic model where model.dataTypeNo=" + dataTypeNo;
 		List<DataDic> list = rootdao.queryByQL2List(hql);
@@ -76,15 +79,16 @@ public class ReportCommonService {
 
 	public List getConfList(String code) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		List list = rootdao.queryByQL2List(" from SysBusinavConf model where model.parentCode='" + code
-				+ "' order by model.showSeq");
+		List list = rootdao.queryByQL2List(
+				" from SysBusinavConf model where model.parentCode='" + code + "' order by model.showSeq");
 		return list;
 	}
-	public List getConfList(String code,List codeList) throws CommonException {
+
+	public List getConfList(String code, List codeList) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		StringBuffer result = new StringBuffer("from SysBusinavConf model where model.parentCode='" + code+"'");
-		if (codeList!=null && codeList.size()>0) {
-			result.append(" and model.id in "+ReportUtils.getStrCodes(codeList));
+		StringBuffer result = new StringBuffer("from SysBusinavConf model where model.parentCode='" + code + "'");
+		if (codeList != null && codeList.size() > 0) {
+			result.append(" and model.id in " + ReportUtils.getStrCodes(codeList));
 		}
 		result.append("  order by model.showSeq");
 		List list = rootdao.queryByQL2List(result.toString());
@@ -114,83 +118,93 @@ public class ReportCommonService {
 		return list;
 	}
 
-	public List<DataDic> getBusinessByTypeNo() throws CommonException{
+	public List<DataDic> getBusinessByTypeNo() throws CommonException {
 		List<DataDic> busiList = getDataDicList(ReportConstant.DATA_DIC_BUSI_TYPE_NO, null);
 		return busiList;
 	}
+
 	/**
 	 * 导出项目list
-	 * */
-	public String getProjectNamesToStr(String recId) throws CommonException{
+	 */
+	public String getProjectNamesToStr(String recId) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		List projectList = rootdao.queryByQL2List(" from BopProjectInfo model where model.recId='"+recId.trim()+"'");
+		List projectList = rootdao
+				.queryByQL2List(" from BopProjectInfo model where model.recId='" + recId.trim() + "'");
 		return ReportUtils.getProjectNamesByList(projectList);
 	}
+
 	/**
 	 * 导出债权人list
-	 * */
-	public String getBopCreditorsToStr(String recId) throws CommonException{
+	 */
+	public String getBopCreditorsToStr(String recId) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		List creditorsList = rootdao.queryByQL2List(" from BopCfaCreditorDs model where model.recId='"+recId.trim()+"'");
+		List creditorsList = rootdao
+				.queryByQL2List(" from BopCfaCreditorDs model where model.recId='" + recId.trim() + "'");
 		return ReportUtils.getBopCreditorsByList(creditorsList);
 	}
+
 	/**
 	 * 导出境外担保人list
-	 * */
-	public String getBopCfaFoguinfoToStr(String recId) throws CommonException{
+	 */
+	public String getBopCfaFoguinfoToStr(String recId) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		List foguinfoList = rootdao.queryByQL2List(" from BopCfaFogucodeinfo model where model.recId='"+recId.trim()+"'");
+		List foguinfoList = rootdao
+				.queryByQL2List(" from BopCfaFogucodeinfo model where model.recId='" + recId.trim() + "'");
 		return ReportUtils.getFogucodeinfoByList(foguinfoList);
 	}
+
 	/**
 	 * 导出担保人list
-	 * */
+	 */
 
-	public String getBopExguTorsToStr(String recId) throws CommonException{
+	public String getBopExguTorsToStr(String recId) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		List exguTorList = rootdao.queryByQL2List(" from BopExguTorDs model where model.recId='"+recId.trim()+"' and torType = '03'");
+		List exguTorList = rootdao
+				.queryByQL2List(" from BopExguTorDs model where model.recId='" + recId.trim() + "' and torType = '03'");
 		return ReportUtils.getBopExguTorDsByList(exguTorList);
 	}
+
 	/**
 	 * 导出对外担保被担保人list
-	 * */
-	public String getBopExguTorGua(String recId) throws CommonException{
+	 */
+	public String getBopExguTorGua(String recId) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		List exguTorList = rootdao.queryByQL2List(" FROM BopExguTorDs model WHERE model.recId = '"+recId.trim()+"' AND torType = '01' ");
-		return ReportUtils.getBopExguTorDsByList(exguTorList);
-	}
-	/**
-	 * 导出对外担保受益人list
-	 * */
-	public String getBopExguTorBen(String recId) throws CommonException{
-		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		List exguTorList = rootdao.queryByQL2List(" FROM BopExguTorDs model WHERE model.recId = '"+recId.trim()+"' AND torType = '02' ");
+		List exguTorList = rootdao.queryByQL2List(
+				" FROM BopExguTorDs model WHERE model.recId = '" + recId.trim() + "' AND torType = '01' ");
 		return ReportUtils.getBopExguTorDsByList(exguTorList);
 	}
 
+	/**
+	 * 导出对外担保受益人list
+	 */
+	public String getBopExguTorBen(String recId) throws CommonException {
+		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
+		List exguTorList = rootdao.queryByQL2List(
+				" FROM BopExguTorDs model WHERE model.recId = '" + recId.trim() + "' AND torType = '02' ");
+		return ReportUtils.getBopExguTorDsByList(exguTorList);
+	}
 
 	/**
 	 * 导出外汇质押-签约信息 质押list
 	 *
-	 * */
-	public String getConExplbalainfoToStr(String recId) throws CommonException{
+	 */
+	public String getConExplbalainfoToStr(String recId) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		List explbaList = rootdao.queryByQL2List(" from BopCfaExplbalainfo model where model.recId='"+recId.trim()+"'");
+		List explbaList = rootdao
+				.queryByQL2List(" from BopCfaExplbalainfo model where model.recId='" + recId.trim() + "'");
 		return ReportUtils.getConExplbalainfoByList(explbaList);
 	}
+
 	/**
 	 * 导出外汇质押-变动信息 质押list
 	 *
-	 * */
-	public String getChangExplbalainfoToStr(String recId) throws CommonException{
+	 */
+	public String getChangExplbalainfoToStr(String recId) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		List explbaList = rootdao.queryByQL2List(" from BopCfaExplbalainfo model where model.recId='"+recId.trim()+"'");
+		List explbaList = rootdao
+				.queryByQL2List(" from BopCfaExplbalainfo model where model.recId='" + recId.trim() + "'");
 		return ReportUtils.getChangExplbalainfoByList(explbaList);
 	}
-
-
-
-
 
 	/**
 	 * 从数据字典查询所有应用类型及文件类型
@@ -258,7 +272,7 @@ public class ReportCommonService {
 	public String getAppTypeName(String appType) throws CommonException {
 		List<DataDic> diclist = getDataDicList(ReportConstant.DATA_DIC_BOP_APP_TYPE_NO, appType);
 		String appTypeName = appType;
-		if (diclist.size()==1) {
+		if (diclist.size() == 1) {
 			appTypeName = diclist.get(0).getDataName();
 		}
 		return appTypeName;
@@ -266,6 +280,7 @@ public class ReportCommonService {
 
 	/**
 	 * 保存定时任务执行日志
+	 * 
 	 * @param startTm
 	 * @param endTm
 	 * @param quartId
@@ -274,11 +289,11 @@ public class ReportCommonService {
 	 * @param remarak
 	 * @throws CommonException
 	 */
-	public void saveJobLog(Date startTm,Date endTm,String quartId,String result,String jobName,String remark) {
+	public void saveJobLog(Date startTm, Date endTm, String quartId, String result, String jobName, String remark) {
 		BiQuartzJobLog joblog = new BiQuartzJobLog();
 		joblog.setId(ReportUtils.getUUID());
 		joblog.setExecTm(startTm);
-		joblog.setEndTm(endTm==null?new Date():endTm);
+		joblog.setEndTm(endTm == null ? new Date() : endTm);
 		joblog.setQuartzId(quartId);
 		joblog.setQuartzResult(result);
 		joblog.setQuartzName(jobName);
@@ -291,7 +306,6 @@ public class ReportCommonService {
 			e.printStackTrace();
 		}
 	}
-
 
 	/**
 	 * 流程操作记录保存
@@ -314,8 +328,8 @@ public class ReportCommonService {
 	 *            操作类型 如 手动 01:TopReportConstants.REPORT_PROCESS_OPERTYPE_MANU
 	 * @throws CommonException
 	 */
-	public void saveBiProcessLog(String workDate, String busiType, String appType, String brNo, String executeType, Date startTm,
-			Date endTm, String operType) throws CommonException {
+	public void saveBiProcessLog(String workDate, String busiType, String appType, String brNo, String executeType,
+			Date startTm, Date endTm, String operType) throws CommonException {
 
 		GlobalInfo gi = GlobalInfo.getCurrentInstance();
 
@@ -396,36 +410,44 @@ public class ReportCommonService {
 
 	public SubFileConf getSubFileConfByAppTypeByControl(String busiType, String appType) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		List list = rootdao.queryByQL2List(" from SubFileConf model where model.id.busiType='" + busiType
-				+ "' and model.id.appType='" + appType + "' and model.confIsControl='"+ReportEnum.REPORT_IS_STR.YES.value+"'");
-		if (list.size()==1) {
+		List list = rootdao.queryByQL2List(
+				" from SubFileConf model where model.id.busiType='" + busiType + "' and model.id.appType='" + appType
+						+ "' and model.confIsControl='" + ReportEnum.REPORT_IS_STR.YES.value + "'");
+		if (list.size() == 1) {
 			return (SubFileConf) list.get(0);
 		}
 		return null;
 	}
+
 	/**
 	 * 首页回执信息
+	 * 
 	 * @return
 	 * @throws CommonException
 	 */
-	public List<ReportFeedBackBean> getRepBackInfo() throws CommonException{
-		/*return FileImportService.getInstance().getFeedbackImportByPack(DateUtil.dateToNumber(DateUtil.getTbsDay()),
-				DateUtil.dateToNumber(DateUtil.getTbsDay()), null, null, null);*/
+	public List<ReportFeedBackBean> getRepBackInfo() throws CommonException {
+		/*
+		 * return
+		 * FileImportService.getInstance().getFeedbackImportByPack(DateUtil.
+		 * dateToNumber(DateUtil.getTbsDay()),
+		 * DateUtil.dateToNumber(DateUtil.getTbsDay()), null, null, null);
+		 */
 		return null;
 	}
 
 	/**
 	 * 首页补录审核进度
+	 * 
 	 * @return
 	 * @throws CommonException
 	 */
-	public List<BiExecConfirm> getAllBrNoBiExecConfirm() throws CommonException{
+	public List<BiExecConfirm> getAllBrNoBiExecConfirm() throws CommonException {
 		Map<String, List<BiExecConfirm>> map = new HashMap<String, List<BiExecConfirm>>();
 		ROOTDAO rootDao = ROOTDAOUtils.getROOTDAO();
 		List<Bctl> bctls = BctlService.getInstance().getAllEnableBctl();
 		List<String> brNoList = new ArrayList<String>();
 		Map<String, String> brNameMap = new HashMap<String, String>();
-		for(Bctl bc : bctls){
+		for (Bctl bc : bctls) {
 			brNoList.add(bc.getBrno());
 			brNameMap.put(bc.getBrno(), bc.getBrname());
 
@@ -433,16 +455,17 @@ public class ReportCommonService {
 
 		List<String> busiTypsList = new ArrayList<String>();
 		List<DataDic> busiTyps = this.getDataDic(ReportConstant.DATA_DIC_BUSI_TYPE_NO);
-		for(DataDic dd : busiTyps){
+		for (DataDic dd : busiTyps) {
 			busiTypsList.add(dd.getDataNo());
 		}
 
-		String hql = " from BiExecConfirm model where model.id.busiType in" + ReportUtils.toInString(busiTypsList)+ " and model.id.workDate='" + DateUtil.dateToNumber(DateUtil.getTbsDay())
-				+ "' and model.id.brNo in" + ReportUtils.toInString(brNoList) + " order by model.id.brNo";
+		String hql = " from BiExecConfirm model where model.id.busiType in" + ReportUtils.toInString(busiTypsList)
+				+ " and model.id.workDate='" + DateUtil.dateToNumber(DateUtil.getTbsDay()) + "' and model.id.brNo in"
+				+ ReportUtils.toInString(brNoList) + " order by model.id.brNo";
 		List<BiExecConfirm> list = rootDao.queryByQL2List(hql);
-		for(BiExecConfirm bec : list){
-			String key = bec.getId().getBusiType()+"|"+bec.getId().getBrNo();
-			if(map.containsKey(key)){
+		for (BiExecConfirm bec : list) {
+			String key = bec.getId().getBusiType() + "|" + bec.getId().getBrNo();
+			if (map.containsKey(key)) {
 				List<BiExecConfirm> tempList = map.get(key);
 				tempList.add(bec);
 			} else {
@@ -457,8 +480,8 @@ public class ReportCommonService {
 			String key = (String) iterator.next();
 			boolean flag = true;
 			List<BiExecConfirm> tempList = map.get(key);
-			for(BiExecConfirm ec : tempList){
-				if(!ec.getConfirmStatus().equals("01") || !ec.getSubfileStatus().equals("01")){
+			for (BiExecConfirm ec : tempList) {
+				if (!ec.getConfirmStatus().equals("01") || !ec.getSubfileStatus().equals("01")) {
 					flag = false;
 					break;
 				}
@@ -472,7 +495,7 @@ public class ReportCommonService {
 			pk.setWorkDate(confirm.getId().getWorkDate());
 			biExecConfirm.setId(pk);
 			biExecConfirm.setBrNoName(brNameMap.get(pk.getBrNo()));
-			if(flag){
+			if (flag) {
 				biExecConfirm.setFinishStatus("01");
 			} else {
 				biExecConfirm.setFinishStatus("02");
@@ -483,11 +506,11 @@ public class ReportCommonService {
 		return resList;
 	}
 
-	public boolean isAllOrgFinished() throws CommonException{
+	public boolean isAllOrgFinished() throws CommonException {
 		List<BiExecConfirm> list = this.getAllBrNoBiExecConfirm();
 		boolean flag = true;
 		for (BiExecConfirm biExecConfirm : list) {
-			if(biExecConfirm.getFinishStatus().equals("02")){
+			if (biExecConfirm.getFinishStatus().equals("02")) {
 				flag = false;
 				break;
 			}
@@ -498,52 +521,55 @@ public class ReportCommonService {
 
 	/**
 	 * 首页主管确认信息
+	 * 
 	 * @return
 	 * @throws CommonException
 	 */
-	public List<UndoConfirmTaskBean> getUndoConfirmTask(HttpSession httpSession) throws CommonException{
+	public List<UndoConfirmTaskBean> getUndoConfirmTask(HttpSession httpSession) throws CommonException {
 		GlobalInfo globalInfo = (GlobalInfo) httpSession.getAttribute(GlobalInfo.KEY_GLOBAL_INFO);
 		GlobalInfo.setCurrentInstance(globalInfo);
 		List confrimCodeList = globalInfo.getConfrimCodeList();
 		List<UndoConfirmTaskBean> list = new ArrayList<UndoConfirmTaskBean>();
-		if (confrimCodeList!=null && confrimCodeList.size()>0) {
+		if (confrimCodeList != null && confrimCodeList.size() > 0) {
 			String codes = ReportUtils.getConfrimCodes(confrimCodeList);
 			ROOTDAO rootDao = ROOTDAOUtils.getROOTDAO();
-			String hql = "select new com.huateng.report.common.bean.UndoConfirmTaskBean(dd.intInsId,count(dd)) from SysTaskInfo dd where dd.intInsId in "+codes+" group by dd.intInsId";
+			String hql = "select new com.huateng.report.common.bean.UndoConfirmTaskBean(dd.intInsId,count(dd)) from SysTaskInfo dd where dd.intInsId in "
+					+ codes + " group by dd.intInsId";
 			list = rootDao.queryByQL2List(hql);
 			List<DataDic> dds = getDataDicList(300001, null);
 			Map<String, String> ddMap = new HashMap<String, String>();
 			for (DataDic dd : dds) {
 				ddMap.put(dd.getDataNo(), dd.getDataName());
 			}
-			for(UndoConfirmTaskBean bean : list){
+			for (UndoConfirmTaskBean bean : list) {
 				bean.setIntInsIdName(ddMap.get(bean.getIntInsId()));
 			}
 		}
 		return list;
 	}
 
-
-	public List getFunctionInfoListByFavt(HttpSession httpSession) throws CommonException{
+	public List getFunctionInfoListByFavt(HttpSession httpSession) throws CommonException {
 		GlobalInfo globalInfo = (GlobalInfo) httpSession.getAttribute(GlobalInfo.KEY_GLOBAL_INFO);
 		GlobalInfo.setCurrentInstance(globalInfo);
 		Map funmap = globalInfo.getAllFunctions();
 		List funcList = new ArrayList();
 		ROOTDAO dao = ROOTDAOUtils.getROOTDAO();
-		List favtList = dao.queryByQL2List(" from BiTlrFavt model where model.tlrNo='"+globalInfo.getTlrno()+"' and model.funcType='"+globalInfo.getMenuCode()+"' order by model.showSeq");
+		List favtList = dao.queryByQL2List(" from BiTlrFavt model where model.tlrNo='" + globalInfo.getTlrno()
+				+ "' and model.funcType='" + globalInfo.getMenuCode() + "' order by model.showSeq");
 		for (int i = 0; i < favtList.size(); i++) {
 			BiTlrFavt favt = (BiTlrFavt) favtList.get(i);
-			if(funmap.containsKey(favt.getFuncId().trim())){
+			if (funmap.containsKey(favt.getFuncId().trim())) {
 				funcList.add(funmap.get(favt.getFuncId().trim()));
 			}
 		}
 		return funcList;
 	}
 
-	public void saveOrUpdateFavt(String tlrNo,String funcType,List<String> funcId) throws CommonException{
+	public void saveOrUpdateFavt(String tlrNo, String funcType, List<String> funcId) throws CommonException {
 		ROOTDAO dao = ROOTDAOUtils.getROOTDAO();
-		List oldList = dao.queryByQL2List(" from BiTlrFavt model where model.tlrNo='"+tlrNo+"' and model.funcType='"+funcType+"'");
-		if (oldList!=null) {
+		List oldList = dao.queryByQL2List(
+				" from BiTlrFavt model where model.tlrNo='" + tlrNo + "' and model.funcType='" + funcType + "'");
+		if (oldList != null) {
 			for (int i = 0; i < oldList.size(); i++) {
 				dao.delete(oldList.get(i));
 			}
@@ -562,13 +588,15 @@ public class ReportCommonService {
 
 	/**
 	 * 校验当前时间是否为工作日期
+	 * 
 	 * @param date
 	 * @return
 	 * @throws CommonException
 	 */
 	public boolean checkWorkDate(Date date) throws CommonException {
 		boolean bl = false;
-		String hql = "select count(model) from BiWorkdate model where model.id='" + DateUtil.dateToNumber(date) + "' and model.workFlag='1'";
+		String hql = "select count(model) from BiWorkdate model where model.id='" + DateUtil.dateToNumber(date)
+				+ "' and model.workFlag='1'";
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
 		if (rootdao.queryByHqlToCount(hql) > 0) {
 			bl = true;
@@ -578,11 +606,13 @@ public class ReportCommonService {
 
 	/**
 	 * 首页显示定时任务日志
+	 * 
 	 * @return
 	 * @throws CommonException
 	 */
-	public List<BiQuartzJobLog> getQuartzJobLog() throws CommonException{
-		StringBuffer hql = new StringBuffer("select model from BiQuartzJobLog model where model.execTm>=? and model.execTm<=? order by model.execTm desc");
+	public List<BiQuartzJobLog> getQuartzJobLog() throws CommonException {
+		StringBuffer hql = new StringBuffer(
+				"select model from BiQuartzJobLog model where model.execTm>=? and model.execTm<=? order by model.execTm desc");
 		List<Object> objlist = new ArrayList<Object>();
 		String curDateStr = DateUtil.dateToNumber(new Date());
 		objlist.add(DateUtil.getStartDateByDays(DateUtil.stringToDate2(curDateStr), +1));
@@ -590,7 +620,8 @@ public class ReportCommonService {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
 		return rootdao.queryByQL2List(hql.toString(), objlist.toArray(), null);
 	}
-	public List getReportBopJshList() throws CommonException{
+
+	public List getReportBopJshList() throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
 		List list = rootdao.queryByQL2List(" from BiBopjshRetNo");
 		return list;
@@ -598,28 +629,30 @@ public class ReportCommonService {
 
 	/**
 	 * 业绩标准
+	 * 
 	 * @return
 	 * @throws CommonException
 	 */
-	public List<NoticeParam> getNoticeParam() throws CommonException{
+	public List<NoticeParam> getNoticeParam() throws CommonException {
 		StringBuffer hql = new StringBuffer("select model from NoticeParam model where 1=1 order by model.createdt ");
 		List<Object> objlist = new ArrayList<Object>();
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		List<NoticeParam> abc= rootdao.queryByQL2List(hql.toString(), objlist.toArray(), null);
-		for(NoticeParam bean : abc){
-			bean.setNoticeFlg(bean.getNoticeFlg().equals("1") ? "有效" :"无效");
-			bean.setNoticeAmt(bean.getNoticeAmt()==null? new BigDecimal(0) :bean.getNoticeAmt());
+		List<NoticeParam> abc = rootdao.queryByQL2List(hql.toString(), objlist.toArray(), null);
+		for (NoticeParam bean : abc) {
+			bean.setNoticeFlg(bean.getNoticeFlg().equals("1") ? "有效" : "无效");
+			bean.setNoticeAmt(bean.getNoticeAmt() == null ? new BigDecimal(0) : bean.getNoticeAmt());
 		}
 		return abc;
 	}
 
-	public List getFunctionNavList(String parentCode) throws CommonException{
+	public List getFunctionNavList(String parentCode) throws CommonException {
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
-		List list = rootdao.queryByQL2List(" from FunctionInfo model where model.lastdirectory='"+parentCode+"' order by model.showseq");
+		List list = rootdao.queryByQL2List(
+				" from FunctionInfo model where model.lastdirectory='" + parentCode + "' order by model.showseq");
 		return list;
 	}
 
-	public int getFunctionCountByTlrNo(String tlrNo,String parentCode) throws CommonException{
+	public int getFunctionCountByTlrNo(String tlrNo, String parentCode) throws CommonException {
 
 		String funcIds = ReportUtils.getConfrimCodes(getFunctionNavList(parentCode));
 
@@ -627,8 +660,8 @@ public class ReportCommonService {
 		hql.append("select count(rr) from TlrRoleRel tr,RoleFuncRel rr");
 		hql.append(" where tr.roleId=rr.roleId ");
 		hql.append("and tr.tlrno='").append(tlrNo).append("'");
-		if(funcIds!=null&&!"()".equals(funcIds)){
-			hql.append("and rr.funcid in "+funcIds);
+		if (funcIds != null && !"()".equals(funcIds)) {
+			hql.append("and rr.funcid in " + funcIds);
 		}
 		ROOTDAO rootdao = ROOTDAOUtils.getROOTDAO();
 		return rootdao.queryByHqlToCount(hql.toString());

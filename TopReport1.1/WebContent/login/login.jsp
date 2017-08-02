@@ -2,7 +2,7 @@
 <%@ taglib uri="/tags/struts-html" prefix="html"%>
 <%@ taglib uri="/tags/application-tags" prefix="app"%>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
-<%@ page import ="com.huateng.ebank.business.common.UserSessionInfo"  %>
+<%@ page import="com.huateng.ebank.business.common.UserSessionInfo"%>
 <%@page import="java.util.List"%>
 <%@page import="com.huateng.ebank.business.common.service.BctlService"%>
 <%@page import="resource.bean.pub.Bctl"%>
@@ -10,30 +10,26 @@
 <html:html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="<%=request.getContextPath() %>/login/css/main.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="<%=request.getContextPath() %>/templets/ui/js/b.js"></script>
+<link href="<%=request.getContextPath()%>/login/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<%=request.getContextPath()%>/templets/ui/js/b.js"></script>
 <%
-List bctlList = BctlService.getInstance().getAllEnableBctl();
+	List bctlList = BctlService.getInstance().getAllEnableBctl();
 %>
 <title>TopReport 统一申报平台</title>
 <script language="JavaScript" type="text/JavaScript">
 function func_check()
 {
-	<% if (request.getAttribute("REQ_MSG") != null) {
-		String errMsg = ((String) request.getAttribute("REQ_MSG")).replace("\n","[n]");
-	%>
-	var errMsg = "<%= errMsg %>";
+	<%if (request.getAttribute("REQ_MSG") != null) {
+					String errMsg = ((String) request.getAttribute("REQ_MSG")).replace("\n", "[n]");%>
+	var errMsg = "<%=errMsg%>";
 	alert(errMsg.replace("[n]","\n"));
-	<% } %>
-	<%
-	UserSessionInfo userInfo =	(UserSessionInfo) session.getAttribute("USER_SESSION_INFO");
-	if(userInfo!=null)
-	{
-		out.println("document.loginForm.userName.value = \""+userInfo.getTlrNo()+"\";");
-		out.println("document.loginForm.userName.readOnly=true;");
-		out.println("focus(document.loginForm.passWord);");
-	}
-%>
+	<%}%>
+	<%UserSessionInfo userInfo = (UserSessionInfo) session.getAttribute("USER_SESSION_INFO");
+				if (userInfo != null) {
+					out.println("document.loginForm.userName.value = \"" + userInfo.getTlrNo() + "\";");
+					out.println("document.loginForm.userName.readOnly=true;");
+					out.println("focus(document.loginForm.passWord);");
+				}%>
 
 	return;
 }
@@ -73,76 +69,90 @@ function nextEvent(strName){
 }
 </script>
 </head>
-<body onload="func_check()" style="background: #2a6fa6 url('<%=request.getContextPath() %>/login/images/bg.gif');height:100%; margin:0 auto; width:100%;">
-<table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%">
-	<tr style="line-height: 26px;height: 26px">
-		<td align="right" style="padding-right: 8px;color: #ffffee;font-family:Arial,Helvetica,sans-serif;font-size: 12px; ">只供授权用户登入</td>
-	</tr>
-	<tr valign="top" height="232px">
-		<td align="center"><img src="<%=request.getContextPath() %>/login/images/login_top.gif" border="0"/></td>
-	</tr>
-	<tr height="60px"><td></td></tr>
-	<tr height="100%">
-	<td valign="top" align="center">
-	<div id="mistake" style="text-align: left;width: 360px;color: red"></div>
-	<html:form action="/custlogin.do" target="_top" focus="userName">
-	<input type="hidden" name="brCode" id="brCode"/>
-	<table cellpadding="0" cellspacing="0" border="0" width="595px" height="210xp" background="<%=request.getContextPath() %>/login/images/bg_panel_login.png">
-		<tr>
-			<td align="center" valign="top">
-			<table cellpadding="0" cellspacing="0" border="0" width="246px" style="margin-top: 20px;">
-			<tr height="35px">
-				<td width="37px"><img src="<%=request.getContextPath() %>/login/images/icon_jigou.gif"  alt="" id="brcodeImg1" title="点击选择机构"/></td>
-				<td width="100%">
-				<input type="text" name="brCodeName" id="brCodeName"  value="--请选择机构--" class="inputcls" readonly="readonly" style="cursor: default;"/><p>
-				<div id="brCodeSelect" style="position:absolute;width:auto;">
-					<ol id="brCodeOl">
-					<%
-					for(int i=0;i<bctlList.size();i++){
-						Bctl bctl = (Bctl)bctlList.get(i);
-					%>
-					<li><a href="javascript:setBrCode('<%=bctl.getBrcode()+"-"+bctl.getBrname() %>','<%=bctl.getBrcode() %>');" id="bctl_<%=bctl.getBrcode() %>"><%=bctl.getBrcode()+"-"+bctl.getBrname() %></a></li>
-					<%} %>
-					</ol>
-				</div>
-				</p>
-				</td>
-				<td width="9px;"><img src="<%=request.getContextPath() %>/login/images/corner_ipt_login.gif"  alt=""  id="brcodeImg2"/></td>
-			</tr>
-			<tr  height="35px">
-				<td width="37px"><img src="<%=request.getContextPath() %>/login/images/icon_user.gif"  alt=""/></td>
-				<td width="100%"> <input type="text" name="userName"  id="userName" value="99999999"	onkeypress="nextEvent('password');" maxlength="10" class="inputcls"/></td>
-				<td width="9px;"><img src="<%=request.getContextPath() %>/login/images/corner_ipt_login.gif"  alt="" /></td>
-			</tr>
-			<tr  height="35px">
-				<td width="37px"><img src="<%=request.getContextPath() %>/login/images/icon_lock.gif"  alt=""/></td>
-				<td width="100%"><input type="password" name="passWord" id="passWord" 	onkeypress="nextEvent('submit');" class="inputcls"/></td>
-				<td width="9px;"><img src="<%=request.getContextPath() %>/login/images/corner_ipt_login.gif"  alt="" /></td>
-			</tr>
-			<tr height="40px">
-				<td colspan="3" valign="middle" align="center">
-				<table cellpadding="0" cellspacing="0" border="0" width="100%">
-					<tr>
-						<td align="center">
-						<img src="<%=request.getContextPath() %>/login/images/btn_login.png" class="hand"  alt="" onclick="submitForm()"/></li>
-						</td>
-						<td align="center">
-						<img src="<%=request.getContextPath() %>/login/images/btn_reset.png" class="hand"  alt="" onclick="resetForm()"/>
-						</td>
-					</tr>
-				</table>
-				</td>
-			</tr>
-			</table>
+<body onload="func_check()"
+	style="background: #2a6fa6 url('<%=request.getContextPath()%>/login/images/bg.gif');height:100%; margin:0 auto; width:100%;">
+	<table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%">
+		<tr style="line-height: 26px;height: 26px">
+			<td align="right" style="padding-right: 8px;color: #ffffee;font-family:Arial,Helvetica,sans-serif;font-size: 12px; ">只供授权用户登入</td>
+		</tr>
+		<tr valign="top" height="232px">
+			<td align="center"><img src="<%=request.getContextPath()%>/login/images/login_top.gif" border="0" /></td>
+		</tr>
+		<tr height="60px">
+			<td></td>
+		</tr>
+		<tr height="100%">
+			<td valign="top" align="center">
+				<div id="mistake" style="text-align: left;width: 360px;color: red"></div> <html:form action="/custlogin.do"
+					target="_top" focus="userName">
+					<input type="hidden" name="brCode" id="brCode" />
+					<table cellpadding="0" cellspacing="0" border="0" width="595px" height="210xp"
+						background="<%=request.getContextPath()%>/login/images/bg_panel_login.png">
+						<tr>
+							<td align="center" valign="top">
+								<table cellpadding="0" cellspacing="0" border="0" width="246px" style="margin-top: 20px;">
+									<tr height="35px">
+										<td width="37px"><img src="<%=request.getContextPath()%>/login/images/icon_jigou.gif" alt=""
+											id="brcodeImg1" title="点击选择机构" /></td>
+										<td width="100%"><input type="text" name="brCodeName" id="brCodeName" value="--请选择机构--" class="inputcls"
+												readonly="readonly" style="cursor: default;" />
+											<p>
+											<div id="brCodeSelect" style="position:absolute;width:auto;">
+												<ol id="brCodeOl">
+													<%
+														for (int i = 0; i < bctlList.size(); i++) {
+																	Bctl bctl = (Bctl) bctlList.get(i);
+													%>
+													<li>
+														<a href="javascript:setBrCode('<%=bctl.getBrcode() + "-" + bctl.getBrname()%>','<%=bctl.getBrcode()%>');"
+															id="bctl_<%=bctl.getBrcode()%>"><%=bctl.getBrcode() + "-" + bctl.getBrname()%></a>
+													</li>
+													<%
+														}
+													%>
+												</ol>
+											</div>
+											</p></td>
+										<td width="9px;"><img src="<%=request.getContextPath()%>/login/images/corner_ipt_login.gif" alt=""
+											id="brcodeImg2" /></td>
+									</tr>
+									<tr height="35px">
+										<td width="37px"><img src="<%=request.getContextPath()%>/login/images/icon_user.gif" alt="" /></td>
+										<td width="100%"><input type="text" name="userName" id="userName" value="99999999"
+												onkeypress="nextEvent('password');" maxlength="10" class="inputcls" /></td>
+										<td width="9px;"><img src="<%=request.getContextPath()%>/login/images/corner_ipt_login.gif" alt="" /></td>
+									</tr>
+									<tr height="35px">
+										<td width="37px"><img src="<%=request.getContextPath()%>/login/images/icon_lock.gif" alt="" /></td>
+										<td width="100%"><input type="password" name="passWord" id="passWord" onkeypress="nextEvent('submit');"
+												class="inputcls" /></td>
+										<td width="9px;"><img src="<%=request.getContextPath()%>/login/images/corner_ipt_login.gif" alt="" /></td>
+									</tr>
+									<tr height="40px">
+										<td colspan="3" valign="middle" align="center">
+											<table cellpadding="0" cellspacing="0" border="0" width="100%">
+												<tr>
+													<td align="center"><img src="<%=request.getContextPath()%>/login/images/btn_login.png" class="hand"
+														alt="" onclick="submitForm()" />
+													</li></td>
+													<td align="center"><img src="<%=request.getContextPath()%>/login/images/btn_reset.png" class="hand"
+														alt="" onclick="resetForm()" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</html:form>
 			</td>
 		</tr>
+		<tr height="30px">
+			<td></td>
+		</tr>
 	</table>
-	</html:form>
-	</td>
-	</tr>
-	<tr height="30px"><td></td></tr>
-</table>
-<script type="text/javascript">
+	<script type="text/javascript">
 	function setBrCode(name,code){
 		var sel = document.getElementById("brCode").value;
 		document.getElementById("bctl_"+code).style.backgroundColor = "highlight";
