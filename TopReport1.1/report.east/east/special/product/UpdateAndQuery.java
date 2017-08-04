@@ -182,7 +182,8 @@ public class UpdateAndQuery {
 	            while (rs.next()) {
 	            	zhdh=rs.getString("ZHDH");
 					lldh=rs.getString("LLDH");
-					jyrq = df.format(rs.getDate("JYRQ"));
+					//jyrq = df.format(rs.getDate("JYRQ"));
+					jyrq = rs.getString("JYRQ");
 					qx=(Integer.parseInt(date.substring(0, 4))-Integer.parseInt(jyrq.substring(0, 4)))*12+(Integer.parseInt(date.substring(4, 6))-Integer.parseInt(jyrq.substring(4, 6)));
 					if(qx>3&&qx<6){
 						lldh="01102M03";

@@ -1,15 +1,22 @@
 package east.utils.tools;
 
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
+import java.net.URLDecoder;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.huateng.ebank.framework.security.Md5;
 
@@ -113,10 +120,9 @@ public class ToolUtils {
 	 * @return
 	 * @throws Exception
 	 */
-	public static String formatString(String fieldType, String fieldValue,
+	public static String formatString(String tableName, String fieldName, String fieldType, String fieldValue,
 			int fieldLength, String specflag, int fieldLength2,int fieldSetFlag)
 			throws Exception {
-		
 		if (fieldValue == null || "".equals(fieldValue.trim())) {
 			if (fieldType.startsWith("DECIMAL")) {
 				fieldValue = "0";
@@ -126,6 +132,10 @@ public class ToolUtils {
 				fieldValue = "";
 			}
 		}
+		
+		byte  b2[] = {0x01};
+		String str2 = new String(b2);
+		
 		// 处理金额
 		if (fieldType.equals("DECIMAL")) {
 			BigDecimal money = new BigDecimal(fieldValue);
@@ -134,18 +144,46 @@ public class ToolUtils {
 			} else {
 				money = money.setScale(2, BigDecimal.ROUND_HALF_UP);
 			}
-			fieldValue = money.toString()+",";
-			return fieldValue.trim();
+			fieldValue = money.toString();
+			return fieldValue.trim()+str2;
 		}else {
-			if(fieldSetFlag!=0&&!"".equals(fieldValue)){// 非金额处理	
-				fieldValue=changData(fieldValue,fieldSetFlag);	
+			if(fieldSetFlag!=0&&!"".equals(fieldValue)){// 非金额处理
+				//为股东信息中的股东证件号码特殊处理
+				if("GDXX".equals(tableName)){
+					Connection conn = DBUtil.getConnection();
+					Statement stmt = null;
+					stmt = conn.createStatement();
+					ResultSet rs = stmt.executeQuery("select distinct GDZJLB from EAST_GDXX where GDZJHM ='" + fieldValue.trim() + "'");  
+				    while (rs.next()) {  
+				        Object note[] = new Object[50];  
+				        for (int i = 0; i < note.length; i++) {  
+				            note[i] = rs.getObject(i + 1);  
+				            if("身份证".equals(note[i])){
+				            	fieldValue=changData(fieldValue,fieldSetFlag);	
+				            	break;
+				            }else{
+				            	fieldValue=changData(fieldValue,8);	//股东信息中除了身份证，其他的都不加密
+				            	break;
+				            }
+				        }  
+				    }  
+				    
+				}else{
+					fieldValue=changData(fieldValue,fieldSetFlag);	
+				}
+				
 			}
 		}
-		return fieldValue.trim()+",";
+		if ("CJRQ".equals(fieldName)){
+			return fieldValue.trim();
+		}else{
+			return fieldValue.trim()+str2;
+		}
+		
 	}	
 
-	//名称变形,身份证变形 '不变形-0,名称变形-1,身份证变形-2,名称暂时不取-3,身份证暂时不取-4,其他暂不取-5,其他暂时不变形-6'
-	public static String changData(String fieldValue,int fieldSetFlag) {
+	//名称变形,身份证变形 '不变形-0,名称变形-1,对私表身份证变形-2,含对公对私表身份证变形-3,身份证暂时不取-4,其他暂不取-5,对私客户统一编号变形-6,含对私与对公的客户统一编号变形-7,其他暂时不变形-8'
+	public static String changData(String fieldValue,int fieldSetFlag) throws UnsupportedEncodingException {
 		switch (fieldSetFlag) {
 		case 0:
 			return fieldValue.trim();				
@@ -157,11 +195,23 @@ public class ToolUtils {
 			}
 			return fieldValue.trim();		
 		case 2:
-			if(fieldValue.trim().length()==18||fieldValue.trim().length()==15){
-				fieldValue=objMd5.getMD5ofStr(fieldValue.trim());	
+			
+			if (fieldValue.trim().length()!=fieldValue.trim().getBytes().length){
+				fieldValue=fieldValue.trim().substring(0, 2) + EncoderByMd5(fieldValue.trim());;
+			}else{
+				fieldValue=fieldValue.trim().substring(0, 6) + objMd5.getMD5ofStr(fieldValue.trim());	
 			}
-			return fieldValue.trim();				
+	        
+			return fieldValue.trim();		
+			
 		case 3:
+			if (fieldValue.trim().length()==15 || fieldValue.trim().length()==18 ){
+				if (fieldValue.trim().length()!=fieldValue.trim().getBytes().length){
+					fieldValue=fieldValue.trim().substring(0, 2) + EncoderByMd5(fieldValue.trim());;
+				}else{
+					fieldValue=fieldValue.trim().substring(0, 6) + objMd5.getMD5ofStr(fieldValue.trim());	
+				}
+			}
 			
 			return fieldValue.trim();	
 			
@@ -171,12 +221,57 @@ public class ToolUtils {
 			
 		case 5:
 			
-			return fieldValue.trim();	
+			return fieldValue.trim();
+			
+		case 6:
+			int len = fieldValue.trim().length();
+			if (len>7){
+				fieldValue=fieldValue.trim().substring(0, 1) + fieldValue.trim().substring(1, 7) + objMd5.getMD5ofStr(fieldValue.trim().substring(1, len));
+			}
+		
+		case 7:
+			if (fieldValue.trim().length()==19){
+				fieldValue=fieldValue.trim().substring(0, 1) + fieldValue.trim().substring(1, 7) + objMd5.getMD5ofStr(fieldValue.trim().substring(1, 19));	
+			}else if (fieldValue.trim().length()==16){
+				fieldValue=fieldValue.trim().substring(0, 1) + fieldValue.trim().substring(1, 7) + objMd5.getMD5ofStr(fieldValue.trim().substring(1, 16));	
+			}
+			return fieldValue.trim();
 			
 		default:
 			return fieldValue.trim();	
 		}	
 	}
+	
+	
+	public static String EncoderByMd5(String str) {  
+	    String result = "";  
+	    MessageDigest md5 = null;  
+	    try {  
+	        md5 = MessageDigest.getInstance("MD5");  
+	        // 这句是关键  
+	        md5.update(str.getBytes("UTF-8"));  
+	    } catch (NoSuchAlgorithmException e) {  
+	        // TODO Auto-generated catch block  
+	        e.printStackTrace();  
+	    } catch (UnsupportedEncodingException e) {  
+	        // TODO Auto-generated catch block  
+	        e.printStackTrace();  
+	    }  
+	    byte b[] = md5.digest();  
+	    int i;  
+	    StringBuffer buf = new StringBuffer("");  
+	    for (int offset = 0; offset < b.length; offset++) {  
+	        i = b[offset];  
+	        if (i < 0)  
+	            i += 256;  
+	        if (i < 16)  
+	            buf.append("0");  
+	        buf.append(Integer.toHexString(i));  
+	    }  
+	    result = buf.toString();  
+	    return result;  
+	}  
+
 		
 	/**
 	 * 
@@ -208,7 +303,7 @@ public class ToolUtils {
 		for (int i = 0; i < bytes.length; i++) {
 			bytes[i] = (byte) 32;
 		}
-		fieldValue=new String(fieldValue.getBytes(),"GBK");
+		fieldValue=new String(fieldValue.getBytes(),"UTF-8");
 		// 处理金额
 		if (fieldType.equals("DECIMAL")) {
 			BigDecimal money = new BigDecimal(fieldValue);

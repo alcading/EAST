@@ -3,7 +3,8 @@ package east.creatfile;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -14,6 +15,7 @@ import east.special.product.UpdateAndQuery;
 import east.utils.tools.ToolUtils;
 import east.utils.tools.XmlUtil;
 import east.vo.DefautValueVO;
+
 
 
 /**
@@ -66,23 +68,24 @@ public class AllCreatFileMX {
 
 			try {
 				File txtFile = new File(fileName + ".txt");
-				BufferedWriter bw = new BufferedWriter(new FileWriter(txtFile));
-				
+				//BufferedWriter bw = new BufferedWriter(new FileWriter(txtFile));
+				BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (new FileOutputStream (txtFile), "UTF-8"));
 				//dataList = BaseDao.query(tableName, args[0], sqlMap);
 				
 				int count = BaseDao.queryAndWriteFile(tableName, args[0], sqlMap, tableInfoMap, bw, defautValue);
-			
-			
+				String counts=Integer.toString(count);
 				bw.close();
 				FileInputStream inputStream = new FileInputStream(txtFile);
 				//log文件
-				BufferedWriter flagFileWriter = new BufferedWriter(new FileWriter(fileName + ".log"));
+				//BufferedWriter flagFileWriter = new BufferedWriter(new FileWriter(fileName + ".log"));
+				BufferedWriter flagFileWriter = new BufferedWriter (new OutputStreamWriter (new FileOutputStream (fileName + ".log"), "UTF-8"));
 				flagFileWriter.write(txtFile.getName() + "\n" );
 				flagFileWriter.write(txtFile.length() + "\n" );
 				Calendar calendar=Calendar.getInstance();
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				flagFileWriter.write(sdf.format(calendar.getTime())+"\n");
-				flagFileWriter.write("Y".trim());
+				flagFileWriter.write("Y".trim()+"\n");
+				flagFileWriter.write(counts);
 				flagFileWriter.close();
 	
 				System.out.println(tableName + "file***over,sum:"+ count +"！");
