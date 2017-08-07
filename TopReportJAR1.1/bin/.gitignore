@@ -1,10 +1,10 @@
-/.svn/
-/META-INF/
 /com/
+/.svn/
 /commonResources.properties
+/META-INF/
+/topbpm_variable.properties
+/resource/
+/test/
 /ehcache.xml
 /log4j.dtd
 /log4j.xml
-/resource/
-/test/
-/topbpm_variable.properties
