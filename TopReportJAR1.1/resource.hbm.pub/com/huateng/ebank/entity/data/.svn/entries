@@ -1,52 +1,0 @@
-8
-
-dir
-179
-https://163.1.8.172/svn/Report/TopReportJAR1.1/resource.hbm.pub/com/huateng/ebank/entity/data
-https://163.1.8.172/svn/Report
-
-
-
-2015-05-13T02:11:32.046875Z
-131
-shaomy
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-a5dfae00-c675-ab40-80db-15507a8894f9
-
-mng
-dir
-
-flowManagement
-dir
-
-TlrWorkload.java
-file
-
-
-
-
-2017-03-09T10:58:10.249946Z
-dac474ad30da0c52dc4635f417069020
-2015-01-09T09:52:31.484375Z
-4
-shaomy
-
-base
-dir
-
-workflow
-dir
-

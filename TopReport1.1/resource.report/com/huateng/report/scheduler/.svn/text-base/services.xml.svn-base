@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "/WEB-INF/dtd/spring-beans-2.0.dtd">
-<beans>
-   <bean id="bopTimedScheduler" class="com.huateng.report.scheduler.timer.BopTimedScheduler"></bean>
-   
-   <bean id="BopTimedSchedulerOperation" class="com.huateng.report.scheduler.operation.BopTimedSchedulerOperation"></bean>
-</beans>
