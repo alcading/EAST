@@ -37,4 +37,27 @@
    <bean id="CustomerReaOperation" 
    		class="com.huateng.report.basis.operation.CustomerReaOperation">
    	</bean>
+   	
+   		<!-- EAST 监管报送信息表维护 -->
+   <bean id="EastJgbbService" 
+   		class="resources.east.data.service.EastJgbbService">
+   	</bean>
+   	<!-- EAST 校验结果查询 -->
+   <bean id="EastVerifResultService" 
+   		class="resources.east.data.service.EastVerifResultService">
+   	</bean>
+   		<!-- EAST 校验处理情况查询 -->
+   <bean id="EastProcessLogService" 
+   		class="resources.east.data.service.EastProcessLogService">
+   	</bean>
+   	
+   		<!-- EAST 机构信息表维护 -->
+   <bean id="EastJgxxbService" 
+   		class="resources.east.data.service.EastJgxxbService">
+   	</bean>
+   	
+   	<!-- EAST 员工信息表维护 -->
+   <bean id="EastYgbService" 
+   		class="resources.east.data.service.EastYgbService">
+   	</bean>
 </beans>

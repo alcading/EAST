@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	txnlogflag:true记录日志
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="数据维护" navigate="主页 &gt; 数据维护 &gt; 手工执行数据校验" type="call"
+	interface="false" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	txnlogflag="true"
+	getterclassname="resources.east.data.getter.EastProcessLogGetter">
+	<Include id="BankParam" />
+	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="数据导出-数据校验"  />
+	
+	<Fields>
+		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+		 <Field id="id" desc="ID号" edittype="text" status="F" datatype="string" size="32" xpath="/id"></Field>
+		<Field id="workDate" desc="执行日期" edittype="text" status="F" datatype="string" size="8" xpath="/workDate"></Field>
+		<Field id="startTm" desc="开始时间" edittype="text" status="F" datatype="string" size="6" xpath="/startTm"></Field>
+	    <Field id="endTm" desc="结束时间" edittype="text" status="F" datatype="string" size="6" xpath="/endTm"></Field>
+		 <Field id="status" desc="执行状态" edittype="text" status="F" datatype="string" size="10" xpath="/status"></Field>
+		<Field id="excemsg" desc="错误信息" edittype="text" status="F" datatype="string" size="2000" xpath="/excemsg"></Field>
+       </Fields>
+
+	<Parameters></Parameters>
+    <Operations>
+			<Button id="btDel" name="btDel" desc="手工执行数据校验" operation="asysubmit" 
+    	updateClass="resources.east.data.update.EastVerifyDelUpdate" url="#" txn="" 
+    	tip="手工执行数据校验" icon="icon-impin"/>
+    </Operations>
+	<Script>
+	</Script>
+	</CommQry>
+

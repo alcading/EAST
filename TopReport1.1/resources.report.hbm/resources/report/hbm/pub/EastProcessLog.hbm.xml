@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.report">
+  <class
+		name="EastProcessLog"
+		table="EAST_PROCESS_LOG"
+	>
+		<meta attribute="sync-DAO">false</meta>
+			<id
+			name="id"
+			type="string"
+			column="PRO_ID"
+		>
+		</id>
+
+		<property
+			name="workDate"
+			column="WORK_DATE"
+			type="string"
+			length="8"
+		/>
+		
+			<property
+			name="startTm"
+			column="START_TM"
+			type="string"
+			length="6"
+		/>
+	<property
+			name="endTm"
+			column="END_TM"
+			type="string"
+			length="6"
+		/>
+     <property
+			name="status"
+			column="STATUS"
+			type="string"
+			length="10"
+		/>
+      <property
+			name="excemsg"
+			column="EXCEMSG"
+			type="string"
+			length="2000"
+		/>
+
+    </class>
+</hibernate-mapping>

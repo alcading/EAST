@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resource.bean.report">
+  <class
+		name="EastVerifResult"
+		table="EAST_VERIF_RESULT">
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="integer"
+			column="ID"
+		>
+		</id>
+			<property
+				name="tableName"
+				column="TABLE_NAME"
+				type="string"
+				length="100"
+			/>
+			<property
+				name="tableDesc"
+				column="TABLE_DESC"
+				type="string"
+				length="100"
+			/>
+				<property
+				name="columnName"
+				column="COLUMN_NAME"
+				type="string"
+				length="100"
+			/>
+			<property
+				name="columnDesc"
+				column="COLUMN_DESC"
+				type="string"
+				length="100"
+			/>
+			<property
+				name="errormsg"
+				column="ERRORMSG"
+				type="string"
+				length="500"
+			/>
+			
+				<property
+				name="dataDate"
+				column="DATA_DATE"
+				type="string"
+				length="8"
+			/>
+			
+				<property
+				name="ruleDesc"
+				column="RULE_DESC"
+				type="string"
+				length="500"
+			/>
+    </class>
+</hibernate-mapping>
+   
