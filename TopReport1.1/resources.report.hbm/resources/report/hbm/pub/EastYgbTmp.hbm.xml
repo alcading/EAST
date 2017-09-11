@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+  <class
+		name="EastYgbTmp"
+		table="EAST_YGB_TMP"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastYgbPK">
+			<key-property
+				name="gh"
+				column="gh"
+				type="string"
+			/>
+			<key-property
+				name="nbjgh"
+				column="nbjgh"
+				type="string"
+			/>
+		</composite-id>
+	
+	  <property
+			name="yxjgdm"
+			column="yxjgdm"
+			type="string"
+			length="30"
+		/>
+		
+		 <property
+			name="jrxkzh"
+			column="jrxkzh"
+			type="string"
+			length="30"
+		/>
+      
+        <property
+			name="yxjgmc"
+			column="yxjgmc"
+			type="string"
+			length="200"
+		/>
+		
+		 <property
+			name="xm"
+			column="xm"
+			type="string"
+			length="100"
+		/>
+         <property
+			name="sfzh"
+			column="sfzh"
+			type="string"
+			length="60"
+		/>
+         <property
+			name="lxdh"
+			column="lxdh"
+			type="string"
+			length="30"
+		/>
+		 <property
+			name="wdh"
+			column="wdh"
+			type="string"
+			length="30"
+		/>
+     	 <property
+			name="ssbm"
+			column="ssbm"
+			type="string"
+			length="60"
+		/>
+         <property
+			name="zw"
+			column="zw"
+			type="string"
+			length="60"
+		/>
+         <property
+			name="ygzt"
+			column="ygzt"
+			type="string"
+			length="30"
+		/>
+       
+        <property
+			name="gwbh"
+			column="gwbh"
+			type="string"
+			length="60"
+		/>
+       <property
+			name="cjrq"
+			column="cjrq"
+			type="string"
+			length="8"
+		/>
+		 <property
+			name="errmsg"
+			column="errmsg"
+			type="string"
+			length="500"
+		/>
+	</class>	
+</hibernate-mapping>

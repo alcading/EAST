@@ -7,15 +7,17 @@ import com.huateng.ebank.framework.util.ApplicationContextUtils;
 
 import resource.report.dao.ROOTDAO;
 import resource.report.dao.ROOTDAOUtils;
+import resources.east.data.getter.EastGrhqckfhzTmpGetter;
 import resources.east.data.pub.EastProcessLog;
 
-public class EastProcessLogService {
+public class EastGrhqckfhzTmpService {
+
 	public PageQueryResult pageQueryByHql(int pageIndex, int pageSize) {
 		// TODO Auto-generated method stub
 		ROOTDAO rootDAO = ROOTDAOUtils.getROOTDAO();
 		PageQueryResult pageQueryResult = null;
 		PageQueryCondition queryCondition = new PageQueryCondition();
-		String hql = "from EastProcessLog epl where 1=1  ";
+		String hql = "from EastGrhqckfhzTmp epl where 1=1  ";
 		try {
 			queryCondition.setQueryString(hql);
 			queryCondition.setPageIndex(pageIndex);
@@ -34,20 +36,20 @@ public class EastProcessLogService {
 	 * @param paramgroupId 参数段编号
 	 */
 
-	public static EastProcessLogService getInstance() {
+	public static EastGrhqckfhzTmpService getInstance() {
 		// TODO Auto-generated method stub
-		return (EastProcessLogService)ApplicationContextUtils.getBean("EastProcessLogService");
+		return (EastGrhqckfhzTmpService)ApplicationContextUtils.getBean("EastGrhqckfhzTmpService");
 	}
 	
 
 	
 //  通过id来获取实体类
-	 public EastProcessLog  selectById(String id){
+	 public EastGrhqckfhzTmpGetter  selectById(String id){
 		  ROOTDAO rootdao=ROOTDAOUtils.getROOTDAO();
-		  EastProcessLog  evr = null;
+		  EastGrhqckfhzTmpGetter  evr = null;
 		  try {
 			
-			  evr=  (EastProcessLog)rootdao.query(EastProcessLog.class, id);
+			  evr=  (EastGrhqckfhzTmpGetter)rootdao.query(EastGrhqckfhzTmpGetter.class, id);
 			 
 			 	} catch (CommonException e) {
 			// TODO Auto-generated catch block
@@ -56,4 +58,5 @@ public class EastProcessLogService {
 		
 		return evr;
 	  }
+
 }

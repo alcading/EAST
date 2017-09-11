@@ -142,4 +142,6 @@
 	<bean id="EastProcessLogUpdateOperation"
     	class="resources.east.data.operation.EastProcessLogUpdateOperation">
   	</bean>
+  
+  	
 </beans>

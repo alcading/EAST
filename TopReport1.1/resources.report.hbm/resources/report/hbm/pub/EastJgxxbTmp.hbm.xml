@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+      <class
+		name="EastJgxxbTmp"
+		table="EAST_JGXXB_TMP"
+	>
+	<!-- 机构信息表 -->
+		<meta attribute="sync-DAO">false</meta>
+		<!-- nbjgh内部机构号 -->
+		<id
+			name="id"
+			type="string"
+			column="nbjgh"
+		>
+		</id>
+       <!-- 银行机构代码 -->
+		<property
+			name="yxjgdm"
+			column="yxjgdm"
+			type="string"
+			length="30"
+		/>
+	
+         <!-- 金融许可证号 -->
+		<property
+			name="jrxkzh"
+			column="jrxkzh"
+			type="string"
+			length="30"
+		/>
+      
+        <!-- 银行机构名称 -->
+		<property
+			name="yxjgmc"
+			column="yxjgmc"
+			type="string"
+			length="200"
+		/>
+  
+        <!-- 机构类别 -->
+		<property
+			name="jglb"
+			column="jglb"
+			type="string"
+			length="30"
+		/>
+        <!--邮政编码 -->
+		<property
+			name="yzbm"
+			column="yzbm"
+			type="string"
+			length="6"
+		/>
+       <!--网点号 -->
+		<property
+			name="wdh"
+			column="wdh"
+			type="string"
+			length="30"
+		/>
+         <!--营业状态 -->
+		<property
+			name="yyzt"
+			column="yyzt"
+			type="string"
+			length="9"
+		/>
+          <!--成立时间 -->
+		<property
+			name="clsj"
+			column="clsj"
+			type="string"
+			length="8"
+		/>
+            <!--机构工作开始时间 -->
+		<property
+			name="jggzkssj"
+			column="jggzkssj"
+			type="string"
+			length="6"
+		/>
+            <!--机构工作终止时间-->
+		<property
+			name="jggzzzsj"
+			column="jggzzzsj"
+			type="string"
+			length="6"
+		/>
+             <!--机构地址--> 
+		<property
+			name="jgdz"
+			column="jgdz"
+			type="string"
+			length="400"
+		/>
+            <!--负责人姓名-->
+		<property
+			name="fzrxm"
+			column="fzrxm"
+			type="string"
+			length="100"
+		/>
+           <!--负责人职务-->
+		<property
+			name="fzrzw"
+			column="fzrzw"
+			type="string"
+			length="60"
+		/>
+            <!--负责人联系电话-->
+		<property
+			name="fzrlxdh"
+			column="fzrlxdh"
+			type="string"
+			length="30"
+		/>
+             <!--采集日期-->
+		<property
+			name="cjrq"
+			column="cjrq"
+			type="string"
+			length="8"
+		/>
+		<property
+			name="errmsg"
+			column="errmsg"
+			type="string"
+			length="500"
+		/>
+    </class>
+</hibernate-mapping>

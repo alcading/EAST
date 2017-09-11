@@ -28,7 +28,7 @@ $('#DataVerify_interface_dataset_btnSubmit').after($('#button-tools'));
 $(function(){
 });
 function btDel_onClickCheck(button) {
-alert("后台处理时间较长请耐心等待！");
+alert("后台处理时间较长请耐心等待,10分钟后再查询！");
 btDel.disable(true);
  setTimeout(function (){
             btDel.disable(false)

@@ -6,10 +6,10 @@ import com.huateng.ebank.business.management.common.DAOUtils;
 import com.huateng.ebank.framework.exceptions.CommonException;
 import com.huateng.ebank.framework.util.ApplicationContextUtils;
 
-import resource.bean.report.EastVerifResult;
 import resource.dao.base.HQLDAO;
 import resource.report.dao.ROOTDAO;
 import resource.report.dao.ROOTDAOUtils;
+import resources.east.data.pub.EastVerifResult;
 
 public class EastVerifResultService {
 

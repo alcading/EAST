@@ -43,8 +43,6 @@
 		if (record) {
 		    var tableName = record.getValue("tableName");
 		   cell.innerHTML="<center><a href=\"JavaScript:openData('"+tableName+"')\">详细</a></center>";
-		   //  cell.innerHTML="<center><a href=\"${contextPath}\/fpages\/datamodify\/ftl\/DataManageJgxxb.ftl\">详细</a></center>";
-			//cell.innerHTML="<center>详细</center>";
 		} else {//当不存在记录时
 		 cell.innerHTML="&nbsp;";
 		}	
@@ -53,10 +51,13 @@
 	function openData(tableName){
 		if( tableName != null){
 		   if (tableName == "EAST_YGB"){
-		      window.location.href = "${contextPath}/fpages/datamodify/ftl/DataManageYgb.ftl";
-		   } else if (id == "EAST_JGXXB"){
-		      window.location.href = "${contextPath}/fpages/datamodify/ftl/DataManageJgxxb.ftl";
-		   } else{
+		      window.location.href = "${contextPath}/fpages/datamodify/ftl/EastYgbTmp.ftl";
+		   } else if (tableName == "EAST_JGXXB"){
+		      window.location.href = "${contextPath}/fpages/datamodify/ftl/EastJgxxbTmp.ftl";
+		   } else if (tableName == "EAST_GRHQCKFHZ"){
+		      window.location.href = "${contextPath}/fpages/datamodify/ftl/EastGrhqckfhzTmp.ftl";
+		   }else {
+		      window.location.href = "${contextPath}/fpages/datamodify/ftl/EastCzxxTmp.ftl";
 		   }
 		} else{
 		}

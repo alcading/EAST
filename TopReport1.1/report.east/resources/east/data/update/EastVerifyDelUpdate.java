@@ -3,11 +3,12 @@ package resources.east.data.update;
 
 
 import resources.east.data.operation.EastProcessLogUpdateOperation;
+import resources.east.data.pub.EastProcessLog;
+
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import resource.bean.report.EastProcessLog;
 
 import com.huateng.common.log.HtLog;
 import com.huateng.common.log.HtLogFactory;

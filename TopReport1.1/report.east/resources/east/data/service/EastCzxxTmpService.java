@@ -9,13 +9,13 @@ import resource.report.dao.ROOTDAO;
 import resource.report.dao.ROOTDAOUtils;
 import resources.east.data.pub.EastProcessLog;
 
-public class EastProcessLogService {
+public class EastCzxxTmpService {
 	public PageQueryResult pageQueryByHql(int pageIndex, int pageSize) {
 		// TODO Auto-generated method stub
 		ROOTDAO rootDAO = ROOTDAOUtils.getROOTDAO();
 		PageQueryResult pageQueryResult = null;
 		PageQueryCondition queryCondition = new PageQueryCondition();
-		String hql = "from EastProcessLog epl where 1=1  ";
+		String hql = "from EastCzxxTmp czxx where 1=1  ";
 		try {
 			queryCondition.setQueryString(hql);
 			queryCondition.setPageIndex(pageIndex);
@@ -34,26 +34,12 @@ public class EastProcessLogService {
 	 * @param paramgroupId 参数段编号
 	 */
 
-	public static EastProcessLogService getInstance() {
+	public static EastCzxxTmpService getInstance() {
 		// TODO Auto-generated method stub
-		return (EastProcessLogService)ApplicationContextUtils.getBean("EastProcessLogService");
+		return (EastCzxxTmpService)ApplicationContextUtils.getBean("EastCzxxTmpService");
 	}
 	
 
 	
-//  通过id来获取实体类
-	 public EastProcessLog  selectById(String id){
-		  ROOTDAO rootdao=ROOTDAOUtils.getROOTDAO();
-		  EastProcessLog  evr = null;
-		  try {
-			
-			  evr=  (EastProcessLog)rootdao.query(EastProcessLog.class, id);
-			 
-			 	} catch (CommonException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return evr;
-	  }
+
 }

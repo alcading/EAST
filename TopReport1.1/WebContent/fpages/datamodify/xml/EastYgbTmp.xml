@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	txnlogflag:true记录日志
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="员工表不合规数据维护" navigate="主页 &gt; 数据完善 &gt; 员工表不合规数据维护" type="call"
+	interface="false" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	txnlogflag="true"
+	getterclassname="resources.east.data.getter.EastYgbTmpGetter">
+	<Include id="BankParam" />
+	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="数据导出-员工信息"  />
+	
+	<Fields>
+		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+
+		<!--  
+		<Field id="id" desc="币种" status="F" primary="false" method="None" readonly="false" type="String" size="20" default=""
+			   edittype="select" translated="CQ:CurrencySelect" fieldmap="id=currencyNo;idName=currencyNoName" viewField="currencyNoName" xpath="/id" require="" tip="币种" />
+			   -->
+
+	    <Field id="id" desc="工号" edittype="text" datatype="string" size="30" xpath="/id"></Field>
+	    <Field id="gh" desc="工号" edittype="text" status="F" datatype="string" size="30" xpath="/id/gh"></Field>	
+	    <Field id="nbjgh" desc="内部机构号" status="F" edittype="text" datatype="string" size="30" xpath="/id/nbjgh"></Field>	
+		<Field id="yxjgdm" desc="银行机构代码" edittype="text"  datatype="string" size="30" xpath="/yxjgdm" />
+		<Field id="jrxkzh" desc="金融许可证号" edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
+		<Field id="yxjgmc" desc="银行机构名称" edittype="text"  datatype="string" size="200" xpath="/yxjgmc" />
+		<Field id="xm" desc="姓名" edittype="text"  datatype="string" size="100" xpath="/xm" />
+		<Field id="sfzh" desc="身份证号" edittype="text"  datatype="string" size="60" xpath="/sfzh" />
+		<Field id="lxdh" desc="联系电话" edittype="text"  datatype="string" size="30" xpath="lxdh" />
+		<Field id="wdh" desc="网点号" edittype="text"  datatype="string" size="30" xpath="/wdh" />
+		<Field id="ssbm" desc="所属部门" edittype="text"  datatype="string" size="60" xpath="/ssbm" />
+		<Field id="zw" desc="职务" edittype="text"  datatype="string" size="60" xpath="/zw" />
+		<Field id="ygzt" desc="员工状态" edittype="text"  datatype="string" size="30" xpath="/ygzt" />
+		<Field id="gwbh" desc="岗位编号" edittype="text"  datatype="string" size="60" xpath="/gwbh" />
+		<Field id="cjrq" desc="采集日期" edittype="text"  datatype="string" size="8" xpath="/cjrq" />
+		<Field id="errmsg" desc="错误信息" edittype="text"  datatype="string" size="500" xpath="/errmsg" />
+		<Field id="opr" desc="操作" status="N" method="None" xpath=""
+			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
+       </Fields>
+
+	<Parameters></Parameters>
+<Operations>
+
+	<Button id="btMod" name="btMod" desc="修改" operation="syncsubmit" url="#" show="" group="" txn="" />
+
+	<Button id="btSave" name="btSave" desc="保存"
+			operation="asysubmit"
+			updateClass="resources.east.data.update.EastYgbTmpUpdate"
+			url="/fpages/regonization/ftl/EastYgbTmp.ftl" txn="" />
+
+</Operations>
+	<Script>
+	</Script>
+
+</CommQry>

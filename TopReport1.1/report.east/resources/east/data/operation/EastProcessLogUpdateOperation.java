@@ -16,9 +16,9 @@ import com.huateng.ebank.framework.operation.BaseOperation;
 import com.huateng.ebank.framework.operation.OperationContext;
 import com.huateng.ebank.framework.util.ExceptionUtil;
 
-import resource.bean.report.EastProcessLog;
 import resource.report.dao.ROOTDAO;
 import resource.report.dao.ROOTDAOUtils;
+import resources.east.data.pub.EastProcessLog;
 
 public class EastProcessLogUpdateOperation extends BaseOperation {
 
