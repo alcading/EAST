@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<META>
-	
-	<Query id="BOPForBiExecConfirmedEntry" path="/fpages/workconfirmed/xml/BOPForBiExecConfirmedEntry.xml" />
-	<Query id="BOPForWorkConfirmedEntry" path="/fpages/workconfirmed/xml/BOPForWorkConfirmedEntry.xml" />
-	
-</META>

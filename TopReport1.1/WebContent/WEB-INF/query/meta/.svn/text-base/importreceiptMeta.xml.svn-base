@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<META>
-	<Query id="receiptFileImportEntry" path="/fpages/importreceipt/xml/ReceiptFileImportEntry.xml" txn="" desc="回执导入跳转页面入口" />
-
-	<Query id="receiptPackImport" path="/fpages/importreceipt/xml/ReceiptPackImport.xml" txn="" desc="" />
-
-	<Query id="receiptFileErrEntry" path="/fpages/importreceipt/xml/ReceiptFileErrEntry.xml" txn=""  desc="回执文件错误页面"></Query>
-</META>

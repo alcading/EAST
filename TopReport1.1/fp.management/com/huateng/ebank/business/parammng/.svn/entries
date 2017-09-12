@@ -1,55 +1,0 @@
-8
-
-dir
-178
-https://163.1.8.172/svn/Report/TopReport1.1/fp.management/com/huateng/ebank/business/parammng
-https://163.1.8.172/svn/Report
-
-
-
-2015-05-13T02:23:48.796875Z
-132
-shaomy
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-a5dfae00-c675-ab40-80db-15507a8894f9
-
-operation
-dir
-
-update
-dir
-
-bean
-dir
-
-TellerService.java
-file
-
-
-
-
-2016-09-02T11:22:47.669652Z
-961108a3803e0b702898d80964abd83b
-2015-01-09T09:02:38.062500Z
-2
-shaomy
-
-getter
-dir
-
-cqGetter
-dir
-
