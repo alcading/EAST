@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<META>
+   	<!-- 查询监控报送报表-->
+	<Query id="dataManageJgbb" path="/fpages/datamodify/xml/DataManageJgbb.xml"
+		desc="报送表查询" />
+
+	<!-- 查询监控报送的员工表-->
+	<Query id="EAST_YGB_TMP" path="/fpages/datamodify/xml/EastYgbTmp.xml"
+		desc="员工表不合规数据维护" />
+		
+		<!-- 查询监控报送的机构信息表-->
+	<Query id="EAST_JGXXB_TMP" path="/fpages/datamodify/xml/EastJgxxbTmp.xml"
+		desc="机构信息表查询" />
+		<!-- 校验结果信息查询-->
+	<Query id="DataCheckResult" path="/fpages/datamodify/xml/DataCheckResult.xml"
+		desc="校验结果信息查询" />
+		
+		<!-- 手工执行校验过程查询-->
+	<Query id="DataVerify" path="/fpages/datamodify/xml/DataVerify.xml"
+		desc="手工执行校验过程查询" />
+		
+		<!-- 存折查询-->
+	<Query id="EAST_CZXX_TMP" path="/fpages/datamodify/xml/EastCzxxTmp.xml"
+		desc="存折查询" />
+		
+		<!-- 个人活期存款分户账不合规数据维护-->
+	<Query id="EAST_GRHQCKFHZ_TMP" path="/fpages/datamodify/xml/EastGrhqckfhzTmp.xml"
+		desc="个人活期存款分户账不合规数据维护" />
+		<!-- 个人活期存款分户账明细记录不合规数据维护-->
+	<Query id="EAST_GRHQCKFHZMXJL_TMP" path="/fpages/datamodify/xml/EastGrhqckfhzmxjlTmp.xml"
+		desc="个人活期存款分户账明细记录不合规数据维护" />
+		<!-- 对公活期存款分户账明细记录不合规数据维护-->
+	<Query id="EAST_DGHQCKFHZMXJL_TMP" path="/fpages/datamodify/xml/EastDghqckfhzmxjlTmp.xml"
+		desc="对公活期存款分户账明细记录不合规数据维护" />
+		
+				<!-- 担保关系查询-->
+	<Query id="EAST_DBGX_TMP" path="/fpages/datamodify/xml/EastDbgxTmp.xml"
+		desc="担保关系查询" />
+</META>

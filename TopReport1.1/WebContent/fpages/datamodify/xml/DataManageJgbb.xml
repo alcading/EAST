@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	txnlogflag:true记录日志
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="报送表查询" navigate="主页 &gt; 数据完善报 &gt; 送表查询" type="call"
+	interface="false" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	txnlogflag="true"
+	getterclassname="resources.east.data.getter.EastJgbbGetter">
+	<Include id="BankParam" />
+	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="数据导出-数据校验"  />	
+	<Fields>
+		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+
+	  <Field id="id" desc="报送表" edittype="text" status="F" datatype="string" size="30" xpath="/id"></Field>
+	    <Field id="eastTableName" desc="报送表名称" edittype="text" status="F" datatype="string" size="100" xpath="/eastTableName"></Field>
+		<Field id="opr" desc="操作" status="N" method="None" xpath=""
+			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
+       </Fields>
+
+	<Parameters></Parameters>
+	 <Where>
+		<TextBox id="eastTable" desc="报送表" tip="报送表"  fieldname="eastTable" datatype="string" index="0" />
+		<TextBox id="eastTableName" desc="报送表名称" tip="报送表名称"  fieldname="eastTableName" datatype="string" index="1" />
+			
+	</Where>
+    <Operations>
+    </Operations>
+	<Script>
+	</Script>
+
+</CommQry>

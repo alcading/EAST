@@ -254,7 +254,8 @@
 				/WEB-INF/query/meta/jshCollandauditMeta.xml,
 				/WEB-INF/query/meta/bopDataqueryMeta.xml,
 				/WEB-INF/query/meta/jshDataqueryMeta.xml,
-				/WEB-INF/query/meta/anzMeta.xml
+				/WEB-INF/query/meta/anzMeta.xml,
+				/WEB-INF/query/meta/DataManage.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>2</load-on-startup>

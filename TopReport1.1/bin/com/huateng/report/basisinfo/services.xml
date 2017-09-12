@@ -37,4 +37,45 @@
    <bean id="CustomerReaOperation" 
    		class="com.huateng.report.basis.operation.CustomerReaOperation">
    	</bean>
+   	
+   		<!-- EAST 监管报送信息表维护 -->
+   <bean id="EastJgbbService" 
+   		class="resources.east.data.service.EastJgbbService">
+   	</bean>
+   	<!-- EAST 校验结果查询 -->
+   <bean id="EastVerifResultService" 
+   		class="resources.east.data.service.EastVerifResultService">
+   	</bean>
+   		<!-- EAST 校验处理情况查询 -->
+   <bean id="EastProcessLogService" 
+   		class="resources.east.data.service.EastProcessLogService">
+   	</bean>
+   	
+   		<!-- EAST 机构信息表维护 -->
+   <bean id="EastJgxxbTmpService" 
+   		class="resources.east.data.service.EastJgxxbTmpService">
+   	</bean>
+   	
+   	<!-- EAST 员工信息表维护 -->
+   <bean id="EastYgbTmpService" 
+   		class="resources.east.data.service.EastYgbTmpService">
+   	</bean>
+   		<!-- EAST 存折信息表维护 -->
+   <bean id="EastCzxxTmpService" 
+   		class="resources.east.data.service.EastCzxxTmpService">
+   	</bean>
+   	
+    		<!-- EAST 个人活期存款分户账表维护 -->
+   <bean id="EastGrhqckfhzTmpService" 
+   		class="resources.east.data.service.EastGrhqckfhzTmpService">
+   	</bean>
+   	 <!-- EAST 个人活期存款分户账明细记录表维护 -->
+   <bean id="EastGrhqckfhzmxjlTmpService" 
+   		class="resources.east.data.service.EastGrhqckfhzmxjlTmpService">
+   	</bean>
+   <!-- EAST 对公活期存款分户账明细记录表维护 -->
+   <bean id="EastDghqckfhzmxjlTmpService" 
+   		class="resources.east.data.service.EastDghqckfhzmxjlTmpService">
+   	</bean>		
+   	
 </beans>

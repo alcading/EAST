@@ -137,4 +137,11 @@
     	class="com.huateng.ebank.business.management.operation.RoleMngApplyOperation">
   	</bean>
 	<!-- add by zhiyang.he 双岗复核改造 2012-09-03 end -->
+	
+	<!-- east手工执行校验 -->
+	<bean id="EastProcessLogUpdateOperation"
+    	class="resources.east.data.operation.EastProcessLogUpdateOperation">
+  	</bean>
+  
+  	
 </beans>

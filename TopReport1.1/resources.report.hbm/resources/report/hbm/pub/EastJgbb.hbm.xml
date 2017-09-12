@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+  <class
+		name="EastJgbb"
+		table="east_jgbb"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<!--  -->
+		<id
+			name="id"
+			type="string"
+			column="east_table"
+		>
+		</id>
+	
+		
+	  <property
+			name="eastTableName"
+			column="east_table_name"
+			type="string"
+			length="100"
+		/>
+		
+		 <property
+			name="ftlPath"
+			column="ftl_path"
+			type="string"
+			length="100"
+		/>
+ 
+
+	</class>	
+</hibernate-mapping>

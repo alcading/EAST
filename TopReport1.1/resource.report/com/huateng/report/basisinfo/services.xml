@@ -65,10 +65,22 @@
    		class="resources.east.data.service.EastCzxxTmpService">
    	</bean>
    	
+   		<!-- EAST 担保关系信息表维护 -->
+   <bean id="EastDbgxTmpService" 
+   		class="resources.east.data.service.EastDbgxTmpService">
+   	</bean>
+   	
     		<!-- EAST 个人活期存款分户账表维护 -->
    <bean id="EastGrhqckfhzTmpService" 
    		class="resources.east.data.service.EastGrhqckfhzTmpService">
    	</bean>
-   		
+   	 <!-- EAST 个人活期存款分户账明细记录表维护 -->
+   <bean id="EastGrhqckfhzmxjlTmpService" 
+   		class="resources.east.data.service.EastGrhqckfhzmxjlTmpService">
+   	</bean>
+   <!-- EAST 对公活期存款分户账明细记录表维护 -->
+   <bean id="EastDghqckfhzmxjlTmpService" 
+   		class="resources.east.data.service.EastDghqckfhzmxjlTmpService">
+   	</bean>		
    	
 </beans>

@@ -37,7 +37,7 @@ public class WorkflowProcNameSelectGetter extends BaseGetter {
 		HQLDAO dao = BaseDAOUtils.getHQLDAO();
 
 		Session session = dao.getHibernateTemplate().getSessionFactory().openSession();
-
+ 
 
 		try {
 			TopBPMConfiguration topbpmConfiguration = TopBPMConfiguration.getInstance();

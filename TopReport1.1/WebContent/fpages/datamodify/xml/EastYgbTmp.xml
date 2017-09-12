@@ -36,7 +36,7 @@
 		<Field id="yxjgmc" desc="银行机构名称" edittype="text"  datatype="string" size="200" xpath="/yxjgmc" />
 		<Field id="xm" desc="姓名" edittype="text"  datatype="string" size="100" xpath="/xm" />
 		<Field id="sfzh" desc="身份证号" edittype="text"  datatype="string" size="60" xpath="/sfzh" />
-		<Field id="lxdh" desc="联系电话" edittype="text"  datatype="string" size="30" xpath="lxdh" />
+		<Field id="lxdh" desc="联系电话" edittype="text"  datatype="string" size="30" xpath="/lxdh" />
 		<Field id="wdh" desc="网点号" edittype="text"  datatype="string" size="30" xpath="/wdh" />
 		<Field id="ssbm" desc="所属部门" edittype="text"  datatype="string" size="60" xpath="/ssbm" />
 		<Field id="zw" desc="职务" edittype="text"  datatype="string" size="60" xpath="/zw" />

@@ -13,7 +13,7 @@ import com.huateng.ebank.framework.exceptions.CommonException;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
-
+//TopReport1.1/report.scheduler/com/huateng/report/scheduler/getter/BopTimedSchedulerGetter.java
 
 public class BopTimedSchedulerGetter extends BaseGetter{
 

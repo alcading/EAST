@@ -95,7 +95,7 @@
 		subwindow_signWindow.show();
 	}
 	
-	function datatable1_opr_onRefresh(cell, value, record)
+	function datatable1_opr_f(cell, value, record)
 	{
 	
 		if (record) {//当存在记录时

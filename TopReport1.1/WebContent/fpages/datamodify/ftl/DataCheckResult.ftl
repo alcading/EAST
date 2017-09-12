@@ -56,8 +56,14 @@
 		      window.location.href = "${contextPath}/fpages/datamodify/ftl/EastJgxxbTmp.ftl";
 		   } else if (tableName == "EAST_GRHQCKFHZ"){
 		      window.location.href = "${contextPath}/fpages/datamodify/ftl/EastGrhqckfhzTmp.ftl";
-		   }else {
+		   }else if (tableName == "EAST_GRHQCKFHZMXJL"){
+		      window.location.href = "${contextPath}/fpages/datamodify/ftl/EastGrhqckfhzmxjlTmpTmp.ftl";
+		   }else if (tableName == "EAST_DGHQCKFHZMXJL"){
+		      window.location.href = "${contextPath}/fpages/datamodify/ftl/EastDghqckfhzmxjlTmpTmp.ftl";
+		   }else if (tableName == "EAST_CZXX"){
 		      window.location.href = "${contextPath}/fpages/datamodify/ftl/EastCzxxTmp.ftl";
+		   } else{
+		     window.location.href = "${contextPath}/fpages/datamodify/ftl/EastDghqckfhzmxjlTmp.ftl";
 		   }
 		} else{
 		}
