@@ -195,13 +195,16 @@ public class ToolUtils {
 			}
 			return fieldValue.trim();		
 		case 2:
-			
-			if (fieldValue.trim().length()!=fieldValue.trim().getBytes().length){
-				fieldValue=fieldValue.trim().substring(0, 2) + EncoderByMd5(fieldValue.trim());;
-			}else{
-				fieldValue=fieldValue.trim().substring(0, 6) + objMd5.getMD5ofStr(fieldValue.trim());	
+			int len1 = fieldValue.trim().length();
+			if (len1>2){
+				if (fieldValue.trim().length()!=fieldValue.trim().getBytes().length){
+					fieldValue=fieldValue.trim().substring(0, 2) + EncoderByMd5(fieldValue.trim());;
+				}else{
+					if (len1>6){
+						fieldValue=fieldValue.trim().substring(0, 6) + objMd5.getMD5ofStr(fieldValue.trim());	
+					}
+				}
 			}
-	        
 			return fieldValue.trim();		
 			
 		case 3:
@@ -228,7 +231,7 @@ public class ToolUtils {
 			if (len>7){
 				fieldValue=fieldValue.trim().substring(0, 1) + fieldValue.trim().substring(1, 7) + objMd5.getMD5ofStr(fieldValue.trim().substring(1, len));
 			}
-		
+			return fieldValue.trim();
 		case 7:
 			if (fieldValue.trim().length()==19){
 				fieldValue=fieldValue.trim().substring(0, 1) + fieldValue.trim().substring(1, 7) + objMd5.getMD5ofStr(fieldValue.trim().substring(1, 19));	

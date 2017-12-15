@@ -10,6 +10,7 @@ import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
 import resources.east.data.service.EastCzxxTmpService;
+import resources.east.data.service.EastDbgxTmpService;
 import resources.east.data.service.EastProcessLogService;
 import resources.east.data.service.EastYgbTmpService;
 

@@ -131,7 +131,7 @@ public class Md5 implements IEncryption {
 	}
 
 	public static String byteHEX(byte byte0) {
-		char ac[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+		char ac[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 		char ac1[] = new char[2];
 		ac1[0] = ac[byte0 >>> 4 & 0xf];
 		ac1[1] = ac[byte0 & 0xf];
