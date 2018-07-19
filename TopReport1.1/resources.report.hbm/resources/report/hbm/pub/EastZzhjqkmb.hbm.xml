@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+	<class name="EastZzhjqkmb" table="EAST_ZZHJQKMB">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastZzhjqkmbPK">
+			<key-property name="nbjgh" column="nbjgh" type="string" />
+			<key-property name="kmbh" column="kmbh" type="string" />
+			<key-property name="bz" column="bz" type="string" />
+			<key-property name="kjrq" column="kjrq" type="string" />
+			<key-property name="bszq" column="bszq" type="string" />
+		</composite-id>
+
+		<property name="yhjgdm" column="yhjgdm" type="string" length="30" />
+		<property name="yhjgmc" column="yhjgmc" type="string" length="200" />
+		<property name="jrxkzh" column="jrxkzh" type="string" length="30" />
+		<property name="kmmc" column="kmmc" type="string" length="200" />
+		<property name="kmjc" column="kmjc" type="string" length="2" />
+		<property name="kmlx" column="kmlx" type="string" length="2" />
+		<property name="qcjfye" column="qcjfye" type="string" length="20" />
+		<property name="qcdfye" column="qcdfye" type="string" length="20" />
+		<property name="jffse" column="jffse" type="string" length="20" />
+		<property name="dffse" column="dffse" type="string" length="20" />
+		<property name="qmjfye" column="qmjfye" type="string" length="20" />
+		<property name="qmdfye" column="qmdfye" type="string" length="20" />
+
+
+	</class>
+</hibernate-mapping>

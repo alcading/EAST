@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	txnlogflag:true记录日志
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="内部分户账明细记录" navigate="银监标准化    &gt; 内部分户账明细记录" type="call"
+	interface="false" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	txnlogflag="true"
+	getterclassname="resources.east.data.getter.EastNbfhzmxjlGetter">
+	<Include id="BankParam" />
+	<!--
+	<PageQryExp type="CSV" limit="true" encoding="GBK" url="/trans/qryExp.do" directory="F:/upload"/>
+	-->
+	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-内部分户账明细记录" />
+	<Fields>
+		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+		
+		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
+        <Field id="hxjylsh" desc="核心交易流水号" edittype="text" status="F" datatype="string" size="60" xpath="/id/hxjylsh"></Field>	
+	    <Field id="zjylsh" desc="子交易流水号" edittype="text" status="F" datatype="string" size="60" xpath="/id/zjylsh"></Field>
+	    <Field id="bcxh" desc="笔次序号" status="F" edittype="text" datatype="string" size="30" xpath="/id/bcxh"></Field>	
+		<Field id="nbfhzzh" desc="内部分户账账号" status="F"  edittype="text"  datatype="string" size="30" xpath="/id/nbfhzzh"></Field>
+		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm" />
+		<Field id="jrxkzh" desc="金融许可证号" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
+		<Field id="nbjgh" desc="内部机构号" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+		<Field id="mxkmbh" desc="明细科目编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/mxkmbh" />
+		<Field id="yxjgmc" desc="银行机构名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/yxjgmc" />
+		<Field id="mxkmmc" desc="明细科目名称" status="F"  edittype="text"  datatype="string" size="300" xpath="/mxkmmc" />
+		<Field id="hxjyrq" desc="核心交易日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/hxjyrq" />
+		<Field id="hxjysj" desc="核心交易时间" status="F"  edittype="text"  datatype="string" size="6" xpath="/hxjysj" />
+		<Field id="bz" desc="币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
+		<Field id="zhmc" desc="账户名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/zhmc" />
+		<Field id="jylx" desc="交易类型" status="F"  edittype="text"  datatype="string" size="60" xpath="/jylx" />
+		<Field id="jyje" desc="交易金额" status="F"  edittype="text"  datatype="string" size="20" xpath="/jyje" />
+		<Field id="zhye" desc="账户余额" status="F"  edittype="text"  datatype="string" size="30" xpath="/zhye" />
+		<Field id="dfzh" desc="对方账号" status="F"  edittype="text"  datatype="string" size="60" xpath="/dfzh" />
+		<Field id="dfhm" desc="对方户名" status="F"  edittype="text"  datatype="string" size="60" xpath="/dfhm" />
+		<Field id="dfkmbh" desc="对方科目编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/dfkmbh" />
+		<Field id="dfkmmc" desc="对方科目名称" status="F"  edittype="text"  datatype="string" size="300" xpath="/dfkmmc" />
+		<Field id="dfxh" desc="对方行号" status="F"  edittype="text"  datatype="string" size="30" xpath="/dfxh" />
+		<Field id="jyqd" desc="交易渠道" status="F"  edittype="text"  datatype="string" size="60" xpath="/jyqd" />
+		<Field id="xzbz" desc="现转标志" status="F"  edittype="text"  datatype="string" size="4" xpath="/xzbz" />
+		<Field id="jygyh" desc="交易柜员号" status="F"  edittype="text"  datatype="string" size="30" xpath="/jygyh" />
+		<Field id="sqgyh" desc="授权柜员号" status="F"  edittype="text"  datatype="string" size="30" xpath="/sqgyh" />
+		<Field id="jzrq" desc="进账日期" status="F"  edittype="text"  datatype="string" size="30" xpath="/jzrq" />
+		<Field id="xzrq" desc="销账日期" status="F"  edittype="text"  datatype="string" size="30" xpath="/xzrq" />
+		<Field id="zy" desc="摘要" status="F"  edittype="text"  datatype="string" size="400" xpath="/zy" />
+		<Field id="cbmbz" desc="冲补抹标志" status="F"  edittype="text"  datatype="string" size="10" xpath="/cbmbz" />
+		<Field id="jyjdbz" desc="交易借贷标志" status="F"  edittype="text"  datatype="string" size="12" xpath="/jyjdbz" />
+		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="operation" desc="操作" status="N" method="None" xpath=""
+			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
+       </Fields>
+    <Where>
+    	
+    </Where>
+	<Operations>
+		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"
+			updateClass="resources.east.data.update.EastNbfhzmxjlModOrAddUpdate"
+			url="" txn="" />
+		<Button id="btDel" name="btDel" desc="删除" operation="asysubmit"
+			updateClass="resources.east.data.update.EastNbfhzmxjlModOrAddUpdate"
+			url="" />
+		<Button id="btCancel" name="btCancel" desc="取消" operation="href" url="" />
+		<Button id="btAdd" name="btAdd" desc="新增" operation="" url="#" show="" group="" txn="" icon="icon-add"/>
+	</Operations>
+</CommQry>

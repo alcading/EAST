@@ -14,7 +14,8 @@
 			</property>
 		-->
 		<property name="jdbcUrl">
-			<value>jdbc:oracle:thin:@localhost:1521:ORCL</value>
+			<!-- <value>jdbc:oracle:thin:@localhost:1521:ORCL</value> -->
+			<value>jdbc:oracle:thin:163.1.17.178:1521:ORCL</value>
 		</property>
 		<property name="user">
 			<value>report</value>

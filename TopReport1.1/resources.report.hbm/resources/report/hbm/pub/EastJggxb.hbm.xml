@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+	<class name="EastJggxb" table="EAST_JGGXB">
+		<!-- 机构信息表 -->
+		<meta attribute="sync-DAO">false</meta>
+		<!-- nbjgh内部机构号 -->
+		<id name="id" type="string" column="nbjgh">
+		</id>
+		<!-- 银行机构代码 -->
+		<property name="yhjgdm" column="yhjgdm" type="string" length="30" />
+
+		<!-- 金融许可证号 -->
+		<property name="jrxkzh" column="jrxkzh" type="string" length="30" />
+
+		<!-- 银行机构名称 -->
+		<property name="yhjgmc" column="yhjgmc" type="string" length="200" />
+
+		<!--邮政编码 -->
+		<property name="yzbm" column="yzbm" type="string" length="6" />
+		<!--上级管理机构代码 -->
+		<property name="sjgljgdm" column="sjgljgdm" type="string"
+			length="30" />
+		<!--上级管理机构名称 -->
+		<property name="sjgljgmc" column="sjgljgmc" type="string"
+			length="200" />
+
+		<!--采集日期 -->
+		<property name="cjrq" column="cjrq" type="string" length="8" />
+
+	</class>
+</hibernate-mapping>

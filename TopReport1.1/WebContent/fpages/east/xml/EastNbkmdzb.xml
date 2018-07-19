@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	txnlogflag:true记录日志
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="内部科目对照表" navigate="银监标准化    &gt; 内部科目对照表" type="call"
+	interface="false" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	txnlogflag="true"
+	getterclassname="resources.east.data.getter.EastNbkmdzbGetter">
+	<Include id="BankParam" />
+	<!--
+	<PageQryExp type="CSV" limit="true" encoding="GBK" url="/trans/qryExp.do" directory="F:/upload"/>
+	-->
+	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-内部科目对照表" />
+	<Fields>
+		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+		
+		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
+        <Field id="kmbh" desc="总账会计科目编号" edittype="text" status="F" datatype="string" size="60" xpath="/id/kmbh"></Field>	
+	    <Field id="kmmc" desc="总账会计科目名称" edittype="text" status="F" datatype="string" size="200" xpath="/kmmc"></Field>
+	    <Field id="kjkmjc" desc="会计科目级次" status="F" edittype="text" datatype="string" size="2" xpath="/kjkmjc"></Field>	
+		<Field id="sjkmbh" desc="上级科目编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/sjkmbh"></Field>
+		<Field id="sjkmmc" desc="上级科目名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/sjkmmc" />
+		<Field id="gsywdl" desc="归属业务大类" status="F"  edittype="text"  datatype="string" size="2" xpath="/gsywdl" />
+		<Field id="gsywzl" desc="归属业务子类" status="F"  edittype="text"  datatype="string" size="30" xpath="/gsywzl" />
+		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="operation" desc="操作" status="N" method="None" xpath=""
+			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
+       </Fields>
+    <Where>
+    	
+    </Where>
+	<Operations>
+		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"
+			updateClass="resources.east.data.update.EastNbkmdzbModOrAddUpdate"
+			url="" txn="" />
+		<Button id="btDel" name="btDel" desc="删除" operation="asysubmit"
+			updateClass="resources.east.data.update.EastNbkmdzbModOrAddUpdate"
+			url="" />
+		<Button id="btCancel" name="btCancel" desc="取消" operation="href" url="" />
+		<Button id="btAdd" name="btAdd" desc="新增" operation="" url="#" show="" group="" txn="" icon="icon-add"/>
+	</Operations>
+</CommQry>

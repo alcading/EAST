@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+	<class name="EastXdhtb" table="EAST_Xdhtb">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastXdhtbPK">
+			<key-property name="xdhth" column="xdhth" type="string" />
+			<key-property name="cjrq" column="cjrq" type="string" />
+		</composite-id>
+		<property name="zhth" column="zhth" type="string" length="100" />
+		<property name="khtybh" column="khtybh" type="string" length="60" />
+		<property name="yxjgdm" column="YXJGDM" type="string" length="30" />
+		<property name="jrxkzh" column="JRXKZH" type="string" length="30" />
+		<property name="nbjgh" column="NBJGH" type="string" length="30" />
+		<property name="khmc" column="khmc" type="string" length="200" />
+		<property name="cpmc" column="cpmc" type="string" length="200" />
+		<property name="dkxgzl" column="dkxgzl" type="string" length="30" />
+		<property name="xdywzl" column="xdywzl" type="string" length="100" />
+		<property name="bz" column="bz" type="string" length="3" />
+		<property name="je" column="je" type="big_decimal" length="20" />
+		<property name="htydrq" column="htydrq" type="string" length="8" />
+		<property name="htdqrq" column="htdqrq" type="string" length="8" />
+		<property name="lllx" column="lllx" type="string" length="6" />
+		<property name="jzll" column="jzll" type="big_decimal" length="10" />
+		<property name="llfd" column="llfd" type="int" length="20" />
+		<property name="zydbfs" column="zydbfs" type="string" length="200" />
+		<property name="ghjlgh" column="ghjlgh" type="string" length="30" />
+		<property name="dkqx" column="dkqx" type="int" length="60" />
+		<property name="fkfs" column="fkfs" type="string" length="8" />
+		<property name="zjly" column="zjly" type="string" length="1000" />
+		<property name="dkyt" column="dkyt" type="string" length="8" />
+		<property name="dktxdq" column="dktxdq" type="string" length="100" />
+		<property name="dktxxy" column="dktxxy" type="string" length="30" />
+		<property name="sfgjxzxy" column="sfgjxzxy" type="string" length="60" />
+		
+	</class>
+</hibernate-mapping>

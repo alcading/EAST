@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+	<class name="EastDgkh" table="EAST_Dgkh">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastDgkhPK">
+			<key-property name="khtybh" column="KHTYBH" type="string" />
+			<key-property name="cjrq" column="cjrq" type="string" />
+		</composite-id>
+		<property name="zzjgdm" column="ZZJGDM" type="string" length="40" />
+		<property name="yxjgdm" column="YXJGDM" type="string" length="30" />
+		<property name="jrxkzh" column="JRXKZH" type="string" length="30" />
+		<property name="nbjgh" column="NBJGH" type="string" length="30" />
+		<property name="khmc" column="khmc" type="string" length="200" />
+		<property name="khywmc" column="KHYWMC" type="string" length="200" />
+		<property name="frdb" column="frdb" type="string" length="30" />
+		<property name="frdbzjlb" column="frdbzjlb" type="string" length="60" />
+		<property name="frdbzjhm" column="frdbzjhm" type="string" length="60" />
+		<property name="cwry" column="cwry" type="string"
+			length="100" />
+		<property name="cwryzjlb" column="cwryzjlb" type="string" length="60" />
+		<property name="cwryzjhm" column="cwryzjhm" type="string"
+			length="60" />
+		<property name="jbckzh" column="jbckzh" type="string" length="60" />
+		<property name="jbzhkhxmc" column="jbzhkhxmc" type="string"
+			length="200" />
+		<property name="zczb" column="zczb" type="big_decimal" length="20" />
+		<property name="zcdz" column="zcdz" type="string" length="200" />
+		<property name="lxdh" column="lxdh" type="string" length="30" />
+		<property name="yyzzh" column="yyzzh" type="string" length="60" />
+		<property name="yyzzyxjzrq" column="yyzzyxjzrq" type="string" length="8" />
+		<property name="jyfw" column="jyfw" type="string" length="1000" />
+		<property name="clrq" column="clrq" type="string" length="8" />
+		<property name="ssxy" column="ssxy" type="string" length="100" />
+		<property name="khlb" column="khlb" type="string" length="30" />
+		<property name="dkzh" column="dkzh" type="string" length="60" />
+		<property name="gszh" column="gszh" type="string" length="60" />
+		<property name="dszh" column="dszh" type="string" length="60" />
+		<property name="mgskhtybh" column="mgskhtybh" type="string" length="60" />
+		<property name="tysxbz" column="tysxbz" type="string" length="4" />
+		<property name="sxed" column="sxed" type="big_decimal" length="20" />
+		<property name="yyed" column="yyed" type="big_decimal" length="20" />
+		<property name="ssgsbz" column="ssgsbz" type="string" length="4" />
+		<property name="xydjbh" column="xydjbh" type="string" length="200" />
+		<property name="zczbbz" column="zczbbz" type="string" length="3" />
+		<property name="sszbbz" column="sszbbz" type="string" length="3" />
+		<property name="sszb" column="sszb" type="big_decimal" length="20" />
+		<property name="zzc" column="zzc" type="big_decimal" length="20" />
+		<property name="jzc" column="jzc" type="big_decimal" length="20" />
+		<property name="nsr" column="nsr" type="big_decimal" length="20" />
+		<property name="scjlxdgxny" column="scjlxdgxny" type="string" length="6" />
+		<property name="yzbm" column="yzbm" type="string" length="6" />
+		<property name="czhm" column="czhm" type="string" length="30" />
+		<property name="ygrs" column="ygrs" type="int" length="10" />
+		<property name="xzqhdm" column="xzqhdm" type="string" length="20" />
+		<property name="khlx" column="khlx" type="string" length="12" />
+		<property name="fxyjxh" column="fxyjxh" type="string" length="200" />
+	</class>
+</hibernate-mapping>

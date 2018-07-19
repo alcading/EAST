@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+	<class name="EastGrkhgxxx" table="EAST_Grkhgxxx">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastGrkhgxxxPK">
+			<key-property name="khtybh" column="khtybh" type="string" />
+			<key-property name="dygrkhtybh" column="dygrkhtybh"
+				type="string" />
+			<key-property name="cjrq" column="cjrq" type="string" />
+		</composite-id>
+		<property name="yxjgdm" column="yxjgdm" type="string" length="30" />
+		<property name="jrxkzh" column="jrxkzh" type="string" length="30" />
+		<property name="nbjgh" column="nbjgh" type="string" length="30" />
+		<property name="shgx" column="shgx" type="string" length="60" />
+		<property name="dygrkhxm" column="dygrkhxm" type="string"
+			length="100" />
+		<property name="dygrkhgzdwmc" column="dygrkhgzdwmc" type="string"
+			length="200" />
+		<property name="dygrkhgzdwdz" column="dygrkhgzdwdz" type="string"
+			length="400" />
+		<property name="dygrkhgzdwdh" column="dygrkhgzdwdh" type="string"
+			length="30" />
+
+
+	</class>
+</hibernate-mapping>

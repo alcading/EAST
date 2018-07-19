@@ -21,7 +21,7 @@ public class EastGrhqckfhzmxjl extends BaseEastGrhqckfhzmxjl implements java.io.
 	}
 
 	/** minimal constructor */
-	public EastGrhqckfhzmxjl(EastGrhqckfhzmxjlTmpId id) {
+	public EastGrhqckfhzmxjl(EastGrhqckfhzmxjlId id) {
 		super(id);
 	}
 

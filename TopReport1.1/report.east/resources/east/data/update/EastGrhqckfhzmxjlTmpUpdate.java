@@ -62,7 +62,7 @@ public class EastGrhqckfhzmxjlTmpUpdate extends BaseUpdate {
 			mapToObject(dghqckfhzmxjlTmp,map);
 			mapToObject(dghqckfhzmxjl,map);
 			dghqckfhzmxjlTmp.setId(dghqckfhzmxjlId);
-			dghqckfhzmxjl.setId(dghqckfhzmxjlId);
+//			dghqckfhzmxjl.setId(dghqckfhzmxjlId);
 			try{
 				htlog.info("开始修改EAST_GRHQCKFHZMXJL数据");
 				dao.getHibernateTemplate().update(dghqckfhzmxjl);

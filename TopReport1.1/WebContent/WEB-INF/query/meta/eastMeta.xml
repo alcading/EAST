@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<META>
+	<!-- east机构信息表 -->
+	<Query id="EastJgxxb" path="/fpages/east/xml/EastJgxxb.xml" desc="机构信息表" />
+
+	<!-- east机员工表 -->
+	<Query id="EastYgb" path="/fpages/east/xml/EastYgb.xml" desc="员工表" />
+
+	<!-- east柜员表 -->
+	<Query id="EastGyb" path="/fpages/east/xml/EastGyb.xml" desc="柜员表" />
+
+	<!-- east岗位信息表 -->
+	<Query id="EastGwxxb" path="/fpages/east/xml/EastGwxxb.xml" desc="岗位信息表" />
+
+	<!-- east机构关系表 -->
+	<Query id="EastJggxb" path="/fpages/east/xml/EastJggxb.xml" desc="机构关系表" />
+	
+	<!-- east总账会计全科目表 -->
+	<Query id="EastZzhjqkmb" path="/fpages/east/xml/EastZzhjqkmb.xml" desc="总账会计全科目表" />
+	
+	<!-- east内部科目对照表 -->
+	<Query id="EastNbkmdzb" path="/fpages/east/xml/EastNbkmdzb.xml" desc="内部科目对照表" />
+	
+	<!-- east个人活期存款分户账 -->
+	<Query id="EastGrhqckfhz" path="/fpages/east/xml/EastGrhqckfhz.xml" desc="个人活期存款分户账" />
+	
+	<!-- east个人活期存款分户账明细记录 -->
+	<Query id="EastGrhqckfhzmxjl" path="/fpages/east/xml/EastGrhqckfhzmxjl.xml" desc="个人活期存款分户账明细记录" />
+	
+	<!-- east个人定期存款分户账 -->
+	<Query id="EastGrdqckfhz" path="/fpages/east/xml/EastGrdqckfhz.xml" desc="个人定期存款分户账" />
+	
+	<!-- east个人定期存款分户账明细记录 -->
+	<Query id="EastGrdqckfhzmxjl" path="/fpages/east/xml/EastGrdqckfhzmxjl.xml" desc="个人定期存款分户账明细记录" />
+	
+	<!-- east对公活期存款分户账 -->
+	<Query id="EastDghqckfhz" path="/fpages/east/xml/EastDghqckfhz.xml" desc="对公活期存款分户账" />
+	
+	<!-- east对公活期存款分户账明细记录 -->
+	<Query id="EastDghqckfhzmxjl" path="/fpages/east/xml/EastDghqckfhzmxjl.xml" desc="对公活期存款分户账明细记录" />
+	
+	<!-- east对公定期存款分户账 -->
+	<Query id="EastDgdqckfhz" path="/fpages/east/xml/EastDgdqckfhz.xml" desc="对公定期存款分户账" />
+	
+	<!-- east对公定期存款分户账明细记录 -->
+	<Query id="EastDgdqckfhzmxjl" path="/fpages/east/xml/EastDgdqckfhzmxjl.xml" desc="个人定期存款分户账明细记录" />
+	
+	<!-- east内部分户账 -->
+	<Query id="EastNbfhz" path="/fpages/east/xml/EastNbfhz.xml" desc="内部分户账" />
+	
+	<!-- east内部分户账明细记录 -->
+	<Query id="EastNbfhzmxjl" path="/fpages/east/xml/EastNbfhzmxjl.xml" desc="内部分户账明细记录" />
+	
+	<!-- east个人信贷分户账 -->
+	<Query id="EastGrxdfhz" path="/fpages/east/xml/EastGrxdfhz.xml" desc="个人信贷分户账" />
+	
+	<!-- east个人信贷分户账明细记录 -->
+	<Query id="EastGrxdfhzmxjl" path="/fpages/east/xml/EastGrxdfhzmxjl.xml" desc="个人信贷分户账明细记录" />
+	
+	<!-- east对公信贷分户账 -->
+	<Query id="EastDgxdfhz" path="/fpages/east/xml/EastDgxdfhz.xml" desc="个人信贷分户账" />
+	
+	<!-- east对公信贷分户账明细记录 -->
+	<Query id="EastDgxdfhzmxjl" path="/fpages/east/xml/EastDgxdfhzmxjl.xml" desc="个人信贷分户账明细记录" />
+	
+	<!-- east个人基础信息 -->
+	<Query id="EastGrjcxx" path="/fpages/east/xml/EastGrjcxx.xml" desc="个人基础信息" />
+	
+	<!-- east个人客户关系信息 -->
+	<Query id="EastGrkhgxxx" path="/fpages/east/xml/EastGrkhgxxx.xml" desc="人客户关系信息" />
+	
+	<!-- east对公客户-->
+	<Query id="EastDgkh" path="/fpages/east/xml/EastDgkh.xml" desc="对公客户" />
+	
+	<!-- east股东信息-->
+	<Query id="EastGdxx" path="/fpages/east/xml/EastGdxx.xml" desc="股东信息" />
+	
+	<!-- east关联关系-->
+	<Query id="EastGlgx" path="/fpages/east/xml/EastGlgx.xml" desc="关联关系" />
+	
+	<!-- east信贷合同表-->
+	<Query id="EastXdhtb" path="/fpages/east/xml/EastXdhtb.xml" desc="信贷合同表" />
+
+</META>

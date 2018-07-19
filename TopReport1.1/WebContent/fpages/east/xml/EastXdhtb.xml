@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	txnlogflag:true记录日志
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="信贷合同表" navigate="银监标准化    &gt; 信贷合同表" type="call"
+	interface="false" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	txnlogflag="true"
+	getterclassname="resources.east.data.getter.EastXdhtbGetter">
+	<Include id="BankParam" />
+	<!--
+	<PageQryExp type="CSV" limit="true" encoding="GBK" url="/trans/qryExp.do" directory="F:/upload"/>
+	-->
+	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-信贷合同表" />
+	<Fields>
+		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+		
+		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
+		<Field id="xdhth" desc="信贷合同号" edittype="text" status="F" datatype="string" size="100" xpath="/id/xdhth"></Field>	
+	    <Field id="zhth" desc="主合同号" edittype="text" status="F" datatype="string" size="100" xpath="/zhth"></Field>
+	    <Field id="khtybh" desc="客户统一编号" status="F" edittype="text" datatype="string" size="60" xpath="/khtybh"></Field>	
+		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="jrxkzh" desc="金融许可证号" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
+		<Field id="nbjgh" desc="内部机构号 " status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+		<Field id="khmc" desc="客户名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/khmc" />
+		<Field id="cpmc" desc="产品名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/cpmc" />
+		<Field id="dkxgzl" desc="贷款新规种类" status="F"  edittype="text"  datatype="string" size="30" xpath="/dkxgzl" />
+		<Field id="xdywzl" desc="贷款类型" status="F"  edittype="text"  datatype="string" size="100" xpath="/xdywzl" />
+		<Field id="bz" desc="币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
+		<Field id="je" desc="金额" status="F"  edittype="text"  datatype="string" size="20" xpath="/je" />
+		<Field id="htydrq" desc="合同约定日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/htydrq" />
+		<Field id="htdqrq" desc="合同到期日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/htdqrq" />
+		<Field id="lllx" desc="利率类型" status="F"  edittype="text"  datatype="string" size="6" xpath="/lllx" />
+		<Field id="jzll" desc="基准利率" status="F"  edittype="text"  datatype="string" size="10" xpath="/jzll" />
+		<Field id="llfd" desc="利率浮动" status="F"  edittype="text"  datatype="string" size="10" xpath="/llfd" />
+		<Field id="zydbfs" desc="主要担保方式" status="F"  edittype="text"  datatype="string" size="60" xpath="/zydbfs" />
+		<Field id="ghjlgh" desc="客户经理工号" status="F"  edittype="text"  datatype="string" size="30" xpath="/ghjlgh" />
+		<Field id="dkqx" desc="贷款期限" status="F"  edittype="text"  datatype="string" size="10" xpath="/dkqx" />
+		<Field id="fkfs" desc="放款方式" status="F"  edittype="text"  datatype="string" size="12" xpath="/fkfs" />
+		<Field id="zjly" desc="资金来源" status="F"  edittype="text"  datatype="string" size="100" xpath="/zjly" />
+		<Field id="dkyt" desc="贷款用途" status="F"  edittype="text"  datatype="string" size="400" xpath="/dkyt" />
+		<Field id="dktxdq" desc="贷款投向地区" status="F"  edittype="text"  datatype="string" size="200" xpath="/dktxdq" />
+		<Field id="dktxxy" desc="贷款投向行业" status="F"  edittype="text"  datatype="string" size="100" xpath="/dktxxy" />
+		<Field id="sfgjxzxy" desc="是否国家限制行业" status="F"  edittype="text"  datatype="string" size="4" xpath="/sfgjxzxy" />
+		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="operation" desc="操作" status="N" method="None" xpath=""
+			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
+       </Fields>
+    <Where>
+    	
+    </Where>
+	<Operations>
+		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"
+			updateClass="resources.east.data.update.EastXdhtbModOrAddUpdate"
+			url="" txn="" />
+		<Button id="btDel" name="btDel" desc="删除" operation="asysubmit"
+			updateClass="resources.east.data.update.EastXdhtbModOrAddUpdate"
+			url="" />
+		<Button id="btCancel" name="btCancel" desc="取消" operation="href" url="" />
+		<Button id="btAdd" name="btAdd" desc="新增" operation="" url="#" show="" group="" txn="" icon="icon-add"/>
+	</Operations>
+</CommQry>

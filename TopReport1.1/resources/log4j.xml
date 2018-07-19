@@ -152,6 +152,13 @@
 		<appender-ref ref="ERROR" />
 	</logger>
 
+	<logger name="resources.east">
+		<level value="INFO"/>
+		<appender-ref ref="INFO" />
+		<appender-ref ref="WARN" />
+		<appender-ref ref="ERROR" />
+	</logger>
+	
 	<logger name="com.huateng.ebank.topbpm.handle.ecds">
 		<level value="WARN"/>
 		<appender-ref ref="INFO" />

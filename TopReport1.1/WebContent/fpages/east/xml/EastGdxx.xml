@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	txnlogflag:true记录日志
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="股东信息" navigate="银监标准化    &gt; 股东信息" type="call"
+	interface="false" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	txnlogflag="true"
+	getterclassname="resources.east.data.getter.EastGdxxGetter">
+	<Include id="BankParam" />
+	<!--
+	<PageQryExp type="CSV" limit="true" encoding="GBK" url="/trans/qryExp.do" directory="F:/upload"/>
+	-->
+	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-股东信息" />
+	<Fields>
+		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+		
+		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
+		<Field id="khtybh" desc="客户统一编号" edittype="text" status="F" datatype="string" size="60" xpath="/id/khtybh"></Field>	
+	    <Field id="zzjgdm" desc="统一社会信用代码" edittype="text" status="F" datatype="string" size="40" xpath="/zzjgdm"></Field>
+	    <Field id="yxjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
+	    <Field id="jrxkzh" desc="金融许可证号" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
+		<Field id="nbjgh" desc="内部机构号" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh"></Field>
+		<Field id="gdmc" desc="股东名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/gdmc" />
+		<Field id="gdzjlb" desc="股东证件类别 " status="F"  edittype="text"  datatype="string" size="60" xpath="/gdzjlb" />
+		<Field id="gdzjhm" desc="股东证件号码" status="F"  edittype="text"  datatype="string" size="60" xpath="/id/gdzjhm" />
+		<Field id="gdzt" desc="股东状态" status="F"  edittype="text"  datatype="string" size="6" xpath="/gdzt" />
+		<Field id="cgbl" desc="持股比例" status="F"  edittype="text"  datatype="big_decimal" size="10" xpath="/cgbl" />
+		<Field id="rgsj" desc="入股时间" status="F"  edittype="text"  datatype="string" size="8" xpath="/rgsj" />
+		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="operation" desc="操作" status="N" method="None" xpath=""
+			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
+       </Fields>
+    <Where>
+    	
+    </Where>
+	<Operations>
+		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"
+			updateClass="resources.east.data.update.EastGdxxModOrAddUpdate"
+			url="" txn="" />
+		<Button id="btDel" name="btDel" desc="删除" operation="asysubmit"
+			updateClass="resources.east.data.update.EastGdxxModOrAddUpdate"
+			url="" />
+		<Button id="btCancel" name="btCancel" desc="取消" operation="href" url="" />
+		<Button id="btAdd" name="btAdd" desc="新增" operation="" url="#" show="" group="" txn="" icon="icon-add"/>
+	</Operations>
+</CommQry>

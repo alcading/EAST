@@ -2,7 +2,7 @@ package resources.east.data.base;
 
 import java.math.BigDecimal;
 
-import resources.east.data.pub.EastGrhqckfhzmxjlTmpId;
+import resources.east.data.pub.EastGrhqckfhzmxjlId;
 
 /**
  * AbstractEastGrhqckfhzmxjlTmp entity provides the base persistence definition
@@ -17,7 +17,7 @@ public abstract class BaseEastGrhqckfhzmxjl implements java.io.Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -7981634766426960189L;
-	private EastGrhqckfhzmxjlTmpId id;
+	private EastGrhqckfhzmxjlId id;
 	private String khtybh;
 	private String yxjgdm;
 	private String jrxkzh;
@@ -56,12 +56,12 @@ public abstract class BaseEastGrhqckfhzmxjl implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public BaseEastGrhqckfhzmxjl(EastGrhqckfhzmxjlTmpId id) {
+	public BaseEastGrhqckfhzmxjl(EastGrhqckfhzmxjlId id) {
 		this.id = id;
 	}
 
 	/** full constructor */
-	public BaseEastGrhqckfhzmxjl(EastGrhqckfhzmxjlTmpId id, String khtybh, String yxjgdm, String jrxkzh,
+	public BaseEastGrhqckfhzmxjl(EastGrhqckfhzmxjlId id, String khtybh, String yxjgdm, String jrxkzh,
 			String nbjgh, String mxkmbh, String yxjgmc, String mxkmmc, String hxjysj, String bz, String zhmc,
 			String jylx, BigDecimal jyje, String khhjgh, String ywbljgh, BigDecimal zhye, String dfzh, String dfhm, String dfxh,
 			String dfxm, String jyqd, String xzbz, String dbrxm, String dbrzjlb, String dbrzjhm, String jygyh,
@@ -102,11 +102,11 @@ public abstract class BaseEastGrhqckfhzmxjl implements java.io.Serializable {
 
 	// Property accessors
 
-	public EastGrhqckfhzmxjlTmpId getId() {
+	public EastGrhqckfhzmxjlId getId() {
 		return this.id;
 	}
 
-	public void setId(EastGrhqckfhzmxjlTmpId id) {
+	public void setId(EastGrhqckfhzmxjlId id) {
 		this.id = id;
 	}
 

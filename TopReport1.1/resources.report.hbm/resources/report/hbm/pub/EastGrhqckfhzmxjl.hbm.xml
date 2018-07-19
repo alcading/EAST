@@ -9,7 +9,7 @@
 		table="EAST_GRHQCKFHZMXJL"
 	>
 		<meta attribute="sync-DAO">false</meta>
-		<composite-id name="id" class="EastGrhqckfhzmxjlTmpId">
+		<composite-id name="id" class="EastGrhqckfhzmxjlId">
 			<key-property
 				name="hxjylsh"
 				column="HXJYLSH"
@@ -226,11 +226,6 @@
 			type="string"
 			length="12"
 		/>
-		<property
-			name="errmsg"
-			column="ERRMSG"
-			type="string"
-			length="500"
-		/>
+
 	</class>	
 </hibernate-mapping>

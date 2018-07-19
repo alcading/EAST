@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+	<class name="EastGwxxb" table="EAST_GWXXB">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastGwxxbPK">
+			<key-property name="gwbh" column="gwbh" type="string" />
+			<key-property name="nbjgh" column="nbjgh" type="string" />
+		</composite-id>
+
+		<property name="yxjgdm" column="yxjgdm" type="string" length="30" />
+
+		<property name="jrxkzh" column="jrxkzh" type="string" length="30" />
+
+		<property name="gwzl" column="gwzl" type="string" length="60" />
+
+		<property name="gwmc" column="gwmc" type="string" length="60" />
+		<property name="gwsm" column="gwsm" type="string" length="400" />
+		<property name="gwzt" column="gwzt" type="string" length="30" />
+		<property name="cjrq" column="cjrq" type="string" length="8" />
+
+
+	</class>
+</hibernate-mapping>
