@@ -6,7 +6,7 @@
 <table width="1300px">
 	<tr>
 		<td colspan="2" valign="top">
-			<@CommonQueryMacro.Interface id="interface" label="机构信息表" />
+			<@CommonQueryMacro.Interface id="interface" label="岗位信息表" />
 		</td>
 	</tr>
 	<tr>
@@ -38,6 +38,15 @@
 </td></tr>
 </table>
 <script language="JavaScript">
+
+//给查询条件中的默认值为当前月的上一个月的最后一天
+window.onload=function(){
+	var date = new Date();
+    var day = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+	var enddate = new Date(new Date().getFullYear(), new Date().getMonth()-1, day);
+    EastGwxxb_interface_dataset.setValue("cjrq", enddate);
+}
+
 	//定位一行记录
 	function locate(id) {
 		var record = EastGwxxb_dataset.find(["id"],[id]);

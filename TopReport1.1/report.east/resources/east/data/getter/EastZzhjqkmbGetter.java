@@ -1,16 +1,22 @@
 package resources.east.data.getter;
 
+import java.util.Map;
+
+import org.apache.commons.lang.StringUtils;
+
 import com.huateng.common.err.Module;
 import com.huateng.common.err.Rescode;
 import com.huateng.commquery.result.Result;
 import com.huateng.commquery.result.ResultMng;
 import com.huateng.ebank.business.common.PageQueryResult;
+import com.huateng.ebank.framework.exceptions.CommonException;
 import com.huateng.ebank.framework.report.common.ReportConstant;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
 import resources.east.data.service.EastZzhjqkmbService;
 
+@SuppressWarnings("unchecked")
 public class EastZzhjqkmbGetter extends BaseGetter {
 	/*
 	 * 获取员工列表
@@ -41,11 +47,31 @@ public class EastZzhjqkmbGetter extends BaseGetter {
 	   * 查询总账会计全科目表
 	   * @return
 	   */
-	   private PageQueryResult getData() {
-
+		private PageQueryResult getData() throws CommonException {
+	
+		    Map para = this.getCommQueryServletRequest().getParameterMap();
+		   	
+		   	String kjrq = (String)para.get("kjrq");
+		   	
+		   	String yhjgdm = (String)para.get("yhjgdm");
+		   	
 			int pageSize = this.getResult().getPage().getEveryPage();
 			int pageIndex = this.getResult().getPage().getCurrentPage();
-			PageQueryResult pqr= EastZzhjqkmbService.getInstance().pageQueryByHql(pageIndex, pageSize);
+			
+			StringBuffer hql = new StringBuffer();
+			
+			hql.append("from EastZzhjqkmb A where 1 = 1 ");
+			
+			if(StringUtils.isNotBlank(yhjgdm)){
+				hql.append(" and A.yhjgdm = '"+yhjgdm.trim()+"' ");
+			}
+			if(StringUtils.isNotBlank(kjrq)){
+				hql.append(" and A.id.kjrq = '"+kjrq.trim().toUpperCase()+"' ");
+			}else {
+				hql.append(" and 1 = 0 ");
+			}
+		
+			PageQueryResult pqr= EastZzhjqkmbService.getInstance().pageQueryByHql(pageIndex, pageSize, hql.toString());
 			return pqr;
 		}
 }
