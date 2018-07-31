@@ -80,5 +80,8 @@
 	
 	<!-- east信贷合同表-->
 	<Query id="EastXdhtb" path="/fpages/east/xml/EastXdhtb.xml" desc="信贷合同表" />
+	
+	<!-- east项目贷款信息表-->
+	<Query id="EastXmdkxxb" path="/fpages/east/xml/EastXmdkxxb.xml" desc="信贷合同表" />
 
 </META>

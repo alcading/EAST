@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+	<class name="EastXmdkxxb" table="EAST_Xmdkxxb">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastXmdkxxbPK">
+			<key-property name="xdhth" column="xdhth" type="string" />
+			<key-property name="cjrq" column="cjrq" type="string" />
+		</composite-id>
+		<property name="khtybh" column="KHTYBH" type="string" length="60" />
+		<property name="yxjgdm" column="YXJGDM" type="string" length="30" />
+		<property name="jrxkzh" column="JRXKZH" type="string" length="30" />
+		<property name="nbjgh" column="NBJGH" type="string" length="30" />
+		<property name="jkrmc" column="JKRMC" type="string" length="200" />
+		<property name="xmmc" column="XMMC" type="string" length="100" />
+		<property name="xmlx" column="XMLX" type="string" length="100" />
+		<property name="sfyt" column="SFYT" type="string" length="4" />
+		<property name="xmztz" column="XMZTZ" type="big_decimal" length="24" />
+		<property name="zbj" column="ZBJ" type="big_decimal" length="24" />
+		<property name="xmdkje" column="XMDKJE" type="big_decimal" length="24" />
+		<property name="xmdkqx" column="XMDKQX" type="string" length="30" />
+		<property name="pwwh" column="PWWH" type="string" length="60" />
+		<property name="lxpw" column="LXPW" type="string" length="60" />
+		<property name="ghxkzbh" column="GHXKZBH" type="string" length="60" />
+		<property name="jsydxkzbh" column="JSYDXKZBH" type="string" length="60" />
+		<property name="hpxkzbh" column="HPXKZBH" type="string" length="60" />
+		<property name="sgxkzbh" column="SGXKZBH" type="string" length="60" />
+		<property name="qtxkz" column="QTXKZ" type="string" length="60" />
+		<property name="qtxkzbh" column="QTXKZBH" type="string" length="60" />
+		<property name="kgrq" column="KGRQ" type="string" length="8" />
+		
+	</class>
+</hibernate-mapping>

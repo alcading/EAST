@@ -23,7 +23,7 @@
       			<div align="center">
       				<@CommonQueryMacro.Group id="group1" label=""
         			  fieldStr="khtybh,zjhm,yxjgdm,jrxkzh,nbjgh,lyxt,khxm,khywxm,zjlb,gj,mz,xb,xl,csrq,gzdwmc,gzdwdz,gzdwdh,zy,jtzz,txdz,jtdh,yddh,grysr,jtysr,hyqk,poxm,polxdh,poyddh,podykhh,bxygbz,sbxhmdbz,shmdrq,shmdyy,yzbm,dwxz,zc,sfnh,cjrq" colNm=4/>
-        			<br/>
+        			<br/><br/><br/><br/><br/><br/><br/><br/>
         			<@CommonQueryMacro.Button id="btModOrAdd" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<@CommonQueryMacro.Button id="btCancel" />
       			</div>
@@ -38,6 +38,15 @@
 </td></tr>
 </table>
 <script language="JavaScript">
+
+	//给查询条件中的默认值为当前月的上一个月的最后一天
+	window.onload=function(){
+		var date = new Date();
+	    var day = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+		var enddate = new Date(new Date().getFullYear(), new Date().getMonth()-1, day);
+	    EastGrjcxx_interface_dataset.setValue("cjrq", enddate);
+	}
+
 	//定位一行记录
 	function locate(id) {
 		var record = EastGrjcxx_dataset.find(["id"],[id]);
@@ -81,14 +90,9 @@
 	function openModifyWindow(id,flag) {
 		locate(id);
 		if(flag==1){
-		EastGrjcxx_dataset.setFieldReadOnly("hqckzh",true);
-		EastGrjcxx_dataset.setFieldReadOnly("bz",true);
-		EastGrjcxx_dataset.setFieldReadOnly("jyjzh",true);
-		EastGrjcxx_dataset.setFieldReadOnly("chlb",true);
-		EastGrjcxx_dataset.setFieldReadOnly("cjrq",true);
-		$("#btModOrAdd").get(0).style.display="";
+			$("#btModOrAdd").get(0).style.display="";
 		}
-		subwindow_signWindow.show();	
+		subwindow_signWindow.show();
 	}
 	
 	function doDel(id) {

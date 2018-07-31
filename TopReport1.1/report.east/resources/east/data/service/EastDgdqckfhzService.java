@@ -42,19 +42,14 @@ public class EastDgdqckfhzService {
 		return (EastDgdqckfhzService) ApplicationContextUtils.getBean("EastDgdqckfhzService");
 	}
 
-	public PageQueryResult pageQueryByHql(int pageIndex, int pageSize) {
+	public PageQueryResult pageQueryByHql(int pageIndex, int maxRows, String hql) throws CommonException {
 		ROOTDAO rootDAO = ROOTDAOUtils.getROOTDAO();
 		PageQueryResult pageQueryResult = null;
 		PageQueryCondition queryCondition = new PageQueryCondition();
-		String hql = "from EastDgdqckfhz Dgdqckfhz   ";
-		try {
-			queryCondition.setQueryString(hql);
-			queryCondition.setPageIndex(pageIndex);
-			queryCondition.setPageSize(pageSize);
-			pageQueryResult = rootDAO.pageQueryByQL(queryCondition);
-		} catch (CommonException e) {
-			e.printStackTrace();
-		}
+		queryCondition.setQueryString(hql);
+		queryCondition.setPageIndex(pageIndex);
+		queryCondition.setPageSize(maxRows);
+		pageQueryResult = rootDAO.pageQueryByQL(queryCondition);
 		return pageQueryResult;
 	}
 

@@ -217,5 +217,13 @@
 	<bean id="EastXdhtbOperation" class="resources.east.data.operation.EastXdhtbOperation">
 	</bean>
 	
+													<!-- EAST 信贷合同表 -->
+	<bean id="EastXmdkxxb" class="resources.east.data.pub.EastXmdkxxb">
+	</bean>
+	<bean id="EastXmdkxxbService" class="resources.east.data.service.EastXmdkxxbService">
+	</bean>
+	<bean id="EastXmdkxxbOperation" class="resources.east.data.operation.EastXmdkxxbOperation">
+	</bean>
+	
 
 </beans>

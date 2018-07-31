@@ -38,6 +38,15 @@
 </td></tr>
 </table>
 <script language="JavaScript">
+
+	//给查询条件中的默认值为当前月的上一个月的最后一天
+	window.onload=function(){
+		var date = new Date();
+	    var day = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+		var enddate = new Date(new Date().getFullYear(), new Date().getMonth()-1, day);
+	    EastDgxdfhzmxjl_interface_dataset.setValue("cjrq", enddate);
+	}
+
 	//定位一行记录
 	function locate(id) {
 		var record = EastDgxdfhzmxjl_dataset.find(["id"],[id]);
