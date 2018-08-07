@@ -49,9 +49,9 @@
 
 	//定位一行记录
 	function locate(id) {
-		var record = EastXdhtb_dataset.find(["id"],[id]);
+		var record = EastXmdkxxb_dataset.find(["id"],[id]);
 		if(record) {
-			EastXdhtb_dataset.setRecord(record);
+			EastXmdkxxb_dataset.setRecord(record);
 		}
 	}
 	//系统刷新单元格
@@ -78,7 +78,7 @@
 	}
 	//关浮动窗口,释放dataset
 	function signWindow_floatWindow_beforeClose(subwindow) {
-		EastXdhtb_dataset.cancelRecord();
+		EastXmdkxxb_dataset.cancelRecord();
 		return true;
 	}
 	function signWindow_floatWindow_beforeHide(subwindow) {
@@ -90,8 +90,8 @@
 	function openModifyWindow(id,flag) {
 		locate(id);
 		if(flag==1){
-		EastXdhtb_dataset.setFieldReadOnly("xdhth",true);
-		EastXdhtb_dataset.setFieldReadOnly("cjrq",true);
+		EastXmdkxxb_dataset.setFieldReadOnly("xdhth",true);
+		EastXmdkxxb_dataset.setFieldReadOnly("cjrq",true);
 		$("#btModOrAdd").get(0).style.display="";
 		}
 		subwindow_signWindow.show();	
@@ -112,7 +112,7 @@
 		flushCurrentPage();
 	}
 	function btModOrAdd_onClickCheck(button) {
-		var id = EastXdhtb_dataset.getValue("id");
+		var id = EastXmdkxxb_dataset.getValue("id");
 		if(id == null || "" == id ) {
 			alert("字段[内部机构号]不能为空");
 			return false;
@@ -127,7 +127,7 @@
 	}
 	//刷新当前页
 	function flushCurrentPage() {
-		EastXdhtb_dataset.flushData(EastXdhtb_dataset.pageIndex);
+		EastXmdkxxb_dataset.flushData(EastXmdkxxb_dataset.pageIndex);
 	}
 </script>
 </@CommonQueryMacro.page>

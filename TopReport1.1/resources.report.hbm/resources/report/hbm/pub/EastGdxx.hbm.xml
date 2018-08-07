@@ -18,7 +18,7 @@
 		<property name="gdmc" column="GDMC" type="string" length="200" />
 		<property name="gdzjlb" column="GDZJLB" type="string" length="60" />
 		<property name="gdzt" column="GDZT" type="string" length="6" />
-		<property name="cgbl" column="CGBL" type="string" length="14" />
+		<property name="cgbl" column="CGBL" type="big_decimal" length="14" />
 		<property name="rgsj" column="RGSJ" type="string" length="8" />
 	</class>
 </hibernate-mapping>

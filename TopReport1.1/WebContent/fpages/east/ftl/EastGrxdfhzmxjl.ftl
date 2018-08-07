@@ -23,7 +23,7 @@
       			<div align="center">
       				<@CommonQueryMacro.Group id="group1" label=""
         			  fieldStr="hxjylsh,zjylsh,bcxh,dkfhzh,xdjjh,khtybh,yxjgdm,jrxkzh,nbjgh,mxkmbh,yxjgmc,mxkmmc,hxjyrq,hxjysj,bz,zhmc,jylx,jyje,zhye,dfzh,dfhm,dfxh,dfxm,jyqd,xzbz,dbrxm,dbrzjlb,dbrzjhm,jygyh,sqgyh,zy,cbmbz,jyjdbz,cjrq" colNm=4/>
-        			<br/>
+        			<br/><br/><br/><br/><br/>
         			<@CommonQueryMacro.Button id="btModOrAdd" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<@CommonQueryMacro.Button id="btCancel" />
       			</div>

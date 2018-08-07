@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+	<class name="EastGlgx" table="East_Glgx">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastGlgxPK">
+			<key-property name="khtybh" column="KHTYBH" type="string" length="60"/>
+			<key-property name="glrkhtybh" column="GLRKHTYBH" type="string" length="60"/>
+			<key-property name="cjrq" column="CJRQ" type="string" length="8"/>
+		</composite-id>
+		<property name="yxjgdm" column="YXJGDM" type="string" length="30" />
+		<property name="jrxkzh" column="JRXKZH" type="string" length="30" />
+		<property name="nbjgh" column="NBJGH" type="string" length="30" />
+		<property name="khsbm" column="KHSBM" type="string" length="60" />
+		<property name="khlb" column="KHLB" type="string" length="30" />
+		<property name="glrsbm" column="GLRSBM" type="string" length="60" />
+		<property name="glrmc" column="GLRMC" type="string" length="200" />
+		<property name="glrlb" column="GLRLB" type="string" length="30" />
+		<property name="gxlx" column="GXLX" type="string" length="300" />
+		<property name="glgxzt" column="GLGXZT" type="string" length="300" />
+		<property name="lrsj" column="LRSJ" type="string" length="8" />
+	</class>
+</hibernate-mapping>

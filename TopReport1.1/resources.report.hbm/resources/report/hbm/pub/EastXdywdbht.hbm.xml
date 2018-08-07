@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+	<class name="EastXdywdbht" table="EAST_Xdywdbht">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastXdywdbhtPK">
+			<key-property name="dbhth" column="DBHTH" type="string" />
+			<key-property name="zjhm" column="ZJHM" type="string" />
+			<key-property name="cjrq" column="cjrq" type="string" />
+		</composite-id>
+			<property name="jrxkzh" column="JRXKZH" type="string" length="30" />
+			<property name="yxjgdm" column="YXJGDM" type="string" length="30" />
+			<property name="nbjgh" column="NBJGH" type="string" length="30" />
+			<property name="dblx" column="DBLX" type="string" length="30" />
+			<property name="dbhtlx" column="DBHTLX" type="string" length="30" />
+			<property name="bzrlb" column="BZRLB" type="string" length="6" />
+			<property name="bzrmc" column="BZRMC" type="string" length="200" />
+			<property name="zjlb" column="ZJLB" type="string" length="60" />
+			<property name="bzrjzc" column="BZRJZC" type="big_decimal" length="24" />
+			<property name="dbqsrq" column="DBQSRQ" type="string" length="8" />
+			<property name="dbdqrq" column="DBDQRQ" type="string" length="8" />
+			<property name="dbhtzt" column="DBHTZT" type="string" length="30" />
+			<property name="dbhtqdrq" column="DBHTQDRQ" type="string" length="8" />
+			<property name="dbhtsxrq" column="DBHTSXRQ" type="string" length="8" />
+			<property name="dbhtdqrq" column="DBHTDQRQ" type="string" length="8" />
+			<property name="dbbz" column="DBBZ" type="string" length="3" />
+			<property name="dbzje" column="DBZJE" type="big_decimal" length="24" />
+			<property name="dbwpxh" column="DBWPXH" type="string" length="1000" />
+			<property name="jlygh" column="JLYGH" type="string" length="30" />
+	</class>
+</hibernate-mapping>

@@ -23,7 +23,7 @@
       			<div align="center">
       				<@CommonQueryMacro.Group id="group1" label=""
         			  fieldStr="hxjylsh,zjylsh,bcxh,dkzh,xdjjh,khtybh,yxjgdm,jrxkzh,nbjgh,mxkmbh,yxjgmc,mxkmmc,hxjyrq,hxjysj,bz,zhmc,jylx,jyje,zhye,dfzh,dfhm,dfxh,dfxm,jyqd,xzbz,dbrxm,dbrzjlb,dbrzjhm,jygyh,sqgyh,zy,cbmbz,jyjdbz,cjrq" colNm=4/>
-        			<br/>
+        			<br/><br/><br/><br/><br/>
         			<@CommonQueryMacro.Button id="btModOrAdd" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<@CommonQueryMacro.Button id="btCancel" />
       			</div>
@@ -92,12 +92,7 @@
 	function openModifyWindow(id,flag) {
 		locate(id);
 		if(flag==1){
-		EastDgxdfhzmxjl_dataset.setFieldReadOnly("hxjylsh",true);
-		EastDgxdfhzmxjl_dataset.setFieldReadOnly("zjylsh",true);
-		EastDgxdfhzmxjl_dataset.setFieldReadOnly("bcxh",true);
-		EastDgxdfhzmxjl_dataset.setFieldReadOnly("dkfhzh",true);
-		EastDgxdfhzmxjl_dataset.setFieldReadOnly("hxjyrq",true);
-		EastDgxdfhzmxjl_dataset.setFieldReadOnly("cjrq",true);
+		
 		$("#btModOrAdd").get(0).style.display="";
 		}
 		

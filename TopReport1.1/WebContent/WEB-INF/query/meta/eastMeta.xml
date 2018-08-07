@@ -82,6 +82,36 @@
 	<Query id="EastXdhtb" path="/fpages/east/xml/EastXdhtb.xml" desc="信贷合同表" />
 	
 	<!-- east项目贷款信息表-->
-	<Query id="EastXmdkxxb" path="/fpages/east/xml/EastXmdkxxb.xml" desc="信贷合同表" />
+	<Query id="EastXmdkxxb" path="/fpages/east/xml/EastXmdkxxb.xml" desc="项目贷款信息表" />
+	
+	<!-- east票据票面信息表-->
+	<Query id="EastPjpmxxb" path="/fpages/east/xml/EastPjpmxxb.xml" desc="票据票面信息表" />
+		
+	<!-- east表外授信业务-->
+	<Query id="EastDgbwsxyw" path="/fpages/east/xml/EastDgbwsxyw.xml" desc="表外授信业务" />
+	
+	<!-- east贸易融资业务信息表-->
+	<Query id="EastMyrzywxxb" path="/fpages/east/xml/EastMyrzywxxb.xml" desc="贸易融资业务信息表" />
+	
+	<!-- east银团贷款-->
+	<Query id="EastYtdk" path="/fpages/east/xml/EastYtdk.xml" desc="银团贷款" />
+	
+	<!-- east委托贷款-->
+	<Query id="EastWtdk" path="/fpages/east/xml/EastWtdk.xml" desc="委托贷款" />
+	
+	<!-- east个人信贷业务借据-->
+	<Query id="EastGrxdywjj" path="/fpages/east/xml/EastGrxdywjj.xml" desc="个人信贷业务借据" />
+	
+	<!-- east对公信贷业务借据-->
+	<Query id="EastDgxdywjj" path="/fpages/east/xml/EastDgxdywjj.xml" desc="对公信贷业务借据" />
+	
+	<!-- east信贷业务担保合同-->
+	<Query id="EastXdywdbht" path="/fpages/east/xml/EastXdywdbht.xml" desc="信贷业务担保合同" />
+	
+	<!-- east担保关系-->
+	<Query id="EastDbgx" path="/fpages/east/xml/EastDbgx.xml" desc="担保关系" />
+	
+	<!-- east信贷业务质或抵押物-->
+	<Query id="EastXdywzhdyw" path="/fpages/east/xml/EastXdywzhdyw.xml" desc="信贷业务质或抵押物" />
 
 </META>

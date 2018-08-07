@@ -17,6 +17,7 @@ import com.huateng.exception.AppException;
 import com.huateng.report.system.operation.SysParamsOperation;
 
 import resources.east.data.operation.EastXdhtbOperation;
+import resources.east.data.operation.EastXmdkxxbOperation;
 import resources.east.data.pub.EastXmdkxxb;
 import resources.east.data.pub.EastXmdkxxbPK;
 
@@ -51,17 +52,17 @@ public class EastXmdkxxbModOrAddUpdate extends BaseUpdate {
 				BaseUpdate.mapToObject(eastXmdkxxb, map);
 				eastXmdkxxb.setId(Xmdkxxbpk);
 				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastXdhtbOperation.CMD, EastXdhtbOperation.CMD_UPDATE);
+					context.setAttribute(EastXmdkxxbOperation.CMD, EastXmdkxxbOperation.CMD_UPDATE);
 				}
 				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastXdhtbOperation.CMD, EastXdhtbOperation.CMD_INSERT);
+					context.setAttribute(EastXmdkxxbOperation.CMD, EastXmdkxxbOperation.CMD_INSERT);
 				}
 				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastXdhtbOperation.CMD, EastXdhtbOperation.CMD_DELETE);
+					context.setAttribute(EastXmdkxxbOperation.CMD, EastXmdkxxbOperation.CMD_DELETE);
 				}
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastXmdkxxb);
 				// call方式开启operation事务
-				OPCaller.call(EastXdhtbOperation.ID, context);
+				OPCaller.call(EastXmdkxxbOperation.ID, context);
 				return updateReturnBean;
 			}
 		} catch (AppException appe) {

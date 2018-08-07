@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+	<class name="EastPjpmxxb" table="EAST_Pjpmxxb">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastPjpmxxbPK">
+			<key-property name="pjhm" column="pjhm" type="string" />
+			<key-property name="cjrq" column="cjrq" type="string" />
+		</composite-id>
+		<property name="cprbh" column="CPRBH" type="string" length="60" />
+		<property name="fkxdm" column="FKXDM" type="string" length="30" />
+		<property name="yxjgdm" column="YXJGDM" type="string" length="30" />
+		<property name="jrxkzh" column="JRXKZH" type="string" length="30" />
+		<property name="nbjgh" column="NBJGH" type="string" length="30" />
+		<property name="pjlx" column="PJLX" type="string" length="30" />
+		<property name="cprqc" column="CPRQC" type="string" length="200" />
+		<property name="cprzh" column="CPRZH" type="string" length="60" />
+		<property name="fkxmc" column="FKXMC" type="string" length="200" />
+		<property name="bz" column="BZ" type="string" length="3" />
+		<property name="pmje" column="PMJE" type="big_decimal" length="24" />
+		<property name="qfrq" column="QFRQ" type="string" length="8" />
+		<property name="pjdqrq" column="PJDQRQ" type="string" length="8" />
+		<property name="skrmc" column="SKRMC" type="string" length="200" />
+		<property name="skrzh" column="SKRZH" type="string" length="60" />
+		<property name="skrkhx" column="SKRKHX" type="string" length="30" />
+		<property name="syfphm" column="SYFPHM" type="string" length="200" />
+		<property name="syfpbz" column="SYFPBZ" type="string" length="3" />
+		<property name="syfpje" column="SYFPJE" type="big_decimal" length="24" />
+		<property name="syfpzl" column="SYFPZL" type="string" length="60" />
+		
+	</class>
+</hibernate-mapping>
