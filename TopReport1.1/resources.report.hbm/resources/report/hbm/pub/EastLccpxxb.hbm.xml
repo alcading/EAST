@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+  <class
+		name="EastLccpxxb"
+		table="EAST_Lccpxxb"
+	>
+	
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="string" column="HNBSM"></id>
+		
+		<property name="yxjgdm" column="YXJGDM" type="string" length="30" />
+		<property name="jrxkzh" column="JRXKZH" type="string" length="30" />
+		<property name="nbjgh" column="NBJGH" type="string" length="30" />
+		<property name="mxkmbh" column="MXKMBH" type="string" length="60" />
+		<property name="yxjgmc" column="YXJGMC" type="string" length="200" />
+		<property name="mxkmmc" column="MXKMMC" type="string" length="300" />
+		<property name="cpmc" column="CPMC" type="string" length="200" />
+		<property name="cpdjbm" column="CPDJBM" type="string" length="30" />
+		<property name="cppp" column="CPPP" type="string" length="30" />
+		<property name="cpqc" column="CPQC" type="integer" length="4" />
+		<property name="cpsprsfzh" column="CPSPRSFZH" type="string" length="60" />
+		<property name="cpsprxm" column="CPSPRXM" type="string" length="100" />
+		<property name="cpsjrsfzh" column="CPSJRSFZH" type="string" length="60" />
+		<property name="cpsjrxm" column="CPSJRXM" type="string" length="100" />
+		<property name="tzjlsfzh" column="TZJLSFZH" type="string" length="60" />
+		<property name="tzjlxm" column="TZJLXM" type="string" length="100" />
+		<property name="cpsylx" column="CPSYLX" type="string" length="30" />
+		<property name="cpqx" column="CPQX" type="string" length="30" />
+		<property name="tzzlx" column="TZZLX" type="string" length="30" />
+		<property name="zjtxdq" column="ZJTXDQ" type="string" length="15" />
+		<property name="cptzgjhdq" column="CPTZGJHDQ" type="string" length="60" />
+		<property name="lcywfwms" column="LCYWFWMS" type="string" length="30" />
+		<property name="cpyzms" column="CPYZMS" type="string" length="30" />
+		<property name="kjhsfs" column="KJHSFS" type="string" length="6" />
+		<property name="cpzcpzfs" column="CPZCPZFS" type="string" length="30" />
+		<property name="cpglms" column="CPGLMS" type="string" length="30" />
+		<property name="sjgllmc" column="SJGLLMC" type="string" length="200" />
+		<property name="cpdjfs" column="CPDJFS" type="string" length="30" />
+		<property name="tzlx" column="TZLX" type="string" length="30" />
+		<property name="hzms" column="HZMS" type="string" length="30" />
+		<property name="hzjgmc" column="HZJGMC" type="string" length="200" />
+		<property name="tzzczljbl" column="TZZCZLJBL" type="string" length="2000" />
+		<property name="sfyyqsyl" column="SFYYQSYL" type="string" length="4" />
+		<property name="yjkhzgnsyl" column="YJKHZGNSYL" type="big_decimal" length="10" />
+		<property name="yjkhzdnsyl" column="YJKHZDNSYL" type="big_decimal" length="10" />
+		<property name="sfysylcsyj" column="SFYSYLCSYJ" type="string" length="4" />
+		<property name="tzzfxph" column="TZZFXPH" type="string" length="9" />
+		<property name="cpxsqy" column="CPXSQY" type="string" length="2000" />
+		<property name="mjbz" column="MJBZ" type="string" length="3" />
+		<property name="dfbjbz" column="DFBJBZ" type="string" length="3" />
+		<property name="dfsybz" column="DFSYBZ" type="string" length="3" />
+		<property name="qdxsje" column="QDXSJE" type="big_decimal" length="20" />
+		<property name="jhmjje" column="JHMJJE" type="big_decimal" length="20" />
+		<property name="mjqsrq" column="MJQSRQ" type="string" length="8" />
+		<property name="tzbjdzr" column="TZBJDZR" type="string" length="4" />
+		<property name="tzsydzr" column="TZSYDZR" type="string" length="4" />
+		<property name="xssxfl" column="XSSXFL" type="big_decimal" length="10" />
+		<property name="jntgjgmc" column="JNTGJGMC" type="string" length="200" />
+		<property name="jntgjgdm" column="JNTGJGDM" type="string" length="30" />
+		<property name="jwtgjggb" column="JWTGJGGB" type="string" length="60" />
+		<property name="jwtgjgmc" column="JWTGJGMC" type="string" length="200" />
+		<property name="lccpzjtgzh" column="LCCPZJTGZH" type="string" length="60" />
+		<property name="lccpzjtgzhmc" column="LCCPZJTGZHMC" type="string" length="200" />
+		<property name="tgfl" column="TGFL" type="big_decimal" length="10" />
+		<property name="cpfxdj" column="CPFXDJ" type="string" length="30" />
+		<property name="fxjgtqzzqbs" column="FXJGTQZZQBS" type="string" length="4" />
+		<property name="khshqbs" column="KHSHQBS" type="string" length="4" />
+		<property name="cpzxbs" column="CPZXBS" type="string" length="4" />
+		<property name="cpzxjglx" column="CPZXJGLX" type="string" length="30" />
+		<property name="cpzxxs" column="CPZXXS" type="string" length="12" />
+		<property name="cjrq" column="CJRQ" type="string" length="8" />
+	</class>	
+</hibernate-mapping>

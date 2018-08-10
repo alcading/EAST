@@ -304,5 +304,93 @@
 	</bean>
 	<bean id="EastXdywzhdywOperation" class="resources.east.data.operation.EastXdywzhdywOperation">
 	</bean>
+	
+	<!-- EAST 借记卡信息 -->
+	<bean id="eastJjkxx" class="resources.east.data.pub.EastJjkxx">
+	</bean>
+	<bean id="EastJjkxxService" class="resources.east.data.service.EastJjkxxService">
+	</bean>
+	<bean id="EastJjkxxOperation" class="resources.east.data.operation.EastJjkxxOperation">
+	</bean>
+	
+	<!-- EAST 存折信息 -->
+	<bean id="eastCzxx" class="resources.east.data.pub.EastCzxx">
+	</bean>
+	<bean id="EastCzxxService" class="resources.east.data.service.EastCzxxService">
+	</bean>
+	<bean id="EastCzxxOperation" class="resources.east.data.operation.EastCzxxOperation">
+	</bean>
+	
+	<!-- EAST 信用卡信息 -->
+	<bean id="eastXykxx" class="resources.east.data.pub.EastXykxx">
+	</bean>
+	<bean id="EastXykxxService" class="resources.east.data.service.EastXykxxService">
+	</bean>
+	<bean id="EastXykxxOperation" class="resources.east.data.operation.EastXykxxOperation">
+	</bean>
+	
+	<!-- EAST 信用卡账户交易明细记录 -->
+	<bean id="eastXykzhjymxb" class="resources.east.data.pub.EastXykzhjymxb">
+	</bean>
+	<bean id="EastXykzhjymxbService" class="resources.east.data.service.EastXykzhjymxbService">
+	</bean>
+	<bean id="EastXykzhjymxbOperation" class="resources.east.data.operation.EastXykzhjymxbOperation">
+	</bean>
+	
+	<!-- EAST 授信信息 -->
+	<bean id="eastSxxx" class="resources.east.data.pub.EastSxxx">
+	</bean>
+	<bean id="EastSxxxService" class="resources.east.data.service.EastSxxxService">
+	</bean>
+	<bean id="EastSxxxOperation" class="resources.east.data.operation.EastSxxxOperation">
+	</bean>
+	
+	<!-- EAST 贷款核销 -->
+	<bean id="eastDkhx" class="resources.east.data.pub.EastDkhx">
+	</bean>
+	<bean id="EastDkhxService" class="resources.east.data.service.EastDkhxService">
+	</bean>
+	<bean id="EastDkhxOperation" class="resources.east.data.operation.EastDkhxOperation">
+	</bean>
+	
+	<!-- EAST 贷款展期 -->
+	<bean id="eastDkzq" class="resources.east.data.pub.EastDkzq">
+	</bean>
+	<bean id="EastDkzqService" class="resources.east.data.service.EastDkzqService">
+	</bean>
+	<bean id="EastDkzqOperation" class="resources.east.data.operation.EastDkzqOperation">
+	</bean>
+	
+	<!-- EAST 理财产品销售明细记录 -->
+	<bean id="eastLccpxsmxjl" class="resources.east.data.pub.EastLccpxsmxjl">
+	</bean>
+	<bean id="EastLccpxsmxjlService" class="resources.east.data.service.EastLccpxsmxjlService">
+	</bean>
+	<bean id="EastLccpxsmxjlOperation" class="resources.east.data.operation.EastLccpxsmxjlOperation">
+	</bean>
+	
+	<!-- EAST 客户理财账户信息表 -->
+	<bean id="eastKhlczhxxb" class="resources.east.data.pub.EastKhlczhxxb">
+	</bean>
+	<bean id="EastKhlczhxxbService" class="resources.east.data.service.EastKhlczhxxbService">
+	</bean>
+	<bean id="EastKhlczhxxbOperation" class="resources.east.data.operation.EastKhlczhxxbOperation">
+	</bean>
+	
+	<!-- EAST 理财产品状态表 -->
+	<bean id="eastLccpztb" class="resources.east.data.pub.EastLccpztb">
+	</bean>
+	<bean id="EastLccpztbService" class="resources.east.data.service.EastLccpztbService">
+	</bean>
+	<bean id="EastLccpztbOperation" class="resources.east.data.operation.EastLccpztbOperation">
+	</bean>
+	
+	<!-- EAST 理财产品信息表 -->
+	<bean id="eastLccpxxb" class="resources.east.data.pub.EastLccpxxb">
+	</bean>
+	<bean id="EastLccpxxbService" class="resources.east.data.service.EastLccpxxbService">
+	</bean>
+	<bean id="EastLccpxxbOperation" class="resources.east.data.operation.EastLccpxxbOperation">
+	</bean>
 
 </beans>

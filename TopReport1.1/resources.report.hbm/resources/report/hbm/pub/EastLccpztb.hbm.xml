@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+	
+<hibernate-mapping package="resources.east.data.pub">
+	  <class
+		name="EastLccpztb"
+		table="EAST_Lccpztb"
+	>
+	<!-- 理财产品状态表 -->
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="string" column="HNBSM"></id>
+		
+		<property name="yxjgdm" column="YXJGDM" type="string" length="30" />
+		<property name="jrxkzh" column="JRXKZH" type="string" length="30" />
+		<property name="nbjgh" column="NBJGH" type="string" length="30" />
+		<property name="yxjgmc" column="YXJGMC" type="string" length="200" />
+		<property name="lccpmc" column="LCCPMC" type="string" length="200" />
+		<property name="sjmjje" column="SJMJJE" type="big_decimal" length="20" />
+		<property name="cpqsrq" column="CPQSRQ" type="string" length="8" />
+		<property name="cpyjzzrq" column="CPYJZZRQ" type="string" length="8" />
+		<property name="fxdjr" column="FXDJR" type="string" length="8" />
+		<property name="yhdsjsxsr" column="YHDSJSXSR" type="big_decimal" length="20" />
+		<property name="dfkhsy" column="DFKHSY" type="big_decimal" length="20" />
+		<property name="khdsjnhsyl" column="KHDSJNHSYL" type="big_decimal" length="10" />
+		<property name="cpdsjnhsyl" column="CPDSJNHSYL" type="big_decimal" length="10" />
+		<property name="zzdjr" column="ZZDJR" type="string" length="8" />
+		<property name="cjrq" column="CJRQ" type="string" length="8" />
+     	
+	</class>
+</hibernate-mapping>

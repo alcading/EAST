@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+  <class
+		name="EastKhlczhxxb"
+		table="EAST_Khlczhxxb"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastKhlczhxxbPK">
+			<key-property name="lczh" column="LCZH" type="string" />
+			<key-property name="glhqckzh" column="GLHQCKZH" type="string" />
+			<key-property name="hnbsm" column="HNBSM" type="string" />
+		</composite-id>
+		
+		<property name="yxjgdm" column="YXJGDM" type="string" length="30" />
+		<property name="jrxkzh" column="JRXKZH" type="string" length="30" />
+		<property name="nbjgh" column="NBJGH" type="string" length="30" />
+		<property name="mxkmbh" column="MXKMBH" type="string" length="60" />
+		<property name="yxjgmc" column="YXJGMC" type="string" length="200" />
+		<property name="mxkmmc" column="MXKMMC" type="string" length="300" />
+		<property name="bz" column="BZ" type="string" length="3" />
+		<property name="khtybh" column="KHTYBH" type="string" length="60" />
+		<property name="khxm" column="KHXM" type="string" length="100" />
+		<property name="lccpmc" column="LCCPMC" type="string" length="200" />
+		<property name="fezs" column="FEZS" type="big_decimal" length="20" />
+		<property name="djfe" column="DJFE" type="big_decimal" length="20" />
+		<property name="hlztzbz" column="HLZTZBZ" type="string" length="4" />
+		<property name="bqsy" column="BQSY" type="big_decimal" length="20" />
+		<property name="ljsy" column="LJSY" type="big_decimal" length="20" />
+		<property name="mrcb" column="MRCB" type="big_decimal" length="20" />
+		<property name="bqqsrq" column="BQQSRQ" type="string" length="8" />
+		<property name="bqdqrq" column="BQDQRQ" type="string" length="8" />
+		<property name="khrq" column="KHRQ" type="string" length="8" />
+		<property name="scdhrq" column="SCDHRQ" type="string" length="8" />
+		<property name="cjrq" column="CJRQ" type="string" length="8" />
+		
+	</class>	
+</hibernate-mapping>
