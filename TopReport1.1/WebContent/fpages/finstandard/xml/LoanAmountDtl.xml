@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="贷款发生额详情" navigate="贷款发生额详情" type="call"
+	interface="true" pagesize="20" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="resources.finstandard.data.getter.LoanAmountMngGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<Field id="sjrq" desc="数据日期" edittype="date" require="true"
+			size="10" errmsg="数据日期不能为空！" datatype="date" status="F" xpath="/sjrq"
+			readonly="true" />
+
+		<Field id="jrjgbm" desc="金融机构编码" edittype="text" size="14"
+			require="true" errmsg="金融机构编码不能为空！" datatype="string" status="F"
+			xpath="/jrjgbm" readonly="true" />
+
+		<Field id="khlx" desc="客户类型" require="false" edittype="select"
+			status="F" translated="DATA_DIC.20020" datatype="string" size="10"
+			default="" xpath="/khlx" tip="" readonly="true" />
+
+		<Field id="jkrbm" desc="借款人代码" edittype="text" size="30"
+			require="true" errmsg="借款人代码不能为空！" datatype="string" status="F"
+			xpath="/jkrbm" readonly="true" />
+
+		<Field id="dkzthylx" desc="贷款主题行业类别" require="true" errmsg="贷款主题行业类别不能为空！"
+			edittype="select" status="F" translated="DATA_DIC.20021" datatype="string"
+			size="5" default="" xpath="/dkzthylx" readonly="true" />
+
+		<Field id="jkrzcdbm" desc="借款人注册地编码" edittype="text" size="6"
+			require="false" datatype="string" status="F" xpath="/jkrzcdbm"
+			readonly="true" />
+
+		<Field id="qyczrjjcf" desc="企业出资人经济成分" require="false" edittype="select"
+			status="F" translated="DATA_DIC.20022" datatype="string" size="5"
+			default="" xpath="/qyczrjjcf" readonly="true" />
+
+		<Field id="qygm" desc="企业规模" require="false" edittype="select"
+			status="F" translated="DATA_DIC.20023" datatype="string" size="4"
+			default="" xpath="/qygm" readonly="true" />
+
+		<Field id="dkjjbh" desc="贷款借据编码" edittype="text" size="35"
+			require="true" errmsg="贷款借据编码不能为空！" datatype="string" status="F"
+			xpath="/dkjjbh" readonly="true" />
+
+		<Field id="cplb" desc="产品类别" require="true" errmsg="产品类别不能为空！"
+			edittype="select" status="F" translated="DATA_DIC.20024" datatype="string"
+			size="6" default="" xpath="/cplb" readonly="true" />
+
+		<Field id="dksjtx" desc="贷款实际投向" require="false" edittype="select"
+			status="F" translated="DATA_DIC.20025" datatype="string" size="10"
+			default="" xpath="/dksjtx" readonly="true" />
+
+		<Field id="dkffrq" desc="贷款发放日期" edittype="date" require="true"
+			size="10" errmsg="贷款发放日期不能为空！" datatype="date" status="F" xpath="/dkffrq"
+			readonly="true" />
+
+		<Field id="dkdqrq" desc="贷款到期日期" edittype="date" require="true"
+			size="10" errmsg="贷款到期日期不能为空！" datatype="date" status="F" xpath="/dkdqrq"
+			readonly="true" />
+
+		<Field id="dksjzzrq" desc="展期到期日期" edittype="date" require="false"
+			size="10" datatype="date" status="F" xpath="/dksjzzrq" readonly="true" />
+
+		<Field id="dkbz" desc="币种" require="true" errmsg="贷款币种不能为空！"
+			edittype="select" status="F" translated="DATA_DIC.20026" datatype="string"
+			size="3" default="" xpath="/dkbz" readonly="true" />
+
+		<Field id="dkfsje" desc="贷款发生金额" require="true" errmsg="贷款发生金额不能为空！"
+			edittype="text" datatype="currency" scale="2" rules="isRate_17_2"
+			method="None" size="20" status="F" xpath="/dkfsje" readonly="true" />
+
+		<Field id="llsfgd" desc="利率是否固定" require="true" errmsg="利率是否固定不能为空！"
+			edittype="select" status="N" translated="DATA_DIC.20027" datatype="string"
+			size="4" default="" xpath="/llsfgd" tip="利率是否固定" readonly="true" />
+
+		<Field id="llsp" desc="利率水平" require="true" errmsg="利率水平不能为空！"
+			edittype="double" scale="5" rules="isRate_13_5" datatype="string"
+			method="None" size="13" status="F" default="" xpath="/llsp" readonly="true" />
+
+		<Field id="dkdbfs" desc="贷款担保方式" require="true" errmsg="贷款担保方式不能为空！"
+			edittype="select" status="F" translated="DATA_DIC.20028" datatype="string"
+			size="3" default="" xpath="/dkdbfs" readonly="true" />
+
+		<Field id="dkzt" desc="贷款状态" require="true" errmsg="贷款状态不能为空！"
+			edittype="select" status="F" translated="DATA_DIC.20029" datatype="string"
+			size="4" default="" xpath="/dkzt" readonly="true" />
+
+		<Field id="dkffshbz" desc="贷款发放收回标志" require="true" errmsg="贷款发放收回标志不能为空！"
+			edittype="select" status="F" translated="DATA_DIC.20031" datatype="string"
+			size="10" default="" xpath="/dkffshbz" readonly="true" />
+	</Fields>
+	<Where>
+	</Where>
+
+	<Operations>
+		<Button id="btCancel" name="btCancel" desc="返回" operation="submitform"
+			url="/fpages/finstandard/ftl/LoanAmountEntry.ftl" txn="" icon="icon-back" />
+	</Operations>
+	<Script></Script>
+</CommQry>

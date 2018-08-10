@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="resources.finstandard.data.pub">
+	<class name="LoanAmount" table="LOAF">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id>
+			<!-- 数据日期 -->
+			<key-property name="sjrq" column="SJRQ" type="date"
+				length="10" />
+			<!-- 借款人代码 -->
+			<key-property name="jkrbm" column="JKRBM" type="string"
+				length="30" />
+			<!-- 贷款借据编码 -->
+			<key-property name="dkjjbh" column="DKJJBH" type="string"
+				length="35" />
+		</composite-id>
+		<!-- 金融机构编码 -->
+		<property name="jrjgbm" column="JRJGBM" type="string"
+			not-null="true" length="14" />
+		<!-- 客户类型 -->
+		<property name="khlx" column="KHLX" type="string" not-null="true"
+			length="1" />
+		<!-- 贷款主题行业类别 -->
+		<property name="dkzthylx" column="DKZTHYLX" type="string"
+			not-null="true" length="1" />
+		<!-- 借款人注册地编码 -->
+		<property name="jkrzcdbm" column="JKRZCDBM" type="string"
+			length="6" />
+		<!-- 企业出资人经济成分 -->
+		<property name="qyczrjjcf" column="QYCZRJJCF" type="string"
+			length="5" />
+		<!-- 企业规模 -->
+		<property name="qygm" column="QYGM" type="string" length="4" />
+		<!-- 产品类型 -->
+		<property name="cplb" column="CPLB" type="string" not-null="true"
+			length="6" />
+		<!-- 贷款实际投向 -->
+		<property name="dksjtx" column="DKSJTX" type="string" length="3" />
+		<!-- 贷款发放日期 -->
+		<property name="dkffrq" column="DKFFRQ" type="date"
+			not-null="true" length="10" />
+		<!-- 贷款到期日期 -->
+		<property name="dkdqrq" column="DKDQRQ" type="date"
+			not-null="true" length="10" />
+		<!-- 展期到期日期 -->
+		<property name="dksjzzrq" column="DKSJZZRQ" type="date"
+			length="10" />
+		<!-- 贷款币种 -->
+		<property name="dkbz" column="DKBZ" type="string" not-null="true"
+			length="3" />
+		<!-- 贷款发生金额 -->
+		<property name="dkfsje" column="DKFSJE" type="big_decimal"
+			not-null="true" length="17" />
+		<!-- 利率是否固定 -->
+		<property name="llsfgd" column="LLSFGD" type="string"
+			not-null="true" length="4" />
+		<!-- 利率水平 -->
+		<property name="llsp" column="LLSP" type="big_decimal"
+			not-null="true" length="13" />
+		<!-- 贷款担保方式 -->
+		<property name="dkdbfs" column="DKDBFS" type="string"
+			not-null="true" length="3" />
+		<!-- 贷款状态 -->
+		<property name="dkzt" column="DKZT" type="string" not-null="true"
+			length="4" />
+		<!-- 贷款发放收回标志 -->
+		<property name="dkffshbz" column="DKFFSHBZ" type="string"
+			not-null="true" length="1" />
+	</class>
+</hibernate-mapping>

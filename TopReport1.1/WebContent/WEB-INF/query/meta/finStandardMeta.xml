@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<META>
+	<Query id="LoanAmountEntry" path="/fpages/finstandard/xml/LoanAmountEntry.xml"
+		txn="" desc="贷款发生额列表" />
+	<Query id="LoanAmountEdit" path="/fpages/finstandard/xml/LoanAmountMng.xml"
+		txn="" desc="贷款发生额修改" />
+	<Query id="LoanAmountDtl" path="/fpages/finstandard/xml/LoanAmountDtl.xml"
+		txn="" desc="贷款发生额详情" />
+		
+	<Query id="LoanBalanceEntry" path="/fpages/finstandard/xml/LoanBalanceEntry.xml"
+		txn="" desc="贷款余额列表" />
+	<Query id="LoanBalanceEdit" path="/fpages/finstandard/xml/LoanBalanceMng.xml"
+		txn="" desc="贷款余额修改" />	
+	<Query id="LoanBalanceDtl" path="/fpages/finstandard/xml/LoanBalanceDtl.xml"
+		txn="" desc="贷款余额详情" />	
+		
+	<Query id="DepositBalanceEntry" path="/fpages/finstandard/xml/DepositBalanceEntry.xml"
+		txn="" desc="存款余额列表" />
+	<Query id="DepositBalanceEdit" path="/fpages/finstandard/xml/DepositBalanceMng.xml"
+		txn="" desc="存款余额修改" />
+	<Query id="DepositBalanceDtl" path="/fpages/finstandard/xml/DepositBalanceDtl.xml"
+		txn="" desc="存款余额详情" />
+</META>

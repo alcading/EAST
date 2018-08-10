@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false) 
+	databusid:数据总线编号 transdataactionurl:数据整理URL txnlogflag:true记录日志 async:异步提交标志 
+	pagesize:页面显示记录数(缺省为10) -->
+
+<CommQry title="DepositBalanceEntry.title" navigate="金融标准化  &gt; 存款余额"
+	type="call" interface="false" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do" txnlogflag="true"
+	getterclassname="resources.finstandard.data.getter.DepositBalanceMngGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
+
+		<Field id="sjrq" desc="数据日期" edittype="date" require="true"
+			size="10" errmsg="数据日期不能为空！" datatype="date" status="F" xpath="/sjrq"
+			readonly="true" />
+
+		<Field id="jrjgbm" desc="金融机构编码" edittype="text" size="14"
+			require="true" errmsg="金融机构编码不能为空！" datatype="string" status="F"
+			xpath="/jrjgbm" />
+
+		<Field id="khlx" desc="客户类型" require="false" edittype="select"
+			status="N" translated="DATA_DIC.20020" datatype="string" size="10"
+			default="" xpath="/khlx" tip="" />
+
+		<Field id="ckzhdm" desc="账户代码" edittype="text" size="60"
+			require="false" datatype="string" status="F" xpath="/ckzhdm"
+			readonly="true" />
+
+		<Field id="ckxydm" desc="协议代码" edittype="text" size="60"
+			require="false" datatype="string" status="F" xpath="/ckxydm" />
+
+		<Field id="cplb" desc="产品类别" require="true" errmsg="产品类别不能为空！"
+			edittype="select" status="F" translated="DATA_DIC.20033" datatype="string"
+			size="6" default="" xpath="/cplb" tip="" />
+
+		<Field id="ckxyqsrq" desc="协议起始日" edittype="date" require="false"
+			size="10" datatype="date" status="F" xpath="/ckxyqsrq" />
+
+		<Field id="ckxydqrq" desc="协议到期日" edittype="date" require="false"
+			size="10" datatype="date" status="F" xpath="/ckxydqrq" />
+
+		<Field id="ckbz" desc="币种" require="true" errmsg="币种不能为空！"
+			edittype="select" status="F" translated="DATA_DIC.20026" datatype="string"
+			size="6" default="" xpath="/ckbz" tip="" />
+
+		<Field id="ckye" desc="余额" require="true" errmsg="余额不能为空！"
+			edittype="text" datatype="currency" scale="2" rules="isRate_17_2"
+			method="None" readonly="false" size="20" status="N" xpath="/ckye" />
+
+		<Field id="llsfgd" desc="利率是否固定" require="true" errmsg="利率是否固定不能为空！"
+			edittype="select" status="N" translated="DATA_DIC.20027" datatype="string"
+			size="4" default="" xpath="/llsfgd" tip="利率是否固定" />
+
+		<Field id="llsp" desc="利率水平" require="true" errmsg="利率水平不能为空！"
+			edittype="double" scale="5" rules="isRate_13_5" datatype="string"
+			method="None" readonly="false" size="13" status="N" default="" xpath="/llsp" />
+	</Fields>
+
+	<Where>
+	</Where>
+
+	<Operations>
+		<Button id="btQueryVerify" name="btQueryVerify" desc="修改"
+			operation="asysubmit" updateClass="resources.finstandard.data.update.DepositBalanceUpdateMod"
+			url="/fpages/finstandard/ftl/DepositBalanceEntry.ftl" icon="icon-save" />
+
+		<Button id="btCancel" name="btCancel" desc="返回" operation="submitform"
+			url="/fpages/finstandard/ftl/DepositBalanceEntry.ftl" txn="" icon="icon-back" />
+	</Operations>
+	<Script></Script>
+</CommQry>

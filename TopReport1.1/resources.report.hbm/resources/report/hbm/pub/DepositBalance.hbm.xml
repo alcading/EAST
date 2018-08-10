@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="resources.finstandard.data.pub">
+	<class name="DepositBalance" table="DEPB">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id>
+			<!-- 数据日期 -->
+			<key-property name="sjrq" column="SJRQ" type="date"
+				length="10" />
+			<!-- 账号代码 -->
+			<key-property name="ckzhdm" column="CKZHDM" type="string"
+				length="60" />
+		</composite-id>
+		<!-- 金融机构编码 -->
+		<property name="jrjgbm" column="JRJGBM" type="string"
+			not-null="true" length="14" />
+		<!-- 客户类型 -->
+		<property name="khlx" column="KHLX" type="string" not-null="true"
+			length="1" />
+		<!-- 协议代码 -->
+		<property name="ckxydm" column="CKXYDM" type="string"
+			not-null="true" length="60" />
+		<!-- 产品类型 -->
+		<property name="cplb" column="CPLB" type="string" not-null="true"
+			length="6" />
+		<!-- 协议起始日 -->
+		<property name="ckxyqsrq" column="CKXYQSRQ" type="date"
+			length="10" />
+		<!-- 协议到期日 -->
+		<property name="ckxydqrq" column="CKXYDQRQ" type="date"
+			length="10" />
+		<!-- 存款币种 -->
+		<property name="ckbz" column="CKBZ" type="string" not-null="true"
+			length="3" />
+		<!-- 存款余额 -->
+		<property name="ckye" column="CKYE" type="big_decimal"
+			not-null="true" length="17" />
+		<!-- 利率是否固定 -->
+		<property name="llsfgd" column="LLSFGD" type="string"
+			not-null="true" length="4" />
+		<!-- 利率水平 -->
+		<property name="llsp" column="LLSP" type="big_decimal"
+			not-null="true" length="13" />
+	</class>
+</hibernate-mapping>
