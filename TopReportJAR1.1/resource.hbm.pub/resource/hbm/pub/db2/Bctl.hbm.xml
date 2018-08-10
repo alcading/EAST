@@ -229,6 +229,13 @@
 			not-null="false"
 			length="1"
 		/>
-
+		<!-- 
+		<property
+			name="jrjgbm"
+			column="JRJGBM"
+			type="string"
+			not-null="false"
+			length="14"
+		/> -->
 	</class>
 </hibernate-mapping>

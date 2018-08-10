@@ -4,6 +4,5 @@
 	<!-- 金融统计标准化 服务类 -->
 	<bean id="LoanAmountService" class="resources.finstandard.data.service.LoanAmountService" />
 	<bean id="LoanBalanceService" class="resources.finstandard.data.service.LoanBalanceService" />
-	<bean id="DepositBalanceService"
-		class="resources.finstandard.data.service.DepositBalanceService" />
+	<bean id="DepositBalanceService" class="resources.finstandard.data.service.DepositBalanceService" />
 </beans>

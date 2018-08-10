@@ -19,5 +19,9 @@
 </@CommonQueryMacro.CommonQuery>
 
 <script language="JavaScript">
+	function btCancel_onClick(button) {
+		var sjrq = LoanAmountDtl_dataset.getValue("sjrq").format("yyyyMMdd");
+		window.location.href="${contextPath}/fpages/finstandard/ftl/LoanAmountEntry.ftl?sjrq="+sjrq;
+	}
 </script>
 </@CommonQueryMacro.page>

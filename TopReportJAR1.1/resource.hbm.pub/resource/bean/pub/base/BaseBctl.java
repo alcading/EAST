@@ -49,6 +49,7 @@ public abstract class BaseBctl  implements Serializable {
 	public static String PROP_ST = "st";
 	public static String PROP_LOCK = "lock";
 	public static String PROP_DEL ="del";
+	public static String PROP_JRJGBM = "jrjgbm";
 
 	// constructors
 	public BaseBctl () {
@@ -118,6 +119,7 @@ public abstract class BaseBctl  implements Serializable {
 	private boolean lock;
 	private java.lang.String st;
 	private boolean del;
+	private java.lang.String jrjgbm;
 
 
 	public boolean isLock() {
@@ -674,8 +676,13 @@ public abstract class BaseBctl  implements Serializable {
 		this.expireDate = expireDate;
 	}
 
+	public java.lang.String getJrjgbm() {
+		return jrjgbm;
+	}
 
-
+	public void setJrjgbm(java.lang.String jrjgbm) {
+		this.jrjgbm = jrjgbm;
+	}
 
 	public boolean equals (Object obj) {
 		if (null == obj) return false;

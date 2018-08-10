@@ -63,12 +63,19 @@
 	</Where>
 
 	<Operations>
-		<Button id="btQueryVerify" name="btQueryVerify" desc="修改"
+		<!-- <Button id="btQueryVerify" name="btQueryVerify" desc="修改"
 			operation="asysubmit" updateClass="resources.finstandard.data.update.DepositBalanceUpdateMod"
 			url="/fpages/finstandard/ftl/DepositBalanceEntry.ftl" icon="icon-save" />
 
 		<Button id="btCancel" name="btCancel" desc="返回" operation="submitform"
-			url="/fpages/finstandard/ftl/DepositBalanceEntry.ftl" txn="" icon="icon-back" />
+			url="/fpages/finstandard/ftl/DepositBalanceEntry.ftl" txn="" icon="icon-back" /> -->
+			
+		<Button id="btQueryVerify" name="btQueryVerify" desc="修改"
+			operation="asysubmit" updateClass="resources.finstandard.data.update.DepositBalanceUpdateMod"
+			url="#" icon="icon-save" />
+			
+		<Button id="btCancel" name="btCancel" desc="返回" operation=""
+			url="#" txn="" icon="icon-back" />	
 	</Operations>
 	<Script></Script>
 </CommQry>

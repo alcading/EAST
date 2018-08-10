@@ -69,8 +69,14 @@
 
     //保存后刷新当前页
     function btQueryVerify_postSubmit(button) {
+    	var sjrq = DepositBalanceEdit_dataset.getValue("sjrq").format("yyyyMMdd");
+		window.location.href="${contextPath}/fpages/finstandard/ftl/DepositBalanceEntry.ftl?sjrq="+sjrq;
     	alert("记录修改成功！");
     }
 
+	function btCancel_onClick(button) {
+		var sjrq = DepositBalanceEdit_dataset.getValue("sjrq").format("yyyyMMdd");
+		window.location.href="${contextPath}/fpages/finstandard/ftl/DepositBalanceEntry.ftl?sjrq="+sjrq;
+	}
 </script>
 </@CommonQueryMacro.page>

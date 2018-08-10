@@ -36,7 +36,8 @@
 			classpath:com/huateng/report/jsh/collection/services.xml,
 			classpath:com/huateng/report/jsh/audit/services.xml,
 			classpath:com/huateng/report/jsh/dataquery/services.xml,
-			classpath:com/huateng/report/east/services.xml
+			classpath:com/huateng/report/east/services.xml,
+			classpath:com/cibfintech/report/finstandard/services.xml
 		</param-value>
 	</context-param>
 	<!--
@@ -257,7 +258,8 @@
 				/WEB-INF/query/meta/jshDataqueryMeta.xml,
 				/WEB-INF/query/meta/anzMeta.xml,
 				/WEB-INF/query/meta/DataManage.xml,
-				/WEB-INF/query/meta/eastMeta.xml
+				/WEB-INF/query/meta/eastMeta.xml,
+				/WEB-INF/query/meta/finStandardMeta.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>2</load-on-startup>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry title="DepositBalanceEntry.title" navigate="金融标准化  &gt; 下载报文"
+	type="call" interface="false" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do" txnlogflag="true" >
+	<Include id="BankParam" />
+	<Where>
+		<DateTextBox id="sjrq" desc="数据日期" edittype="text"
+			datatype="date" size="30" require="true" index="0" />
+	</Where>
+	<Operations>
+		<Button id="btLoad" name="btLoad" desc="下载" 
+			operation="asysubmit" url="#" updateClass="resources.finstandard.data.update.JBFileDownload" txn=""  icon="icon-print"/>
+	</Operations>
+</CommQry>

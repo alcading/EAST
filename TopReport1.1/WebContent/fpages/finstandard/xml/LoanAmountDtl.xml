@@ -92,8 +92,11 @@
 	</Where>
 
 	<Operations>
-		<Button id="btCancel" name="btCancel" desc="返回" operation="submitform"
-			url="/fpages/finstandard/ftl/LoanAmountEntry.ftl" txn="" icon="icon-back" />
+		<!-- <Button id="btCancel" name="btCancel" desc="返回" operation="submitform"
+			url="/fpages/finstandard/ftl/LoanAmountEntry.ftl" txn="" icon="icon-back" /> -->
+		
+		<Button id="btCancel" name="btCancel" desc="返回" operation=""
+			url="#" txn="" icon="icon-back" />
 	</Operations>
 	<Script></Script>
 </CommQry>

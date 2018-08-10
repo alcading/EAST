@@ -103,8 +103,14 @@
 
     //保存后刷新当前页
     function btQueryVerify_postSubmit(button) {
+    	var sjrq = LoanBalanceEdit_dataset.getValue("sjrq").format("yyyyMMdd");
+		window.location.href="${contextPath}/fpages/finstandard/ftl/LoanBalanceEntry.ftl?sjrq="+sjrq;
     	alert("记录修改成功！");
     }
 
+	function btCancel_onClick(button) {
+		var sjrq = LoanBalanceEdit_dataset.getValue("sjrq").format("yyyyMMdd");
+		window.location.href="${contextPath}/fpages/finstandard/ftl/LoanBalanceEntry.ftl?sjrq="+sjrq;
+	}
 </script>
 </@CommonQueryMacro.page>

@@ -10,8 +10,8 @@
 	getterclassname="resources.finstandard.data.getter.DepositBalanceGetter">
 	<Include id="BankParam" />
 
-	<PageQryExp type="XLS" limit="true" encoding="UTF-8"
-		url="/trans/qryExp.do" desc="批量下载存款余额信息" />
+	<!-- <PageQryExp type="XLS" limit="true" encoding="UTF-8"
+		url="/trans/qryExp.do" desc="批量下载存款余额信息" /> -->
 	<Fields>
 		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
 		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->
@@ -76,11 +76,11 @@
 
 	<Operations>
 		<Button id="btMod" name="btMod" desc="finStandard.button.btMod"
-			operation="syncsubmit" url="/fpages/finstandard/ftl/DepositBalanceMng.ftl"
-			txn="" />
+			operation="syncsubmit" url="/fpages/finstandard/ftl/DepositBalanceMng.ftl" txn="" />
 		<Button id="btDtl" name="btDtl" desc="finStandard.button.btDtl"
-			operation="syncsubmit" url="/fpages/finstandard/ftl/DepositBalanceDtl.ftl"
-			txn="" />
+			operation="syncsubmit" url="/fpages/finstandard/ftl/DepositBalanceDtl.ftl" txn="" />
+		<!-- <Button id="btExp" name="btExp" desc="导出报文" 
+			operation="asysubmit" url="#" updateClass="resources.finstandard.data.update.DepositBalanceExp" txn=""  icon="icon-remove"/> -->
 	</Operations>
 	<Script></Script>
 </CommQry>

@@ -19,8 +19,9 @@
 </@CommonQueryMacro.CommonQuery>
 
 <script language="JavaScript">
-    function btCancel_onClick() {
-		closeWin();
+    function btCancel_onClick(button) {
+		var sjrq = DepositBalanceDtl_dataset.getValue("sjrq").format("yyyyMMdd");
+		window.location.href="${contextPath}/fpages/finstandard/ftl/DepositBalanceEntry.ftl?sjrq="+sjrq;
 	}
 </script>
 </@CommonQueryMacro.page>

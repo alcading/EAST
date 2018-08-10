@@ -132,5 +132,7 @@
     <Query id="BOPLiabilityBalanceInfoAudit" path="/fpages/dataaudit/xml/BOPLiabilityBalanceInfoAudit.xml" />
     <!--  对外担保 审核责任余额信息 -->
     <Query id="BOPGuperInfoAudit" path="/fpages/dataaudit/xml/BOPGuperInfoAudit.xml" />
+    
+    <Query id="JBFileDownload" path="/fpages/finstandard/xml/JBFileDownload.xml" />
 
 </META>

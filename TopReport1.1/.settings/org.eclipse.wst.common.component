@@ -61,6 +61,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/topbpm.flow"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/fp.management"/>
 <wb-resource deploy-path="/WEB-INF/classes" source-path="/report.anz"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/report.finstandard"/>
         <dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/TopReportBatch/lib/batchcore.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>

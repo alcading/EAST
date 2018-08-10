@@ -1,6 +1,8 @@
 package resources.finstandard.data.getter;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
@@ -11,7 +13,6 @@ import com.huateng.commquery.result.Result;
 import com.huateng.commquery.result.ResultMng;
 import com.huateng.ebank.business.common.PageQueryResult;
 import com.huateng.ebank.framework.exceptions.CommonException;
-import com.huateng.ebank.framework.util.DateUtil;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
@@ -45,6 +46,7 @@ public class DepositBalanceGetter extends BaseGetter {
 	}
 
 	private PageQueryResult getData() throws CommonException, ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		Map paramsMap = this.getCommQueryServletRequest().getParameterMap();
 		int pageSize = this.getResult().getPage().getEveryPage();
 		int pageIndex = this.getResult().getPage().getCurrentPage();
@@ -55,6 +57,8 @@ public class DepositBalanceGetter extends BaseGetter {
 		StringBuffer hql=new StringBuffer(" from DepositBalance la where 1=1");
 		if (StringUtils.isNotBlank(sjrq)) {
 			hql.append(" and la.sjrq=to_date('"+sjrq+"','yyyy-mm-dd')");
+		} else {
+			hql.append(" and la.sjrq=to_date('"+sdf.format(new Date())+"','yyyy-mm-dd')");
 		}
 		if (StringUtils.isNotBlank(jrjgbm)) {
 			hql.append(" and la.jrjgbm= '"+jrjgbm+"'");
