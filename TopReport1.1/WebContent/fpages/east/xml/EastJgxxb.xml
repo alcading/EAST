@@ -32,7 +32,7 @@
 		<Field id="jglb" desc="机构类别" status="F"  edittype="text"  datatype="string" size="30" xpath="/jglb" />
 		<Field id="yzbm" desc="邮政编码" status="F"  edittype="text"  datatype="string" size="6" xpath="/yzbm" />
 		<Field id="wdh" desc="网点号" status="F"  edittype="text"  datatype="string" size="30" xpath="/wdh" />
-		<Field id="yyzt" desc="营业状态" status="F"  edittype="text"  datatype="string" size="9" xpath="/yyzt" />
+		<Field id="yyzt" desc="营业状态" status="F"  edittype="select" translated="DATA_DIC.20033"  datatype="string" size="9" xpath="/yyzt" />
 		<Field id="clsj" desc="成立时间" status="F"  edittype="text"  datatype="string" size="8" xpath="/clsj" />
 		<Field id="jggzkssj" desc="机构工作开始时间" status="F"  edittype="text"  datatype="string" size="6" xpath="/jggzkssj" />
 		<Field id="jggzzzsj" desc="机构工作终止时间" status="F" edittype="text"  datatype="string" size="6" xpath="/jggzzzsj" />

@@ -146,5 +146,32 @@
 	
 	<!-- east 理财产品信息表-->
 	<Query id="EastLccpxxb" path="/fpages/east/xml/EastLccpxxb.xml" desc="理财产品信息表" />
+	
+	<!-- east 信贷资产转让-->
+	<Query id="EastXdzczr" path="/fpages/east/xml/EastXdzczr.xml" desc="信贷资产转让" />
+	
+	<!-- east 资产转让关系表-->
+	<Query id="EastZczrgxb" path="/fpages/east/xml/EastZczrgxb.xml" desc="资产转让关系表" />
+	
+	<!-- east 贷款五级形态变动-->
+	<Query id="EastDkwjxtbd" path="/fpages/east/xml/EastDkwjxtbd.xml" desc="贷款五级形态变动" />
+	
+	<!-- east 资产负债科目统计表-->
+	<Query id="EastZcfzkmtjb" path="/fpages/east/xml/EastZcfzkmtjb.xml" desc="资产负债科目统计表" />
+	
+	<!-- east 交易流水信息-->
+	<Query id="EastJyls" path="/fpages/east/xml/EastJyls.xml" desc="交易流水信息" />
+	
+	<!-- east 涉农统计表-->
+	<Query id="EastSntjb" path="/fpages/east/xml/EastSntjb.xml" desc="涉农统计表" />
+	
+	<!-- east 资金交易信息表-->
+	<Query id="EastZjjyxxb" path="/fpages/east/xml/EastZjjyxxb.xml" desc="资金交易信息表" />
+	
+	<!-- east 金融工具信息表-->
+	<Query id="EastJrgjxxb" path="/fpages/east/xml/EastJrgjxxb.xml" desc="金融工具信息表" />
+	
+	<!-- east 汇率信息表-->
+	<Query id="EastHlxxb" path="/fpages/east/xml/EastHlxxb.xml" desc="汇率信息表" />
 
 </META>

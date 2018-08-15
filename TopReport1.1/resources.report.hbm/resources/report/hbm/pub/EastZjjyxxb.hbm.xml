@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+  <class
+		name="EastZjjyxxb"
+		table="EAST_Zjjyxxb"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastZjjyxxbPK">
+			<key-property name="jybh" column="JYBH" type="string" />
+			<key-property name="jrgjbh" column="JRGJBH" type="string" />
+			<key-property name="cjrq" column="CJRQ" type="string" />
+		</composite-id>
+		
+		<property name="yxjgdm" column="YXJGDM" type="string" length="30" />
+		<property name="jrxkzh" column="JRXKZH" type="string" length="30" />
+		<property name="nbjgh" column="NBJGH" type="string" length="30" />
+		<property name="mxkmbh" column="MXKMBH" type="string" length="60" />
+		<property name="yxjgmc" column="YXJGMC" type="string" length="200" />
+		<property name="mxkmmc" column="MXKMMC" type="string" length="300" />
+		<property name="lccpdjbm" column="LCCPDJBM" type="string" length="30" />
+		<property name="jylx" column="JYLX" type="string" length="6" />
+		<property name="jyzl" column="JYZL" type="string" length="60" />
+		<property name="jyzhlx" column="JYZHLX" type="string" length="12" />
+		<property name="hth" column="HTH" type="string" length="100" />
+		<property name="htje" column="HTJE" type="big_decimal" length="20" />
+		<property name="bz" column="BZ" type="string" length="3" />
+		<property name="jczckhmc" column="JCZCKHMC" type="string" length="200" />
+		<property name="jczcsshy" column="JCZCSSHY" type="string" length="100" />
+		<property name="jczcsfwbhkh" column="JCZCSFWBHKH" type="string" length="4" />
+		<property name="jczczxfs" column="JCZCZXFS" type="string" length="30" />
+		<property name="jczczxr" column="JCZCZXR" type="string" length="200" />
+		<property name="jygy" column="JYGY" type="string" length="100" />
+		<property name="spr" column="SPR" type="string" length="100" />
+		<property name="jydsdm" column="JYDSDM" type="string" length="60" />
+		<property name="jydsmc" column="JYDSMC" type="string" length="200" />
+		<property name="jyrq" column="JYRQ" type="string" length="8" />
+		<property name="qsrq" column="QSRQ" type="string" length="8" />
+		<property name="dqrq" column="DQRQ" type="string" length="8" />
+		<property name="mmbz" column="MMBZ" type="string" length="6" />
+		<property name="jyqbz" column="JYQBZ" type="string" length="6" />
+		<property name="mrbz" column="MRBZ" type="string" length="3" />
+		<property name="mrje" column="MRJE" type="big_decimal" length="20" />
+		<property name="mcbz" column="MCBZ" type="string" length="3" />
+		<property name="mcje" column="MCJE" type="big_decimal" length="20" />
+		<property name="cjjg" column="CJJG" type="string" length="100" />
+		<property name="ywzt" column="YWZT" type="string" length="20" />
+		<property name="fhrq" column="FHRQ" type="string" length="8" />
+		<property name="qxrq" column="QXRQ" type="string" length="8" />
+		<property name="sjjgrq" column="SJJGRQ" type="string" length="8" />
+		<property name="qsbz" column="QSBZ" type="string" length="4" />
+		<property name="jfzh" column="JFZH" type="string" length="60" />
+		<property name="dfzh" column="DFZH" type="string" length="60" />
+		<property name="jfje" column="JFJE" type="big_decimal" length="20" />
+		<property name="dfje" column="DFJE" type="big_decimal" length="20" />
+		<property name="jfbz" column="JFBZ" type="string" length="3" />
+		<property name="dfbz" column="DFBZ" type="string" length="3" />
+		<property name="jfll" column="JFLL" type="big_decimal" length="10" />
+		<property name="dfll" column="DFLL" type="big_decimal" length="10" />
+		<property name="bzjjybz" column="BZJJYBZ" type="string" length="4" />
+		<property name="glbzjzh" column="GLBZJZH" type="string" length="60" />
+		<property name="glywbh" column="GLYWBH" type="string" length="40" />
+		<property name="wbglxtmc" column="WBGLXTMC" type="string" length="100" />
+	</class>	
+</hibernate-mapping>

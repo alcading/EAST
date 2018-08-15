@@ -18,8 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-import com.huateng.ebank.framework.exceptions.CommonException;
-import com.huateng.ebank.framework.util.ExceptionUtil;
 import com.huateng.report.imports.common.Constants;
 import com.huateng.report.utils.ReportUtils;
 
@@ -59,6 +57,7 @@ public class JBFileDownload extends HttpServlet {
 			FileToZip.fileToZip(sourceFilePath, zipFilePath, fileName); 
 			inStream = new FileInputStream(zipFilePath+fileName + ".zip");
 			fileName = fileName+".zip";
+			deleteServerFile(filePath,fileName);
 			setResponse(fileName);
 			download();
 			logger.info("~~~~~DepositBalanceLoad end~~~");
@@ -66,6 +65,16 @@ public class JBFileDownload extends HttpServlet {
 			logger.error("DepositBalanceLoad error", e);
 			response.setContentType("text/html; charset=utf-8");
 			response.getWriter().write("<script type='text/javascript'>alert('当前日期数据文件还未生成！');</script>");
+		}
+	}
+
+	/**
+	 * 删除服务上的文件
+	 */
+	public static void deleteServerFile(String filePath, String fileName){
+		File file = new File(filePath + fileName);
+		if (file.exists() && file.isFile()){
+			file.delete();
 		}
 	}
 	

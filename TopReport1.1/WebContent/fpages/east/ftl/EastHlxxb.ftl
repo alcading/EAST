@@ -1,0 +1,182 @@
+<#import "/templets/commonQuery/CommonQueryTagMacro.ftl" as CommonQueryMacro>
+<#assign bean=JspTaglibs["/WEB-INF/struts-bean.tld"] />
+<@CommonQueryMacro.page title="汇率信息表">
+<table align="left"><tr><td>
+<@CommonQueryMacro.CommonQuery id="EastHlxxb" init="true" submitMode="current">
+<table width="1300px">
+	<tr>
+		<td colspan="2" valign="top">
+			<@CommonQueryMacro.Interface id="interface" label="汇率信息表" />
+		</td>
+	</tr>
+	<tr>
+		<td><@CommonQueryMacro.PagePilot id="pagePilot1" maxpagelink="15" showArrow="true" pageCache="false"/></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<@CommonQueryMacro.DataTable id="datatable1"  fieldStr="yxjgdm[100],nbjgh[90],wb[50],bb[50],zjj[70],jzj[70],hlrq[100],operation[100]"  width="100%" hasFrame="true"/>
+		</td>
+	</tr>
+	<tr>
+      	<td colspan="2">
+      		<@CommonQueryMacro.FloatWindow id="signWindow" label="" width="900px" height="480px" resize="true" defaultZoom="normal" minimize="false" maximize="false" closure="true" float="true" exclusive="true" position="center" show="false" >
+      			<div align="center">
+      				<@CommonQueryMacro.Group id="group1" label=""
+        			  fieldStr="yxjgdm,jrxkzh,nbjgh,yxjgmc,wb,bb,zjj,jzj,hlrq,cjrq" colNm=4/>
+        			<br/>
+        			<@CommonQueryMacro.Button id="btModOrAdd" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<@CommonQueryMacro.Button id="btCancel" />
+      			</div>
+     		</@CommonQueryMacro.FloatWindow>	
+  		</td>
+  	</tr>
+	<tr style="display:none">
+		<td><@CommonQueryMacro.Button id="btDel" /></td>
+	</tr>
+</table>
+</@CommonQueryMacro.CommonQuery>
+</td></tr>
+</table>
+<script language="JavaScript">
+
+//给查询条件中的默认值为当前月的上一个月的最后一天
+window.onload=function(){
+	var date = new Date();
+    var day = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+	var enddate = new Date(new Date().getFullYear(), new Date().getMonth()-1, day);
+    EastHlxxb_interface_dataset.setValue("cjrq", enddate);
+}
+
+	//定位一行记录
+	function locate(id) {
+		var record = EastHlxxb_dataset.find(["id"],[id]);
+		if(record) {
+			EastHlxxb_dataset.setRecord(record);
+		}
+	}
+	//系统刷新单元格
+	function datatable1_operation_onRefresh(cell,value,record) {
+		if(record) {
+			var id = record.getValue("id");
+			
+			if( !(''==id || null == id))
+			{
+				cell.innerHTML="<center><a href=\"JavaScript:openModifyWindow('"+id+"',1)\"><@bean.message key='修改'/></a> &nbsp; </center>";
+			}
+			
+		}else {
+			cell.innerHTML="&nbsp;";
+		}
+	}
+	function btAdd_onClick(button) {
+			btNewClick();
+	}
+	//取消功能
+	function btCancel_onClickCheck(button) {
+		//关闭浮动窗口
+		subwindow_signWindow.close();
+	}
+	//关浮动窗口,释放dataset
+	function signWindow_floatWindow_beforeClose(subwindow) {
+		EastHlxxb_dataset.cancelRecord();
+		return true;
+	}
+	function signWindow_floatWindow_beforeHide(subwindow) {
+		return signWindow_floatWindow_beforeClose(subwindow);
+	}
+	
+	//新增功能
+	function btNewClick() {
+		EastHlxxb_dataset.setFieldReadOnly("yxjgdm",false);
+		EastHlxxb_dataset.setFieldReadOnly("jrxkzh",false);
+		EastHlxxb_dataset.setFieldReadOnly("nbjgh",false);
+		EastHlxxb_dataset.setFieldReadOnly("yxjgmc",false);
+		EastHlxxb_dataset.setFieldReadOnly("wb",false);
+		EastHlxxb_dataset.setFieldReadOnly("bb",false);
+		EastHlxxb_dataset.setFieldReadOnly("zjj",false);
+		EastHlxxb_dataset.setFieldReadOnly("jzj",false);
+		EastHlxxb_dataset.setFieldReadOnly("hlrq",false);
+		EastHlxxb_dataset.setFieldReadOnly("cjrq",false);
+		$("#btModOrAdd").get(0).style.display="";
+		EastHlxxb_dataset.insertRecord("end");
+		subwindow_signWindow.show();
+	}
+	
+	/**
+	//展示对比功能的js
+	function datatable1_id_onRefresh(cell, value, record){
+		if(record!=null){
+			var id=record.getValue("id");
+			cell.innerHTML = "<a href=\"Javascript:openModifyWindow('"+id+"',2)\">"+id+"</a>";
+		} else {
+			cell.innerHTML = ""
+		}
+	}
+    **/
+
+	//修改功能
+	function openModifyWindow(id,flag) {
+		locate(id);
+		if(flag==1){
+			EastHlxxb_dataset.setFieldReadOnly("yxjgdm",false);
+			EastHlxxb_dataset.setFieldReadOnly("jrxkzh",false);
+			EastHlxxb_dataset.setFieldReadOnly("nbjgh",false);
+			EastHlxxb_dataset.setFieldReadOnly("yxjgmc",false);
+			EastHlxxb_dataset.setFieldReadOnly("wb",true);
+			EastHlxxb_dataset.setFieldReadOnly("bb",true);
+			EastHlxxb_dataset.setFieldReadOnly("zjj",false);
+			EastHlxxb_dataset.setFieldReadOnly("jzj",false);
+			EastHlxxb_dataset.setFieldReadOnly("hlrq",true);
+			EastHlxxb_dataset.setFieldReadOnly("cjrq",true);
+			$("#btModOrAdd").get(0).style.display="";
+		}
+		if(flag==2){
+			EastHlxxb_dataset.setFieldReadOnly("yxjgdm",true);
+			EastHlxxb_dataset.setFieldReadOnly("jrxkzh",true);
+			EastHlxxb_dataset.setFieldReadOnly("nbjgh",true);
+			EastHlxxb_dataset.setFieldReadOnly("yxjgmc",true);
+			EastHlxxb_dataset.setFieldReadOnly("wb",true);
+			EastHlxxb_dataset.setFieldReadOnly("bb",true);
+			EastHlxxb_dataset.setFieldReadOnly("zjj",true);
+			EastHlxxb_dataset.setFieldReadOnly("jzj",true);
+			EastHlxxb_dataset.setFieldReadOnly("hlrq",true);
+			EastHlxxb_dataset.setFieldReadOnly("cjrq",true);
+			$("#btModOrAdd").get(0).style.display="none";
+		}
+		subwindow_signWindow.show();	
+	}
+	
+	function doDel(id) {
+		locate(id);
+		btDel.click();
+	}
+	
+	function btDel_onClickCheck(button) {
+		return confirm("确认删除该条记录？");
+	}
+	function btDel_postSubmit(button) {
+		
+		button.url="#";
+		//刷新当前页
+		flushCurrentPage();
+	}
+	function btModOrAdd_onClickCheck(button) {
+		var id = EastHlxxb_dataset.getValue("id");
+		if(id == null || "" == id ) {
+			alert("字段[内部机构号]不能为空");
+			return false;
+		}
+		return true;
+	}
+	//保存后刷新当前页
+	function btModOrAdd_postSubmit(button) {
+		button.url="#";
+		subwindow_signWindow.close();
+		flushCurrentPage();
+	}
+	//刷新当前页
+	function flushCurrentPage() {
+		EastHlxxb_dataset.flushData(EastHlxxb_dataset.pageIndex);
+	}
+</script>
+</@CommonQueryMacro.page>

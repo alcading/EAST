@@ -14,10 +14,10 @@ import com.huateng.ebank.framework.report.common.ReportConstant;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
-import resources.east.data.service.EastDkzqService;
+import resources.east.data.service.EastXdzczrService;
 
 @SuppressWarnings("unchecked")
-public class EastDkzqGetter extends BaseGetter {
+public class EastXdzczrGetter extends BaseGetter {
 	/*
 	 * 获取列表
 	 * 
@@ -27,7 +27,7 @@ public class EastDkzqGetter extends BaseGetter {
 	public Result call() throws AppException {
 		try {
 
-			this.setValue2DataBus(ReportConstant.QUERY_LOG_BUSI_NAME, "贷款展期");
+			this.setValue2DataBus(ReportConstant.QUERY_LOG_BUSI_NAME, "信贷资产转让");
 
 			PageQueryResult pageResult = getData();
 			ResultMng.fillResultByList(getCommonQueryBean(), getCommQueryServletRequest(), pageResult.getQueryResult(),
@@ -61,7 +61,7 @@ public class EastDkzqGetter extends BaseGetter {
 		
 		StringBuffer hql = new StringBuffer();
 		
-		hql.append("from EastDkzq A where 1 = 1 ");
+		hql.append("from EastXdzczr A where 1 = 1 ");
 		
 		if(StringUtils.isNotBlank(yxjgdm)){
 			hql.append(" and A.yxjgdm = '"+yxjgdm.trim()+"' ");
@@ -71,7 +71,7 @@ public class EastDkzqGetter extends BaseGetter {
 		}else {
 			hql.append(" and 1 = 0 ");
 		}
-		PageQueryResult pqr = EastDkzqService.getInstance().pageQueryByHql(pageIndex, pageSize, hql.toString());
+		PageQueryResult pqr = EastXdzczrService.getInstance().pageQueryByHql(pageIndex, pageSize, hql.toString());
 		return pqr;
 	}
 }

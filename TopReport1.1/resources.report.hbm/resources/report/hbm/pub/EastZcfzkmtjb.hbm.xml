@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+  <class
+		name="EastZcfzkmtjb"
+		table="EAST_Zcfzkmtjb"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastZcfzkmtjbPK">
+			<key-property name="nbjgh" column="NBJGH" type="string" />
+			<key-property name="tjkmbh" column="TJKMBH" type="string" />
+			<key-property name="qxlx" column="QXLX" type="string" />
+			<key-property name="tjrq" column="TJRQ" type="string" />
+			<key-property name="bz" column="BZ" type="string" />
+			<key-property name="cjrq" column="CJRQ" type="string" />
+		</composite-id>
+		
+		<property name="jrjgdm" column="JRJGDM" type="string" length="30" />
+		<property name="jrxkzh" column="JRXKZH" type="string" length="30" />
+		<property name="tjkmmc" column="TJKMMC" type="string" length="120" />
+		<property name="tjkmje" column="TJKMJE" type="big_decimal" length="20" />
+		<property name="dqmc" column="DQMC" type="string" length="60" />
+		<property name="xzqhdm" column="XZQHDM" type="string" length="20" />
+	</class>	
+</hibernate-mapping>

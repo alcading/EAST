@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.east.data.pub">
+	<class name="EastDkwjxtbd" table="EAST_Dkwjxtbd">
+		<meta attribute="sync-DAO">false</meta>
+		<composite-id name="id" class="EastDkwjxtbdPK">
+			<key-property name="tzrq" column="TZRQ" type="string" />
+			<key-property name="xdjjh" column="XDJJH" type="string" />
+			<key-property name="cjrq" column="CJRQ" type="string" />
+		</composite-id>
+		<property name="xdhth" column="XDHTH" type="string" length="100" />
+		<property name="khtybh" column="KHTYBH" type="string" length="60" />
+		<property name="yxjgdm" column="YXJGDM" type="string" length="30" />
+		<property name="jrxkzh" column="JRXKZH" type="string" length="30" />
+		<property name="nbjgh" column="NBJGH" type="string" length="30" />
+		<property name="yxjgmc" column="YXJGMC" type="string" length="200" />
+		<property name="ymxkmbh" column="YMXKMBH" type="string" length="60" />
+		<property name="ymxkmmc" column="YMXKMMC" type="string" length="300" />
+		<property name="ywjxt" column="YWJXT" type="string" length="6" />
+		<property name="xmxkmbh" column="XMXKMBH" type="string" length="60" />
+		<property name="xmxkmmc" column="XMXKMMC" type="string" length="300" />
+		<property name="xwjxt" column="XWJXT" type="string" length="6" />
+		<property name="bz" column="BZ" type="string" length="3" />
+		<property name="zrje" column="ZRJE" type="big_decimal" length="24" />
+		<property name="zcje" column="ZCJE" type="big_decimal" length="24" />
+		<property name="khmc" column="KHMC" type="string" length="200" />
+		<property name="jbgyh" column="JBGYH" type="string" length="30" />
+		<property name="tzgyh" column="TZGYH" type="string" length="30" />
+		<property name="sqgyh" column="SQGYH" type="string" length="30" />
+		<property name="spgyh" column="SPGYH" type="string" length="30" />
+		<property name="bdyy" column="BDYY" type="string" length="60" />
+		<property name="bdfs" column="BDFS" type="string" length="30" />
+	</class>
+</hibernate-mapping>
