@@ -26,44 +26,44 @@
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
 		<Field id="id" desc="工号" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="khtybh" desc="客户统一编号" edittype="text" status="F" datatype="string" size="60" xpath="/id/khtybh"></Field>
-        <Field id="zjhm" desc="证件号码" edittype="text" status="F" datatype="string" size="60" xpath="/zjhm"></Field>	
-	    <Field id="yxjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
-	    <Field id="jrxkzh" desc="金融许可证号" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
-		<Field id="nbjgh" desc="内部机构号" status="F"  edittype="text"  datatype="string" size="300" xpath="/nbjgh"></Field>
-		<Field id="lyxt" desc="来源系统" status="F"  edittype="text"  datatype="string" size="100" xpath="/lyxt" />
-		<Field id="khxm" desc="客户姓名" status="F"  edittype="text"  datatype="string" size="100" xpath="/khxm" />
+		<Field id="khtybh" desc="客户统一编号" require="true"  edittype="text" status="F" datatype="string" size="60" xpath="/id/khtybh"></Field>
+        <Field id="zjhm" desc="证件号码"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/zjhm"></Field>	
+	    <Field id="yxjgdm" desc="银行机构代码" require="true"  edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
+	    <Field id="jrxkzh" desc="金融许可证号" require="true"  status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
+		<Field id="nbjgh" desc="内部机构号" require="true"  status="F"  edittype="text"  datatype="string" size="300" xpath="/nbjgh"></Field>
+		<Field id="lyxt" desc="来源系统"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/lyxt" />
+		<Field id="khxm" desc="客户姓名"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/khxm" />
 		<Field id="khywxm" desc="客户英文姓名" status="F"  edittype="text"  datatype="string" size="200" xpath="/khywxm" />
-		<Field id="zjlb" desc="证件类别" status="F"  edittype="text"  datatype="string" size="60" xpath="/zjlb" />
-		<Field id="gj" desc="国籍" status="F"  edittype="text"  datatype="string" size="60" xpath="/gj" />
-		<Field id="mz" desc="民族" status="F"  edittype="text"  datatype="string" size="30" xpath="/mz" />
-		<Field id="xb" desc="性别" status="F"  edittype="text"  datatype="string" size="10" xpath="/xb" />
-		<Field id="xl" desc="学历" status="F" edittype="text"  datatype="string" size="30" xpath="/xl" />
+		<Field id="zjlb" desc="证件类别"  require="true" status="F"  edittype="select" translated="DATA_DIC.20041"  datatype="string" size="60" xpath="/zjlb" />
+		<Field id="gj" desc="国籍" require="true"  status="F"  edittype="text"  datatype="string" size="60" xpath="/gj" />
+		<Field id="mz" desc="民族"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/mz" />
+		<Field id="xb" desc="性别" require="true"  status="F"  edittype="text"  datatype="string" size="10" xpath="/xb" />
+		<Field id="xl" desc="学历"  require="true" status="F" edittype="text"  datatype="string" size="30" xpath="/xl" />
 		<Field id="csrq" desc="出生日期" status="F" edittype="text"  datatype="string" size="8" xpath="/csrq" />
-		<Field id="gzdwmc" desc="工作单位名称" status="F" edittype="text"  datatype="string" size="200" xpath="/gzdwmc" />
-		<Field id="gzdwdz" desc="工作单位地址" status="F" edittype="text"  datatype="string" size="400" xpath="/gzdwdz" />
+		<Field id="gzdwmc" desc="工作单位名称"  require="true" status="F" edittype="text"  datatype="string" size="200" xpath="/gzdwmc" />
+		<Field id="gzdwdz" desc="工作单位地址"  require="true" status="F" edittype="text"  datatype="string" size="400" xpath="/gzdwdz" />
 		<Field id="gzdwdh" desc="工作单位电话" status="F" edittype="text"  datatype="string" size="30" xpath="/gzdwdh" />
-		<Field id="zy" desc="职业" status="F" edittype="text"  datatype="string" size="80" xpath="/zy" />
+		<Field id="zy" desc="职业"  require="true" status="F" edittype="text"  datatype="string" size="80" xpath="/zy" />
 		<Field id="jtzz" desc="家庭住址" status="F" edittype="text"  datatype="string" size="400" xpath="/jtzz" />
 		<Field id="txdz" desc="通讯地址" status="F" edittype="text"  datatype="string" size="400" xpath="/txdz" />
 		<Field id="jtdh" desc="家庭电话" status="F" edittype="text"  datatype="string" size="30" xpath="/jtdh" />
 		<Field id="yddh" desc="移动电话" status="F" edittype="text"  datatype="string" size="30" xpath="/yddh" />
-		<Field id="grysr" desc="个人月收入" status="F" edittype="text"  datatype="big_decimal" size="20" xpath="/grysr" />
-		<Field id="jtysr" desc="家庭月收入" status="F" edittype="text"  datatype="big_decimal" size="20" xpath="/jtysr" />
-		<Field id="hyqk" desc="婚姻情况" status="F" edittype="text"  datatype="string" size="30" xpath="/hyqk" />
-		<Field id="poxm" desc="配偶姓名" status="F" edittype="text"  datatype="string" size="100" xpath="/poxm" />
+		<Field id="grysr" desc="个人月收入"  require="true" status="F" edittype="text"  datatype="currency" size="20" xpath="/grysr" />
+		<Field id="jtysr" desc="家庭月收入"  require="true" status="F" edittype="text"  datatype="currency" size="20" xpath="/jtysr" />
+		<Field id="hyqk" desc="婚姻情况"  require="true" status="F" edittype="select" translated="DATA_DIC.20048"  datatype="string" size="30" xpath="/hyqk" />
+		<Field id="poxm" desc="配偶姓名"  require="true" status="F" edittype="text"  datatype="string" size="100" xpath="/poxm" />
 		<Field id="polxdh" desc="配偶联系电话" status="F" edittype="text"  datatype="string" size="30" xpath="/polxdh" />
 		<Field id="poyddh" desc="配偶移动电话" status="F" edittype="text"  datatype="string" size="30" xpath="/poyddh" />
-		<Field id="podykhh" desc="配偶对应客户号" status="F" edittype="text"  datatype="string" size="60" xpath="/podykhh" />
-		<Field id="bxygbz" desc="本行员工标志" status="F" edittype="text"  datatype="string" size="4" xpath="/bxygbz" />
-		<Field id="sbxhmdbz" desc="上本行黑名单标志" status="F" edittype="text"  datatype="string" size="4" xpath="/sbxhmdbz" />
-		<Field id="shmdrq" desc="上黑名单日期" status="F" edittype="text"  datatype="string" size="8" xpath="/shmdrq" />
-		<Field id="shmdyy" desc="上黑名单原因" status="F" edittype="text"  datatype="string" size="400" xpath="/shmdyy" />
-		<Field id="yzbm" desc="邮政编码" status="F" edittype="text"  datatype="string" size="6" xpath="/yzbm" />
-		<Field id="dwxz" desc="单位性质" status="F" edittype="text"  datatype="string" size="60" xpath="/dwxz" />
-		<Field id="zc" desc="职称" status="F" edittype="text"  datatype="string" size="60" xpath="/zc" />
-		<Field id="sfnh" desc="是否农户" status="F" edittype="text"  datatype="string" size="4" xpath="/sfnh" />
-  	    <Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="podykhh" desc="配偶对应客户号"  require="true" status="F" edittype="text"  datatype="string" size="60" xpath="/podykhh" />
+		<Field id="bxygbz" desc="本行员工标志"  require="true" status="F" edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/bxygbz" />
+		<Field id="sbxhmdbz" desc="上本行黑名单标志"  require="true" status="F" edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/sbxhmdbz" />
+		<Field id="shmdrq" desc="上黑名单日期"  require="true" status="F" edittype="text"  datatype="string" size="8" xpath="/shmdrq" />
+		<Field id="shmdyy" desc="上黑名单原因" require="true"  status="F" edittype="text"  datatype="string" size="400" xpath="/shmdyy" />
+		<Field id="yzbm" desc="邮政编码"  require="true" status="F" edittype="text"  datatype="string" size="6" xpath="/yzbm" />
+		<Field id="dwxz" desc="单位性质"  require="true" status="F" edittype="text"  datatype="string" size="60" xpath="/dwxz" />
+		<Field id="zc" desc="职称"  require="true" status="F" edittype="text"  datatype="string" size="60" xpath="/zc" />
+		<Field id="sfnh" desc="是否农户"  require="true" status="F" edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/sfnh" />
+  	    <Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

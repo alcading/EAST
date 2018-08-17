@@ -27,30 +27,30 @@
 		
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="zrhth" desc="贷款展期编号" status="F"  edittype="text"  datatype="string" size="100" xpath="/id/zrhth" />
-		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
-		<Field id="jrxkzh" desc="金融许可证号" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
-		<Field id="nbjgh" desc="内部机构号 " status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
-		<Field id="mxkmbh" desc="明细科目编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/mxkmbh" />
-		<Field id="mxkmmc" desc="明细科目名称" status="F"  edittype="text"  datatype="string" size="300" xpath="/mxkmmc" />
-		<Field id="jydsbh" desc="交易对手编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/jydsbh" />
-		<Field id="jydsmc" desc="交易对手名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/jydsmc" />
-	    <Field id="xdjylx" desc="信贷交易类型" status="F" edittype="text" datatype="string" size="60" xpath="/xdjylx"></Field>	
-		<Field id="jyzclx" desc="交易资产类型" status="F"  edittype="text"  datatype="string" size="30" xpath="/jyzclx" />
-		<Field id="bz" desc="币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
-		<Field id="zrdkbjze" desc="转让贷款本金总额" status="F"  edittype="text"  datatype="string" size="24" xpath="/zrdkbjze" />
-		<Field id="zrdklxze" desc="转让抵款利息总额" status="F"  edittype="text"  datatype="string" size="24" xpath="/zrdklxze" />
-		<Field id="zrsxf" desc="转让手续费" status="F"  edittype="text"  datatype="string" size="24" xpath="/zrsxf" />
-		<Field id="zrzj" desc="转让总价" status="F"  edittype="text"  datatype="string" size="24" xpath="/zrzj" />
-		<Field id="hgll" desc="回购利率" status="F"  edittype="text"  datatype="string" size="18" xpath="/hgll" />
-		<Field id="zrjgrq" desc="转让交割日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/zrjgrq" />
-		<Field id="hgjzrq" desc="回购基准日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/hgjzrq" />
-		<Field id="zrhtqsrq" desc="转让合同起始日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/zrhtqsrq" />
-		<Field id="zrhtdqrq" desc="转让合同到期日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/zrhtdqrq" />
-		<Field id="jydszzh" desc="交易对手转账账号" status="F"  edittype="text"  datatype="string" size="60" xpath="/jydszzh" />
-		<Field id="jydszzzhhm" desc="交易对手转账账号户名" status="F"  edittype="text"  datatype="string" size="200" xpath="/jydszzzhhm" />
-		<Field id="jydsxh" desc="交易对手行号" status="F"  edittype="text"  datatype="string" size="30" xpath="/jydsxh" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="zrhth" desc="贷款展期编号" require="true"  status="F"  edittype="text"  datatype="string" size="100" xpath="/id/zrhth" />
+		<Field id="yxjgdm" desc="银行机构代码"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="jrxkzh" desc="金融许可证号" require="true"  edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
+		<Field id="nbjgh" desc="内部机构号 "  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+		<Field id="mxkmbh" desc="明细科目编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/mxkmbh" />
+		<Field id="mxkmmc" desc="明细科目名称" require="true"  status="F"  edittype="text"  datatype="string" size="300" xpath="/mxkmmc" />
+		<Field id="jydsbh" desc="交易对手编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/jydsbh" />
+		<Field id="jydsmc" desc="交易对手名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/jydsmc" />
+	    <Field id="xdjylx" desc="信贷交易类型"  require="true" status="F" edittype="text" datatype="string" size="60" xpath="/xdjylx"></Field>	
+		<Field id="jyzclx" desc="交易资产类型"  require="true" status="F"  edittype="select" translated="DATA_DIC.20076"  datatype="string" size="30" xpath="/jyzclx" />
+		<Field id="bz" desc="币种"  require="true" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
+		<Field id="zrdkbjze" desc="转让贷款本金总额"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/zrdkbjze" />
+		<Field id="zrdklxze" desc="转让抵款利息总额"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/zrdklxze" />
+		<Field id="zrsxf" desc="转让手续费"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/zrsxf" />
+		<Field id="zrzj" desc="转让总价"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/zrzj" />
+		<Field id="hgll" desc="回购利率"  require="true" status="F"  edittype="text"  datatype="string" size="18" xpath="/hgll" />
+		<Field id="zrjgrq" desc="转让交割日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/zrjgrq" />
+		<Field id="hgjzrq" desc="回购基准日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/hgjzrq" />
+		<Field id="zrhtqsrq" desc="转让合同起始日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/zrhtqsrq" />
+		<Field id="zrhtdqrq" desc="转让合同到期日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/zrhtdqrq" />
+		<Field id="jydszzh" desc="交易对手转账账号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/jydszzh" />
+		<Field id="jydszzzhhm" desc="交易对手转账账号户名"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/jydszzzhhm" />
+		<Field id="jydsxh" desc="交易对手行号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/jydsxh" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

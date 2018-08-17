@@ -26,15 +26,15 @@
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="gwbh" desc="岗位编号" edittype="text" status="F" datatype="string" size="60" xpath="/id/gwbh"></Field>
-        <Field id="yxjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>	
-	    <Field id="nbjgh" desc="内部机构号" edittype="text" status="F" datatype="string" size="30" xpath="/id/nbjgh"></Field>
-	    <Field id="jrxkzh" desc="金融许可证号" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
-		<Field id="gwzl" desc="岗位种类" status="F"  edittype="text"  datatype="string" size="60" xpath="/gwzl"></Field>
-		<Field id="gwmc" desc="岗位名称" status="F"  edittype="text"  datatype="string" size="60" xpath="/gwmc" />
-		<Field id="gwsm" desc="岗位说明" status="F"  edittype="text"  datatype="string" size="400" xpath="/gwsm" />
-		<Field id="gwzt" desc="岗位状态" status="F"  edittype="text"  datatype="string" size="30" xpath="/gwzt" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/cjrq" />
+		<Field id="gwbh" desc="岗位编号" require="true"  edittype="text" status="F" datatype="string" size="60" xpath="/id/gwbh"></Field>
+        <Field id="yxjgdm" desc="银行机构代码"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>	
+	    <Field id="nbjgh" desc="内部机构号" require="true"  edittype="text" status="F" datatype="string" size="30" xpath="/id/nbjgh"></Field>
+	    <Field id="jrxkzh" desc="金融许可证号" require="true"  status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
+		<Field id="gwzl" desc="岗位种类"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/gwzl"></Field>
+		<Field id="gwmc" desc="岗位名称"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/gwmc" />
+		<Field id="gwsm" desc="岗位说明"  require="true" status="F"  edittype="text"  datatype="string" size="400" xpath="/gwsm" />
+		<Field id="gwzt" desc="岗位状态" require="true"  status="F"  edittype="text"  datatype="string" size="30" xpath="/gwzt" />
+		<Field id="cjrq" desc="采集日期" require="true"  status="F"  edittype="text"  datatype="string" size="8" xpath="/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

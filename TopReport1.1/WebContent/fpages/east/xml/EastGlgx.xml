@@ -26,20 +26,20 @@
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="khtybh" desc="客户统一编号" edittype="text" status="F" datatype="string" size="60" xpath="/id/khtybh"></Field>	
-	    <Field id="yxjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
-	    <Field id="jrxkzh" desc="金融许可证号" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
-		<Field id="nbjgh" desc="内部机构号" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh"></Field>
-		<Field id="glrkhtybh" desc="关联人客户统一编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/id/glrkhtybh" />
-		<Field id="khsbm" desc="客户识别码 " status="F"  edittype="text"  datatype="string" size="60" xpath="/khsbm" />
-		<Field id="khlb" desc="客户类别" status="F"  edittype="text"  datatype="string" size="30" xpath="/khlb" />
-		<Field id="glrsbm" desc="关联人识别码" status="F"  edittype="text"  datatype="string" size="60" xpath="/glrsbm" />
-		<Field id="glrmc" desc="关联人名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/glrmc" />
-		<Field id="glrlb" desc="关联人类别" status="F"  edittype="text"  datatype="string" size="30" xpath="/glrlb" />
-		<Field id="gxlx" desc="关系类型" status="F"  edittype="text"  datatype="string" size="300" xpath="/gxlx" />
-		<Field id="glgxzt" desc="关联关系状态" status="F"  edittype="text"  datatype="string" size="6" xpath="/glgxzt" />
-		<Field id="lrsj" desc="录入时间" status="F"  edittype="text"  datatype="string" size="8" xpath="/lrsj" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="khtybh" desc="客户统一编号"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/id/khtybh"></Field>	
+	    <Field id="yxjgdm" desc="银行机构代码" require="true"  edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
+	    <Field id="jrxkzh" desc="金融许可证号"  require="true" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
+		<Field id="nbjgh" desc="内部机构号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh"></Field>
+		<Field id="glrkhtybh" desc="关联人客户统一编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/id/glrkhtybh" />
+		<Field id="khsbm" desc="客户识别码 "  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/khsbm" />
+		<Field id="khlb" desc="客户类别"  require="true" status="F"  edittype="select" translated="DATA_DIC.20049"  datatype="string" size="30" xpath="/khlb" />
+		<Field id="glrsbm" desc="关联人识别码"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/glrsbm" />
+		<Field id="glrmc" desc="关联人名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/glrmc" />
+		<Field id="glrlb" desc="关联人类别" require="true"  status="F"  edittype="select" translated="DATA_DIC.20049"  datatype="string" size="30" xpath="/glrlb" />
+		<Field id="gxlx" desc="关系类型"  require="true" status="F"  edittype="select" translated="DATA_DIC.20052"  datatype="string" size="300" xpath="/gxlx" />
+		<Field id="glgxzt" desc="关联关系状态" require="true"  status="F"  edittype="select" translated="DATA_DIC.20050"  datatype="string" size="6" xpath="/glgxzt" />
+		<Field id="lrsj" desc="录入时间" require="true"  status="F"  edittype="text"  datatype="string" size="8" xpath="/lrsj" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

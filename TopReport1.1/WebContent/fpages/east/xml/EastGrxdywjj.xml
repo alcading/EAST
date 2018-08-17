@@ -27,54 +27,54 @@
 		
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="xdjjh" desc="信贷借据号" status="F"  edittype="text"  datatype="string" size="100" xpath="/id/xdjjh" />
-		<Field id="dkfhzh" desc="贷款分户账号" status="F"  edittype="text"  datatype="string" size="60" xpath="/dkfhzh" />
-		<Field id="khtybh" desc="客户统一编号" edittype="text" status="F" datatype="string" size="60" xpath="/khtybh"></Field>
-		<Field id="khmc" desc="客户名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/khmc" />
-		<Field id="xdhth" desc="信贷合同号" status="F"  edittype="text"  datatype="string" size="100" xpath="/xdhth" />
-		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
-		<Field id="jrxkzh" desc="金融许可证号" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
-		<Field id="nbjgh" desc="内部机构号 " status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
-	    <Field id="mxkmbh" desc="明细科目编号" status="F" edittype="text" datatype="string" size="60" xpath="/mxkmbh"></Field>	
-		<Field id="yxjgmc" desc="银行机构名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/yxjgmc" />
-		<Field id="mxkmmc" desc="明细科目名称" status="F"  edittype="text"  datatype="string" size="300" xpath="/mxkmmc" />
-		<Field id="xdywzl" desc="信贷业务种类" status="F"  edittype="text"  datatype="string" size="100" xpath="/xdywzl" />
-		<Field id="bz" desc="币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
-		<Field id="jkje" desc="借款金额" status="F"  edittype="text"  datatype="string" size="24" xpath="/jkje" />
-		<Field id="jkye" desc="借款余额" status="F"  edittype="text"  datatype="string" size="24" xpath="/jkye" />
-		<Field id="dkqx" desc="贷款期限" status="F"  edittype="text"  datatype="string" size="4" xpath="/dkqx" />
-		<Field id="zqcs" desc="展期次数" status="F"  edittype="text"  datatype="string" size="4" xpath="/zqcs" />
-		<Field id="zqs" desc="总期数" status="F"  edittype="text"  datatype="string" size="4" xpath="/zqs" />
-		<Field id="dqqs" desc="当前期数" status="F"  edittype="text"  datatype="string" size="4" xpath="/dqqs" />
-		<Field id="fkfs" desc="放款方式" status="F"  edittype="text"  datatype="string" size="12" xpath="/fkfs" />
-		<Field id="dksjffrq" desc="贷款实际发放日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/dksjffrq" />
-		<Field id="dkysdqrq" desc="贷款原始到期日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/dkysdqrq" />
-		<Field id="dksjdqrq" desc="贷款实际到期日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/dksjdqrq" />
-		<Field id="bnqxye" desc="表内欠息余额" status="F"  edittype="text"  datatype="string" size="24" xpath="/bnqxye" />
-		<Field id="bwqxye" desc="表外欠息余额" status="F"  edittype="text"  datatype="string" size="24" xpath="/bwqxye" />
-		<Field id="dkzt" desc="贷款状态" status="F"  edittype="text"  datatype="string" size="100" xpath="/dkzt" />
-		<Field id="zjrq" desc="终结日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/zjrq" />
-		<Field id="dklx" desc="贷款类型" status="F"  edittype="text"  datatype="string" size="100" xpath="/dklx" />
-		<Field id="dkrzzh" desc="贷款入账账号" status="F"  edittype="text"  datatype="string" size="60" xpath="/dkrzzh" />
-		<Field id="dkwjfl" desc="贷款五级分类" status="F"  edittype="text"  datatype="string" size="6" xpath="/dkwjfl" />
-		<Field id="lllx" desc="利率类型" status="F"  edittype="text"  datatype="string" size="6" xpath="/lllx" />
-		<Field id="jzll" desc="基准利率" status="F"  edittype="text"  datatype="string" size="18" xpath="/jzll" />
-		<Field id="llfd" desc="利率浮动" status="F"  edittype="text"  datatype="string" size="10" xpath="/llfd" />
-		<Field id="hkfs" desc="还款方式" status="F"  edittype="text"  datatype="string" size="40" xpath="/hkfs" />
-		<Field id="hkzh" desc="还款账号" status="F"  edittype="text"  datatype="string" size="60" xpath="/hkzh" />
-		<Field id="hkqd" desc="还款渠道" status="F"  edittype="text"  datatype="string" size="100" xpath="/hkqd" />
-		<Field id="jxfs" desc="计息方式" status="F"  edittype="text"  datatype="string" size="30" xpath="/jxfs" />
-		<Field id="bzjbl" desc="保证金比例" status="F"  edittype="text"  datatype="string" size="14" xpath="/bzjbl" />
-		<Field id="bzjbz" desc="保证金币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/bzjbz" />
-		<Field id="bzjje" desc="保证金金额" status="F"  edittype="text"  datatype="string" size="24" xpath="/bzjje" />
-		<Field id="bzjzh" desc="保证金账号" status="F"  edittype="text"  datatype="string" size="60" xpath="/bzjzh" />
-		<Field id="xdyxm" desc="信贷员姓名" status="F"  edittype="text"  datatype="string" size="100" xpath="/xdyxm" />
-		<Field id="xdyygh" desc="信贷员员工号" status="F"  edittype="text"  datatype="string" size="30" xpath="/xdyygh" />
-		<Field id="xzbz" desc="现转标志" status="F"  edittype="text"  datatype="string" size="4" xpath="/xzbz" />
-		<Field id="ljqkqs" desc="累计欠款期数" status="F"  edittype="text"  datatype="string" size="4" xpath="/ljqkqs" />
-		<Field id="lxqkqs" desc="连续欠款期数" status="F"  edittype="text"  datatype="string" size="4" xpath="/lxqkqs" />
-		<Field id="stzfbz" desc="受托支付标志" status="F"  edittype="text"  datatype="string" size="4" xpath="/stzfbz" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="xdjjh" desc="信贷借据号"  require="true" status="F"  edittype="text" datatype="string" size="100" xpath="/id/xdjjh" />
+		<Field id="dkfhzh" desc="贷款分户账号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/dkfhzh" />
+		<Field id="khtybh" desc="客户统一编号" require="true"  edittype="text" status="F" datatype="string" size="60" xpath="/khtybh"></Field>
+		<Field id="khmc" desc="客户名称" require="true"  status="F"  edittype="text"  datatype="string" size="200" xpath="/khmc" />
+		<Field id="xdhth" desc="信贷合同号" require="true"  status="F"  edittype="text"  datatype="string" size="100" xpath="/xdhth" />
+		<Field id="yxjgdm" desc="银行机构代码"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="jrxkzh" desc="金融许可证号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
+		<Field id="nbjgh" desc="内部机构号 " require="true"  status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+	    <Field id="mxkmbh" desc="明细科目编号"  require="true" status="F" edittype="text" datatype="string" size="60" xpath="/mxkmbh"></Field>	
+		<Field id="yxjgmc" desc="银行机构名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/yxjgmc" />
+		<Field id="mxkmmc" desc="明细科目名称"  require="true" status="F"  edittype="text"  datatype="string" size="300" xpath="/mxkmmc" />
+		<Field id="xdywzl" desc="信贷业务种类"  require="true" status="F"  edittype="select" translated="DATA_DIC.20063"  datatype="string" size="100" xpath="/xdywzl" />
+		<Field id="bz" desc="币种" require="true"  status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
+		<Field id="jkje" desc="借款金额"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/jkje" />
+		<Field id="jkye" desc="借款余额" require="true"  status="F"  edittype="text"  datatype="currency" size="24" xpath="/jkye" />
+		<Field id="dkqx" desc="贷款期限"  require="true" status="F"  edittype="text"  datatype="string" size="4" xpath="/dkqx" />
+		<Field id="zqcs" desc="展期次数"  require="true" status="F"  edittype="text"  datatype="string" size="4" xpath="/zqcs" />
+		<Field id="zqs" desc="总期数"  require="true" status="F"  edittype="text"  datatype="string" size="4" xpath="/zqs" />
+		<Field id="dqqs" desc="当前期数"  require="true" status="F"  edittype="text"  datatype="string" size="4" xpath="/dqqs" />
+		<Field id="fkfs" desc="放款方式"  require="true" status="F"  edittype="select" translated="DATA_DIC.20057"  datatype="string" size="12" xpath="/fkfs" />
+		<Field id="dksjffrq" desc="贷款实际发放日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/dksjffrq" />
+		<Field id="dkysdqrq" desc="贷款原始到期日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/dkysdqrq" />
+		<Field id="dksjdqrq" desc="贷款实际到期日期" require="true"  status="F"  edittype="text"  datatype="string" size="8" xpath="/dksjdqrq" />
+		<Field id="bnqxye" desc="表内欠息余额"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/bnqxye" />
+		<Field id="bwqxye" desc="表外欠息余额"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/bwqxye" />
+		<Field id="dkzt" desc="贷款状态"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/dkzt" />
+		<Field id="zjrq" desc="终结日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/zjrq" />
+		<Field id="dklx" desc="贷款类型"  require="true" status="F"  edittype="select" translated="DATA_DIC.20054"  datatype="string" size="100" xpath="/dklx" />
+		<Field id="dkrzzh" desc="贷款入账账号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/dkrzzh" />
+		<Field id="dkwjfl" desc="贷款五级分类"  require="true" status="F"  edittype="select" translated="DATA_DIC.20047"  datatype="string" size="6" xpath="/dkwjfl" />
+		<Field id="lllx" desc="利率类型" require="true"  status="F"  edittype="select" translated="DATA_DIC.20055"  datatype="string" size="6" xpath="/lllx" />
+		<Field id="jzll" desc="基准利率"  require="true" status="F"  edittype="text"  datatype="string" size="18" xpath="/jzll" />
+		<Field id="llfd" desc="利率浮动"  require="true" status="F"  edittype="text"  datatype="string" size="10" xpath="/llfd" />
+		<Field id="hkfs" desc="还款方式" require="true"  status="F"  edittype="select" translated="DATA_DIC.20064"  datatype="string" size="40" xpath="/hkfs" />
+		<Field id="hkzh" desc="还款账号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/hkzh" />
+		<Field id="hkqd" desc="还款渠道" require="true"  status="F"  edittype="text"  datatype="string" size="100" xpath="/hkqd" />
+		<Field id="jxfs" desc="计息方式"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/jxfs" />
+		<Field id="bzjbl" desc="保证金比例"  require="true" status="F"  edittype="text"  datatype="string" size="14" xpath="/bzjbl" />
+		<Field id="bzjbz" desc="保证金币种"  require="true" status="F"  edittype="text"  datatype="string" size="3" xpath="/bzjbz" />
+		<Field id="bzjje" desc="保证金金额"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/bzjje" />
+		<Field id="bzjzh" desc="保证金账号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/bzjzh" />
+		<Field id="xdyxm" desc="信贷员姓名"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/xdyxm" />
+		<Field id="xdyygh" desc="信贷员员工号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/xdyygh" />
+		<Field id="xzbz" desc="现转标志"  require="true" status="F"  edittype="select" translated="DATA_DIC.20040"  datatype="string" size="4" xpath="/xzbz" />
+		<Field id="ljqkqs" desc="累计欠款期数"  require="true" status="F"  edittype="text"  datatype="string" size="4" xpath="/ljqkqs" />
+		<Field id="lxqkqs" desc="连续欠款期数"  require="true" status="F"  edittype="text"  datatype="string" size="4" xpath="/lxqkqs" />
+		<Field id="stzfbz" desc="受托支付标志"  require="true" status="F"  edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/stzfbz" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

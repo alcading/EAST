@@ -26,18 +26,18 @@
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="khtybh" desc="客户统一编号" edittype="text" status="F" datatype="string" size="60" xpath="/id/khtybh"></Field>	
-	    <Field id="zzjgdm" desc="统一社会信用代码" edittype="text" status="F" datatype="string" size="40" xpath="/zzjgdm"></Field>
-	    <Field id="yxjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
-	    <Field id="jrxkzh" desc="金融许可证号" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
-		<Field id="nbjgh" desc="内部机构号" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh"></Field>
-		<Field id="gdmc" desc="股东名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/gdmc" />
-		<Field id="gdzjlb" desc="股东证件类别 " status="F"  edittype="text"  datatype="string" size="60" xpath="/gdzjlb" />
-		<Field id="gdzjhm" desc="股东证件号码" status="F"  edittype="text"  datatype="string" size="60" xpath="/id/gdzjhm" />
-		<Field id="gdzt" desc="股东状态" status="F"  edittype="text"  datatype="string" size="6" xpath="/gdzt" />
-		<Field id="cgbl" desc="持股比例" status="F"  edittype="text"  datatype="big_decimal" size="10" xpath="/cgbl" />
-		<Field id="rgsj" desc="入股时间" status="F"  edittype="text"  datatype="string" size="8" xpath="/rgsj" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="khtybh" desc="客户统一编号"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/id/khtybh"></Field>	
+	    <Field id="zzjgdm" desc="统一社会信用代码"  require="true" edittype="text" status="F" datatype="string" size="40" xpath="/zzjgdm"></Field>
+	    <Field id="yxjgdm" desc="银行机构代码" require="true"  edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
+	    <Field id="jrxkzh" desc="金融许可证号"  require="true" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
+		<Field id="nbjgh" desc="内部机构号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh"></Field>
+		<Field id="gdmc" desc="股东名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/gdmc" />
+		<Field id="gdzjlb" desc="股东证件类别 "  require="true" status="F"  edittype="select" translated="DATA_DIC.20041"  datatype="string" size="60" xpath="/gdzjlb" />
+		<Field id="gdzjhm" desc="股东证件号码" require="true"  status="F"  edittype="select" translated="DATA_DIC.20050"  datatype="string" size="60" xpath="/id/gdzjhm" />
+		<Field id="gdzt" desc="股东状态" require="true"  status="F"  edittype="text"  datatype="string" size="6" xpath="/gdzt" />
+		<Field id="cgbl" desc="持股比例" require="true"  status="F"  edittype="text"  datatype="big_decimal" size="10" xpath="/cgbl" />
+		<Field id="rgsj" desc="入股时间" require="true"  status="F"  edittype="text"  datatype="string" size="8" xpath="/rgsj" />
+		<Field id="cjrq" desc="采集日期" require="true"  status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

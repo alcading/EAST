@@ -24,30 +24,31 @@
 	<Fields>
 		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
-		
+
+
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="pjhm" desc="票据号码" edittype="text" status="F" datatype="string" size="60" xpath="/id/pjhm"></Field>	
-		<Field id="cprbh" desc="出票人编号" edittype="text" status="F" datatype="string" size="60" xpath="/cprbh"></Field>
-	    <Field id="fkxdm" desc="付款行代码" status="F" edittype="text" datatype="string" size="30" xpath="/fkxdm"></Field>	
-		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
-		<Field id="jrxkzh" desc="金融许可证号" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
-		<Field id="nbjgh" desc="内部机构号 " status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
-		<Field id="pjlx" desc="票据类型" status="F"  edittype="text"  datatype="string" size="30" xpath="/pjlx" />
-		<Field id="cprqc" desc="出票人全称" status="F"  edittype="text"  datatype="string" size="200" xpath="/cprqc" />
-		<Field id="cprzh" desc="出票人账号" status="F"  edittype="text"  datatype="string" size="60" xpath="/cprzh" />
-		<Field id="fkxmc" desc="付款行名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/fkxmc" />
-		<Field id="bz" desc="币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
-		<Field id="pmje" desc="票面金额" status="F"  edittype="text"  datatype="string" size="24" xpath="/pmje" />
-		<Field id="qfrq" desc="签发日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/qfrq" />
-		<Field id="pjdqrq" desc="票据到期日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/pjdqrq" />
-		<Field id="skrmc" desc="收款人名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/skrmc" />
-		<Field id="skrzh" desc="收款人账号" status="F"  edittype="text"  datatype="string" size="60" xpath="/skrzh" />
-		<Field id="skrkhx" desc="收款人开户行" status="F"  edittype="text"  datatype="string" size="30" xpath="/skrkhx" />
-		<Field id="syfphm" desc="商业发票号码" status="F"  edittype="text"  datatype="string" size="200" xpath="/syfphm" />
-		<Field id="syfpbz" desc="商业发票币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/syfpbz" />
-		<Field id="syfpje" desc="商业发票金额" status="F"  edittype="text"  datatype="string" size="24" xpath="/syfpje" />
-		<Field id="syfpzl" desc="商业发票种类" status="F"  edittype="text"  datatype="string" size="60" xpath="/syfpzl" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="pjhm" desc="票据号码"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/id/pjhm"></Field>	
+		<Field id="cprbh" desc="出票人编号"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/cprbh"></Field>
+	    <Field id="fkxdm" desc="付款行代码"  require="true" status="F" edittype="text" datatype="string" size="30" xpath="/fkxdm"></Field>	
+		<Field id="yxjgdm" desc="银行机构代码"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="jrxkzh" desc="金融许可证号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
+		<Field id="nbjgh" desc="内部机构号 "  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+		<Field id="pjlx" desc="票据类型"  require="true" status="F"  edittype="select" translated="DATA_DIC.20058"  datatype="string" size="30" xpath="/pjlx" />
+		<Field id="cprqc" desc="出票人全称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/cprqc" />
+		<Field id="cprzh" desc="出票人账号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/cprzh" />
+		<Field id="fkxmc" desc="付款行名称" require="true"  status="F"  edittype="text"  datatype="string" size="200" xpath="/fkxmc" />
+		<Field id="bz" desc="币种"  require="true" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
+		<Field id="pmje" desc="票面金额"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/pmje" />
+		<Field id="qfrq" desc="签发日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/qfrq" />
+		<Field id="pjdqrq" desc="票据到期日期" require="true"  status="F"  edittype="text"  datatype="string" size="8" xpath="/pjdqrq" />
+		<Field id="skrmc" desc="收款人名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/skrmc" />
+		<Field id="skrzh" desc="收款人账号" require="true"  status="F"  edittype="text"  datatype="string" size="60" xpath="/skrzh" />
+		<Field id="skrkhx" desc="收款人开户行"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/skrkhx" />
+		<Field id="syfphm" desc="商业发票号码" require="true"  status="F"  edittype="text"  datatype="string" size="200" xpath="/syfphm" />
+		<Field id="syfpbz" desc="商业发票币种"  require="true" status="F"  edittype="text"  datatype="string" size="3" xpath="/syfpbz" />
+		<Field id="syfpje" desc="商业发票金额"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/syfpje" />
+		<Field id="syfpzl" desc="商业发票种类"  require="true" status="F"  edittype="select" translated="DATA_DIC.20059"  datatype="string" size="60" xpath="/syfpzl" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

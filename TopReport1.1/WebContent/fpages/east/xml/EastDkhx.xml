@@ -27,28 +27,28 @@
 		
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="xdjjh" desc="信贷借据号" status="F"  edittype="text"  datatype="string" size="100" xpath="/id/xdjjh" />
-		<Field id="xdhth" desc="信贷合同号" status="F"  edittype="text"  datatype="string" size="100" xpath="/xdhth" />
-		<Field id="khtybh" desc="客户统一编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/khtybh" />
-		<Field id="jrxkzh" desc="金融许可证号" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
-		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
-		<Field id="nbjgh" desc="内部机构号 " status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
-		<Field id="mxkmbh" desc="明细科目编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/mxkmbh" />
-	    <Field id="mxkmmc" desc="明细科目名称" status="F" edittype="text" datatype="string" size="300" xpath="/mxkmmc"></Field>	
-		<Field id="kmgsjg" desc="科目归属机构" status="F"  edittype="text"  datatype="string" size="30" xpath="/kmgsjg" />
-		<Field id="bz" desc="币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
-		<Field id="shdkbj" desc="实核贷款本金" status="F"  edittype="text"  datatype="string" size="24" xpath="/shdkbj" />
-		<Field id="shbnlx" desc="实核表内利息" status="F"  edittype="text"  datatype="string" size="24" xpath="/shbnlx" />
-		<Field id="shbwlx" desc="实核表外利息" status="F"  edittype="text"  datatype="string" size="24" xpath="/shbwlx" />
-		<Field id="hxrq" desc="核销日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/hxrq" />
-		<Field id="hxshbj" desc="核销收回本金" status="F"  edittype="text"  datatype="string" size="24" xpath="/hxshbj" />
-		<Field id="hxshbnlx" desc="核销收回表内利息" status="F"  edittype="text"  datatype="string" size="24" xpath="/hxshbnlx" />
-		<Field id="hxshbwlx" desc="核销收回表外利息" status="F"  edittype="text"  datatype="string" size="24" xpath="/hxshbwlx" />
-		<Field id="shbz" desc="收回标志" status="F"  edittype="text"  datatype="string" size="3" xpath="/shbz" />
-		<Field id="hxshgyh" desc="核销收回柜员号" status="F"  edittype="text"  datatype="string" size="30" xpath="/hxshgyh" />
-		<Field id="hxshrq" desc="核销收回日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/hxshrq" />
-		<Field id="bzh" desc="备注" status="F"  edittype="text"  datatype="string" size="200" xpath="/bzh" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="xdjjh" desc="信贷借据号"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/id/xdjjh" />
+		<Field id="xdhth" desc="信贷合同号" require="true"  status="F"  edittype="text"  datatype="string" size="100" xpath="/xdhth" />
+		<Field id="khtybh" desc="客户统一编号" require="true"  status="F"  edittype="text"  datatype="string" size="60" xpath="/khtybh" />
+		<Field id="jrxkzh" desc="金融许可证号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
+		<Field id="yxjgdm" desc="银行机构代码"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="nbjgh" desc="内部机构号 "  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+		<Field id="mxkmbh" desc="明细科目编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/mxkmbh" />
+	    <Field id="mxkmmc" desc="明细科目名称"  require="true" status="F" edittype="text" datatype="string" size="300" xpath="/mxkmmc"></Field>	
+		<Field id="kmgsjg" desc="科目归属机构"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/kmgsjg" />
+		<Field id="bz" desc="币种"  require="true" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
+		<Field id="shdkbj" desc="实核贷款本金"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/shdkbj" />
+		<Field id="shbnlx" desc="实核表内利息"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/shbnlx" />
+		<Field id="shbwlx" desc="实核表外利息"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/shbwlx" />
+		<Field id="hxrq" desc="核销日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/hxrq" />
+		<Field id="hxshbj" desc="核销收回本金"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/hxshbj" />
+		<Field id="hxshbnlx" desc="核销收回表内利息"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/hxshbnlx" />
+		<Field id="hxshbwlx" desc="核销收回表外利息"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/hxshbwlx" />
+		<Field id="shbz" desc="收回标志" require="true"  status="F"  edittype="select" translated="DATA_DIC.20034"  datatype="string" size="3" xpath="/shbz" />
+		<Field id="hxshgyh" desc="核销收回柜员号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/hxshgyh" />
+		<Field id="hxshrq" desc="核销收回日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/hxshrq" />
+		<Field id="bzh" desc="备注"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/bzh" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

@@ -25,30 +25,30 @@
 		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
-		<Field id="id" desc="柜员号" edittype="text" status="F" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="gh" desc="工号" edittype="text" status="F" datatype="string" size="30" xpath="/gh"></Field>
-        <Field id="yxjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>	
-	    <Field id="nbjgh" desc="内部机构号" edittype="text" status="F" datatype="string" size="30" xpath="/nbjgh"></Field>
-	    <Field id="zxjgdm" desc="总行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/zxjgdm"></Field>
-	    <Field id="jrxkzh" desc="金融许可证号" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
-		<Field id="yxjgmc" desc="银行机构名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/yxjgmc"></Field>
-		<Field id="gylx" desc="柜员类型" status="F"  edittype="text"  datatype="string" size="30" xpath="/gylx" />
-		<Field id="sfstgy" desc="是否实体柜员" status="F"  edittype="text"  datatype="string" size="4" xpath="/sfstgy" />
-		<Field id="khjlbz" desc="客户经理标志" status="F"  edittype="text"  datatype="string" size="4" xpath="/khjlbz" />
-		<Field id="jbzwbz" desc="经办财务标志" status="F"  edittype="text"  datatype="string" size="4" xpath="/jbzwbz" />
-		<Field id="qxglbz" desc="权限管理标志" status="F"  edittype="text"  datatype="string" size="4" xpath="/qxglbz" />
-		<Field id="ybglbz" desc="一般管理标志" status="F"  edittype="text"  datatype="string" size="4" xpath="/ybglbz" />
-		<Field id="xdybz" desc="信贷员标志" status="F" edittype="text"  datatype="string" size="4" xpath="/xdybz" />
-		<Field id="kgybz" desc="库管员标志"  status="F" edittype="text"  datatype="string" size="4" xpath="/kgybz" />
-		<Field id="zhgybz" desc="综合柜员标志" status="F" edittype="text"  datatype="string" size="4" xpath="/zhgybz" />
-		<Field id="sqbz" desc="授权标志" status="F" edittype="text"  datatype="string" size="4" xpath="/sqbz" />
-		<Field id="sqfw" desc="授权范围" status="F"  edittype="text"  datatype="string" size="60" xpath="/sqfw" />
-		<Field id="gwbh" desc="岗位编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/gwbh" />
-		<Field id="gyyhjb" desc="柜员用户级别" status="F"  edittype="text"  datatype="string" size="30" xpath="/gyyhjb" />
-		<Field id="gyqxjb" desc="柜员权限级别" status="F"  edittype="text"  datatype="string" size="30" xpath="/gyqxjb" />
-		<Field id="sgrq" desc="上岗日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/sgrq" />
-		<Field id="gwzt" desc="柜员状态" status="F"  edittype="text"  datatype="string" size="30" xpath="/gwzt" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/cjrq" />
+		<Field id="id" desc="柜员号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/id"></Field>
+		<Field id="gh" desc="工号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/gh"></Field>
+        <Field id="yxjgdm" desc="银行机构代码"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>	
+	    <Field id="nbjgh" desc="内部机构号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/nbjgh"></Field>
+	    <Field id="zxjgdm" desc="总行机构代码" require="true"  edittype="text" status="F" datatype="string" size="30" xpath="/zxjgdm"></Field>
+	    <Field id="jrxkzh" desc="金融许可证号"  require="true" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
+		<Field id="yxjgmc" desc="银行机构名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/yxjgmc"></Field>
+		<Field id="gylx" desc="柜员类型"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/gylx" />
+		<Field id="sfstgy" desc="是否实体柜员" require="true"  status="F"  edittype="select" translated="DATA_DIC.20034" datatype="string" size="4" xpath="/sfstgy" />
+		<Field id="khjlbz" desc="客户经理标志"  require="true" status="F"  edittype="select" translated="DATA_DIC.20034" datatype="string" size="4" xpath="/khjlbz" />
+		<Field id="jbzwbz" desc="经办财务标志"  require="true" status="F"  edittype="select" translated="DATA_DIC.20034" datatype="string" size="4" xpath="/jbzwbz" />
+		<Field id="qxglbz" desc="权限管理标志"  require="true" status="F"  edittype="select" translated="DATA_DIC.20034" datatype="string" size="4" xpath="/qxglbz" />
+		<Field id="ybglbz" desc="一般管理标志"  require="true" status="F"  edittype="select" translated="DATA_DIC.20034" datatype="string" size="4" xpath="/ybglbz" />
+		<Field id="xdybz" desc="信贷员标志"  require="true" status="F" edittype="select" translated="DATA_DIC.20034" datatype="string" size="4" xpath="/xdybz" />
+		<Field id="kgybz" desc="库管员标志"   require="true" status="F" edittype="select" translated="DATA_DIC.20034" datatype="string" size="4" xpath="/kgybz" />
+		<Field id="zhgybz" desc="综合柜员标志"  require="true" status="F" edittype="select" translated="DATA_DIC.20034" datatype="string" size="4" xpath="/zhgybz" />
+		<Field id="sqbz" desc="授权标志"  require="true" status="F" edittype="select" translated="DATA_DIC.20034" datatype="string" size="4" xpath="/sqbz" />
+		<Field id="sqfw" desc="授权范围"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/sqfw" />
+		<Field id="gwbh" desc="岗位编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/gwbh" />
+		<Field id="gyyhjb" desc="柜员用户级别"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/gyyhjb" />
+		<Field id="gyqxjb" desc="柜员权限级别"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/gyqxjb" />
+		<Field id="sgrq" desc="上岗日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/sgrq" />
+		<Field id="gwzt" desc="柜员状态"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/gwzt" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

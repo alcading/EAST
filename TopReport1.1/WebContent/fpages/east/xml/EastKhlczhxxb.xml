@@ -26,30 +26,30 @@
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
 		<Field id="id" desc="理财账号" edittype="text" datatype="string" size="60" xpath="/id"></Field>
-		<Field id="yxjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
-		<Field id="jrxkzh" desc="金融许可证号" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
-		<Field id="nbjgh" desc="内部机构号" edittype="text" status="F" datatype="string" size="30" xpath="/nbjgh"></Field>
-		<Field id="mxkmbh" desc="明细科目编号" edittype="text" status="F" datatype="string" size="60" xpath="/mxkmbh"></Field>
-		<Field id="yxjgmc" desc="银行机构名称" edittype="text" status="F" datatype="string" size="200" xpath="/yxjgmc"></Field>
-		<Field id="mxkmmc" desc="明细科目名称" edittype="text" status="F" datatype="string" size="300" xpath="/mxkmmc"></Field>
-		<Field id="bz" desc="币种" edittype="text" status="F" datatype="string" size="3" xpath="/bz"></Field>
-		<Field id="lczh" desc="理财账号" edittype="text" status="F" datatype="string" size="60" xpath="/id/lczh"></Field>
-		<Field id="khtybh" desc="客户统一编号" edittype="text" status="F" datatype="string" size="60" xpath="/khtybh"></Field>
-		<Field id="khxm" desc="客户姓名" edittype="text" status="F" datatype="string" size="100" xpath="/khxm"></Field>
-		<Field id="glhqckzh" desc="关联活期存款账号" edittype="text" status="F" datatype="string" size="60" xpath="/id/glhqckzh"></Field>
-		<Field id="lccpmc" desc="理财产品名称" edittype="text" status="F" datatype="string" size="200" xpath="/lccpmc"></Field>
-		<Field id="hnbsm" desc="行内标识码" edittype="text" status="F" datatype="string" size="30" xpath="/id/hnbsm"></Field>
-		<Field id="fezs" desc="份额总数" edittype="text" status="F" datatype="string" size="20" xpath="/fezs"></Field>
-		<Field id="djfe" desc="冻结份额" edittype="text" status="F" datatype="string" size="20" xpath="/djfe"></Field>
-		<Field id="hlztzbz" desc="再投资标志" edittype="text" status="F" datatype="string" size="4" xpath="/hlztzbz"></Field>
-		<Field id="bqsy" desc="本期收益" edittype="text" status="F" datatype="string" size="202" xpath="/bqsy"></Field>
-		<Field id="ljsy" desc="累计收益" edittype="text" status="F" datatype="string" size="202" xpath="/ljsy"></Field>
-		<Field id="mrcb" desc="买入成本" edittype="text" status="F" datatype="string" size="202" xpath="/mrcb"></Field>
-		<Field id="bqqsrq" desc="本期起始日期" edittype="text" status="F" datatype="string" size="8" xpath="/bqqsrq"></Field>
-		<Field id="bqdqrq" desc="本期到期日期" edittype="text" status="F" datatype="string" size="8" xpath="/bqdqrq"></Field>
-		<Field id="khrq" desc="开户日期" edittype="text" status="F" datatype="string" size="8" xpath="/khrq"></Field>
-		<Field id="scdhrq" desc="上次动户日期" edittype="text" status="F" datatype="string" size="8" xpath="/scdhrq"></Field>
-		<Field id="cjrq" desc="采集日期" edittype="text" status="F" datatype="string" size="8" xpath="/cjrq"></Field>
+		<Field id="yxjgdm" desc="银行机构代码"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="jrxkzh" desc="金融许可证号" require="true"  edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
+		<Field id="nbjgh" desc="内部机构号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/nbjgh"></Field>
+		<Field id="mxkmbh" desc="明细科目编号"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/mxkmbh"></Field>
+		<Field id="yxjgmc" desc="银行机构名称"  require="true" edittype="text" status="F" datatype="string" size="200" xpath="/yxjgmc"></Field>
+		<Field id="mxkmmc" desc="明细科目名称"  require="true" edittype="text" status="F" datatype="string" size="300" xpath="/mxkmmc"></Field>
+		<Field id="bz" desc="币种"  require="true" edittype="text" status="F" datatype="string" size="3" xpath="/bz"></Field>
+		<Field id="lczh" desc="理财账号" require="true"  edittype="text" status="F" datatype="string" size="60" xpath="/id/lczh"></Field>
+		<Field id="khtybh" desc="客户统一编号"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/khtybh"></Field>
+		<Field id="khxm" desc="客户姓名" require="true"  edittype="text" status="F" datatype="string" size="100" xpath="/khxm"></Field>
+		<Field id="glhqckzh" desc="关联活期存款账号" require="true"  edittype="text" status="F" datatype="string" size="60" xpath="/id/glhqckzh"></Field>
+		<Field id="lccpmc" desc="理财产品名称" require="true"  edittype="text" status="F" datatype="string" size="200" xpath="/lccpmc"></Field>
+		<Field id="hnbsm" desc="行内标识码"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/id/hnbsm"></Field>
+		<Field id="fezs" desc="份额总数"  require="true" edittype="text" status="F" datatype="string" size="20" xpath="/fezs"></Field>
+		<Field id="djfe" desc="冻结份额" require="true"  edittype="text" status="F" datatype="string" size="20" xpath="/djfe"></Field>
+		<Field id="hlztzbz" desc="再投资标志"  require="true" edittype="select" translated="DATA_DIC.20034" status="F" datatype="string" size="4" xpath="/hlztzbz"></Field>
+		<Field id="bqsy" desc="本期收益"  require="true" edittype="text" status="F" datatype="currency" size="20" xpath="/bqsy"></Field>
+		<Field id="ljsy" desc="累计收益"  require="true" edittype="text" status="F" datatype="currency" size="20" xpath="/ljsy"></Field>
+		<Field id="mrcb" desc="买入成本"  require="true" edittype="text" status="F" datatype="currency" size="20" xpath="/mrcb"></Field>
+		<Field id="bqqsrq" desc="本期起始日期"  require="true" edittype="text" status="F" datatype="string" size="8" xpath="/bqqsrq"></Field>
+		<Field id="bqdqrq" desc="本期到期日期" require="true"  edittype="text" status="F" datatype="string" size="8" xpath="/bqdqrq"></Field>
+		<Field id="khrq" desc="开户日期"  require="true" edittype="text" status="F" datatype="string" size="8" xpath="/khrq"></Field>
+		<Field id="scdhrq" desc="上次动户日期"  require="true" edittype="text" status="F" datatype="string" size="8" xpath="/scdhrq"></Field>
+		<Field id="cjrq" desc="采集日期"  require="true" edittype="text" status="F" datatype="string" size="8" xpath="/cjrq"></Field>
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

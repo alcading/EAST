@@ -27,46 +27,46 @@
 		
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="zhdywbh" desc="质或抵押物编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/id/zhdywbh" />
-		<Field id="dbhth" desc="担保合同号" status="F"  edittype="text"  datatype="string" size="100" xpath="/dbhth" />
-		<Field id="khtybh" desc="客户统一编号" edittype="text" status="F" datatype="string" size="60" xpath="/khtybh"></Field>
-		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
-		<Field id="jrxkzh" desc="金融许可证号" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
-		<Field id="nbjgh" desc="内部机构号 " status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
-		<Field id="zhdywmc" desc="质或抵押物名称" status="F"  edittype="text"  datatype="string" size="1000" xpath="/zhdywmc" />
-		<Field id="zhdywlx" desc="质或抵押物类型" status="F"  edittype="text"  datatype="string" size="300" xpath="/zhdywlx" />
-	    <Field id="zhdywzmjz" desc="质或抵押物账面价值" status="F" edittype="text" datatype="string" size="24" xpath="/zhdywzmjz"></Field>	
-		<Field id="bz" desc="币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
-		<Field id="yxrdjz" desc="银行认定价值" status="F"  edittype="text"  datatype="string" size="24" xpath="/yxrdjz" />
-		<Field id="pgjz" desc="评估价值" status="F"  edittype="text"  datatype="string" size="24" xpath="/pgjz" />
-		<Field id="pgrq" desc="评估日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/pgrq" />
-		<Field id="pgjgmc" desc="评估机构名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/pgjgmc" />
-		<Field id="zhdyl" desc="质或抵押率" status="F"  edittype="text"  datatype="string" size="14" xpath="/zhdyl" />
-		<Field id="dywsyqrmc" desc="抵押物所有权人名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/dywsyqrmc" />
-		<Field id="ydyjz" desc="已抵押价值" status="F"  edittype="text"  datatype="string" size="24" xpath="/ydyjz" />
-		<Field id="djrq" desc="登记日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/djrq" />
-		<Field id="swsqrq" desc="实物收取日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/swsqrq" />
-		<Field id="djjg" desc="登记机构" status="F"  edittype="text"  datatype="string" size="200" xpath="/djjg" />
-		<Field id="czjg" desc="操作机构" status="F"  edittype="text"  datatype="string" size="30" xpath="/czjg" />
-		<Field id="dbqsrq" desc="担保起始日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbqsrq" />
-		<Field id="dbdqrq" desc="担保到期日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbdqrq" />
-		<Field id="zypzzh" desc="质押票证账号" status="F"  edittype="text"  datatype="string" size="60" xpath="/zypzzh" />
-		<Field id="zypzlx" desc="质押票证类型" status="F"  edittype="text"  datatype="string" size="60" xpath="/zypzlx" />
-		<Field id="zypzhm" desc="质押票证号码" status="F"  edittype="text"  datatype="string" size="300" xpath="/zypzhm" />
-		<Field id="zypzje" desc="质押票证金额" status="F"  edittype="text"  datatype="string" size="24" xpath="/zypzje" />
-		<Field id="zypzqfjg" desc="质押票证签发机构" status="F"  edittype="text"  datatype="string" size="30" xpath="/zypzqfjg" />
-		<Field id="zypzklrq" desc="质押票证开立日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/zypzklrq" />
-		<Field id="bxdh" desc="保险单号" status="F"  edittype="text"  datatype="string" size="300" xpath="/bxdh" />
-		<Field id="hbrq" desc="核保日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/hbrq" />
-		<Field id="hbryxm" desc="核保人一姓名" status="F"  edittype="text"  datatype="string" size="100" xpath="/hbryxm" />
-		<Field id="hbrexm" desc="核保人二姓名" status="F"  edittype="text"  datatype="string" size="100" xpath="/hbrexm" />
-		<Field id="qzdjhm" desc="权证登记号码" status="F"  edittype="text"  datatype="string" size="300" xpath="/qzdjhm" />
-		<Field id="qzmc" desc="权证名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/qzmc" />
-		<Field id="qzyxdqrq" desc="权证有效到期日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/qzyxdqrq" />
-		<Field id="djyxzzrq" desc="登记有效终止日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/djyxzzrq" />
-		<Field id="sfnrbwhs" desc="是否纳入表外核算" status="F"  edittype="text"  datatype="string" size="4" xpath="/sfnrbwhs" />
-		<Field id="bwhsksrq" desc="表外核算开始日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/bwhsksrq" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="zhdywbh" desc="质或抵押物编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/id/zhdywbh" />
+		<Field id="dbhth" desc="担保合同号"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/dbhth" />
+		<Field id="khtybh" desc="客户统一编号"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/khtybh"></Field>
+		<Field id="yxjgdm" desc="银行机构代码"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="jrxkzh" desc="金融许可证号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
+		<Field id="nbjgh" desc="内部机构号" require="true"  status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+		<Field id="zhdywmc" desc="质或抵押物名称"  require="true" status="F"  edittype="text"  datatype="string" size="1000" xpath="/zhdywmc" />
+		<Field id="zhdywlx" desc="质或抵押物类型"  require="true" status="F"  edittype="text"  datatype="string" size="300" xpath="/zhdywlx" />
+	    <Field id="zhdywzmjz" desc="质或抵押物账面价值"  require="true" status="F" edittype="text" datatype="currency" size="24" xpath="/zhdywzmjz"></Field>	
+		<Field id="bz" desc="币种"  require="true" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
+		<Field id="yxrdjz" desc="银行认定价值"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/yxrdjz" />
+		<Field id="pgjz" desc="评估价值"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/pgjz" />
+		<Field id="pgrq" desc="评估日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/pgrq" />
+		<Field id="pgjgmc" desc="评估机构名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/pgjgmc" />
+		<Field id="zhdyl" desc="质或抵押率"  require="true" status="F"  edittype="text"  datatype="string" size="14" xpath="/zhdyl" />
+		<Field id="dywsyqrmc" desc="抵押物所有权人名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/dywsyqrmc" />
+		<Field id="ydyjz" desc="已抵押价值"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/ydyjz" />
+		<Field id="djrq" desc="登记日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/djrq" />
+		<Field id="swsqrq" desc="实物收取日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/swsqrq" />
+		<Field id="djjg" desc="登记机构"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/djjg" />
+		<Field id="czjg" desc="操作机构"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/czjg" />
+		<Field id="dbqsrq" desc="担保起始日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbqsrq" />
+		<Field id="dbdqrq" desc="担保到期日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbdqrq" />
+		<Field id="zypzzh" desc="质押票证账号" require="true"  status="F"  edittype="text"  datatype="string" size="60" xpath="/zypzzh" />
+		<Field id="zypzlx" desc="质押票证类型"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/zypzlx" />
+		<Field id="zypzhm" desc="质押票证号码"  require="true" status="F"  edittype="text"  datatype="string" size="300" xpath="/zypzhm" />
+		<Field id="zypzje" desc="质押票证金额"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/zypzje" />
+		<Field id="zypzqfjg" desc="质押票证签发机构"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/zypzqfjg" />
+		<Field id="zypzklrq" desc="质押票证开立日期" require="true"  status="F"  edittype="text"  datatype="string" size="8" xpath="/zypzklrq" />
+		<Field id="bxdh" desc="保险单号"  require="true" status="F"  edittype="text"  datatype="string" size="300" xpath="/bxdh" />
+		<Field id="hbrq" desc="核保日期" require="true"  status="F"  edittype="text"  datatype="string" size="8" xpath="/hbrq" />
+		<Field id="hbryxm" desc="核保人一姓名"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/hbryxm" />
+		<Field id="hbrexm" desc="核保人二姓名"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/hbrexm" />
+		<Field id="qzdjhm" desc="权证登记号码"  require="true" status="F"  edittype="text"  datatype="string" size="300" xpath="/qzdjhm" />
+		<Field id="qzmc" desc="权证名称" require="true"  status="F"  edittype="text"  datatype="string" size="200" xpath="/qzmc" />
+		<Field id="qzyxdqrq" desc="权证有效到期日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/qzyxdqrq" />
+		<Field id="djyxzzrq" desc="登记有效终止日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/djyxzzrq" />
+		<Field id="sfnrbwhs" desc="是否纳入表外核算"  require="true" status="F"  edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/sfnrbwhs" />
+		<Field id="bwhsksrq" desc="表外核算开始日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/bwhsksrq" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

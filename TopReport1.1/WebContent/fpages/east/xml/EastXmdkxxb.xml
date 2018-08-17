@@ -25,30 +25,31 @@
 		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
+		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="xdhth" desc="信贷合同号" edittype="text" status="F" datatype="string" size="100" xpath="/id/xdhth"></Field>	
-	    <Field id="khtybh" desc="客户统一编号" status="F" edittype="text" datatype="string" size="60" xpath="/khtybh"></Field>	
-		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
-		<Field id="jrxkzh" desc="金融许可证号" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
-		<Field id="nbjgh" desc="内部机构号 " status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
-		<Field id="jkrmc" desc="借款人名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/jkrmc" />
-		<Field id="xmmc" desc="项目名称" status="F"  edittype="text"  datatype="string" size="100" xpath="/xmmc" />
-		<Field id="xmlx" desc="项目类型" status="F"  edittype="text"  datatype="string" size="100" xpath="/xmlx" />
-		<Field id="sfyt" desc="是否银团" status="F"  edittype="text"  datatype="string" size="4" xpath="/sfyt" />
-		<Field id="xmztz" desc="项目总投资" status="F"  edittype="text"  datatype="string" size="24" xpath="/xmztz" />
-		<Field id="zbj" desc="资本金" status="F"  edittype="text"  datatype="string" size="24" xpath="/zbj" />
-		<Field id="xmdkje" desc="项目贷款金额" status="F"  edittype="text"  datatype="string" size="24" xpath="/xmdkje" />
-		<Field id="xmdkqx" desc="项目贷款期限" status="F"  edittype="text"  datatype="string" size="30" xpath="/xmdkqx" />
-		<Field id="pwwh" desc="批文文号" status="F"  edittype="text"  datatype="string" size="60" xpath="/pwwh" />
-		<Field id="lxpw" desc="立项批文" status="F"  edittype="text"  datatype="string" size="60" xpath="/lxpw" />
-		<Field id="ghxkzbh" desc="规划许可证编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/ghxkzbh" />
-		<Field id="jsydxkzbh" desc="建设用地许可证编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/jsydxkzbh" />
-		<Field id="hpxkzbh" desc="环评许可证编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/hpxkzbh" />
-		<Field id="sgxkzbh" desc="施工许可证编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/sgxkzbh" />
-		<Field id="qtxkz" desc="其他许可证" status="F"  edittype="text"  datatype="string" size="60" xpath="/qtxkz" />
-		<Field id="qtxkzbh" desc="其他许可证编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/qtxkzbh" />
-		<Field id="kgrq" desc="开工日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/kgrq" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="xdhth" desc="信贷合同号"  require="true" edittype="text" status="F" datatype="string" size="100" xpath="/id/xdhth"></Field>	
+	    <Field id="khtybh" desc="客户统一编号"  require="true" status="F" edittype="text" datatype="string" size="60" xpath="/khtybh"></Field>	
+		<Field id="yxjgdm" desc="银行机构代码"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="jrxkzh" desc="金融许可证号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
+		<Field id="nbjgh" desc="内部机构号 "  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+		<Field id="jkrmc" desc="借款人名称" require="true"  status="F"  edittype="text"  datatype="string" size="200" xpath="/jkrmc" />
+		<Field id="xmmc" desc="项目名称"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/xmmc" />
+		<Field id="xmlx" desc="项目类型"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/xmlx" />
+		<Field id="sfyt" desc="是否银团"  require="true" status="F" edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/sfyt" />
+		<Field id="xmztz" desc="项目总投资"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/xmztz" />
+		<Field id="zbj" desc="资本金"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/zbj" />
+		<Field id="xmdkje" desc="项目贷款金额"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/xmdkje" />
+		<Field id="xmdkqx" desc="项目贷款期限" require="true"  status="F"  edittype="text"  datatype="string" size="30" xpath="/xmdkqx" />
+		<Field id="pwwh" desc="批文文号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/pwwh" />
+		<Field id="lxpw" desc="立项批文" require="true"  status="F"  edittype="text"  datatype="string" size="60" xpath="/lxpw" />
+		<Field id="ghxkzbh" desc="规划许可证编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/ghxkzbh" />
+		<Field id="jsydxkzbh" desc="建设用地许可证编号" require="true"  status="F"  edittype="text"  datatype="string" size="60" xpath="/jsydxkzbh" />
+		<Field id="hpxkzbh" desc="环评许可证编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/hpxkzbh" />
+		<Field id="sgxkzbh" desc="施工许可证编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/sgxkzbh" />
+		<Field id="qtxkz" desc="其他许可证"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/qtxkz" />
+		<Field id="qtxkzbh" desc="其他许可证编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/qtxkzbh" />
+		<Field id="kgrq" desc="开工日期" require="true"  status="F"  edittype="text"  datatype="string" size="8" xpath="/kgrq" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

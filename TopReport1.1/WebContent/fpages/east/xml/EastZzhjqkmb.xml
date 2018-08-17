@@ -26,23 +26,23 @@
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-        <Field id="yhjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yhjgdm"></Field>	
-	    <Field id="nbjgh" desc="内部机构号" edittype="text" status="F" datatype="string" size="30" xpath="/id/nbjgh"></Field>
-	    <Field id="jrxkzh" desc="金融许可证号" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
-		<Field id="yhjgmc" desc="银行机构名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/yhjgmc"></Field>
-		<Field id="kmbh" desc="科目编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/id/kmbh" />
-		<Field id="kmmc" desc="科目名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/kmmc" />
-		<Field id="kmjc" desc="科目级次" status="F"  edittype="text"  datatype="string" size="2" xpath="/kmjc" />
-		<Field id="kmlx" desc="科目类型" status="F"  edittype="text"  datatype="string" size="2" xpath="/kmlx" />
-		<Field id="qcjfye" desc="期初借方余额" status="F"  edittype="text"  datatype="string" size="20" xpath="/qcjfye" />
-		<Field id="qcdfye" desc="期初贷方余额" status="F"  edittype="text"  datatype="string" size="20" xpath="/qcdfye" />
-		<Field id="jffse" desc="本期借方发生额" status="F"  edittype="text"  datatype="string" size="20" xpath="/jffse" />
-		<Field id="dffse" desc="本期贷方发生额" status="F"  edittype="text"  datatype="string" size="20" xpath="/dffse" />
-		<Field id="qmjfye" desc="期末借方余额" status="F"  edittype="text"  datatype="string" size="20" xpath="/qmjfye" />
-		<Field id="qmdfye" desc="期末贷方余额" status="F"  edittype="text"  datatype="string" size="20" xpath="/qmdfye" />
-		<Field id="bz" desc="币种信息" status="F"  edittype="text"  datatype="string" size="3" xpath="/id/bz" />
-		<Field id="kjrq" desc="会计日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/kjrq" />
-		<Field id="bszq" desc="报送周期" status="F"  edittype="text"  datatype="string" size="2" xpath="/id/bszq" />
+        <Field id="yhjgdm" desc="银行机构代码"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/yhjgdm"></Field>	
+	    <Field id="nbjgh" desc="内部机构号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/id/nbjgh"></Field>
+	    <Field id="jrxkzh" desc="金融许可证号"  require="true" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
+		<Field id="yhjgmc" desc="银行机构名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/yhjgmc"></Field>
+		<Field id="kmbh" desc="科目编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/id/kmbh" />
+		<Field id="kmmc" desc="科目名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/kmmc" />
+		<Field id="kmjc" desc="科目级次"  require="true" status="F"  edittype="text"  datatype="string" size="2" xpath="/kmjc" />
+		<Field id="kmlx" desc="科目类型"  require="true" status="F"  edittype="select" translated="DATA_DIC.20035" datatype="string" size="2" xpath="/kmlx" />
+		<Field id="qcjfye" desc="期初借方余额" require="true"  status="F"  edittype="text"  datatype="currency" size="20" xpath="/qcjfye" />
+		<Field id="qcdfye" desc="期初贷方余额"  require="true" status="F"  edittype="text"  datatype="currency" size="20" xpath="/qcdfye" />
+		<Field id="jffse" desc="本期借方发生额" require="true"  status="F"  edittype="text"  datatype="currency" size="20" xpath="/jffse" />
+		<Field id="dffse" desc="本期贷方发生额"  require="true" status="F"  edittype="text"  datatype="currency" size="20" xpath="/dffse" />
+		<Field id="qmjfye" desc="期末借方余额"  require="true" status="F"  edittype="text"  datatype="currency" size="20" xpath="/qmjfye" />
+		<Field id="qmdfye" desc="期末贷方余额"  require="true" status="F"  edittype="text"  datatype="currency" size="20" xpath="/qmdfye" />
+		<Field id="bz" desc="币种信息"  require="true" status="F"  edittype="text"  datatype="string" size="3" xpath="/id/bz" />
+		<Field id="kjrq" desc="会计日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/kjrq" />
+		<Field id="bszq" desc="报送周期" require="true"  status="F"  edittype="select" translated="DATA_DIC.20036" datatype="string" size="2" xpath="/id/bszq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

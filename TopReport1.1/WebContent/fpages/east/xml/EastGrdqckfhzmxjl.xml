@@ -26,42 +26,42 @@
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-        <Field id="hxjylsh" desc="核心交易流水号" edittype="text" status="F" datatype="string" size="60" xpath="/id/hxjylsh"></Field>	
-	    <Field id="zjylsh" desc="子交易流水号" edittype="text" status="F" datatype="string" size="60" xpath="/id/zjylsh"></Field>
-	    <Field id="bcxh" desc="笔次序号" status="F" edittype="text" datatype="string" size="30" xpath="/id/bcxh"></Field>	
-		<Field id="dqckzh" desc="活期存款账号" status="F"  edittype="text"  datatype="string" size="30" xpath="/id/dqckzh"></Field>
-		<Field id="khtybh" desc="客户统一编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/khtybh" />
-		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm" />
-		<Field id="jrxkzh" desc="金融许可证号" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
-		<Field id="nbjgh" desc="内部机构号" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
-		<Field id="mxkmbh" desc="明细科目编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/mxkmbh" />
-		<Field id="yxjgmc" desc="银行机构名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/yxjgmc" />
-		<Field id="mxkmmc" desc="明细科目名称" status="F"  edittype="text"  datatype="string" size="300" xpath="/mxkmmc" />
-		<Field id="hxjyrq" desc="核心交易日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/hxjyrq" />
-		<Field id="hxjysj" desc="核心交易时间" status="F"  edittype="text"  datatype="string" size="6" xpath="/hxjysj" />
-		<Field id="bz" desc="币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
-		<Field id="zhmc" desc="账户名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/zhmc" />
-		<Field id="jylx" desc="交易类型" status="F"  edittype="text"  datatype="string" size="60" xpath="/jylx" />
-		<Field id="jyje" desc="交易金额" status="F"  edittype="text"  datatype="string" size="20" xpath="/jyje" />
-		<Field id="khhjgh" desc="开户行机构号" status="F"  edittype="text"  datatype="string" size="30" xpath="/khhjgh" />
-		<Field id="ywbljgh" desc="业务办理机构号" status="F"  edittype="text"  datatype="string" size="30" xpath="/ywbljgh" />
-		<Field id="zhye" desc="账户余额" status="F"  edittype="text"  datatype="string" size="20" xpath="/zhye" />
-		<Field id="dfzh" desc="对方账号" status="F"  edittype="text"  datatype="string" size="60" xpath="/dfzh" />
-		<Field id="dfhm" desc="对方户名" status="F"  edittype="text"  datatype="string" size="200" xpath="/dfhm" />
-		<Field id="dfxh" desc="对方行号" status="F"  edittype="text"  datatype="string" size="30" xpath="/dfxh" />
-		<Field id="dfxm" desc="对方行名" status="F"  edittype="text"  datatype="string" size="200" xpath="/dfxm" />
-		<Field id="jyqd" desc="交易渠道" status="F"  edittype="text"  datatype="string" size="60" xpath="/jyqd" />
-		<Field id="xzbz" desc="现转标志" status="F"  edittype="text"  datatype="string" size="4" xpath="/xzbz" />
-		<Field id="bftqzqbz" desc="部分提前支取标志" status="F"  edittype="text"  datatype="string" size="4" xpath="/bftqzqbz" />
-		<Field id="dbrxm" desc="代办人姓名" status="F"  edittype="text"  datatype="string" size="100" xpath="/dbrxm" />
-		<Field id="dbrzjlb" desc="代办人证件类别" status="F"  edittype="text"  datatype="string" size="60" xpath="/dbrzjlb" />
-		<Field id="dbrzjhm" desc="代办人证件号码" status="F"  edittype="text"  datatype="string" size="60" xpath="/dbrzjhm" />
-		<Field id="jygyh" desc="交易柜员号" status="F"  edittype="text"  datatype="string" size="30" xpath="/jygyh" />
-		<Field id="sqgyh" desc="授权柜员号" status="F"  edittype="text"  datatype="string" size="30" xpath="/sqgyh" />
-		<Field id="zy" desc="摘要" status="F"  edittype="text"  datatype="string" size="400" xpath="/zy" />
-		<Field id="cbmbz" desc="冲补抹标志" status="F"  edittype="text"  datatype="string" size="10" xpath="/cbmbz" />
-		<Field id="jyjdbz" desc="交易借贷标志" status="F"  edittype="text"  datatype="string" size="12" xpath="/jyjdbz" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+        <Field id="hxjylsh" desc="核心交易流水号"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/id/hxjylsh"></Field>	
+	    <Field id="zjylsh" desc="子交易流水号"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/id/zjylsh"></Field>
+	    <Field id="bcxh" desc="笔次序号"  require="true" status="F" edittype="text" datatype="string" size="30" xpath="/id/bcxh"></Field>	
+		<Field id="dqckzh" desc="活期存款账号" require="true"  status="F"  edittype="text"  datatype="string" size="30" xpath="/id/dqckzh"></Field>
+		<Field id="khtybh" desc="客户统一编号" require="true"  status="F"  edittype="text"  datatype="string" size="60" xpath="/khtybh" />
+		<Field id="yxjgdm" desc="银行机构代码"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm" />
+		<Field id="jrxkzh" desc="金融许可证号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
+		<Field id="nbjgh" desc="内部机构号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+		<Field id="mxkmbh" desc="明细科目编号" require="true"  status="F"  edittype="text"  datatype="string" size="60" xpath="/mxkmbh" />
+		<Field id="yxjgmc" desc="银行机构名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/yxjgmc" />
+		<Field id="mxkmmc" desc="明细科目名称"  require="true" status="F"  edittype="text"  datatype="string" size="300" xpath="/mxkmmc" />
+		<Field id="hxjyrq" desc="核心交易日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/hxjyrq" />
+		<Field id="hxjysj" desc="核心交易时间"  require="true" status="F"  edittype="text"  datatype="string" size="6" xpath="/hxjysj" />
+		<Field id="bz" desc="币种" require="true"  status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
+		<Field id="zhmc" desc="账户名称" require="true"  status="F"  edittype="text"  datatype="string" size="200" xpath="/zhmc" />
+		<Field id="jylx" desc="交易类型" require="true"  status="F"  edittype="text"  datatype="string" size="60" xpath="/jylx" />
+		<Field id="jyje" desc="交易金额" require="true"  status="F"  edittype="text"  datatype="currency" size="20" xpath="/jyje" />
+		<Field id="khhjgh" desc="开户行机构号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/khhjgh" />
+		<Field id="ywbljgh" desc="业务办理机构号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/ywbljgh" />
+		<Field id="zhye" desc="账户余额"  require="true" status="F"  edittype="text"  datatype="currency" size="20" xpath="/zhye" />
+		<Field id="dfzh" desc="对方账号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/dfzh" />
+		<Field id="dfhm" desc="对方户名" require="true"  status="F"  edittype="text"  datatype="string" size="200" xpath="/dfhm" />
+		<Field id="dfxh" desc="对方行号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/dfxh" />
+		<Field id="dfxm" desc="对方行名" require="true"  status="F"  edittype="text"  datatype="string" size="200" xpath="/dfxm" />
+		<Field id="jyqd" desc="交易渠道" require="true"  status="F"  edittype="select" translated="DATA_DIC.20039" datatype="string" size="60" xpath="/jyqd" />
+		<Field id="xzbz" desc="现转标志"  require="true" status="F"  edittype="select" translated="DATA_DIC.20040"  datatype="string" size="4" xpath="/xzbz" />
+		<Field id="bftqzqbz" desc="部分提前支取标志" require="true"  status="F"  edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/bftqzqbz" />
+		<Field id="dbrxm" desc="代办人姓名"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/dbrxm" />
+		<Field id="dbrzjlb" desc="代办人证件类别"  require="true" status="F"  edittype="select" translated="DATA_DIC.20041"  datatype="string" size="60" xpath="/dbrzjlb" />
+		<Field id="dbrzjhm" desc="代办人证件号码"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/dbrzjhm" />
+		<Field id="jygyh" desc="交易柜员号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/jygyh" />
+		<Field id="sqgyh" desc="授权柜员号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/sqgyh" />
+		<Field id="zy" desc="摘要"  require="true" status="F"  edittype="text"  datatype="string" size="400" xpath="/zy" />
+		<Field id="cbmbz" desc="冲补抹标志" require="true"  status="F"  edittype="select" translated="DATA_DIC.20042"  datatype="string" size="10" xpath="/cbmbz" />
+		<Field id="jyjdbz" desc="交易借贷标志"  require="true" status="F"  edittype="select" translated="DATA_DIC.20043"  datatype="string" size="12" xpath="/jyjdbz" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

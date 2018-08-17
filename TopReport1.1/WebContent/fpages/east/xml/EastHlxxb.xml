@@ -25,17 +25,17 @@
 		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
-		<Field id="id" desc="汇率日期" edittype="text" datatype="string" size="8" xpath="/id"></Field>
-		<Field id="yxjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
-		<Field id="jrxkzh" desc="金融许可证号" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
-		<Field id="nbjgh" desc="内部机构号" edittype="text" status="F" datatype="string" size="30" xpath="/nbjgh"></Field>
-		<Field id="yxjgmc" desc="银行机构名称" edittype="text" status="F" datatype="string" size="200" xpath="/yxjgmc"></Field>
-		<Field id="wb" desc="外币" edittype="text" status="F" datatype="string" size="3" xpath="/id/wb"></Field>
-		<Field id="bb" desc="本币" edittype="text" status="F" datatype="string" size="3" xpath="/id/bb"></Field>
-		<Field id="zjj" desc="中间价" edittype="text" status="F" datatype="big_decimal" size="10" xpath="/zjj"></Field>
-		<Field id="jzj" desc="基准价" edittype="text" status="F" datatype="big_decimal" size="10" xpath="/jzj"></Field>
-		<Field id="hlrq" desc="汇率日期" edittype="text" status="F" datatype="string" size="8" xpath="/id/hlrq"></Field>
-		<Field id="cjrq" desc="采集日期" edittype="text" status="F" datatype="string" size="8" xpath="/id/cjrq"></Field>
+		<Field id="id" desc="汇率日期"  require="true" edittype="text" datatype="string" size="8" xpath="/id"></Field>
+		<Field id="yxjgdm" desc="银行机构代码" require="true"  edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="jrxkzh" desc="金融许可证号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
+		<Field id="nbjgh" desc="内部机构号" require="true"  edittype="text" status="F" datatype="string" size="30" xpath="/nbjgh"></Field>
+		<Field id="yxjgmc" desc="银行机构名称"  require="true" edittype="text" status="F" datatype="string" size="200" xpath="/yxjgmc"></Field>
+		<Field id="wb" desc="外币" require="true"  edittype="text" status="F" datatype="string" size="3" xpath="/id/wb"></Field>
+		<Field id="bb" desc="本币"  require="true" edittype="text" status="F" datatype="string" size="3" xpath="/id/bb"></Field>
+		<Field id="zjj" desc="中间价"  require="true" edittype="text" status="F" datatype="big_decimal" size="10" xpath="/zjj"></Field>
+		<Field id="jzj" desc="基准价"  require="true" edittype="text" status="F" datatype="big_decimal" size="10" xpath="/jzj"></Field>
+		<Field id="hlrq" desc="汇率日期"  require="true" edittype="text" status="F" datatype="string" size="8" xpath="/id/hlrq"></Field>
+		<Field id="cjrq" desc="采集日期"  require="true" edittype="text" status="F" datatype="string" size="8" xpath="/id/cjrq"></Field>
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

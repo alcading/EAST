@@ -11,7 +11,7 @@
 	async:异步提交标志
 	pagesize:页面显示记录数(缺省为10)
 -->
-<CommQry title="贷款展期" navigate="银监标准化    &gt; 贷款展期" type="call"
+<CommQry title="资产转让关系表" navigate="银监标准化    &gt; 资产转让关系表" type="call"
 	interface="false" pagesize="10" async="true" databusid=""
 	transdataactionurl="/trans/TransDataAction.do"
 	txnlogflag="true"
@@ -20,19 +20,19 @@
 	<!--
 	<PageQryExp type="CSV" limit="true" encoding="GBK" url="/trans/qryExp.do" directory="F:/upload"/>
 	-->
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-贷款展期" />
+	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-资产转让关系表" />
 	<Fields>
 		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="xdjjh" desc="信贷借据号" status="F"  edittype="text"  datatype="string" size="100" xpath="/id/xdjjh" />
-		<Field id="zrhth" desc="转让合同号" status="F"  edittype="text"  datatype="string" size="100" xpath="/zrhth" />
-		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
-		<Field id="jrxkzh" desc="金融许可证号" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
-		<Field id="nbjgh" desc="内部机构号 " status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="xdjjh" desc="信贷借据号"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/id/xdjjh" />
+		<Field id="zrhth" desc="转让合同号"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/zrhth" />
+		<Field id="yxjgdm" desc="银行机构代码" require="true"  status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="jrxkzh" desc="金融许可证号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
+		<Field id="nbjgh" desc="内部机构号 "  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

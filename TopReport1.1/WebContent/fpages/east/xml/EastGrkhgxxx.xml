@@ -26,17 +26,17 @@
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
 		<Field id="id" desc="工号" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="khtybh" desc="客户统一编号" edittype="text" status="F" datatype="string" size="60" xpath="/id/khtybh"></Field>	
-	    <Field id="yxjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
-	    <Field id="jrxkzh" desc="金融许可证号" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
-		<Field id="nbjgh" desc="内部机构号" status="F"  edittype="text"  datatype="string" size="300" xpath="/nbjgh"></Field>
+		<Field id="khtybh" desc="客户统一编号"   require="true"  edittype="text" status="F" datatype="string" size="60" xpath="/id/khtybh"></Field>	
+	    <Field id="yxjgdm" desc="银行机构代码"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
+	    <Field id="jrxkzh" desc="金融许可证号"  require="true" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
+		<Field id="nbjgh" desc="内部机构号" require="true"  status="F"  edittype="text"  datatype="string" size="300" xpath="/nbjgh"></Field>
 		<Field id="dygrkhtybh" desc="对应个人客户统一编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/id/dygrkhtybh" />
-		<Field id="shgx" desc="社会关系 " status="F"  edittype="text"  datatype="string" size="60" xpath="/shgx" />
+		<Field id="shgx" desc="社会关系 "  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/shgx" />
 		<Field id="dygrkhxm" desc="对应个人客户姓名" status="F"  edittype="text"  datatype="string" size="100" xpath="/dygrkhxm" />
-		<Field id="dygrkhgzdwmc" desc="对应个人客户工作单位名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/dygrkhgzdwmc" />
+		<Field id="dygrkhgzdwmc" desc="对应个人客户工作单位名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/dygrkhgzdwmc" />
 		<Field id="dygrkhgzdwdz" desc="对应个人客户工作单位地址" status="F"  edittype="text"  datatype="string" size="400" xpath="/dygrkhgzdwdz" />
 		<Field id="dygrkhgzdwdh" desc="对应个人客户工作单位电话" status="F"  edittype="text"  datatype="string" size="30" xpath="/dygrkhgzdwdh" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

@@ -25,14 +25,14 @@
 		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 
-        <Field id="yhjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yhjgdm"></Field>	
-	    <Field id="id" desc="内部机构号" edittype="text" status="F" datatype="string" size="30" xpath="/id"></Field>
-	    <Field id="jrxkzh" desc="金融许可证号" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
-		<Field id="yhjgmc" desc="银行机构名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/yhjgmc"></Field>
-		<Field id="yzbm" desc="邮政编码" status="F"  edittype="text"  datatype="string" size="6" xpath="/yzbm" />
-		<Field id="sjgljgdm" desc="网点号" status="F"  edittype="text"  datatype="string" size="30" xpath="/sjgljgdm" />
-		<Field id="sjgljgmc" desc="营业状态" status="F"  edittype="text"  datatype="string" size="200" xpath="/sjgljgmc" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/cjrq" />
+        <Field id="yhjgdm" desc="银行机构代码"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/yhjgdm"></Field>	
+	    <Field id="id" desc="内部机构号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/id"></Field>
+	    <Field id="jrxkzh" desc="金融许可证号"  require="true" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
+		<Field id="yhjgmc" desc="银行机构名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/yhjgmc"></Field>
+		<Field id="yzbm" desc="邮政编码"  require="true" status="F"  edittype="text"  datatype="string" size="6" xpath="/yzbm" />
+		<Field id="sjgljgdm" desc="网点号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/sjgljgdm" />
+		<Field id="sjgljgmc" desc="营业状态"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/sjgljgmc" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

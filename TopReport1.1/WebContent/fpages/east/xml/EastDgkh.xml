@@ -26,53 +26,53 @@
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
 		<Field id="id" desc="工号" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="khtybh" desc="客户统一编号" edittype="text" status="F" datatype="string" size="60" xpath="/id/khtybh"></Field>	
-	    <Field id="zzjgdm" desc="统一社会信用代码" edittype="text" status="F" datatype="string" size="40" xpath="/zzjgdm"></Field>
-	    <Field id="yxjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
-	    <Field id="jrxkzh" desc="金融许可证号" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
-		<Field id="nbjgh" desc="内部机构号" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh"></Field>
-		<Field id="khmc" desc="客户名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/khmc" />
-		<Field id="khywmc" desc="客户英文名称 " status="F"  edittype="text"  datatype="string" size="200" xpath="/khywmc" />
-		<Field id="frdb" desc="法人代表" status="F"  edittype="text"  datatype="string" size="30" xpath="/frdb" />
-		<Field id="frdbzjlb" desc="法人代表证件类别" status="F"  edittype="text"  datatype="string" size="60" xpath="/frdbzjlb" />
-		<Field id="frdbzjhm" desc="法人代表证件号码" status="F"  edittype="text"  datatype="string" size="60" xpath="/frdbzjhm" />
-		<Field id="cwry" desc="财务人员" status="F"  edittype="text"  datatype="string" size="100" xpath="/cwry" />
-		<Field id="cwryzjlb" desc="财务人员证件类别" status="F"  edittype="text"  datatype="string" size="60" xpath="/cwryzjlb" />
-		<Field id="cwryzjhm" desc="财务人员证件号码" status="F"  edittype="text"  datatype="string" size="60" xpath="/cwryzjhm" />
-		<Field id="jbckzh" desc="基本存款账号" status="F"  edittype="text"  datatype="string" size="60" xpath="/jbckzh" />
-		<Field id="jbzhkhxmc" desc="基本账户开户行名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/jbzhkhxmc" />
-		<Field id="zczb" desc="注册资本" status="F"  edittype="text"  datatype="big_decimal" size="20" xpath="/zczb" />
-		<Field id="zcdz" desc="注册地址" status="F"  edittype="text"  datatype="string" size="400" xpath="/zcdz" />
-		<Field id="lxdh" desc="联系电话" status="F"  edittype="text"  datatype="string" size="30" xpath="/lxdh" />
-		<Field id="yyzzh" desc="营业执照号" status="F"  edittype="text"  datatype="string" size="60" xpath="/yyzzh" />
-		<Field id="yyzzyxjzrq" desc="营业执照有效截止日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/yyzzyxjzrq" />
-		<Field id="jyfw" desc="经营范围" status="F"  edittype="text"  datatype="string" size="100" xpath="/jyfw" />
-		<Field id="clrq" desc="成立日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/clrq" />
-		<Field id="ssxy" desc="所属行业" status="F"  edittype="text"  datatype="string" size="100" xpath="/ssxy" />
-		<Field id="khlb" desc="客户类别" status="F"  edittype="text"  datatype="string" size="30" xpath="/khlb" />
-		<Field id="dkzh" desc="贷款证号" status="F"  edittype="text"  datatype="string" size="60" xpath="/dkzh" />
-		<Field id="gszh" desc="国税证号" status="F"  edittype="text"  datatype="string" size="60" xpath="/gszh" />
-		<Field id="dszh" desc="地税证号" status="F"  edittype="text"  datatype="string" size="60" xpath="/dszh" />
+		<Field id="khtybh" desc="客户统一编号"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/id/khtybh"></Field>	
+	    <Field id="zzjgdm" desc="统一社会信用代码"  require="true" edittype="text" status="F" datatype="string" size="40" xpath="/zzjgdm"></Field>
+	    <Field id="yxjgdm" desc="银行机构代码"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
+	    <Field id="jrxkzh" desc="金融许可证号"  require="true" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
+		<Field id="nbjgh" desc="内部机构号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh"></Field>
+		<Field id="khmc" desc="客户名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/khmc" />
+		<Field id="khywmc" desc="客户英文名称 "  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/khywmc" />
+		<Field id="frdb" desc="法人代表" status="F"  require="true"  edittype="text"  datatype="string" size="30" xpath="/frdb" />
+		<Field id="frdbzjlb" desc="法人代表证件类别"  require="true" status="F"  edittype="select" translated="DATA_DIC.20041"  datatype="string" size="60" xpath="/frdbzjlb" />
+		<Field id="frdbzjhm" desc="法人代表证件号码"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/frdbzjhm" />
+		<Field id="cwry" desc="财务人员" status="F"   require="true" edittype="text"  datatype="string" size="100" xpath="/cwry" />
+		<Field id="cwryzjlb" desc="财务人员证件类别"  require="true" status="F"  edittype="select" translated="DATA_DIC.20041"  datatype="string" size="60" xpath="/cwryzjlb" />
+		<Field id="cwryzjhm" desc="财务人员证件号码"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/cwryzjhm" />
+		<Field id="jbckzh" desc="基本存款账号" status="F"  require="true"  edittype="text"  datatype="string" size="60" xpath="/jbckzh" />
+		<Field id="jbzhkhxmc" desc="基本账户开户行名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/jbzhkhxmc" />
+		<Field id="zczb" desc="注册资本" status="F"  require="true"  edittype="text"  datatype="currency" size="20" xpath="/zczb" />
+		<Field id="zcdz" desc="注册地址" status="F"   require="true" edittype="text"  datatype="string" size="400" xpath="/zcdz" />
+		<Field id="lxdh" desc="联系电话" status="F"   require="true" edittype="text"  datatype="string" size="30" xpath="/lxdh" />
+		<Field id="yyzzh" desc="营业执照号" status="F"  require="true"  edittype="text"  datatype="string" size="60" xpath="/yyzzh" />
+		<Field id="yyzzyxjzrq" desc="营业执照有效截止日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/yyzzyxjzrq" />
+		<Field id="jyfw" desc="经营范围"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/jyfw" />
+		<Field id="clrq" desc="成立日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/clrq" />
+		<Field id="ssxy" desc="所属行业"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/ssxy" />
+		<Field id="khlb" desc="客户类别"  require="true" status="F"  edittype="select" translated="DATA_DIC.20049"  datatype="string" size="30" xpath="/khlb" />
+		<Field id="dkzh" desc="贷款证号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/dkzh" />
+		<Field id="gszh" desc="国税证号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/gszh" />
+		<Field id="dszh" desc="地税证号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/dszh" />
 		<Field id="mgskhtybh" desc="母公司客户统一编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/mgskhtybh" />
-		<Field id="tysxbz" desc="统一授信标志" status="F"  edittype="text"  datatype="string" size="4" xpath="/tysxbz" />
-		<Field id="sxed" desc="授信额度" status="F"  edittype="text"  datatype="big_decimal" size="20" xpath="/sxed" />
-		<Field id="yyed" desc="已用额度" status="F"  edittype="text"  datatype="big_decimal" size="20" xpath="/yyed" />
-		<Field id="ssgsbz" desc="上市公司标志" status="F"  edittype="text"  datatype="string" size="4" xpath="/ssgsbz" />
-		<Field id="xydjbh" desc="信用评级结果" status="F"  edittype="text"  datatype="string" size="200" xpath="/xydjbh" />
-		<Field id="zczbbz" desc="注册资本币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/zczbbz" />
-		<Field id="sszbbz" desc="实收资本币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/sszbbz" />
-		<Field id="sszb" desc="实收资本" status="F"  edittype="text"  datatype="big_decimal" size="20" xpath="/sszb" />
-		<Field id="zzc" desc="总资产" status="F"  edittype="text"  datatype="big_decimal" size="20" xpath="/zzc" />
-		<Field id="jzc" desc="净资产" status="F"  edittype="text"  datatype="big_decimal" size="20" xpath="/jzc" />
-		<Field id="nsr" desc="年收入" status="F"  edittype="text"  datatype="big_decimal" size="20" xpath="/nsr" />
-		<Field id="scjlxdgxny" desc="首次建立信贷关系年月" status="F"  edittype="text"  datatype="string" size="6" xpath="/scjlxdgxny" />
-		<Field id="yzbm" desc="邮政编码" status="F"  edittype="text"  datatype="string" size="6" xpath="/yzbm" />
-		<Field id="czhm" desc="传真号码" status="F"  edittype="text"  datatype="string" size="30" xpath="/czhm" />
-		<Field id="ygrs" desc="员工人数" status="F"  edittype="text"  datatype="string" size="10" xpath="/ygrs" />
-		<Field id="xzqhdm" desc="行政区划代码" status="F"  edittype="text"  datatype="string" size="20" xpath="/xzqhdm" />
-		<Field id="khlx" desc="客户类型" status="F"  edittype="text"  datatype="string" size="12" xpath="/khlx" />
-		<Field id="fxyjxh" desc="风险预警信号" status="F"  edittype="text"  datatype="string" size="200" xpath="/fxyjxh" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="tysxbz" desc="统一授信标志"  require="true" status="F"  edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/tysxbz" />
+		<Field id="sxed" desc="授信额度"  require="true" status="F"  edittype="text"  datatype="currency" size="20" xpath="/sxed" />
+		<Field id="yyed" desc="已用额度"  require="true" status="F"  edittype="text"  datatype="currency" size="20" xpath="/yyed" />
+		<Field id="ssgsbz" desc="上市公司标志"  require="true" status="F"  edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/ssgsbz" />
+		<Field id="xydjbh" desc="信用评级结果"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/xydjbh" />
+		<Field id="zczbbz" desc="注册资本币种"  require="true" status="F"  edittype="text"  datatype="string" size="3" xpath="/zczbbz" />
+		<Field id="sszbbz" desc="实收资本币种"  require="true" status="F"  edittype="text"  datatype="string" size="3" xpath="/sszbbz" />
+		<Field id="sszb" desc="实收资本"  require="true" status="F"  edittype="text"  datatype="currency" size="20" xpath="/sszb" />
+		<Field id="zzc" desc="总资产"  require="true" status="F"  edittype="text"  datatype="currency" size="20" xpath="/zzc" />
+		<Field id="jzc" desc="净资产"  require="true" status="F"  edittype="text"  datatype="currency" size="20" xpath="/jzc" />
+		<Field id="nsr" desc="年收入"  require="true" status="F"  edittype="text"  datatype="currency" size="20" xpath="/nsr" />
+		<Field id="scjlxdgxny" desc="首次建立信贷关系年月"  require="true" status="F"  edittype="text"  datatype="string" size="6" xpath="/scjlxdgxny" />
+		<Field id="yzbm" desc="邮政编码"  require="true" status="F"  edittype="text"  datatype="string" size="6" xpath="/yzbm" />
+		<Field id="czhm" desc="传真号码"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/czhm" />
+		<Field id="ygrs" desc="员工人数"  require="true" status="F"  edittype="text"  datatype="string" size="10" xpath="/ygrs" />
+		<Field id="xzqhdm" desc="行政区划代码"  require="true" status="F"  edittype="text"  datatype="string" size="20" xpath="/xzqhdm" />
+		<Field id="khlx" desc="客户类型"  require="true" status="F"  edittype="text"  datatype="string" size="12" xpath="/khlx" />
+		<Field id="fxyjxh" desc="风险预警信号" require="true"  status="F"  edittype="text"  datatype="string" size="200" xpath="/fxyjxh" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

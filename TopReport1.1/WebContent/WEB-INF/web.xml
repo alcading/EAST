@@ -355,6 +355,17 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
+<!-- 金标报文下载 -->
+	<servlet>
+        <servlet-name>JBFileDownload</servlet-name>
+        <servlet-class>resources.finstandard.data.update.JBFileDownload</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JBFileDownload</servlet-name>
+        <url-pattern>/jbFileLoad</url-pattern>
+    </servlet-mapping>
+
+
 	<servlet>
 		<servlet-name>ProcessImageServlet</servlet-name>
 		<servlet-class>

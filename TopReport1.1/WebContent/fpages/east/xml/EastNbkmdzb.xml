@@ -26,14 +26,14 @@
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-        <Field id="kmbh" desc="总账会计科目编号" edittype="text" status="F" datatype="string" size="60" xpath="/id/kmbh"></Field>	
-	    <Field id="kmmc" desc="总账会计科目名称" edittype="text" status="F" datatype="string" size="200" xpath="/kmmc"></Field>
-	    <Field id="kjkmjc" desc="会计科目级次" status="F" edittype="text" datatype="string" size="2" xpath="/kjkmjc"></Field>	
-		<Field id="sjkmbh" desc="上级科目编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/sjkmbh"></Field>
-		<Field id="sjkmmc" desc="上级科目名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/sjkmmc" />
-		<Field id="gsywdl" desc="归属业务大类" status="F"  edittype="text"  datatype="string" size="2" xpath="/gsywdl" />
-		<Field id="gsywzl" desc="归属业务子类" status="F"  edittype="text"  datatype="string" size="30" xpath="/gsywzl" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+        <Field id="kmbh" desc="总账会计科目编号"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/id/kmbh"></Field>	
+	    <Field id="kmmc" desc="总账会计科目名称"  require="true" edittype="text" status="F" datatype="string" size="200" xpath="/kmmc"></Field>
+	    <Field id="kjkmjc" desc="会计科目级次"  require="true" status="F" edittype="text" datatype="string" size="2" xpath="/kjkmjc"></Field>	
+		<Field id="sjkmbh" desc="上级科目编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/sjkmbh"></Field>
+		<Field id="sjkmmc" desc="上级科目名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/sjkmmc" />
+		<Field id="gsywdl" desc="归属业务大类"  require="true" status="F"  edittype="text"  datatype="string" size="2" xpath="/gsywdl" />
+		<Field id="gsywzl" desc="归属业务子类"  require="true" status="F"  edittype="select" translated="DATA_DIC.20037" datatype="string" size="30" xpath="/gsywzl" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

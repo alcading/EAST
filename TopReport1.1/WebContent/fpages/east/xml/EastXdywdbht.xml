@@ -27,28 +27,28 @@
 		
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="dbhth" desc="担保合同号" status="F"  edittype="text"  datatype="string" size="100" xpath="/id/dbhth" />
-		<Field id="jrxkzh" desc="金融许可证号" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
-		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
-		<Field id="nbjgh" desc="内部机构号 " status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
-		<Field id="dblx" desc="担保类型" status="F"  edittype="text"  datatype="string" size="30" xpath="/dblx" />
-	    <Field id="dbhtlx" desc="担保合同类型" status="F" edittype="text" datatype="string" size="30" xpath="/dbhtlx"></Field>	
-		<Field id="bzrlb" desc="保证人类别" status="F"  edittype="text"  datatype="string" size="30" xpath="/bzrlb" />
-		<Field id="bzrmc" desc="保证人名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/bzrmc" />
-		<Field id="zjlb" desc="证件类别" status="F"  edittype="text"  datatype="string" size="60" xpath="/zjlb" />
-		<Field id="zjhm" desc="证件号码" status="F"  edittype="text"  datatype="string" size="200" xpath="/id/zjhm" />
-		<Field id="bzrjzc" desc="保证人净资产" status="F"  edittype="text"  datatype="string" size="24" xpath="/bzrjzc" />
-		<Field id="dbqsrq" desc="担保起始日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbqsrq" />
-		<Field id="dbdqrq" desc="担保到期日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbdqrq" />
-		<Field id="dbhtzt" desc="担保合同状态" status="F"  edittype="text"  datatype="string" size="30" xpath="/dbhtzt" />
-		<Field id="dbhtqdrq" desc="担保合同签订日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbhtqdrq" />
-		<Field id="dbhtsxrq" desc="担保合同生效日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbhtsxrq" />
-		<Field id="dbhtdqrq" desc="担保合同到期日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbhtdqrq" />
-		<Field id="dbbz" desc="担保币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/dbbz" />
-		<Field id="dbzje" desc="担保总金额" status="F"  edittype="text"  datatype="string" size="24" xpath="/dbzje" />
-		<Field id="dbwpxh" desc="担保物品顺序" status="F"  edittype="text"  datatype="string" size="1000" xpath="/dbwpxh" />
-		<Field id="jlygh" desc="建立员工号" status="F"  edittype="text"  datatype="string" size="30" xpath="/jlygh" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="dbhth" desc="担保合同号"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/id/dbhth" />
+		<Field id="jrxkzh" desc="金融许可证号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
+		<Field id="yxjgdm" desc="银行机构代码"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="nbjgh" desc="内部机构号 "  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+		<Field id="dblx" desc="担保类型"  require="true" status="F"  edittype="select" translated="DATA_DIC.20065"  datatype="string" size="30" xpath="/dblx" />
+	    <Field id="dbhtlx" desc="担保合同类型"  require="true" status="F" edittype="select" translated="DATA_DIC.20067" datatype="string" size="30" xpath="/dbhtlx"></Field>	
+		<Field id="bzrlb" desc="保证人类别"  require="true" status="F"  edittype="select" translated="DATA_DIC.20049"  datatype="string" size="30" xpath="/bzrlb" />
+		<Field id="bzrmc" desc="保证人名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/bzrmc" />
+		<Field id="zjlb" desc="证件类别"  require="true" status="F"  edittype="select" translated="DATA_DIC.20041"  datatype="string" size="60" xpath="/zjlb" />
+		<Field id="zjhm" desc="证件号码"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/id/zjhm" />
+		<Field id="bzrjzc" desc="保证人净资产"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/bzrjzc" />
+		<Field id="dbqsrq" desc="担保起始日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbqsrq" />
+		<Field id="dbdqrq" desc="担保到期日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbdqrq" />
+		<Field id="dbhtzt" desc="担保合同状态"  require="true" status="F"  edittype="select" translated="DATA_DIC.20067"  datatype="string" size="30" xpath="/dbhtzt" />
+		<Field id="dbhtqdrq" desc="担保合同签订日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbhtqdrq" />
+		<Field id="dbhtsxrq" desc="担保合同生效日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbhtsxrq" />
+		<Field id="dbhtdqrq" desc="担保合同到期日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/dbhtdqrq" />
+		<Field id="dbbz" desc="担保币种"  require="true" status="F"  edittype="text"  datatype="string" size="3" xpath="/dbbz" />
+		<Field id="dbzje" desc="担保总金额"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/dbzje" />
+		<Field id="dbwpxh" desc="担保物品顺序"  require="true" status="F"  edittype="text"  datatype="string" size="1000" xpath="/dbwpxh" />
+		<Field id="jlygh" desc="建立员工号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/jlygh" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

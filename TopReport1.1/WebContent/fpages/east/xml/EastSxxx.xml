@@ -27,28 +27,28 @@
 		
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="sxxyh" desc="授信协议号" status="F"  edittype="text"  datatype="string" size="60" xpath="/id/sxxyh" />
-		<Field id="khtybh" desc="客户统一编号" status="F"  edittype="text"  datatype="string" size="60" xpath="/khtybh" />
-		<Field id="jrxkzh" desc="金融许可证号" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
-		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
-		<Field id="nbjgh" desc="内部机构号 " status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
-		<Field id="fsrq" desc="发生日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/fsrq" />
-	    <Field id="khmc" desc="客户名称" status="F" edittype="text" datatype="string" size="200" xpath="/khmc"></Field>	
-		<Field id="sxzl" desc="授信主体种类" status="F"  edittype="text"  datatype="string" size="30" xpath="/sxzl" />
-		<Field id="sxxymc" desc="授信协议名称" status="F"  edittype="text"  datatype="string" size="400" xpath="/sxxymc" />
-		<Field id="edje" desc="额度金额" status="F"  edittype="text"  datatype="string" size="24" xpath="/edje" />
-		<Field id="bz" desc="币种" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
-		<Field id="sxrq" desc="生效日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/sxrq" />
-		<Field id="sxzt" desc="授信状态" status="F"  edittype="text"  datatype="string" size="6" xpath="/sxzt" />
-		<Field id="sxksrq" desc="授信开始日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/sxksrq" />
-		<Field id="sxdqrq" desc="授信到期日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/sxdqrq" />
-		<Field id="scsxrq" desc="首次授信日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/scsxrq" />
-		<Field id="jcdyj" desc="决策单意见" status="F"  edittype="text"  datatype="string" size="2000" xpath="/jcdyj" />
-		<Field id="zzspr" desc="最终审批人" status="F"  edittype="text"  datatype="string" size="30" xpath="/zzspr" />
-		<Field id="sfxhed" desc="是否循环制度" status="F"  edittype="text"  datatype="string" size="4" xpath="/sfxhed" />
-		<Field id="sflsed" desc="是否临时额度" status="F"  edittype="text"  datatype="string" size="4" xpath="/sflsed" />
-		<Field id="sxygh" desc="授信员工号" status="F"  edittype="text"  datatype="string" size="30" xpath="/sxygh" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="sxxyh" desc="授信协议号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/id/sxxyh" />
+		<Field id="khtybh" desc="客户统一编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/khtybh" />
+		<Field id="jrxkzh" desc="金融许可证号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
+		<Field id="yxjgdm" desc="银行机构代码"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="nbjgh" desc="内部机构号 "  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+		<Field id="fsrq" desc="发生日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/fsrq" />
+	    <Field id="khmc" desc="客户名称"  require="true" status="F" edittype="text" datatype="string" size="200" xpath="/khmc"></Field>	
+		<Field id="sxzl" desc="授信主体种类"  require="true" status="F"  edittype="select" translated="DATA_DIC.20075"  datatype="string" size="30" xpath="/sxzl" />
+		<Field id="sxxymc" desc="授信协议名称"  require="true" status="F"  edittype="text"  datatype="string" size="400" xpath="/sxxymc" />
+		<Field id="edje" desc="额度金额"  require="true" status="F"  edittype="text"  datatype="currency" size="24" xpath="/edje" />
+		<Field id="bz" desc="币种"  require="true" status="F"  edittype="text"  datatype="string" size="3" xpath="/bz" />
+		<Field id="sxrq" desc="生效日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/sxrq" />
+		<Field id="sxzt" desc="授信状态"  require="true" status="F"  edittype="select" translated="DATA_DIC.20050"  datatype="string" size="6" xpath="/sxzt" />
+		<Field id="sxksrq" desc="授信开始日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/sxksrq" />
+		<Field id="sxdqrq" desc="授信到期日期" require="true"  status="F"  edittype="text"  datatype="string" size="8" xpath="/sxdqrq" />
+		<Field id="scsxrq" desc="首次授信日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/scsxrq" />
+		<Field id="jcdyj" desc="决策单意见"  require="true" status="F"  edittype="text"  datatype="string" size="2000" xpath="/jcdyj" />
+		<Field id="zzspr" desc="最终审批人"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/zzspr" />
+		<Field id="sfxhed" desc="是否循环制度"  require="true" status="F"  edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/sfxhed" />
+		<Field id="sflsed" desc="是否临时额度"  require="true" status="F"  edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/sflsed" />
+		<Field id="sxygh" desc="授信员工号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/sxygh" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

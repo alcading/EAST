@@ -25,19 +25,19 @@
 		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
 		
-		<Field id="id" desc="统计科目编号" edittype="text" datatype="string" size="20" xpath="/id"></Field>
-		<Field id="jrjgdm" desc="金融机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/jrjgdm"></Field>
-		<Field id="jrxkzh" desc="金融许可证号" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
-		<Field id="nbjgh" desc="内部机构号" edittype="text" status="F" datatype="string" size="30" xpath="/id/nbjgh"></Field>
-		<Field id="tjkmbh" desc="统计科目编号" edittype="text" status="F" datatype="string" size="20" xpath="/tjkmbh"></Field>
-		<Field id="tjkmmc" desc="统计科目名称" edittype="text" status="F" datatype="string" size="120" xpath="/id/tjkmmc"></Field>
-		<Field id="tjkmje" desc="统计科目金额" edittype="text" status="F" datatype="big_decimal" size="20" xpath="/tjkmje"></Field>
-		<Field id="qxlx" desc="期限类型" edittype="text" status="F" datatype="string" size="6" xpath="/id/qxlx"></Field>
-		<Field id="tjrq" desc="统计日期" edittype="text" status="F" datatype="string" size="8" xpath="/id/tjrq"></Field>
-		<Field id="bz" desc="币种" edittype="text" status="F" datatype="string" size="3" xpath="/id/bz"></Field>
-		<Field id="dqmc" desc="地区名称" edittype="text" status="F" datatype="string" size="60" xpath="/dqmc"></Field>
-		<Field id="xzqhdm" desc="行政区划代码" edittype="text" status="F" datatype="string" size="20" xpath="/xzqhdm"></Field>
-		<Field id="cjrq" desc="采集日期" edittype="text" status="F" datatype="string" size="8" xpath="/id/cjrq"></Field>
+		<Field id="id" desc="工号" edittype="text" datatype="string" size="20" xpath="/id"></Field>
+		<Field id="jrjgdm" desc="金融机构代码" require="true"  edittype="text" status="F" datatype="string" size="30" xpath="/jrjgdm"></Field>
+		<Field id="jrxkzh" desc="金融许可证号" require="true"  edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
+		<Field id="nbjgh" desc="内部机构号" require="true"  edittype="text" status="F" datatype="string" size="30" xpath="/id/nbjgh"></Field>
+		<Field id="tjkmbh" desc="统计科目编号" require="true"  edittype="text" status="F" datatype="string" size="20" xpath="/tjkmbh"></Field>
+		<Field id="tjkmmc" desc="统计科目名称"  require="true" edittype="text" status="F" datatype="string" size="120" xpath="/id/tjkmmc"></Field>
+		<Field id="tjkmje" desc="统计科目金额"  require="true" edittype="text" status="F" datatype="currency" size="20" xpath="/tjkmje"></Field>
+		<Field id="qxlx" desc="期限类型"  require="true" edittype="select" translated="DATA_DIC.20080" status="F" datatype="string" size="6" xpath="/id/qxlx"></Field>
+		<Field id="tjrq" desc="统计日期" require="true"  edittype="text" status="F" datatype="string" size="8" xpath="/id/tjrq"></Field>
+		<Field id="bz" desc="币种" require="true"  edittype="text" status="F" datatype="string" size="3" xpath="/id/bz"></Field>
+		<Field id="dqmc" desc="地区名称" require="true"  edittype="text" status="F" datatype="string" size="60" xpath="/dqmc"></Field>
+		<Field id="xzqhdm" desc="行政区划代码"  require="true" edittype="text" status="F" datatype="string" size="20" xpath="/xzqhdm"></Field>
+		<Field id="cjrq" desc="采集日期"  require="true" edittype="text" status="F" datatype="string" size="8" xpath="/id/cjrq"></Field>
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>

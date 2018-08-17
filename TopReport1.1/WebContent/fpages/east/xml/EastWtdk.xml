@@ -27,32 +27,32 @@
 		
 		
 		<Field id="id" desc="id" edittype="text" datatype="string" size="30" xpath="/id"></Field>
-		<Field id="xdjjh" desc="信贷借据号" status="F"  edittype="text"  datatype="string" size="100" xpath="/id/xdjjh" />
-		<Field id="xdhth" desc="信贷合同号" status="F"  edittype="text"  datatype="string" size="100" xpath="/xdhth" />
-		<Field id="khtybh" desc="客户统一编号" edittype="text" status="F" datatype="string" size="60" xpath="/khtybh"></Field>
-		<Field id="yxjgdm" desc="银行机构代码" status="F"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
-		<Field id="jrxkzh" desc="金融许可证号" status="F"  edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
-		<Field id="nbjgh" desc="内部机构号 " status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
-	    <Field id="wtrkhtybh" desc="委托人客户统一编号" status="F" edittype="text" datatype="string" size="60" xpath="/wtrkhtybh"></Field>	
-		<Field id="wtrkhmc" desc="委托人客户名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/wtrkhmc" />
-		<Field id="syrmc" desc="受益人名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/syrmc" />
-		<Field id="wtjjkhxh" desc="委托资金开户行号" status="F"  edittype="text"  datatype="string" size="30" xpath="/wtjjkhxh" />
-		<Field id="wtjjkhxmc" desc="委托资金开户行名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/wtjjkhxmc" />
+		<Field id="xdjjh" desc="信贷借据号" status="F"  require="true"  edittype="text"  datatype="string" size="100" xpath="/id/xdjjh" />
+		<Field id="xdhth" desc="信贷合同号" status="F"  require="true"  edittype="text"  datatype="string" size="100" xpath="/xdhth" />
+		<Field id="khtybh" desc="客户统一编号" edittype="text"  require="true" status="F" datatype="string" size="60" xpath="/khtybh"></Field>
+		<Field id="yxjgdm" desc="银行机构代码" status="F"  require="true"  edittype="text"  datatype="string" size="30" xpath="/yxjgdm"></Field>
+		<Field id="jrxkzh" desc="金融许可证号" status="F"   require="true" edittype="text"  datatype="string" size="30" xpath="/jrxkzh" />
+		<Field id="nbjgh" desc="内部机构号 " status="F"  require="true"  edittype="text"  datatype="string" size="30" xpath="/nbjgh" />
+	    <Field id="wtrkhtybh" desc="委托人客户统一编号" status="F" require="true"  edittype="text" datatype="string" size="60" xpath="/wtrkhtybh"></Field>	
+		<Field id="wtrkhmc" desc="委托人客户名称" status="F"  require="true"  edittype="text"  datatype="string" size="200" xpath="/wtrkhmc" />
+		<Field id="syrmc" desc="受益人名称" status="F"  require="true"  edittype="text"  datatype="string" size="200" xpath="/syrmc" />
+		<Field id="wtjjkhxh" desc="委托资金开户行号" status="F"  require="true"  edittype="text"  datatype="string" size="30" xpath="/wtjjkhxh" />
+		<Field id="wtjjkhxmc" desc="委托资金开户行名称" status="F"  require="true"  edittype="text"  datatype="string" size="200" xpath="/wtjjkhxmc" />
 		<Field id="wtjjzh" desc="参贷行行名" status="F"  edittype="text"  datatype="string" size="200" xpath="/wtjjzh" />
-		<Field id="wtzhlx" desc="委托账号类型" status="F"  edittype="text"  datatype="string" size="30" xpath="/wtzhlx" />
-		<Field id="wtje" desc="委托金额" status="F"  edittype="text"  datatype="string" size="24" xpath="/wtje" />
-		<Field id="sjwtdkje" desc="实际委托金额" status="F"  edittype="text"  datatype="string" size="24" xpath="/sjwtdkje" />
-		<Field id="wtdkyt" desc="委托贷款用途" status="F"  edittype="text"  datatype="string" size="400" xpath="/wtdkyt" />
-		<Field id="sfsx" desc="是否收息" status="F"  edittype="text"  datatype="string" size="4" xpath="/sfsx" />
-		<Field id="sxffs" desc="手续费方式" status="F"  edittype="text"  datatype="string" size="60" xpath="/sxffs" />
-		<Field id="sxfje" desc="手续费金额" status="F"  edittype="text"  datatype="string" size="24" xpath="/sxfje" />
-		<Field id="xyqsrq" desc="协议起始日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/xyqsrq" />
-		<Field id="xydqrq" desc="协议到期日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/xydqrq" />
-		<Field id="jbrxm" desc="经办人姓名" status="F"  edittype="text"  datatype="string" size="100" xpath="/jbrxm" />
-		<Field id="khjlgh" desc="经办人工号" status="F"  edittype="text"  datatype="string" size="8" xpath="/khjlgh" />
-		<Field id="jbjgmc" desc="经办机构名称" status="F"  edittype="text"  datatype="string" size="200" xpath="/jbjgmc" />
-		<Field id="xyzt" desc="协议状态" status="F"  edittype="text"  datatype="string" size="60" xpath="/xyzkzrq" />
-		<Field id="cjrq" desc="采集日期" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
+		<Field id="wtzhlx" desc="委托账号类型" status="F"  require="true"  edittype="select" translated="DATA_DIC.20062"  datatype="string" size="30" xpath="/wtzhlx" />
+		<Field id="wtje" desc="委托金额" status="F"  require="true"  edittype="text"  datatype="currency" size="24" xpath="/wtje" />
+		<Field id="sjwtdkje" desc="实际委托金额" status="F"  require="true"  edittype="text"  datatype="currency" size="24" xpath="/sjwtdkje" />
+		<Field id="wtdkyt" desc="委托贷款用途" status="F"  require="true"  edittype="text"  datatype="string" size="400" xpath="/wtdkyt" />
+		<Field id="sfsx" desc="是否收息" status="F"  require="true"  edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/sfsx" />
+		<Field id="sxffs" desc="手续费方式" status="F"  require="true"  edittype="text"  datatype="string" size="60" xpath="/sxffs" />
+		<Field id="sxfje" desc="手续费金额" status="F"  require="true"  edittype="text"  datatype="currency" size="24" xpath="/sxfje" />
+		<Field id="xyqsrq" desc="协议起始日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/xyqsrq" />
+		<Field id="xydqrq" desc="协议到期日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/xydqrq" />
+		<Field id="jbrxm" desc="经办人姓名"  require="true" status="F"  edittype="text"  datatype="string" size="100" xpath="/jbrxm" />
+		<Field id="khjlgh" desc="经办人工号"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/khjlgh" />
+		<Field id="jbjgmc" desc="经办机构名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/jbjgmc" />
+		<Field id="xyzt" desc="协议状态"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/xyzkzrq" />
+		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>
