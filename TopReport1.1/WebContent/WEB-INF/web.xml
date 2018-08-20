@@ -355,7 +355,7 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
-<!-- 金标报文下载 -->
+	<!-- 金标报文下载 -->
 	<servlet>
         <servlet-name>JBFileDownload</servlet-name>
         <servlet-class>resources.finstandard.data.update.JBFileDownload</servlet-class>
@@ -363,6 +363,16 @@
     <servlet-mapping>
         <servlet-name>JBFileDownload</servlet-name>
         <url-pattern>/jbFileLoad</url-pattern>
+    </servlet-mapping>
+    
+    <!-- East下载 -->
+	<servlet>
+        <servlet-name>EastFileDownload</servlet-name>
+        <servlet-class>resources.east.data.update.EastFileDownload</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EastFileDownload</servlet-name>
+        <url-pattern>/EastFileLoad</url-pattern>
     </servlet-mapping>
 
 

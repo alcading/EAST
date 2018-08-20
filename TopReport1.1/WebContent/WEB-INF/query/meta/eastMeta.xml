@@ -173,5 +173,8 @@
 	
 	<!-- east 汇率信息表-->
 	<Query id="EastHlxxb" path="/fpages/east/xml/EastHlxxb.xml" desc="汇率信息表" />
+	
+	<!-- east 报文下载-->
+	<Query id="EastFileDownload" path="/fpages/east/xml/EastFileDownload.xml" desc="报文下载" />
 
 </META>
