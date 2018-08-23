@@ -176,5 +176,8 @@
 	
 	<!-- east 报文下载-->
 	<Query id="EastFileDownload" path="/fpages/east/xml/EastFileDownload.xml" desc="报文下载" />
+	
+	<!-- east 修改工作日期-->
+	<Query id="EastGlobalinfo" path="/fpages/east/xml/EastGlobalinfo.xml" desc="修改工作日期" />
 
 </META>

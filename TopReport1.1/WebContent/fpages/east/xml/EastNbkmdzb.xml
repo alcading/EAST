@@ -39,7 +39,9 @@
        </Fields>
     <Where>
     	<TextBox id="cjrq" desc="采集日期" datatype="date" index="5" require="true" errmsg="数据日期不能为空！" tip="时间为必输项" size="12"/>
-    	<TextBox id="kmbh" desc="总账会计科目编号" datatype="string" index="3" size="30"/>
+    	<TextBox id="kmbh" desc="总账会计科目编号" datatype="string" index="3" size="60"/>
+    	<TextBox id="kmmc" desc="总账会计科目名称" datatype="string" index="3" size="200"/>
+    	<TextBox id="sjkmbh" desc="上级科目编号" datatype="string" index="3" size="60"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

@@ -62,15 +62,7 @@ public class EastSntjbModOrAddUpdate extends BaseUpdate {
 				Sntjbpk.setNbjgh(nbjgh);
 				BaseUpdate.mapToObject(eastSntjb, map);
 				eastSntjb.setId(Sntjbpk);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastSntjbOperation.CMD, EastSntjbOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastSntjbOperation.CMD, EastSntjbOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastSntjbOperation.CMD, EastSntjbOperation.CMD_DELETE);
-				}
+				context.setAttribute(EastSntjbOperation.CMD, EastSntjbOperation.CMD_UPDATE);
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastSntjb);
 				// call方式开启operation事务
 				OPCaller.call(EastSntjbOperation.ID, context);

@@ -14,6 +14,7 @@ import com.huateng.ebank.framework.report.common.ReportConstant;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
+import east.utils.tools.DBUtil;
 import resources.east.data.service.EastNbkmdzbService;
 
 @SuppressWarnings("unchecked")
@@ -54,13 +55,23 @@ public class EastNbkmdzbGetter extends BaseGetter {
 		   	
 		   	String kmbh = (String)para.get("kmbh");
 		   	
+		   	String kmmc = (String)para.get("kmmc");
+		   	
+		   	String sjkmbh = (String)para.get("sjkmbh");
+		   	
 			int pageSize = this.getResult().getPage().getEveryPage();
 			int pageIndex = this.getResult().getPage().getCurrentPage();
 			
 			StringBuffer hql = new StringBuffer();
 			
-			hql.append("from EastNbkmdzb A where 1 = 1 ");
+			hql.append("from EastNbkmdzb A where rownum<="+DBUtil.ROWNUM);
 			
+			if(StringUtils.isNotBlank(sjkmbh)){
+				hql.append(" and A.sjkmbh = '"+sjkmbh.trim()+"' ");
+			}
+			if(StringUtils.isNotBlank(kmmc)){
+				hql.append(" and A.id.kmmc like '%").append(kmmc.trim()).append("%'");
+			}
 			if(StringUtils.isNotBlank(kmbh)){
 				hql.append(" and A.kmbh = '"+kmbh.trim()+"' ");
 			}

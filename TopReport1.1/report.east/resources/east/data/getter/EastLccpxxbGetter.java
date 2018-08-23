@@ -14,6 +14,7 @@ import com.huateng.ebank.framework.report.common.ReportConstant;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
+import east.utils.tools.DBUtil;
 import resources.east.data.service.EastLccpxxbService;
 
 public class EastLccpxxbGetter extends BaseGetter {
@@ -53,15 +54,25 @@ public class EastLccpxxbGetter extends BaseGetter {
 		   	
 		   String cjrq = (String)para.get("cjrq");
 		   
-		   String hnbsm = (String)para.get("hnbsm");
+		   String hnbsm = (String)para.get("id");
+		   
+		   String cpmc = (String)para.get("cpmc");
+		   
+		   String cpdjbm = (String)para.get("cpdjbm");
 		   
 		   int pageSize = this.getResult().getPage().getEveryPage();
 		   int pageIndex = this.getResult().getPage().getCurrentPage();
 		   
 		   StringBuffer hql = new StringBuffer();
 		   
-		   hql.append("from EastLccpxxb A where 1 = 1 ");
+		   hql.append("from EastLccpxxb A where rownum<="+DBUtil.ROWNUM);
 		   
+		   if(StringUtils.isNotBlank(cpdjbm)){
+			   hql.append(" and A.cpdjbm = '"+cpdjbm.trim()+"' ");
+		   }
+		   if(StringUtils.isNotBlank(cpmc)){
+			   hql.append(" and A.cpmc like '%"+cpmc.trim()+"%' ");
+		   }
 		   if(StringUtils.isNotBlank(hnbsm)){
 			   hql.append(" and A.hnbsm = '"+hnbsm.trim()+"' ");
 		   }

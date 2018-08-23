@@ -49,6 +49,8 @@
     <Where>
     	<TextBox id="kjrq" desc="会计日期" datatype="date" index="5" require="true" errmsg="会计日期不能为空！" tip="时间为必输项" size="12"/>
     	<TextBox id="yhjgdm" desc="银行机构代码" datatype="string" index="3" size="30"/>
+    	<TextBox id="kmbh" desc="科目编号" datatype="string" index="3" size="60"/>
+    	<TextBox id="kmlx" desc="科目类型" edittype="select" translated="DATA_DIC.20035" datatype="string" index="3" size="2"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

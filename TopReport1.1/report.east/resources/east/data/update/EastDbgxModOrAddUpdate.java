@@ -52,15 +52,7 @@ public class EastDbgxModOrAddUpdate extends BaseUpdate {
 				dbgxpk.setCjrq(cjrq);
 				BaseUpdate.mapToObject(eastDbgx, map);
 				eastDbgx.setId(dbgxpk);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastDbgxOperation.CMD, EastDbgxOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastDbgxOperation.CMD, EastDbgxOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastDbgxOperation.CMD, EastDbgxOperation.CMD_DELETE);
-				}
+				context.setAttribute(EastDbgxOperation.CMD, EastDbgxOperation.CMD_UPDATE);
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastDbgx);
 				// call方式开启operation事务
 				OPCaller.call(EastDbgxOperation.ID, context);

@@ -30,21 +30,11 @@ public class EastNbfhzmxjlOperation extends BaseOperation {
 	@Override
 	public void execute(OperationContext context) throws CommonException {
 
-		String cmd = (String)context.getAttribute(CMD);
 		EastNbfhzmxjl eastNbfhzmxjl  = (EastNbfhzmxjl) context.getAttribute(IN_PARAM);
 
 		EastNbfhzmxjlService eastNbfhzmxjlService = EastNbfhzmxjlService.getInstance();
 
-		if(CMD_INSERT.equalsIgnoreCase(cmd))
-		{
-			eastNbfhzmxjlService.addEntity(eastNbfhzmxjl);
-		}else if(CMD_UPDATE.equalsIgnoreCase(cmd))
-		{
-			eastNbfhzmxjlService.modEntity(eastNbfhzmxjl);
-		}else if(CMD_DELETE.equalsIgnoreCase(cmd))
-		{
-			eastNbfhzmxjlService.removeEntity(eastNbfhzmxjl);
-		}
+		eastNbfhzmxjlService.modEntity(eastNbfhzmxjl);
 	}
 	
 

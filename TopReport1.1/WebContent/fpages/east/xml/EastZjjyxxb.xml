@@ -15,7 +15,7 @@
 	interface="false" pagesize="10" async="true" databusid=""
 	transdataactionurl="/trans/TransDataAction.do"
 	txnlogflag="true"
-	getterclassname="resources.east.data.getter.EastZcfzkmtjbGetter">
+	getterclassname="resources.east.data.getter.EastZjjyxxbGetter">
 	<Include id="BankParam" />
 	<!--
 	<PageQryExp type="CSV" limit="true" encoding="GBK" url="/trans/qryExp.do" directory="F:/upload"/>
@@ -84,6 +84,8 @@
     <Where>
     	<TextBox id="cjrq" desc="采集日期" datatype="date" index="5" require="true" errmsg="数据日期不能为空！" tip="时间为必输项" size="12"/>
     	<TextBox id="yxjgdm" desc="银行机构代码" datatype="string" index="3" size="30"/>
+    	<TextBox id="jybh" desc="交易编号" datatype="string" index="3" size="40"/>
+    	<TextBox id="jrgjbh" desc="金融工具编号" datatype="string" index="3" size="60"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

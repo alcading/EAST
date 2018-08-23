@@ -14,6 +14,7 @@ import com.huateng.ebank.framework.report.common.ReportConstant;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
+import east.utils.tools.DBUtil;
 import resources.east.data.service.EastDgxdfhzmxjlService;
 
 public class EastDgxdfhzmxjlGetter extends BaseGetter {
@@ -52,17 +53,27 @@ public class EastDgxdfhzmxjlGetter extends BaseGetter {
 		   	
 		    String cjrq = (String)para.get("cjrq");
 		   	
-		    String yxjgdm = (String)para.get("yxjgdm");
+		    String hxjylsh = (String)para.get("hxjylsh");
 		   	
+		    String dkzh = (String)para.get("dkzh");
+		    
+		    String xdjjh = (String)para.get("xdjjh");
+		    
 			int pageSize = this.getResult().getPage().getEveryPage();
 			int pageIndex = this.getResult().getPage().getCurrentPage();
 			
 			StringBuffer hql = new StringBuffer();
 			
-			hql.append("from EastDgxdfhzmxjl A where 1 = 1 ");
+			hql.append("from EastDgxdfhzmxjl A where rownum<="+DBUtil.ROWNUM);
 			
-			if(StringUtils.isNotBlank(yxjgdm)){
-				hql.append(" and A.yxjgdm = '"+yxjgdm.trim()+"' ");
+			if(StringUtils.isNotBlank(hxjylsh)){
+				hql.append(" and A.id.hxjylsh = '"+hxjylsh.trim()+"' ");
+			}
+			if(StringUtils.isNotBlank(dkzh)){
+				hql.append(" and A.id.dkzh = '"+dkzh.trim()+"' ");
+			}
+			if(StringUtils.isNotBlank(xdjjh)){
+				hql.append(" and A.id.xdjjh = '"+xdjjh.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(cjrq)){
 				hql.append(" and A.id.cjrq = '"+cjrq.trim().toUpperCase()+"' ");

@@ -14,6 +14,7 @@ import com.huateng.ebank.framework.report.common.ReportConstant;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
+import east.utils.tools.DBUtil;
 import resources.east.data.service.EastGrhqckfhzService;
 
 public class EastGrhqckfhzGetter extends BaseGetter {
@@ -53,13 +54,23 @@ public class EastGrhqckfhzGetter extends BaseGetter {
 		   	
 		   	String yxjgdm = (String)para.get("yxjgdm");
 		   	
+		   	String hqckzh = (String)para.get("hqckzh");
+		   	
+		   	String zhmc = (String)para.get("zhmc");
+		   	
 			int pageSize = this.getResult().getPage().getEveryPage();
 			int pageIndex = this.getResult().getPage().getCurrentPage();
 			
 			StringBuffer hql = new StringBuffer();
 			
-			hql.append("from EastGrhqckfhz A where 1 = 1 ");
+			hql.append("from EastGrhqckfhz A where rownum<="+DBUtil.ROWNUM);
 			
+			if(StringUtils.isNotBlank(hqckzh)){
+				hql.append(" and A.id.hqckzh = '"+hqckzh.trim()+"' ");
+			}
+			if(StringUtils.isNotBlank(zhmc)){
+				hql.append(" and A.zhmc like '%").append(zhmc.trim()).append("%'");
+			}
 			if(StringUtils.isNotBlank(yxjgdm)){
 				hql.append(" and A.yxjgdm = '"+yxjgdm.trim()+"' ");
 			}

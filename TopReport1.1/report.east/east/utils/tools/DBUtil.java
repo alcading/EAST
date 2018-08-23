@@ -15,6 +15,9 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class DBUtil {
 	
+	
+	public static final Integer ROWNUM = 10000;
+	
 	public static Connection getConnection(){
 		Connection conn = null;
 		DBUtil dbUtil=new DBUtil();

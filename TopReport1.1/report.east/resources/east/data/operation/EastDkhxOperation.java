@@ -35,13 +35,7 @@ public class EastDkhxOperation extends BaseOperation {
 
 		EastDkhxService eastDkhxService = EastDkhxService.getInstance();
 
-		if (CMD_INSERT.equalsIgnoreCase(cmd)) {
-			eastDkhxService.addEntity(eastDkhx);
-		} else if (CMD_UPDATE.equalsIgnoreCase(cmd)) {
 			eastDkhxService.modEntity(eastDkhx);
-		} else if (CMD_DELETE.equalsIgnoreCase(cmd)) {
-			eastDkhxService.removeEntity(eastDkhx);
-		}
 	}
 
 }

@@ -55,15 +55,7 @@ public class EastGrkhgxxxModOrAddUpdate extends BaseUpdate {
 				Grkhgxxxpk.setDygrkhtybh(dygrkhtybh);
 				BaseUpdate.mapToObject(eastGrkhgxxx, map);
 				eastGrkhgxxx.setId(Grkhgxxxpk);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
 					context.setAttribute(EastGrkhgxxxOperation.CMD, EastGrkhgxxxOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastGrkhgxxxOperation.CMD, EastGrkhgxxxOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastGrkhgxxxOperation.CMD, EastGrkhgxxxOperation.CMD_DELETE);
-				}
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastGrkhgxxx);
 				// call方式开启operation事务
 				OPCaller.call(EastGrkhgxxxOperation.ID, context);

@@ -50,15 +50,7 @@ public class EastYtdkModOrAddUpdate extends BaseUpdate {
 				ytdkpk.setCjrq(cjrq);
 				BaseUpdate.mapToObject(eastYtdk, map);
 				eastYtdk.setId(ytdkpk);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastYtdkOperation.CMD, EastYtdkOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastYtdkOperation.CMD, EastYtdkOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastYtdkOperation.CMD, EastYtdkOperation.CMD_DELETE);
-				}
+				context.setAttribute(EastYtdkOperation.CMD, EastYtdkOperation.CMD_UPDATE);
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastYtdk);
 				// call方式开启operation事务
 				OPCaller.call(EastYtdkOperation.ID, context);

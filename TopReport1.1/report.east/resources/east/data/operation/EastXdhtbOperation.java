@@ -35,13 +35,7 @@ public class EastXdhtbOperation extends BaseOperation {
 
 		EastXdhtbService eastXdhtbService = EastXdhtbService.getInstance();
 
-		if (CMD_INSERT.equalsIgnoreCase(cmd)) {
-			eastXdhtbService.addEntity(eastXdhtb);
-		} else if (CMD_UPDATE.equalsIgnoreCase(cmd)) {
-			eastXdhtbService.modEntity(eastXdhtb);
-		} else if (CMD_DELETE.equalsIgnoreCase(cmd)) {
-			eastXdhtbService.removeEntity(eastXdhtb);
-		}
+		eastXdhtbService.modEntity(eastXdhtb);
 	}
 
 }

@@ -52,15 +52,7 @@ public class EastXdhtbModOrAddUpdate extends BaseUpdate {
 				Xdhtbpk.setCjrq(cjrq);
 				BaseUpdate.mapToObject(eastXdhtb, map);
 				eastXdhtb.setId(Xdhtbpk);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastXdhtbOperation.CMD, EastXdhtbOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastXdhtbOperation.CMD, EastXdhtbOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastXdhtbOperation.CMD, EastXdhtbOperation.CMD_DELETE);
-				}
+				context.setAttribute(EastXdhtbOperation.CMD, EastXdhtbOperation.CMD_UPDATE);
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastXdhtb);
 				// call方式开启operation事务
 				OPCaller.call(EastXdhtbOperation.ID, context);

@@ -52,15 +52,7 @@ public class EastGwxxbModOrAddUpdate extends BaseUpdate {
 				gwxxbpk.setNbjgh(nbjgh);
 				BaseUpdate.mapToObject(eastGwxxb, map);
 				eastGwxxb.setId(gwxxbpk);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
 					context.setAttribute(EastGwxxbOperation.CMD, EastGwxxbOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastGwxxbOperation.CMD, EastGwxxbOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastGwxxbOperation.CMD, EastGwxxbOperation.CMD_DELETE);
-				}
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastGwxxb);
 				// call方式开启operation事务
 				OPCaller.call(EastGwxxbOperation.ID, context);

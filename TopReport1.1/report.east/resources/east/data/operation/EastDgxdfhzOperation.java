@@ -35,16 +35,7 @@ public class EastDgxdfhzOperation extends BaseOperation {
 
 		EastDgxdfhzService eastDgxdfhzService = EastDgxdfhzService.getInstance();
 
-		if(CMD_INSERT.equalsIgnoreCase(cmd))
-		{
-			eastDgxdfhzService.addEntity(eastDgxdfhz);
-		}else if(CMD_UPDATE.equalsIgnoreCase(cmd))
-		{
 			eastDgxdfhzService.modEntity(eastDgxdfhz);
-		}else if(CMD_DELETE.equalsIgnoreCase(cmd))
-		{
-			eastDgxdfhzService.removeEntity(eastDgxdfhz);
-		}
 	}
 	
 

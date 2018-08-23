@@ -30,7 +30,7 @@ public class EastXdzczrOperation extends BaseOperation {
 	@Override
 	public void execute(OperationContext context) throws CommonException {
 
-		String cmd = (String) context.getAttribute(CMD);
+		//String cmd = (String) context.getAttribute(CMD);
 		EastXdzczr eastXdzczr = (EastXdzczr) context.getAttribute(IN_PARAM);
 
 		EastXdzczrService eastXdzczrService = EastXdzczrService.getInstance();

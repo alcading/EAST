@@ -45,15 +45,7 @@ public class EastLccpxxbModOrAddUpdate extends BaseUpdate {
 				// 属性拷贝
 				Map map = updateResultBean.next();
 				BaseUpdate.mapToObject(eastLccpxxb, map);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastLccpxxbOperation.CMD, EastLccpxxbOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastLccpxxbOperation.CMD, EastLccpxxbOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastLccpxxbOperation.CMD, EastLccpxxbOperation.CMD_DELETE);
-				}
+				context.setAttribute(EastLccpxxbOperation.CMD, EastLccpxxbOperation.CMD_UPDATE);
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastLccpxxb);
 				// call方式开启operation事务
 				OPCaller.call(EastLccpxxbOperation.ID, context);

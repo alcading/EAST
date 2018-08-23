@@ -14,6 +14,7 @@ import com.huateng.ebank.framework.report.common.ReportConstant;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
+import east.utils.tools.DBUtil;
 import resources.east.data.service.EastXdzczrService;
 
 @SuppressWarnings("unchecked")
@@ -54,17 +55,27 @@ public class EastXdzczrGetter extends BaseGetter {
 	   	
 	    String cjrq = (String)para.get("cjrq");
 	   	
-	    String yxjgdm = (String)para.get("yxjgdm");
+	    String zrhth = (String)para.get("zrhth");
 	   	
+	    String jydsbh = (String)para.get("jydsbh");
+	    
+	    String jydsmc = (String)para.get("jydsmc");
+	    
 		int pageSize = this.getResult().getPage().getEveryPage();
 		int pageIndex = this.getResult().getPage().getCurrentPage();
 		
 		StringBuffer hql = new StringBuffer();
 		
-		hql.append("from EastXdzczr A where 1 = 1 ");
+		hql.append("from EastXdzczr A where rownum<="+DBUtil.ROWNUM);
 		
-		if(StringUtils.isNotBlank(yxjgdm)){
-			hql.append(" and A.yxjgdm = '"+yxjgdm.trim()+"' ");
+		if(StringUtils.isNotBlank(zrhth)){
+			hql.append(" and A.id.zrhth = '"+zrhth.trim()+"' ");
+		}
+		if(StringUtils.isNotBlank(jydsbh)){
+			hql.append(" and A.jydsbh = '"+jydsbh.trim()+"' ");
+		}
+		if(StringUtils.isNotBlank(jydsmc)){
+			hql.append(" and A.jydsmc like '%"+jydsmc.trim()+"%' ");
 		}
 		if(StringUtils.isNotBlank(cjrq)){
 			hql.append(" and A.id.cjrq = '"+cjrq.trim().toUpperCase()+"' ");

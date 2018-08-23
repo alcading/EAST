@@ -50,15 +50,7 @@ public class EastXdywzhdywModOrAddUpdate extends BaseUpdate {
 				xdywzhdywpk.setCjrq(cjrq);
 				BaseUpdate.mapToObject(eastXdywzhdyw, map);
 				eastXdywzhdyw.setId(xdywzhdywpk);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastXdywzhdywOperation.CMD, EastXdywzhdywOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastXdywzhdywOperation.CMD, EastXdywzhdywOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastXdywzhdywOperation.CMD, EastXdywzhdywOperation.CMD_DELETE);
-				}
+				context.setAttribute(EastXdywzhdywOperation.CMD, EastXdywzhdywOperation.CMD_UPDATE);
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastXdywzhdyw);
 				// call方式开启operation事务
 				OPCaller.call(EastXdywzhdywOperation.ID, context);

@@ -60,6 +60,8 @@
     <Where>
     	<TextBox id="cjrq" desc="采集日期" datatype="date" index="5" require="true" errmsg="数据日期不能为空！" tip="时间为必输项" size="12"/>
     	<TextBox id="jrgjbh" desc="金融工具编号" datatype="string" index="3" size="60"/>
+    	<TextBox id="zqmc" desc="金融工具名称" datatype="string" index="3" size="200"/>
+    	<TextBox id="fxjg" desc="发行机构" datatype="string" index="3" size="200"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

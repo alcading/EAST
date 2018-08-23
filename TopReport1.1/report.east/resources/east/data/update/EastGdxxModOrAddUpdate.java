@@ -55,15 +55,7 @@ public class EastGdxxModOrAddUpdate extends BaseUpdate {
 				Gdxxpk.setCjrq(cjrq);
 				BaseUpdate.mapToObject(eastGdxx, map);
 				eastGdxx.setId(Gdxxpk);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
 					context.setAttribute(EastGdxxOperation.CMD, EastGdxxOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastGdxxOperation.CMD, EastGdxxOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastGdxxOperation.CMD, EastGdxxOperation.CMD_DELETE);
-				}
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastGdxx);
 				// call方式开启operation事务
 				OPCaller.call(EastGdxxOperation.ID, context);

@@ -9,6 +9,9 @@ import com.huateng.ebank.framework.exceptions.CommonException;
 import com.huateng.ebank.framework.report.common.ReportConstant;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
+
+import east.utils.tools.DBUtil;
+
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
@@ -54,15 +57,25 @@ public class EastJgxxbGetter extends BaseGetter {
 		   	
 		   	String yxjgdm = (String)para.get("yxjgdm");
 		   	
+		   	String nbjgh = (String)para.get("id");
+		   	
+		   	String yxjgmc = (String)para.get("yxjgmc");
+		   	
 			int pageSize = this.getResult().getPage().getEveryPage();
 			int pageIndex = this.getResult().getPage().getCurrentPage();
 			
 			StringBuffer hql = new StringBuffer();
 			
-			hql.append("from EastJgxxb A where 1 = 1 ");
+			hql.append("from EastJgxxb A where rownum<="+DBUtil.ROWNUM);
 			
 			if(StringUtils.isNotBlank(yxjgdm)){
 				hql.append(" and A.yxjgdm = '"+yxjgdm.trim()+"' ");
+			}
+			if(StringUtils.isNotBlank(nbjgh)){
+				hql.append(" and A.nbjgh = '"+nbjgh.trim()+"' ");
+			}
+			if(StringUtils.isNotBlank(yxjgmc)){
+				hql.append(" and A.yxjgmc like '%").append(yxjgmc.trim()).append("%'");
 			}
 			if(StringUtils.isNotBlank(cjrq)){
 				hql.append(" and A.cjrq = '"+cjrq.trim().toUpperCase()+"' ");

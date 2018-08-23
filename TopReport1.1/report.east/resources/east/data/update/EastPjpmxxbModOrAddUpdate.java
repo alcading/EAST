@@ -53,15 +53,7 @@ public class EastPjpmxxbModOrAddUpdate extends BaseUpdate {
 				Pjpmxxbpk.setCjrq(cjrq);
 				BaseUpdate.mapToObject(eastPjpmxxb, map);
 				eastPjpmxxb.setId(Pjpmxxbpk);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastPjpmxxbOperation.CMD, EastPjpmxxbOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastPjpmxxbOperation.CMD, EastPjpmxxbOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastPjpmxxbOperation.CMD, EastPjpmxxbOperation.CMD_DELETE);
-				}
+				context.setAttribute(EastPjpmxxbOperation.CMD, EastPjpmxxbOperation.CMD_UPDATE);
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastPjpmxxb);
 				// call方式开启operation事务
 				OPCaller.call(EastPjpmxxbOperation.ID, context);

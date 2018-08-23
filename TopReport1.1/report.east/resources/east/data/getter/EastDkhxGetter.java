@@ -14,6 +14,7 @@ import com.huateng.ebank.framework.report.common.ReportConstant;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
+import east.utils.tools.DBUtil;
 import resources.east.data.service.EastDkhxService;
 
 @SuppressWarnings("unchecked")
@@ -56,13 +57,23 @@ public class EastDkhxGetter extends BaseGetter {
 	   	
 	    String yxjgdm = (String)para.get("yxjgdm");
 	   	
+	    String xdjjh = (String)para.get("xdjjh");
+	    
+	    String khtybh = (String)para.get("khtybh");
+	    
 		int pageSize = this.getResult().getPage().getEveryPage();
 		int pageIndex = this.getResult().getPage().getCurrentPage();
 		
 		StringBuffer hql = new StringBuffer();
 		
-		hql.append("from EastDkhx A where 1 = 1 ");
+		hql.append("from EastDkhx A where rownum<="+DBUtil.ROWNUM);
 		
+		if(StringUtils.isNotBlank(xdjjh)){
+			hql.append(" and A.id.xdjjh = '"+xdjjh.trim()+"' ");
+		}
+		if(StringUtils.isNotBlank(khtybh)){
+			hql.append(" and A.khtybh = '"+khtybh.trim()+"' ");
+		}
 		if(StringUtils.isNotBlank(yxjgdm)){
 			hql.append(" and A.yxjgdm = '"+yxjgdm.trim()+"' ");
 		}

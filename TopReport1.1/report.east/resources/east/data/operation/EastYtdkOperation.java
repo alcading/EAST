@@ -30,18 +30,11 @@ public class EastYtdkOperation extends BaseOperation {
 	@Override
 	public void execute(OperationContext context) throws CommonException {
 
-		String cmd = (String) context.getAttribute(CMD);
 		EastYtdk eastYtdk = (EastYtdk) context.getAttribute(IN_PARAM);
 
 		EastYtdkService eastYtdkService = EastYtdkService.getInstance();
 
-		if (CMD_INSERT.equalsIgnoreCase(cmd)) {
-			eastYtdkService.addEntity(eastYtdk);
-		} else if (CMD_UPDATE.equalsIgnoreCase(cmd)) {
-			eastYtdkService.modEntity(eastYtdk);
-		} else if (CMD_DELETE.equalsIgnoreCase(cmd)) {
-			eastYtdkService.removeEntity(eastYtdk);
-		}
+		eastYtdkService.modEntity(eastYtdk);
 	}
 
 }

@@ -35,16 +35,7 @@ public class EastZcfzkmtjbOperation extends BaseOperation {
 
 		EastZcfzkmtjbService eastZcfzkmtjbService = EastZcfzkmtjbService.getInstance();
 
-		if(CMD_INSERT.equalsIgnoreCase(cmd))
-		{
-			eastZcfzkmtjbService.addEntity(eastZcfzkmtjb);
-		}else if(CMD_UPDATE.equalsIgnoreCase(cmd))
-		{
-			eastZcfzkmtjbService.modEntity(eastZcfzkmtjb);
-		}else if(CMD_DELETE.equalsIgnoreCase(cmd))
-		{
-			eastZcfzkmtjbService.removeEntity(eastZcfzkmtjb);
-		}
+		eastZcfzkmtjbService.modEntity(eastZcfzkmtjb);
 	}
 	
 

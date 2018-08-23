@@ -32,8 +32,8 @@
 		<Field id="yxjgmc" desc="银行机构名称"  require="true" edittype="text" status="F" datatype="string" size="200" xpath="/yxjgmc"></Field>
 		<Field id="wb" desc="外币" require="true"  edittype="text" status="F" datatype="string" size="3" xpath="/id/wb"></Field>
 		<Field id="bb" desc="本币"  require="true" edittype="text" status="F" datatype="string" size="3" xpath="/id/bb"></Field>
-		<Field id="zjj" desc="中间价"  require="true" edittype="text" status="F" datatype="big_decimal" size="10" xpath="/zjj"></Field>
-		<Field id="jzj" desc="基准价"  require="true" edittype="text" status="F" datatype="big_decimal" size="10" xpath="/jzj"></Field>
+		<Field id="zjj" desc="中间价"  require="true" edittype="text" status="F" datatype="currency" size="10" xpath="/zjj"></Field>
+		<Field id="jzj" desc="基准价"  require="true" edittype="text" status="F" datatype="currency" size="10" xpath="/jzj"></Field>
 		<Field id="hlrq" desc="汇率日期"  require="true" edittype="text" status="F" datatype="string" size="8" xpath="/id/hlrq"></Field>
 		<Field id="cjrq" desc="采集日期"  require="true" edittype="text" status="F" datatype="string" size="8" xpath="/id/cjrq"></Field>
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
@@ -42,6 +42,8 @@
     <Where>
     	<TextBox id="cjrq" desc="采集日期" datatype="date" index="5" require="true" errmsg="数据日期不能为空！" tip="时间为必输项" size="12"/>
     	<TextBox id="yxjgdm" desc="银行机构代码" datatype="string" index="3" size="30"/>
+    	<TextBox id="nbjgh" desc="内部机构号" datatype="string" index="3" size="30"/>
+    	<TextBox id="hlrq" desc="汇率日期" datatype="date" index="3" size="30"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

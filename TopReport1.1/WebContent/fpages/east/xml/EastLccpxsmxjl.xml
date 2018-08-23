@@ -58,7 +58,9 @@
        </Fields>
     <Where>
     	<TextBox id="cjrq" desc="采集日期" datatype="date" index="5" require="true" errmsg="数据日期不能为空！" tip="时间为必输项" size="12"/>
+    	<TextBox id="hxjylsh" desc="核心交易流水号" datatype="string" index="3" size="60"/>
     	<TextBox id="jyh" desc="销售合同号" datatype="string" index="3" size="100"/>
+    	<TextBox id="khxm" desc="客户姓名" datatype="string" index="3" size="200"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

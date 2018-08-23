@@ -29,8 +29,8 @@
 		<Field id="jrjgdm" desc="金融机构代码"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/jrjgdm"></Field>
 		<Field id="jrxkzh" desc="金融许可证号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/jrxkzh"></Field>
 		<Field id="nbjgh" desc="内部机构号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/id/nbjgh"></Field>
-		<Field id="tjkmbh" desc="统计科目编号"  require="true" edittype="text" status="F" datatype="string" size="20" xpath="/tjkmbh"></Field>
-		<Field id="tjkmmc" desc="统计科目名称"  require="true" edittype="text" status="F" datatype="string" size="120" xpath="/id/tjkmmc"></Field>
+		<Field id="tjkmbh" desc="统计科目编号"  require="true" edittype="text" status="F" datatype="string" size="20" xpath="/id/tjkmbh"></Field>
+		<Field id="tjkmmc" desc="统计科目名称"  require="true" edittype="text" status="F" datatype="string" size="120" xpath="/tjkmmc"></Field>
 		<Field id="tjkmje" desc="统计科目金额"  require="true" edittype="text" status="F" datatype="currency" size="20" xpath="/tjkmje"></Field>
 		<Field id="qxlx" desc="期限类型" require="true"  edittype="select" translated="DATA_DIC.20080" status="F" datatype="string" size="6" xpath="/id/qxlx"></Field>
 		<Field id="tjrq" desc="统计日期"  require="true" edittype="text" status="F" datatype="string" size="8" xpath="/id/tjrq"></Field>
@@ -44,6 +44,8 @@
     <Where>
     	<TextBox id="cjrq" desc="采集日期" datatype="date" index="5" require="true" errmsg="数据日期不能为空！" tip="时间为必输项" size="12"/>
     	<TextBox id="tjkmbh" desc="统计科目编号" datatype="string" index="3" size="20"/>
+    	<TextBox id="tjkmmc" desc="统计科目名称" datatype="string" index="3" size="120"/>
+    	<TextBox id="qxlx" desc="期限类型" datatype="string" index="3" size="20"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

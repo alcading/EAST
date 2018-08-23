@@ -375,6 +375,15 @@
         <url-pattern>/EastFileLoad</url-pattern>
     </servlet-mapping>
 
+	<!-- East工作日期修改 -->
+	<servlet>
+        <servlet-name>EastGlobalinfoUpdate</servlet-name>
+        <servlet-class>resources.east.data.update.EastGlobalinfoUpdate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EastGlobalinfoUpdate</servlet-name>
+        <url-pattern>/EastGlobalinfoUpdate</url-pattern>
+    </servlet-mapping>
 
 	<servlet>
 		<servlet-name>ProcessImageServlet</servlet-name>

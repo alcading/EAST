@@ -50,15 +50,7 @@ public class EastWtdkModOrAddUpdate extends BaseUpdate {
 				wtdkpk.setCjrq(cjrq);
 				BaseUpdate.mapToObject(eastWtdk, map);
 				eastWtdk.setId(wtdkpk);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastWtdkOperation.CMD, EastWtdkOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastWtdkOperation.CMD, EastWtdkOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastWtdkOperation.CMD, EastWtdkOperation.CMD_DELETE);
-				}
+				context.setAttribute(EastWtdkOperation.CMD, EastWtdkOperation.CMD_UPDATE);
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastWtdk);
 				// call方式开启operation事务
 				OPCaller.call(EastWtdkOperation.ID, context);

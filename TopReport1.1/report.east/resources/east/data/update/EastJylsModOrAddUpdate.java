@@ -61,15 +61,7 @@ public class EastJylsModOrAddUpdate extends BaseUpdate {
 				Jylspk.setCjrq(cjrq);
 				BaseUpdate.mapToObject(eastJyls, map);
 				eastJyls.setId(Jylspk);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
 					context.setAttribute(EastJylsOperation.CMD, EastJylsOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastJylsOperation.CMD, EastJylsOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastJylsOperation.CMD, EastJylsOperation.CMD_DELETE);
-				}
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastJyls);
 				// call方式开启operation事务
 				OPCaller.call(EastJylsOperation.ID, context);

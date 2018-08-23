@@ -14,6 +14,8 @@ import com.huateng.ebank.framework.report.common.ReportConstant;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
+import east.dao.BaseDao;
+import east.utils.tools.DBUtil;
 import resources.east.data.service.EastJylsService;
 
 @SuppressWarnings("unchecked")
@@ -55,13 +57,24 @@ public class EastJylsGetter extends BaseGetter {
 		
 		String hxjylsh = (String)para.get("hxjylsh");
 		
+		String jyzh = (String)para.get("jyzh");
+		
+		String jyhm = (String)para.get("jyhm");
+		
 		int pageSize = this.getResult().getPage().getEveryPage();
 		int pageIndex = this.getResult().getPage().getCurrentPage();
+
 		
 		StringBuffer hql = new StringBuffer();
 		
-		hql.append("from EastJyls A where 1 = 1 ");
+		hql.append("from EastJyls A where rownum<="+DBUtil.ROWNUM);
 		
+		if(StringUtils.isNotBlank(jyzh)){
+			hql.append(" and A.id.jyzh = '"+jyzh.trim()+"' ");
+		}
+		if(StringUtils.isNotBlank(jyhm)){
+			hql.append(" and A.jyhm like '%"+jyhm.trim()+"%' ");
+		}
 		if(StringUtils.isNotBlank(hxjylsh)){
 			hql.append(" and A.id.hxjylsh = '"+hxjylsh.trim()+"' ");
 		}

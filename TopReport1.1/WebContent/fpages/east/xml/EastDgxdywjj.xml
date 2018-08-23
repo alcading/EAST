@@ -81,7 +81,9 @@
        </Fields>
 	<Where>
     	<TextBox id="cjrq" desc="采集日期" datatype="date" index="5" require="true" errmsg="数据日期不能为空！" tip="时间为必输项" size="12"/>
-    	<TextBox id="yxjgdm" desc="银行机构代码" datatype="string" index="3" size="30"/>
+    	<TextBox id="xdhth" desc="信贷合同号" datatype="string" index="3" size="100"/>
+    	<TextBox id="xdjjh" desc="信贷借据号" datatype="string" index="3" size="100"/>
+    	<TextBox id="khmc" desc="客户名称" datatype="string" index="3" size="200"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

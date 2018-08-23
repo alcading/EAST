@@ -53,15 +53,7 @@ public class EastYgbModOrAddUpdate extends BaseUpdate {
 				ygbpk.setNbjgh(nbjgh);
 				BaseUpdate.mapToObject(eastYgb, map);
 				eastYgb.setId(ygbpk);
-				if (UpdateResultBean.MODIFY == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastYgbOperation.CMD, EastYgbOperation.CMD_UPDATE);
-				}
-				if (UpdateResultBean.INSERT == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastYgbOperation.CMD, EastYgbOperation.CMD_INSERT);
-				}
-				if (UpdateResultBean.NONE == updateResultBean.getRecodeState()) {
-					context.setAttribute(EastYgbOperation.CMD, EastYgbOperation.CMD_DELETE);
-				}
+				context.setAttribute(EastYgbOperation.CMD, EastYgbOperation.CMD_UPDATE);
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastYgb);
 				// call方式开启operation事务
 				OPCaller.call(EastYgbOperation.ID, context);

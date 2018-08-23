@@ -54,6 +54,8 @@
 	<Where>
     	<TextBox id="cjrq" desc="采集日期" datatype="date" index="5" require="true" errmsg="数据日期不能为空！" tip="时间为必输项" size="12"/>
     	<TextBox id="yxjgdm" desc="银行机构代码" datatype="string" index="3" size="30"/>
+    	<TextBox id="hqckzh" desc="活期存款帐号" datatype="string" index="3" size="60"/>
+    	<TextBox id="zhmc" desc="账户名称" datatype="string" index="3" size="200"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

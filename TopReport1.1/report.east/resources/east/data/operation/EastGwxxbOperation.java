@@ -35,16 +35,7 @@ public class EastGwxxbOperation extends BaseOperation {
 
 		EastGwxxbService eastGwxxbService = EastGwxxbService.getInstance();
 
-		if(CMD_INSERT.equalsIgnoreCase(cmd))
-		{
-			eastGwxxbService.addEntity(eastGwxxb);
-		}else if(CMD_UPDATE.equalsIgnoreCase(cmd))
-		{
 			eastGwxxbService.modEntity(eastGwxxb);
-		}else if(CMD_DELETE.equalsIgnoreCase(cmd))
-		{
-			eastGwxxbService.removeEntity(eastGwxxb);
-		}
 	}
 	
 

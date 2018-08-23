@@ -35,13 +35,7 @@ public class EastJjkxxOperation extends BaseOperation {
 
 		EastJjkxxService eastJjkxxService = EastJjkxxService.getInstance();
 
-		if (CMD_INSERT.equalsIgnoreCase(cmd)) {
-			eastJjkxxService.addEntity(eastJjkxx);
-		} else if (CMD_UPDATE.equalsIgnoreCase(cmd)) {
 			eastJjkxxService.modEntity(eastJjkxx);
-		} else if (CMD_DELETE.equalsIgnoreCase(cmd)) {
-			eastJjkxxService.removeEntity(eastJjkxx);
-		}
 	}
 
 }

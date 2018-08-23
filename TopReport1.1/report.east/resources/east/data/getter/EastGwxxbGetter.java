@@ -14,6 +14,7 @@ import com.huateng.ebank.framework.report.common.ReportConstant;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
+import east.utils.tools.DBUtil;
 import resources.east.data.service.EastGwxxbService;
 import resources.east.data.service.EastYgbService;
 
@@ -56,15 +57,25 @@ public class EastGwxxbGetter extends BaseGetter {
 		   	
 		   	String yxjgdm = (String)para.get("yxjgdm");
 		   	
+		   	String gwbh = (String)para.get("gwbh");
+		   	
+		   	String nbjgh = (String)para.get("nbjgh");
+		   	
 			int pageSize = this.getResult().getPage().getEveryPage();
 			int pageIndex = this.getResult().getPage().getCurrentPage();
 			
 			StringBuffer hql = new StringBuffer();
 			
-			hql.append("from EastGwxxb A where 1 = 1 ");
+			hql.append("from EastGwxxb A where rownum<="+DBUtil.ROWNUM);
 			
 			if(StringUtils.isNotBlank(yxjgdm)){
 				hql.append(" and A.yxjgdm = '"+yxjgdm.trim()+"' ");
+			}
+			if(StringUtils.isNotBlank(gwbh)){
+				hql.append(" and A.id.gwbh = '"+gwbh.trim()+"' ");
+			}
+			if(StringUtils.isNotBlank(nbjgh)){
+				hql.append(" and A.id.nbjgh = '"+nbjgh.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(cjrq)){
 				hql.append(" and A.cjrq = '"+cjrq.trim().toUpperCase()+"' ");
