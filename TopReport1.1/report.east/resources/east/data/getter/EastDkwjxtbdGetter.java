@@ -57,7 +57,7 @@ public class EastDkwjxtbdGetter extends BaseGetter {
 	   	
 	    String yxjgdm = (String)para.get("yxjgdm");
 	   	
-	    String tzrq = (String)para.get("tzrq");
+	    String xdhth = (String)para.get("xdhth");
 	    
 	    String xdjjh = (String)para.get("xdjjh");
 	    
@@ -68,8 +68,8 @@ public class EastDkwjxtbdGetter extends BaseGetter {
 		
 		hql.append("from EastDkwjxtbd A where rownum<="+DBUtil.ROWNUM);
 		
-		if(StringUtils.isNotBlank(tzrq)){
-			hql.append(" and A.id.tzrq = '"+tzrq.trim()+"' ");
+		if(StringUtils.isNotBlank(xdhth)){
+			hql.append(" and A.xdhth = '"+xdhth.trim()+"' ");
 		}
 		if(StringUtils.isNotBlank(xdjjh)){
 			hql.append(" and A.id.xdjjh = '"+xdjjh.trim()+"' ");

@@ -69,7 +69,7 @@ public class EastXykzhjymxbGetter extends BaseGetter {
 		hql.append("from EastXykzhjymxb A where rownum<="+DBUtil.ROWNUM);
 		
 		if(StringUtils.isNotBlank(kh)){
-			hql.append(" and A.id.kh = '"+kh.trim()+"' ");
+			hql.append(" and A.kh = '"+kh.trim()+"' ");
 		}
 		if(StringUtils.isNotBlank(xykzh)){
 			hql.append(" and A.xykzh = '"+xykzh.trim()+"' ");

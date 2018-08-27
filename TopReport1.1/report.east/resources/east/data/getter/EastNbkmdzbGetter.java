@@ -70,10 +70,10 @@ public class EastNbkmdzbGetter extends BaseGetter {
 				hql.append(" and A.sjkmbh = '"+sjkmbh.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(kmmc)){
-				hql.append(" and A.id.kmmc like '%").append(kmmc.trim()).append("%'");
+				hql.append(" and A.kmmc like '%").append(kmmc.trim()).append("%'");
 			}
 			if(StringUtils.isNotBlank(kmbh)){
-				hql.append(" and A.kmbh = '"+kmbh.trim()+"' ");
+				hql.append(" and A.id.kmbh = '"+kmbh.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(cjrq)){
 				hql.append(" and A.id.cjrq = '"+cjrq.trim().toUpperCase()+"' ");

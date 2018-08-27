@@ -36,7 +36,7 @@
 		<Field id="tjkmbh" desc="统计科目编号" status="F"  require="true"  edittype="text"  datatype="string" size="20" xpath="/tjkmbh" />
 		<Field id="bz" desc="币种" status="F"  require="true"  edittype="text"  datatype="string" size="3" xpath="/id/bz" />
 		<Field id="zhmc" desc="账户名称" status="F"  require="true"  edittype="text"  datatype="string" size="200" xpath="/zhmc" />
-		<Field id="nbfhzzhlx" desc="个人活期存款账户类型" status="F"  require="true"  edittype="text"  datatype="string" size="60" xpath="/nbfhzzhlx" />
+		<Field id="nbfhzzhlx" desc="内部分户账账户类型" status="F"  require="true"  edittype="text"  datatype="string" size="60" xpath="/nbfhzzhlx" />
 		<Field id="jdbz" desc="借贷标志" status="F"  require="true"  edittype="select" translated="DATA_DIC.20046"  datatype="string" size="12" xpath="/jdbz" />
 		<Field id="ll" desc="利率" status="F"   require="true" edittype="text"  datatype="string" size="10" xpath="/ll" />
 		<Field id="jfye" desc="借方余额" status="F"  require="true"  edittype="text"  datatype="currency" size="20" xpath="/jfye" />
@@ -54,7 +54,7 @@
     	<TextBox id="cjrq" desc="采集日期" datatype="date" index="5" require="true" errmsg="数据日期不能为空！" tip="时间为必输项" size="12"/>
     	<TextBox id="yxjgdm" desc="银行机构代码" datatype="string" index="3" size="30"/>
     	<TextBox id="nbfhzzh" desc="内部分户账账号" datatype="string" index="3" size="60"/>
-    	<TextBox id="zhmc" desc="账户名称" datatype="string" index="3" size="30"/>
+    	<TextBox id="zhmc" desc="账户名称" datatype="string" index="3" size="200"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

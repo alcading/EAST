@@ -74,7 +74,7 @@ public class EastYgbGetter extends BaseGetter {
 				hql.append(" and A.id.gh = '"+gh.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(xm)){
-				hql.append(" and A.xm '%").append(xm.trim()).append("%'");
+				hql.append(" and A.xm like '%").append(xm.trim()).append("%'");
 			}
 			if(StringUtils.isNotBlank(cjrq)){
 				hql.append(" and A.cjrq = '"+cjrq.trim().toUpperCase()+"' ");

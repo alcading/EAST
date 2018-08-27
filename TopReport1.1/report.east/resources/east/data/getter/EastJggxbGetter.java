@@ -53,11 +53,11 @@ public class EastJggxbGetter extends BaseGetter {
 		   	
 		   	String cjrq = (String)para.get("cjrq");
 		   	
-		   	String yxjgdm = (String)para.get("yxjgdm");
+		   	String yxjgdm = (String)para.get("yhjgdm");
 		   	
 		   	String nbjgh = (String)para.get("id");
 		   	
-		   	String yxjgmc = (String)para.get("yxjgmc");
+		   	String yxjgmc = (String)para.get("yhjgmc");
 		   	
 			int pageSize = this.getResult().getPage().getEveryPage();
 			int pageIndex = this.getResult().getPage().getCurrentPage();
@@ -67,13 +67,13 @@ public class EastJggxbGetter extends BaseGetter {
 			hql.append("from EastJggxb A where rownum<="+DBUtil.ROWNUM);
 			
 			if(StringUtils.isNotBlank(yxjgdm)){
-				hql.append(" and A.yxjgdm = '"+yxjgdm.trim()+"' ");
+				hql.append(" and A.yhjgdm = '"+yxjgdm.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(nbjgh)){
-				hql.append(" and A.nbjgh = '"+nbjgh.trim()+"' ");
+				hql.append(" and A.id = '"+nbjgh.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(yxjgmc)){
-				hql.append(" and A.yxjgmc like '%").append(yxjgmc.trim()).append("%'");
+				hql.append(" and A.yhjgmc like '%").append(yxjgmc.trim()).append("%'");
 			}
 			if(StringUtils.isNotBlank(cjrq)){
 				hql.append(" and A.cjrq = '"+cjrq.trim().toUpperCase()+"' ");

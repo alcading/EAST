@@ -65,7 +65,7 @@ public class EastZcfzkmtjbGetter extends BaseGetter {
 		
 		StringBuffer hql = new StringBuffer();
 		
-		hql.append("from EastZjjyxxb A where rownum<="+DBUtil.ROWNUM);
+		hql.append("from EastZcfzkmtjb A where rownum<="+DBUtil.ROWNUM);
 		
 		if(StringUtils.isNotBlank(tjkmbh)){
 			hql.append(" and A.id.tjkmbh = '"+tjkmbh.trim()+"' ");

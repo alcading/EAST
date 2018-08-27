@@ -70,7 +70,7 @@ public class EastNbfhzGetter extends BaseGetter {
 				hql.append(" and A.id.nbfhzzh = '"+nbfhzzh.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(zhmc)){
-				hql.append(" and A.zhmc like '%"+yxjgdm.trim()+"%' ");
+				hql.append(" and A.zhmc like '%"+zhmc.trim()+"%' ");
 			}
 			if(StringUtils.isNotBlank(yxjgdm)){
 				hql.append(" and A.yxjgdm = '"+yxjgdm.trim()+"' ");

@@ -38,10 +38,10 @@
 		<Field id="syrmc" desc="受益人名称" status="F"  require="true"  edittype="text"  datatype="string" size="200" xpath="/syrmc" />
 		<Field id="wtjjkhxh" desc="委托资金开户行号" status="F"  require="true"  edittype="text"  datatype="string" size="30" xpath="/wtjjkhxh" />
 		<Field id="wtjjkhxmc" desc="委托资金开户行名称" status="F"  require="true"  edittype="text"  datatype="string" size="200" xpath="/wtjjkhxmc" />
-		<Field id="wtjjzh" desc="参贷行行名" status="F"  edittype="text"  datatype="string" size="200" xpath="/wtjjzh" />
+		<Field id="wtjjzh" desc="委托账号" status="F"  edittype="text"  datatype="string" size="200" xpath="/wtjjzh" />
 		<Field id="wtzhlx" desc="委托账号类型" status="F"  require="true"  edittype="select" translated="DATA_DIC.20062"  datatype="string" size="30" xpath="/wtzhlx" />
 		<Field id="wtje" desc="委托金额" status="F"  require="true"  edittype="text"  datatype="currency" size="24" xpath="/wtje" />
-		<Field id="sjwtdkje" desc="实际委托金额" status="F"  require="true"  edittype="text"  datatype="currency" size="24" xpath="/sjwtdkje" />
+		<Field id="sjwtdkje" desc="实际委托贷款金额" status="F"  require="true"  edittype="text"  datatype="currency" size="24" xpath="/sjwtdkje" />
 		<Field id="wtdkyt" desc="委托贷款用途" status="F"  require="true"  edittype="text"  datatype="string" size="400" xpath="/wtdkyt" />
 		<Field id="sfsx" desc="是否收息" status="F"  require="true"  edittype="select" translated="DATA_DIC.20034"  datatype="string" size="4" xpath="/sfsx" />
 		<Field id="sxffs" desc="手续费方式" status="F"  require="true"  edittype="text"  datatype="string" size="60" xpath="/sxffs" />

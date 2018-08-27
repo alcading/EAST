@@ -14,7 +14,7 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-			<@CommonQueryMacro.DataTable id="datatable1"  fieldStr="zhdywbh[30],zhdywmc[110],khtybh[30],yxjgdm[30],qzmc[40],zhdywlx[30],zhdywzmjz[30],cjrq[30],operation[40]"  width="100%" hasFrame="true"/>
+			<@CommonQueryMacro.DataTable id="datatable1"  fieldStr="zhdywbh[30],zhdywmc[110],khtybh[30],yxjgdm[30],qzmc[30],zhdywlx[30],zhdywzmjz[40],cjrq[30],operation[40]"  width="100%" hasFrame="true"/>
 		</td>
 	</tr>
 	<tr>
@@ -23,7 +23,8 @@
       			<div align="center">
       				<@CommonQueryMacro.Group id="group1" label=""
         			  fieldStr="zhdywbh,dbhth,khtybh,yxjgdm,jrxkzh,nbjgh,zhdywmc,zhdywlx,zhdywzmjz,bz,yxrdjz,pgjz,pgrq,pgjgmc,zhdyl,dywsyqrmc,ydyjz,djrq,swsqrq,djjg,czjg,dbqsrq,dbdqrq,zypzzh,zypzlx,zypzhm,zypzje,zypzqfjg,zypzklrq,bxdh,hbrq,hbryxm,hbrexm,qzdjhm,qzmc,qzyxdqrq,djyxzzrq,sfnrbwhs,bwhsksrq,cjrq" colNm=4/>
-        			<br/>
+        			<br/><br/><br/><br/><br/><br/>
+        			<br/><br/><br/><br/><br/>
         			<@CommonQueryMacro.Button id="btModOrAdd" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<@CommonQueryMacro.Button id="btCancel" />
       			</div>

@@ -73,7 +73,7 @@ public class EastDgxdfhzmxjlGetter extends BaseGetter {
 				hql.append(" and A.id.dkzh = '"+dkzh.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(xdjjh)){
-				hql.append(" and A.id.xdjjh = '"+xdjjh.trim()+"' ");
+				hql.append(" and A.xdjjh = '"+xdjjh.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(cjrq)){
 				hql.append(" and A.id.cjrq = '"+cjrq.trim().toUpperCase()+"' ");

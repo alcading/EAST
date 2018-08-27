@@ -410,7 +410,8 @@ public class HQLDAO extends HibernateDaoSupport {
 		try {
 			PageQueryCallback callback = new PageQueryCallback(queryCondition);
 
-			PageQueryResult returnPageQueryResult = (PageQueryResult) this.getHibernateTemplate().execute(callback);
+			PageQueryResult returnPageQueryResult = (PageQueryResult) this.getHibernateTemplate().execute(callback);			
+			
 			if (logger.isDebugEnabled()) {
 				logger.debug("pageQueryByQL(PageQueryCondition) - end"); //$NON-NLS-1$
 			}

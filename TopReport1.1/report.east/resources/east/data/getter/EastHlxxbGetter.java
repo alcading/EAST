@@ -58,7 +58,7 @@ public class EastHlxxbGetter extends BaseGetter {
 		
 		String nbjgh = (String)para.get("nbjgh");
 		
-		String hlrq = (String)para.get("hlrq");
+		String yxjgmc = (String)para.get("yxjgmc");
 		
 		int pageSize = this.getResult().getPage().getEveryPage();
 		int pageIndex = this.getResult().getPage().getCurrentPage();
@@ -70,8 +70,8 @@ public class EastHlxxbGetter extends BaseGetter {
 		if(StringUtils.isNotBlank(nbjgh)){
 			hql.append(" and A.nbjgh = '"+nbjgh.trim()+"' ");
 		}
-		if(StringUtils.isNotBlank(hlrq)){
-			hql.append(" and A.id.hlrq = '"+hlrq.trim()+"' ");
+		if(StringUtils.isNotBlank(yxjgmc)){
+			hql.append(" and A.yxjgmc like '%"+yxjgmc.trim()+"%' ");
 		}
 		if(StringUtils.isNotBlank(yxjgdm)){
 			hql.append(" and A.yxjgdm = '"+yxjgdm.trim()+"' ");

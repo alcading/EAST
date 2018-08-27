@@ -74,7 +74,7 @@ public class EastLccpztbGetter extends BaseGetter {
 			   hql.append(" and A.nbjgh = '"+nbjgh.trim()+"' ");
 		   }
 		   if(StringUtils.isNotBlank(hnbsm)){
-			   hql.append(" and A.hnbsm = '"+hnbsm.trim()+"' ");
+			   hql.append(" and A.id = '"+hnbsm.trim()+"' ");
 		   }
 		   if(StringUtils.isNotBlank(cjrq)){
 			   hql.append(" and A.cjrq = '"+cjrq.trim().toUpperCase()+"' ");

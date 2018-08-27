@@ -14,7 +14,7 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-			<@CommonQueryMacro.DataTable id="datatable1"  fieldStr="xdjjh[50],xdhth[50],khtybh[50],yxjgdm[50],syrmc[40],wtjjzh[30],sjwtdkje[30],cjrq[30],operation[40]"  width="100%" hasFrame="true"/>
+			<@CommonQueryMacro.DataTable id="datatable1"  fieldStr="xdjjh[40],xdhth[40],khtybh[40],yxjgdm[40],syrmc[60],wtjjzh[40],sjwtdkje[40],cjrq[30],operation[40]"  width="100%" hasFrame="true"/>
 		</td>
 	</tr>
 	<tr>
