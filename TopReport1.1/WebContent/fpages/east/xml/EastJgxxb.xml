@@ -24,23 +24,23 @@
 	<Fields>
 		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
-
-        <Field id="yxjgdm" desc="银行机构代码"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>	
-	    <Field id="id" desc="内部机构号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/id"></Field>
-	    <Field id="jrxkzh" desc="金融许可证号" require="true"  status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
-		<Field id="yxjgmc" desc="银行机构名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/yxjgmc"></Field>
-		<Field id="jglb" desc="机构类别" require="true"  status="F"  edittype="text"  datatype="string" size="30" xpath="/jglb" />
-		<Field id="yzbm" desc="邮政编码" require="true"  status="F"  edittype="text"  datatype="string" size="6" xpath="/yzbm" />
-		<Field id="wdh" desc="网点号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/wdh" />
-		<Field id="yyzt" desc="营业状态"  require="true" status="F"  edittype="select" translated="DATA_DIC.20033"  datatype="string" size="9" xpath="/yyzt" />
-		<Field id="clsj" desc="成立时间"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/clsj" />
-		<Field id="jggzkssj" desc="机构工作开始时间"  require="true" status="F"  edittype="text"  datatype="string" size="6" xpath="/jggzkssj" />
-		<Field id="jggzzzsj" desc="机构工作终止时间"  require="true" status="F" edittype="text"  datatype="string" size="6" xpath="/jggzzzsj" />
-		<Field id="jgdz" desc="机构地址"  require="true"  status="F" edittype="text"  datatype="string" size="400" xpath="/jgdz" />
-		<Field id="fzrxm" desc="负责人姓名" require="true"  status="F" edittype="text"  datatype="string" size="100" xpath="/fzrxm" />
-		<Field id="fzrzw" desc="负责人职务" require="true"  status="F" edittype="text"  datatype="string" size="60" xpath="/fzrzw" />
-		<Field id="fzrlxdh" desc="负责人联系电话"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/fzrlxdh" />
-		<Field id="cjrq" desc="采集日期"  require="true" status="F"  edittype="text"  datatype="string" size="8" xpath="/cjrq" />
+		<Field id="select" desc="选择" edittype="checkbox" datatype="boolean" xpath="/select" />
+        <Field id="yxjgdm" desc="银行机构代码" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>	
+	    <Field id="id" desc="内部机构号" edittype="text" status="F" datatype="string" size="30" xpath="/id"></Field>
+	    <Field id="jrxkzh" desc="金融许可证号" status="F" edittype="text" datatype="string" size="30" xpath="/jrxkzh"></Field>	
+		<Field id="yxjgmc" desc="银行机构名称"  status="F"  edittype="text"  datatype="string" size="200" xpath="/yxjgmc"></Field>
+		<Field id="jglb" desc="机构类别" status="F"  edittype="text"  datatype="string" size="30" xpath="/jglb" />
+		<Field id="yzbm" desc="邮政编码"  status="F"  edittype="text"  datatype="string" size="6" xpath="/yzbm" />
+		<Field id="wdh" desc="网点号"  status="F"  edittype="text"  datatype="string" size="30" xpath="/wdh" />
+		<Field id="yyzt" desc="营业状态"  status="F"  edittype="select" translated="DATA_DIC.20033"  datatype="string" size="9" xpath="/yyzt" />
+		<Field id="clsj" desc="成立时间" status="F"  edittype="text"  datatype="string" size="8" xpath="/clsj" />
+		<Field id="jggzkssj" desc="机构工作开始时间"  status="F"  edittype="text"  datatype="string" size="6" xpath="/jggzkssj" />
+		<Field id="jggzzzsj" desc="机构工作终止时间"  status="F" edittype="text"  datatype="string" size="6" xpath="/jggzzzsj" />
+		<Field id="jgdz" desc="机构地址"   status="F" edittype="text"  datatype="string" size="400" xpath="/jgdz" />
+		<Field id="fzrxm" desc="负责人姓名"  status="F" edittype="text"  datatype="string" size="100" xpath="/fzrxm" />
+		<Field id="fzrzw" desc="负责人职务"  status="F" edittype="text"  datatype="string" size="60" xpath="/fzrzw" />
+		<Field id="fzrlxdh" desc="负责人联系电话"  status="F"  edittype="text"  datatype="string" size="30" xpath="/fzrlxdh" />
+		<Field id="cjrq" desc="采集日期"  status="F"  edittype="text"  datatype="string" size="8" xpath="/cjrq" />
 		<Field id="operation" desc="操作" status="N" method="None" xpath=""
 			   primary="true" type="" size="20" default="" tip="操作" require=""/>	
        </Fields>
@@ -51,12 +51,13 @@
     	<TextBox id="yxjgmc" desc="银行机构名称" datatype="string" index="3" size="200"/>
     </Where>
 	<Operations>
+		<Button id="btDel" name="btDel" desc="删除" operation="asysubmit"
+			updateClass="resources.east.data.update.EastJgxxbDelete"
+			url="" icon="icon-remove"/>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"
 			updateClass="resources.east.data.update.EastJgxxbModOrAddUpdate"
 			url="" txn="" />
-		<Button id="btDel" name="btDel" desc="删除" operation="asysubmit"
-			updateClass="resources.east.data.update.EastJgxxbModOrAddUpdate"
-			url="" />
+		
 		<Button id="btCancel" name="btCancel" desc="取消" operation="href" url="" />
 		<Button id="btAdd" name="btAdd" desc="新增" operation="" url="#" show="" group="" txn="" icon="icon-add"/>
 	</Operations>

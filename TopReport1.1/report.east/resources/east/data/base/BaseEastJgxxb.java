@@ -8,6 +8,7 @@ public abstract class BaseEastJgxxb implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1632710590687246483L;
+	private boolean select;
 	private String id;
 	private String yxjgdm;
 	private String jrxkzh;
@@ -47,6 +48,14 @@ public abstract class BaseEastJgxxb implements Serializable{
 	private int hashCode = Integer.MIN_VALUE;
 
 
+
+	public boolean isSelect() {
+		return select;
+	}
+
+	public void setSelect(boolean select) {
+		this.select = select;
+	}
 
 	public String getYxjgdm() {
 		return this.yxjgdm;

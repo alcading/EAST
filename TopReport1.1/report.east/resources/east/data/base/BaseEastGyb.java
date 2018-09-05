@@ -2,16 +2,18 @@ package resources.east.data.base;
 
 import java.io.Serializable;
 
+import resources.east.data.pub.EastGybPK;
+
 public abstract class BaseEastGyb implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1632710590687246483L;
-	private String id;
+	private boolean select;
+	private EastGybPK id;
 	private String gh;
 	private String yxjgdm;
-	private String nbjgh;
 	private String zxjgdm;
 	private String jrxkzh;
 	private String yxjgmc;
@@ -31,7 +33,6 @@ public abstract class BaseEastGyb implements Serializable {
 	private String gyqxjb;
 	private String sgrq;
 	private String gwzt;
-	private String cjrq;
 
 	// Constructors
 
@@ -39,19 +40,26 @@ public abstract class BaseEastGyb implements Serializable {
 		initialize();
 	}
 
-	public BaseEastGyb(java.lang.String id) {
+	public BaseEastGyb(EastGybPK id) {
 		this.setId(id);
-		initialize();
 	}
 
 	protected void initialize() {
 	}
-
-	public String getId() {
+	
+	public boolean isSelect() {
+		return select;
+	}
+	
+	public void setSelect(boolean select) {
+		this.select = select;
+	}
+	
+	public EastGybPK getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(EastGybPK id) {
 		this.id = id;
 	}
 
@@ -69,14 +77,6 @@ public abstract class BaseEastGyb implements Serializable {
 
 	public void setYxjgdm(String yxjgdm) {
 		this.yxjgdm = yxjgdm;
-	}
-
-	public String getNbjgh() {
-		return nbjgh;
-	}
-
-	public void setNbjgh(String nbjgh) {
-		this.nbjgh = nbjgh;
 	}
 
 	public String getZxjgdm() {
@@ -229,14 +229,6 @@ public abstract class BaseEastGyb implements Serializable {
 
 	public void setGwzt(String gwzt) {
 		this.gwzt = gwzt;
-	}
-
-	public String getCjrq() {
-		return cjrq;
-	}
-
-	public void setCjrq(String cjrq) {
-		this.cjrq = cjrq;
 	}
 
 }

@@ -13,6 +13,7 @@ import resource.dao.base.HQLDAO;
 import resource.report.dao.ROOTDAO;
 import resource.report.dao.ROOTDAOUtils;
 import resources.east.data.pub.EastGyb;
+import resources.east.data.pub.EastGybPK;
 
 /**
  * 
@@ -115,7 +116,7 @@ public class EastGybService {
 		}
 	}
 
-	public void modEntity(EastGyb eastGyb) {
+	public void saveOrUpdateEntity(EastGyb eastGyb) {
 		ROOTDAO rootDAO = ROOTDAOUtils.getROOTDAO();
 		try {
 			rootDAO.update(	eastGyb);
@@ -126,7 +127,7 @@ public class EastGybService {
 		}
 	}
 	
-	public boolean isExists(String id) {
+	public boolean isExists(EastGybPK id) {
 		ROOTDAO rootDAO = ROOTDAOUtils.getROOTDAO();
 		try {
 			EastGyb bd = (EastGyb) rootDAO.query(EastGyb.class, id);

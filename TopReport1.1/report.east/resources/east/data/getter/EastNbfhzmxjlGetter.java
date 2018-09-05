@@ -59,6 +59,8 @@ public class EastNbfhzmxjlGetter extends BaseGetter {
 		    
 		    String nbfhzzh = (String)para.get("nbfhzzh");
 		    
+		    String zjylsh = (String)para.get("zjylsh");
+		    
 			int pageSize = this.getResult().getPage().getEveryPage();
 			int pageIndex = this.getResult().getPage().getCurrentPage();
 			
@@ -68,6 +70,9 @@ public class EastNbfhzmxjlGetter extends BaseGetter {
 			
 			if(StringUtils.isNotBlank(hxjylsh)){
 				hql.append(" and A.id.hxjylsh = '"+hxjylsh.trim()+"' ");
+			}
+			if(StringUtils.isNotBlank(zjylsh)){
+				hql.append(" and A.id.zjylsh = '"+zjylsh.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(nbfhzzh)){
 				hql.append(" and A.id.nbfhzzh = '"+nbfhzzh.trim()+"' ");

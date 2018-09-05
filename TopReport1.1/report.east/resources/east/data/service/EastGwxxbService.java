@@ -116,7 +116,7 @@ public class EastGwxxbService {
 		}
 	}
 
-	public void modEntity(EastGwxxb eastGwxxb) {
+	public void saveOrUpdateEntity(EastGwxxb eastGwxxb) {
 		ROOTDAO rootDAO = ROOTDAOUtils.getROOTDAO();
 		try {
 			rootDAO.update(eastGwxxb);

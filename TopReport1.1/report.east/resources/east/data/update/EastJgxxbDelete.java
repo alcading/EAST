@@ -18,16 +18,16 @@ import com.huateng.ebank.framework.web.commQuery.BaseUpdate;
 import com.huateng.exception.AppException;
 import com.huateng.report.system.operation.SysParamsOperation;
 
-import resources.east.data.operation.EastGwxxbOperation;
-import resources.east.data.pub.EastGwxxb;
-import resources.east.data.pub.EastGwxxbPK;
+import resources.east.data.operation.EastJgxxbOperation;
+import resources.east.data.pub.EastJgxxb;
 
-public class EastGwxxbModOrAddUpdate extends BaseUpdate {
+public class EastJgxxbDelete extends BaseUpdate {
 	
+	private static final Logger logger = Logger.getLogger(EastJgxxbDelete.class);
 	/*
 	 * 处理国家/地区代码维护的插入和更新,插入和更新给程序判定
 	 */
-	public final static String DATASET_ID = "EastGwxxb";
+	public final static String DATASET_ID = "EastJgxxb";
 
 	@Override
 	public UpdateReturnBean saveOrUpdate(MultiUpdateResultBean multiUpdateResultBean, HttpServletRequest request,
@@ -38,24 +38,17 @@ public class EastGwxxbModOrAddUpdate extends BaseUpdate {
 			// 结果集对象
 			UpdateResultBean updateResultBean = multiUpdateResultBean.getUpdateResultBeanByID(DATASET_ID);
 			// 更新对象
-			EastGwxxb eastGwxxb = new EastGwxxb();
-			EastGwxxbPK gwxxbpk = new EastGwxxbPK();
+			EastJgxxb eastJgxxb = new EastJgxxb();
 			// Operation参数
 			OperationContext context = new OperationContext();
 			if (updateResultBean.hasNext()) {
 				// 属性拷贝
 				Map map = updateResultBean.next();
-				map.remove("id");
-				String gwbh = (String) map.get("gwbh");
-				String nbjgh = (String) map.get("nbjgh");
-				gwxxbpk.setGwbh(gwbh);
-				gwxxbpk.setNbjgh(nbjgh);
-				BaseUpdate.mapToObject(eastGwxxb, map);
-				eastGwxxb.setId(gwxxbpk);
-				context.setAttribute(EastGwxxbOperation.CMD, EastGwxxbOperation.CMD_UPDATE);
-				context.setAttribute(SysParamsOperation.IN_PARAM, eastGwxxb);
+				BaseUpdate.mapToObject(eastJgxxb, map);
+				context.setAttribute(EastJgxxbOperation.CMD, EastJgxxbOperation.CMD_DELETE);
+				context.setAttribute(SysParamsOperation.IN_PARAM, eastJgxxb);
 				// call方式开启operation事务
-				OPCaller.call(EastGwxxbOperation.ID, context);
+				OPCaller.call(EastJgxxbOperation.ID, context);
 				return updateReturnBean;
 			}
 		} catch (AppException appe) {

@@ -56,7 +56,7 @@ public class EastGybGetter extends BaseGetter {
 		   	
 		   	String yxjgdm = (String)para.get("yxjgdm");
 		   	
-		   	String gh = (String)para.get("gh");
+		   	String gyh = (String)para.get("gyh");
 		   	
 		   	String nbjgh = (String)para.get("nbjgh");
 		   	
@@ -68,16 +68,16 @@ public class EastGybGetter extends BaseGetter {
 			hql.append("from EastGyb A where rownum<="+DBUtil.ROWNUM);
 			
 			if(StringUtils.isNotBlank(nbjgh)){
-				hql.append(" and A.nbjgh = '"+nbjgh.trim()+"' ");
+				hql.append(" and A.id.nbjgh = '"+nbjgh.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(yxjgdm)){
 				hql.append(" and A.yxjgdm = '"+yxjgdm.trim()+"' ");
 			}
-			if(StringUtils.isNotBlank(gh)){
-				hql.append(" and A.gh = '"+gh.trim()+"' ");
+			if(StringUtils.isNotBlank(gyh)){
+				hql.append(" and A.id.gyh = '"+gyh.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(cjrq)){
-				hql.append(" and A.cjrq = '"+cjrq.trim().toUpperCase()+"' ");
+				hql.append(" and A.id.cjrq = '"+cjrq.trim().toUpperCase()+"' ");
 			}else {
 				hql.append(" and 1 = 0 ");
 			}

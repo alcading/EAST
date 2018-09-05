@@ -45,7 +45,6 @@
 	    var day = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
 		var enddate = new Date(new Date().getFullYear(), new Date().getMonth()-1, day);
 	    EastDkwjxtbd_interface_dataset.setValue("cjrq", enddate);
-	    EastDkwjxtbd_interface_dataset.setValue("tzrq", enddate);
 	}
 
 	//定位一行记录

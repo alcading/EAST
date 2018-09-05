@@ -61,6 +61,8 @@ public class EastJylsGetter extends BaseGetter {
 		
 		String jyhm = (String)para.get("jyhm");
 		
+		String zjylsh = (String)para.get("zjylsh");
+		
 		int pageSize = this.getResult().getPage().getEveryPage();
 		int pageIndex = this.getResult().getPage().getCurrentPage();
 
@@ -71,6 +73,9 @@ public class EastJylsGetter extends BaseGetter {
 		
 		if(StringUtils.isNotBlank(jyzh)){
 			hql.append(" and A.id.jyzh = '"+jyzh.trim()+"' ");
+		}
+		if(StringUtils.isNotBlank(zjylsh)){
+			hql.append(" and A.id.zjylsh = '"+zjylsh.trim()+"' ");
 		}
 		if(StringUtils.isNotBlank(jyhm)){
 			hql.append(" and A.jyhm like '%"+jyhm.trim()+"%' ");

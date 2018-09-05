@@ -14,7 +14,7 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-			<@CommonQueryMacro.DataTable id="datatable1"  fieldStr="gwbh[60],yxjgdm[100],nbjgh[80],jrxkzh[110],gwzl[100],gwmc[100],gwsm[100],gwzt[100],operation[100]"  width="100%" hasFrame="true"/>
+			<@CommonQueryMacro.DataTable id="datatable1" paginationbar="-,btDel" fieldStr="select,gwbh[60],yxjgdm[100],nbjgh[80],jrxkzh[110],gwzl[100],gwmc[100],gwsm[100],gwzt[100],operation[100]"  width="100%" hasFrame="true"/>
 		</td>
 	</tr>
 	<tr>
@@ -31,7 +31,6 @@
   		</td>
   	</tr>
 	<tr style="display:none">
-		<td><@CommonQueryMacro.Button id="btDel" /></td>
 	</tr>
 </table>
 </@CommonQueryMacro.CommonQuery>
@@ -111,16 +110,24 @@ window.onload=function(){
 		subwindow_signWindow.show();	
 	}
 	
-	function doDel(id) {
-		locate(id);
-		btDel.click();
+	function btDel_onClickCheck(button) {
+		var rec = EastGwxxb_dataset.firstUnit;
+		var f = false;
+		while(rec) {
+			if (rec.getValue('select')) {
+				f = true;
+			}
+			rec = rec.nextUnit;
+		}
+		if(!f) {
+			alert('请选择记录');
+			return false;
+		}
+		return confirm("确认删除记录？");
 	}
 	
-	function btDel_onClickCheck(button) {
-		return confirm("确认删除该条记录？");
-	}
 	function btDel_postSubmit(button) {
-		
+		alert("删除记录成功");
 		button.url="#";
 		//刷新当前页
 		flushCurrentPage();
@@ -129,6 +136,59 @@ window.onload=function(){
 		var id = EastGwxxb_dataset.getValue("id");
 		if(id == null || "" == id ) {
 			alert("字段[内部机构号]不能为空");
+			return false;
+		}
+		var gwbh = EastGwxxb_dataset.getValue("gwbh");
+		if (gwbh == null || "" == gwbh) {
+			alert("字段[岗位编号]不能为空");
+			return false;
+		}
+
+		var yxjgdm = EastGwxxb_dataset.getValue("yxjgdm");
+		if (yxjgdm == null || "" == yxjgdm) {
+			alert("字段[银行机构代码]不能为空");
+			return false;
+		}
+
+		var nbjgh = EastGwxxb_dataset.getValue("nbjgh");
+		if (nbjgh == null || "" == nbjgh) {
+			alert("字段[内部机构号]不能为空");
+			return false;
+		}
+
+		var jrxkzh = EastGwxxb_dataset.getValue("jrxkzh");
+		if (jrxkzh == null || "" == jrxkzh) {
+			alert("字段[金融许可证号]不能为空");
+			return false;
+		}
+
+		var gwzl = EastGwxxb_dataset.getValue("gwzl");
+		if (gwzl == null || "" == gwzl) {
+			alert("字段[岗位种类]不能为空");
+			return false;
+		}
+
+		var gwmc = EastGwxxb_dataset.getValue("gwmc");
+		if (gwmc == null || "" == gwmc) {
+			alert("字段[岗位名称]不能为空");
+			return false;
+		}
+
+		var gwsm = EastGwxxb_dataset.getValue("gwsm");
+		if (gwsm == null || "" == gwsm) {
+			alert("字段[岗位说明]不能为空");
+			return false;
+		}
+
+		var gwzt = EastGwxxb_dataset.getValue("gwzt");
+		if (gwzt == null || "" == gwzt) {
+			alert("字段[岗位状态]不能为空");
+			return false;
+		}
+
+		var cjrq = EastGwxxb_dataset.getValue("cjrq");
+		if (cjrq == null || "" == cjrq) {
+			alert("字段[采集日期]不能为空");
 			return false;
 		}
 		return true;

@@ -11,6 +11,7 @@ public class BaseEastYgb implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 7897173337433530607L;
+	private boolean select;
 	private EastYgbPK id;
 	private String yxjgdm;
 	private String jrxkzh;
@@ -55,6 +56,14 @@ public class BaseEastYgb implements Serializable {
 	}
 
 
+
+	public boolean isSelect() {
+		return select;
+	}
+
+	public void setSelect(boolean select) {
+		this.select = select;
+	}
 
 	public String getYxjgdm() {
 		return this.yxjgdm;

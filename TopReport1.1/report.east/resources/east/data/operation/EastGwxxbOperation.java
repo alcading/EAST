@@ -31,11 +31,23 @@ public class EastGwxxbOperation extends BaseOperation {
 	public void execute(OperationContext context) throws CommonException {
 
 		String cmd = (String)context.getAttribute(CMD);
+		
 		EastGwxxb eastGwxxb  = (EastGwxxb) context.getAttribute(IN_PARAM);
 
 		EastGwxxbService eastGwxxbService = EastGwxxbService.getInstance();
-
-			eastGwxxbService.modEntity(eastGwxxb);
+		
+		if(CMD_INSERT.equalsIgnoreCase(cmd))
+		{
+			eastGwxxbService.addEntity(eastGwxxb);
+		}else if(CMD_UPDATE.equalsIgnoreCase(cmd))
+		{
+			eastGwxxbService.saveOrUpdateEntity(eastGwxxb);
+		}else if(CMD_DELETE.equalsIgnoreCase(cmd))
+		{
+			eastGwxxbService.removeEntity(eastGwxxb);
+		}
+		
+		
 	}
 	
 

@@ -6,7 +6,7 @@
 <table width="1300px">
 	<tr>
 		<td colspan="2" valign="top">
-			<@CommonQueryMacro.Interface id="interface" label="资金交信息表" />
+			<@CommonQueryMacro.Interface id="interface" label="资金交易信息表" />
 		</td>
 	</tr>
 	<tr>

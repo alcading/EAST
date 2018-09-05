@@ -109,19 +109,19 @@ public class EastJgxxbService {
 		try {
 			rootDAO.save(eastJgxxb);
 			
-			System.out.println(this.getClass().getName()+" 已插入实体");
+			System.out.println(this.getClass().getName()+" 已新增实体");
 		} catch (CommonException e) {
-			System.out.println(this.getClass().getName()+" 插入实体出错！ ");
+			System.out.println(this.getClass().getName()+" 新增实体出错！ ");
 		}
 	}
 
-	public void modEntity(EastJgxxb eastJgxxb) {
+	public void saveOrUpdateEntity(EastJgxxb eastJgxxb) {
 		ROOTDAO rootDAO = ROOTDAOUtils.getROOTDAO();
 		try {
-			rootDAO.update(	eastJgxxb);
-			System.out.println(this.getClass().getName()+" 已更新实体");
+			rootDAO.saveOrUpdate(eastJgxxb);
+			System.out.println(this.getClass().getName()+" 已更新或新增实体");
 		} catch (CommonException e) {
-			System.out.println(this.getClass().getName()+" 更新实体出错！ ");
+			System.out.println(this.getClass().getName()+" 更新或新增实体出错！ ");
 			e.printStackTrace();
 		}
 	}

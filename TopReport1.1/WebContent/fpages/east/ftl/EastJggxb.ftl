@@ -14,7 +14,7 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-			<@CommonQueryMacro.DataTable id="datatable1"  fieldStr="yhjgdm[100],id[60],jrxkzh[110],yhjgmc[300],yzbm[60],sjgljgdm[60],sjgljgmc[300],cjrq[60],operation[100]"  width="100%" hasFrame="true"/>
+			<@CommonQueryMacro.DataTable id="datatable1" paginationbar="-,btDel" fieldStr="select,yhjgdm[100],id[60],jrxkzh[110],yhjgmc[300],yzbm[60],sjgljgdm[60],sjgljgmc[300],cjrq[60],operation[100]"  width="100%" hasFrame="true"/>
 		</td>
 	</tr>
 	<tr>
@@ -31,7 +31,6 @@
   		</td>
   	</tr>
 	<tr style="display:none">
-		<td><@CommonQueryMacro.Button id="btDel" /></td>
 	</tr>
 </table>
 </@CommonQueryMacro.CommonQuery>
@@ -98,16 +97,24 @@ window.onload=function(){
 		subwindow_signWindow.show();	
 	}
 	
-	function doDel(id) {
-		locate(id);
-		btDel.click();
+	function btDel_onClickCheck(button) {
+		var rec = EastJggxb_dataset.firstUnit;
+		var f = false;
+		while(rec) {
+			if (rec.getValue('select')) {
+				f = true;
+			}
+			rec = rec.nextUnit;
+		}
+		if(!f) {
+			alert('请选择记录');
+			return false;
+		}
+		return confirm("确认删除记录？");
 	}
 	
-	function btDel_onClickCheck(button) {
-		return confirm("确认删除该条记录？");
-	}
 	function btDel_postSubmit(button) {
-		
+		alert("删除记录成功");
 		button.url="#";
 		//刷新当前页
 		flushCurrentPage();
@@ -116,6 +123,53 @@ window.onload=function(){
 		var id = EastJggxb_dataset.getValue("id");
 		if(id == null || "" == id ) {
 			alert("字段[内部机构号]不能为空");
+			return false;
+		}
+		var yhjgdm = EastJggxb_dataset.getValue("yhjgdm");
+		if (yhjgdm == null || "" == yhjgdm) {
+			alert("字段[银行机构代码]不能为空");
+			return false;
+		}
+
+		var nbjgh = EastJggxb_dataset.getValue("nbjgh");
+		if (nbjgh == null || "" == nbjgh) {
+			alert("字段[内部机构号]不能为空");
+			return false;
+		}
+
+		var jrxkzh = EastJggxb_dataset.getValue("jrxkzh");
+		if (jrxkzh == null || "" == jrxkzh) {
+			alert("字段[金融许可证号]不能为空");
+			return false;
+		}
+
+		var yhjgmc = EastJggxb_dataset.getValue("yhjgmc");
+		if (yhjgmc == null || "" == yhjgmc) {
+			alert("字段[银行机构名称]不能为空");
+			return false;
+		}
+
+		var yzbm = EastJggxb_dataset.getValue("yzbm");
+		if (yzbm == null || "" == yzbm) {
+			alert("字段[邮政编码]不能为空");
+			return false;
+		}
+
+		var sjgljgdm = EastJggxb_dataset.getValue("sjgljgdm");
+		if (sjgljgdm == null || "" == sjgljgdm) {
+			alert("字段[上级管理机构代码]不能为空");
+			return false;
+		}
+
+		var sjgljgmc = EastJggxb_dataset.getValue("sjgljgmc");
+		if (sjgljgmc == null || "" == sjgljgmc) {
+			alert("字段[上级管理机构名称]不能为空");
+			return false;
+		}
+
+		var cjrq = EastJggxb_dataset.getValue("cjrq");
+		if (cjrq == null || "" == cjrq) {
+			alert("字段[采集日期]不能为空");
 			return false;
 		}
 		return true;

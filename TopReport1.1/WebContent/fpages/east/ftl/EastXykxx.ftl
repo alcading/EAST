@@ -1,12 +1,12 @@
 <#import "/templets/commonQuery/CommonQueryTagMacro.ftl" as CommonQueryMacro>
 <#assign bean=JspTaglibs["/WEB-INF/struts-bean.tld"] />
-<@CommonQueryMacro.page title="信贷业务质或抵押物">
+<@CommonQueryMacro.page title="信用卡信息">
 <table align="left"><tr><td>
 <@CommonQueryMacro.CommonQuery id="EastXykxx" init="true" submitMode="current">
 <table width="1300px">
 	<tr>
 		<td colspan="2" valign="top">
-			<@CommonQueryMacro.Interface id="interface" label="信贷业务质或抵押物" />
+			<@CommonQueryMacro.Interface id="interface" label="信用卡信息" />
 		</td>
 	</tr>
 	<tr>

@@ -27,7 +27,7 @@
 		
 		<Field id="id" desc="核心交易流水号" edittype="text" datatype="string" size="60" xpath="/id"></Field>
 		<Field id="hxjylsh" desc="核心交易流水号"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/id/hxjylsh"></Field>
-		<Field id="zjylsh" desc="子交易流水号"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/id/zjylsh"></Field>
+		<Field id="zjylsh" desc="子交易流水号"  require="true" edittype="text" status="F" datatype="string" size="60" xpath="/id/zjylsh"></Field>
 		<Field id="bcxh" desc="笔次序号"  require="true" edittype="text" status="F" datatype="integer" size="30" xpath="/id/bcxh"></Field>
 		<Field id="jyrq" desc="交易日期"  require="true" edittype="text" status="F" datatype="string" size="8" xpath="/id/jyrq"></Field>
 		<Field id="yxjgdm" desc="银行机构代码"  require="true" edittype="text" status="F" datatype="string" size="30" xpath="/yxjgdm"></Field>
@@ -73,7 +73,8 @@
        </Fields>
     <Where>
     	<TextBox id="cjrq" desc="采集日期" datatype="date" index="5" require="true" errmsg="数据日期不能为空！" tip="时间为必输项" size="12"/>
-    	<TextBox id="hxjylsh" desc="核心交易流水号" datatype="string" index="3" size="30"/>
+    	<TextBox id="hxjylsh" desc="核心交易流水号" datatype="string" index="3" size="60"/>
+    	<TextBox id="zjylsh" desc="子交易流水号" datatype="string" index="3" size="60"/>
     	<TextBox id="jyzh" desc="交易账号" datatype="string" index="3" size="60"/>
     	<TextBox id="jyhm" desc="交易户名" datatype="string" index="3" size="200"/>
     </Where>

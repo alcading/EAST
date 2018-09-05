@@ -20,6 +20,7 @@ import com.huateng.report.system.operation.SysParamsOperation;
 
 import resources.east.data.operation.EastGybOperation;
 import resources.east.data.pub.EastGyb;
+import resources.east.data.pub.EastGybPK;
 
 public class EastGybModOrAddUpdate extends BaseUpdate {
 	
@@ -38,11 +39,21 @@ public class EastGybModOrAddUpdate extends BaseUpdate {
 			UpdateResultBean updateResultBean = multiUpdateResultBean.getUpdateResultBeanByID(DATASET_ID);
 			// 更新对象
 			EastGyb eastGyb = new EastGyb();
+			EastGybPK gybpk = new EastGybPK();
 			// Operation参数
 			OperationContext context = new OperationContext();
 			if (updateResultBean.hasNext()) {
 				// 属性拷贝
 				Map map = updateResultBean.next();
+				map.remove("id");
+				String gyh = (String) map.get("gyh");
+				String nbjgh = (String) map.get("nbjgh");
+				String cjrq = (String) map.get("cjrq");
+				gybpk.setCjrq(cjrq);
+				gybpk.setNbjgh(nbjgh);
+				gybpk.setGyh(gyh);
+				BaseUpdate.mapToObject(eastGyb, map);
+				eastGyb.setId(gybpk);
 				BaseUpdate.mapToObject(eastGyb, map);
 					context.setAttribute(EastGybOperation.CMD, EastGybOperation.CMD_UPDATE);
 				context.setAttribute(SysParamsOperation.IN_PARAM, eastGyb);

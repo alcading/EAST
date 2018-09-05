@@ -1,6 +1,7 @@
 package resources.east.data.update;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -39,7 +40,7 @@ public class EastGlobalinfoUpdate extends HttpServlet {
 		try {
 			GlobalinfoDAO dao=BaseDAOUtils.getGlobalinfoDAO();
 			Globalinfo globalinfo = dao.findById(1);
-			DateFormat df = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy",Locale.US);
+			DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 			Date date = df.parse(sjrq);
 			ROOTDAO rootDAO = ROOTDAOUtils.getROOTDAO();
 			List<SystemBszq> bszqList = rootDAO.queryByQL2List(" from SystemBszq where id = '1'");

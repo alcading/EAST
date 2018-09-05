@@ -11,7 +11,7 @@
 	async:异步提交标志
 	pagesize:页面显示记录数(缺省为10)
 -->
-<CommQry title="资产负债科目统计表表" navigate="银监标准化    &gt; 资产负债科目统计表表表" type="call"
+<CommQry title="资产负债科目统计表" navigate="银监标准化    &gt; 资产负债科目统计表" type="call"
 	interface="false" pagesize="10" async="true" databusid=""
 	transdataactionurl="/trans/TransDataAction.do"
 	txnlogflag="true"
@@ -20,7 +20,7 @@
 	<!--
 	<PageQryExp type="CSV" limit="true" encoding="GBK" url="/trans/qryExp.do" directory="F:/upload"/>
 	-->
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-资产负债科目统计表表表" />
+	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-资产负债科目统计表" />
 	<Fields>
 		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
@@ -45,7 +45,8 @@
     	<TextBox id="cjrq" desc="采集日期" datatype="date" index="5" require="true" errmsg="数据日期不能为空！" tip="时间为必输项" size="12"/>
     	<TextBox id="tjkmbh" desc="统计科目编号" datatype="string" index="3" size="20"/>
     	<TextBox id="tjkmmc" desc="统计科目名称" datatype="string" index="3" size="120"/>
-    	<TextBox id="qxlx" desc="期限类型" edittype="select" translated="DATA_DIC.20080" index="3" size="20"/>
+    	<TextBox id="nbjgh" desc="内部机构号" datatype="string" index="3" size="60"/>
+    	<Option id="qxlx"  default="" desc="期限类型" type="string" size="100" tip="" method="None" index="3" translated="DATA_DIC.20080"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

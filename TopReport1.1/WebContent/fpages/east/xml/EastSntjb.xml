@@ -45,7 +45,7 @@
     	<TextBox id="cjrq" desc="采集日期" datatype="date" index="5" require="true" errmsg="数据日期不能为空！" tip="时间为必输项" size="12"/>
     	<TextBox id="tjkmbh" desc="统计科目编号" datatype="string" index="3" size="20"/>
     	<TextBox id="tjkmmc" desc="统计科目名称" datatype="string" index="3" size="120"/>
-    	<TextBox id="qxlx" desc="期限类型" datatype="string" index="3" size="20"/>
+    	<Option id="qxlx"  default="" desc="期限类型" type="string" size="100" tip="" method="None" index="3" translated="DATA_DIC.20080"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

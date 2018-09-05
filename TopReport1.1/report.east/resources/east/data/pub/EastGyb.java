@@ -1,7 +1,6 @@
 package resources.east.data.pub;
 
 import resources.east.data.base.BaseEastGyb;
-import resources.east.data.base.BaseEastJgxxb;
 
 public class EastGyb extends BaseEastGyb {
 	/**
@@ -16,7 +15,7 @@ public class EastGyb extends BaseEastGyb {
 	/**
 	 * Constructor for primary key
 	 */
-	public EastGyb (java.lang.String id) {
+	public EastGyb (EastGybPK id) {
 		super(id);
 	}
 }

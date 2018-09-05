@@ -33,7 +33,7 @@
 		<Field id="kmbh" desc="科目编号"  require="true" status="F"  edittype="text"  datatype="string" size="60" xpath="/id/kmbh" />
 		<Field id="kmmc" desc="科目名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/kmmc" />
 		<Field id="kmjc" desc="科目级次"  require="true" status="F"  edittype="text"  datatype="string" size="2" xpath="/kmjc" />
-		<Field id="kmlx" desc="科目类型"  require="true" status="F"  edittype="select" translated="DATA_DIC.20035" datatype="string" size="2" xpath="/kmlx" />
+		<Field id="kmlx" desc="科目类型"  require="true" status="F"  edittype="select" translated="DATA_DIC.20035" datatype="string" size="100" xpath="/kmlx" />
 		<Field id="qcjfye" desc="期初借方余额" require="true"  status="F"  edittype="text"  datatype="currency" size="20" xpath="/qcjfye" />
 		<Field id="qcdfye" desc="期初贷方余额"  require="true" status="F"  edittype="text"  datatype="currency" size="20" xpath="/qcdfye" />
 		<Field id="jffse" desc="本期借方发生额" require="true"  status="F"  edittype="text"  datatype="currency" size="20" xpath="/jffse" />
@@ -50,7 +50,9 @@
     	<TextBox id="kjrq" desc="会计日期" datatype="date" index="5" require="true" errmsg="会计日期不能为空！" tip="时间为必输项" size="12"/>
     	<TextBox id="yhjgdm" desc="银行机构代码" datatype="string" index="3" size="30"/>
     	<TextBox id="kmbh" desc="科目编号" datatype="string" index="3" size="60"/>
-    	<TextBox id="kmlx" desc="科目类型" edittype="select" translated="DATA_DIC.20035" datatype="string" index="3" size="2"/>
+    	<TextBox id="yhjgmc" desc="银行机构名称" datatype="string" index="3" size="200"/>
+    	<Option id="kmlx"  default="" desc="科目类型" type="string" size="100" tip="" method="None" index="3" translated="DATA_DIC.20035"/>
+    	<Option id="bszq"  default="" desc="报送周期" type="string" size="100" tip="" method="None" index="3" translated="DATA_DIC.20036"/>
     </Where>
 	<Operations>
 		<Button id="btModOrAdd" name="btModOrAdd" desc="保存" operation="asysubmit"

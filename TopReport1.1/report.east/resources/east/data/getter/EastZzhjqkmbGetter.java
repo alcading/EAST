@@ -60,6 +60,10 @@ public class EastZzhjqkmbGetter extends BaseGetter {
 		   	
 		   	String kmlx = (String)para.get("kmlx");
 		   	
+		   	String bszq = (String)para.get("bszq");
+		   	
+		   	String yhjgmc = (String)para.get("yhjgmc");
+		   	
 			int pageSize = this.getResult().getPage().getEveryPage();
 			int pageIndex = this.getResult().getPage().getCurrentPage();
 			
@@ -67,8 +71,14 @@ public class EastZzhjqkmbGetter extends BaseGetter {
 			
 			hql.append("from EastZzhjqkmb A where rownum<="+DBUtil.ROWNUM);
 			
+			if(StringUtils.isNotBlank(yhjgmc)){
+				hql.append(" and A.yhjgmc like '%"+yhjgmc.trim()+"%' ");
+			}
 			if(StringUtils.isNotBlank(yhjgdm)){
 				hql.append(" and A.yhjgdm = '"+yhjgdm.trim()+"' ");
+			}
+			if(StringUtils.isNotBlank(bszq)){
+				hql.append(" and A.id.bszq = '"+bszq.trim()+"' ");
 			}
 			if(StringUtils.isNotBlank(kmbh)){
 				hql.append(" and A.id.kmbh = '"+kmbh.trim()+"' ");

@@ -60,6 +60,8 @@ public class EastZcfzkmtjbGetter extends BaseGetter {
 		
 		String qxlx = (String)para.get("qxlx");
 		
+		String nbjgh = (String)para.get("nbjgh");
+		
 		int pageSize = this.getResult().getPage().getEveryPage();
 		int pageIndex = this.getResult().getPage().getCurrentPage();
 		
@@ -69,6 +71,9 @@ public class EastZcfzkmtjbGetter extends BaseGetter {
 		
 		if(StringUtils.isNotBlank(tjkmbh)){
 			hql.append(" and A.id.tjkmbh = '"+tjkmbh.trim()+"' ");
+		}
+		if(StringUtils.isNotBlank(nbjgh)){
+			hql.append(" and A.id.nbjgh = '"+nbjgh.trim()+"' ");
 		}
 		if(StringUtils.isNotBlank(tjkmmc)){
 			hql.append(" and A.tjkmmc like '%"+tjkmmc.trim()+"%' ");
