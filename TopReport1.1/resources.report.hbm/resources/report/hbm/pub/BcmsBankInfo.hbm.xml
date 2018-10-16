@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="resources.bcms.data.pub">
+	<class name="BcmsBankInfo" table="Bcms_BankInfo">
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="id"
+			type="string"
+			column="id"
+		>
+		</id>
+
+		<property name="bankID" column="bankID" type="string" length="500" />
+
+		<property name="secret" column="secret" type="string" length="500" />
+
+
+	</class>
+</hibernate-mapping>

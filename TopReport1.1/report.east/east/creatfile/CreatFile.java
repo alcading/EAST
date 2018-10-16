@@ -1,6 +1,5 @@
 package east.creatfile;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,7 +7,6 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
@@ -19,8 +17,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.huateng.ebank.framework.report.common.ReportConstant;
 import com.huateng.ebank.framework.util.DateUtil;
+import com.huateng.report.imports.batch.ReportProcessJB;
 import com.huateng.report.imports.common.Constants;
+import com.huateng.report.utils.PackZipUtil;
 import com.huateng.report.utils.ReportUtils;
 
 import resource.bean.pub.Bctl;
@@ -68,6 +69,8 @@ public class CreatFile {
 		double end ;
 		//金融机构代号
 		Bctl bctl=ROOTDAOUtils.getBctlDAO().query("9999");
+		//金标-金融机构编码
+		String jbBankCode = BaseDao.getJBBankCode();
 		
 		//生成文件路径加年月路径
 		String filePath = ReportUtils.getSysParamsValue(Constants.PARAM_DIR,
@@ -78,6 +81,16 @@ public class CreatFile {
 			path.mkdir();
 		}
 		
+		//生成金标文件路径加年月日路径
+		String jbFilePath = ReportUtils.getSysParamsValue(Constants.PARAM_DIR,
+				Constants.PARAM_DIR_0104, "");
+//		String jbFilePath = "C:\\Project\\EAST"; //本地测试
+		jbFilePath = jbFilePath + File.separator + args[0].substring(0, 6) + File.separator;
+		File jbPath = new File(jbFilePath);
+		if(!jbPath.exists()){
+			jbPath.mkdir();
+		}
+				
 		Map retMap;
 		Boolean retFlag = false;
 		String retType = "";
@@ -93,6 +106,7 @@ public class CreatFile {
 		Set<String> quarterSet = new HashSet<String>();
 		Set<String> yearSet = new HashSet<String>();
 		Set<String> cSet = new HashSet<String>();
+		Set<String> jbSet = new HashSet<String>();
 		for (String tableName : tableInfoMap.keySet()) {
 			//start=System.currentTimeMillis();
 			/*if(!tableName.equals("JGB")){
@@ -124,7 +138,24 @@ public class CreatFile {
 			if("Y".equals(retType)){
 				yearSet.add(tableName);
 			}
+			if("J".equals(retType)){
+				jbSet.add(tableName);
+			}	
+		}
+		//跑金标报送的数据
+		for(String tableName : jbSet){
+			try{
+				start=System.currentTimeMillis();
+				System.out.println("star===tableName:"+tableName);
 				
+				writeJBFile(tableName, args[0], sqlMap, tableInfoMap, jbFilePath, jbBankCode);
+				
+				end=System.currentTimeMillis();
+				System.out.println("end===time(s):["+(end-start)/1000+"]!");
+			}catch(Exception e) {
+				System.err.println(e.getMessage());
+				continue;
+			}			
 		}
 		
 		//备份cpwj到cpwj_bak
@@ -242,16 +273,16 @@ public class CreatFile {
 		String fileName=null;	
 		fileName = filePath + bctl.getFinanceCode().trim()+"-" + tableName + "-" + ToolUtils.formatDate(workdate);
 		File txtFile = new File(fileName + ".txt");
-		//BufferedWriter bw = new BufferedWriter(new FileWriter(txtFile));
-		BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (new FileOutputStream (txtFile), "UTF-8"));
+		BufferedWriter bw = new BufferedWriter(new FileWriter(txtFile));
+		//BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (new FileOutputStream (txtFile), "UTF-8"));
 		
 		int count = BaseDao.queryAndWriteFile(tableName, workdate, sqlMap, tableInfoMap, bw, defautValue);
 		String counts=Integer.toString(count);
 		bw.close();
         
 		//log文件
-		//BufferedWriter flagFileWriter = new BufferedWriter(new FileWriter(fileName + ".log"));
-		BufferedWriter flagFileWriter = new BufferedWriter (new OutputStreamWriter (new FileOutputStream (fileName + ".log"), "UTF-8"));
+		BufferedWriter flagFileWriter = new BufferedWriter(new FileWriter(fileName + ".log"));
+		//BufferedWriter flagFileWriter = new BufferedWriter (new OutputStreamWriter (new FileOutputStream (fileName + ".log"), "UTF-8"));
 		flagFileWriter.write(txtFile.getName() + "\n" );
 		flagFileWriter.write(txtFile.length() + "\n" );
 		Calendar calendar=Calendar.getInstance();
@@ -264,6 +295,31 @@ public class CreatFile {
 		System.out.println(tableName + "file***over,sum:"+ count +"！");
 		//end=System.currentTimeMillis();
 		//System.out.println("end===time(s):["+(end-start)/1000+"]!");
+	}
+	
+	/*
+	 * 生成金标报送文件 
+	 */
+	public static void writeJBFile(String tableName, String workdate, Map sqlMap, Map tableInfoMap
+			, String filePath, String bankCode )throws Exception{
+		String fileName=null;	
+		fileName = filePath + tableName + bankCode.trim() +  ToolUtils.formatDate(workdate);
+		File datFile = new File(fileName + ".dat");
+		BufferedWriter bw = new BufferedWriter(new FileWriter(datFile));
+		
+		int count = BaseDao.queryAndWriteJBFile(tableName, workdate, sqlMap, tableInfoMap, bw);
+	
+		bw.close();
+		
+		PackZipUtil zipUtil = new PackZipUtil();
+		String zipFileName = fileName + ReportConstant.DOWN_LOAD_PACK_ZIP_EXT;
+		zipUtil.zip(zipFileName, datFile);
+		System.out.println(tableName + "file***over,sum:"+ count +"！");
+	}
+	
+	public static void generateJBData() throws Exception {
+		ReportProcessJB jbProcess = new ReportProcessJB();
+		jbProcess.generateData();
 	}
 	
 	public static void creatManualJgbsFile(Map<String, List<String>> tableInfoMap) throws Exception {
@@ -299,8 +355,8 @@ public class CreatFile {
 
 			try {
 				File txtFile = new File(fileName + ".txt");
-				//BufferedWriter bw = new BufferedWriter(new FileWriter(txtFile));
-				BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (new FileOutputStream (txtFile), "UTF-8"));
+				BufferedWriter bw = new BufferedWriter(new FileWriter(txtFile));
+				//BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (new FileOutputStream (txtFile), "UTF-8"));
 				
 				//dataList = BaseDao.query(tableName, args[0], sqlMap);
 				
@@ -311,8 +367,8 @@ public class CreatFile {
 				FileInputStream inputStream = new FileInputStream(txtFile);
 		        
 				//log文件
-				//BufferedWriter flagFileWriter = new BufferedWriter(new FileWriter(fileName + ".log"));
-				BufferedWriter flagFileWriter = new BufferedWriter (new OutputStreamWriter (new FileOutputStream (fileName + ".log"), "UTF-8"));
+				BufferedWriter flagFileWriter = new BufferedWriter(new FileWriter(fileName + ".log"));
+				//BufferedWriter flagFileWriter = new BufferedWriter (new OutputStreamWriter (new FileOutputStream (fileName + ".log"), "UTF-8"));
 				flagFileWriter.write(txtFile.getName() + "\n" );
 				flagFileWriter.write(txtFile.length() + "\n" );
 				Calendar calendar=Calendar.getInstance();
@@ -321,7 +377,7 @@ public class CreatFile {
 				flagFileWriter.write("Y".trim()+"\n");
 				flagFileWriter.write(counts);
 				flagFileWriter.close();
-				
+	
 				System.out.println(tableName + "file***over,sum:"+ count +"！");
 				end=System.currentTimeMillis();
 				System.out.println("end===time(s):["+(end-start)/1000+"]!");

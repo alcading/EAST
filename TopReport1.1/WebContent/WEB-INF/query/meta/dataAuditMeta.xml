@@ -134,5 +134,8 @@
     <Query id="BOPGuperInfoAudit" path="/fpages/dataaudit/xml/BOPGuperInfoAudit.xml" />
     
     <Query id="JBFileDownload" path="/fpages/finstandard/xml/JBFileDownload.xml" />
+    
+    <!-- BCMS_商行数据填报-->
+    <Query id="BcmsRequestInfo" path="/fpages/bcms/xml/BcmsRequestInfo.xml" />
 
 </META>

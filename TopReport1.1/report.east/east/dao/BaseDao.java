@@ -18,6 +18,7 @@ import java.util.Map;
 import org.directwebremoting.annotations.Auth;
 
 import com.huateng.ebank.framework.exceptions.CommonException;
+import com.huateng.ebank.framework.util.DataFormat;
 import com.huateng.ebank.framework.util.DateUtil;
 
 import resource.report.dao.ROOTDAO;
@@ -94,6 +95,9 @@ public class BaseDao {
 		String[] temAry = null;
 		//	value	byte[] 定长,value  String非定长
 		String value = null;
+		
+		byte  b2[] = {0x01};
+		String str2 = new String(b2);
 		try {
 			if(sqlMap.get(tableName)==null || "".equals(sqlMap.get(tableName).trim())) {
 				throw new Exception("tableName:["+tableName + "] not exist!");
@@ -169,7 +173,7 @@ public class BaseDao {
 									fieldValue=fieldValue.replaceAll(",", "-");
 								}
 							//非定长用逗号分割
-								value=ToolUtils.formatString(tableName,fieldName,fieldType, fieldValue, Integer.parseInt(fieldLength),specflag,Integer.parseInt(fieldLength2),Integer.parseInt(fieldSetFlag));
+								value=ToolUtils.formatString(tableName,fieldName,fieldType, fieldValue, Integer.parseInt(fieldLength),specflag,Integer.parseInt(fieldLength2),Integer.parseInt(fieldSetFlag),str2);
 							} catch (Exception e) {
 								break;
 							}
@@ -196,6 +200,94 @@ public class BaseDao {
 		return ret;
 	}
 	
+    public static int queryAndWriteJBFile(String tableName, String sjrq, Map<String, String> sqlMap, Map<String, List<String>> tableInfoMap, 
+    		BufferedWriter bw) throws Exception{
+    	int ret = 0;
+    	int count = 0;
+		Connection conn = DBUtil.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		StringBuilder line = null;
+		String fieldName = null;
+		String fieldType = null;
+		String fieldLength = null;
+		String specflag = null;
+		String fieldLength2 = null;
+		String fieldSetFlag= null;
+		String fieldValue = null;
+		String[] temAry = null;
+		//	value	byte[] 定长,value  String非定长
+		String value = null;
+		try {
+			if(sqlMap.get(tableName)==null || "".equals(sqlMap.get(tableName).trim())) {
+				throw new Exception("tableName:["+tableName + "] not exist!");
+			}
+			pstmt = conn.prepareStatement(sqlMap.get(tableName));
+			pstmt.setDate(1, (java.sql.Date) DataFormat.ConvertDate1(sjrq));
+			rs = pstmt.executeQuery();
+			ResultSetMetaData rsmd = rs.getMetaData();
+			count = rsmd.getColumnCount();
+			List<String> fieldInfoList = tableInfoMap.get(tableName);
+			if(rs!=null){
+				while(rs.next()){
+					ret ++;
+					line = new StringBuilder();
+					if(count == fieldInfoList.size())
+					{
+						for (int i = 0; i < count; i++) 
+						{
+							String fieldInfo = fieldInfoList.get(i);
+							temAry = fieldInfo.split("\\|");
+							//获取字段名称
+							fieldName = temAry[0];
+							//字段类型
+							fieldType= temAry[1];
+							//获取字段长度
+							fieldLength = temAry[2];
+							//是否特殊标志
+							specflag= temAry[3];
+							//特殊处理位数
+							fieldLength2= temAry[4];
+							//变形字段标记  '不变形-0,名称变形-1,身份证变形-2,名称暂时不取-3,身份证暂时不取-4,其他暂不取-5,其他暂时不变形-6'
+							fieldSetFlag= temAry[5];
+							//sql中查出对应字段值
+							fieldValue = rs.getString(fieldName);
+							if(fieldType.startsWith("TIMESTAMP")) {
+								fieldValue = ToolUtils.formatTimestamp(fieldValue);
+							}else if(fieldType.startsWith("DATE")){
+								fieldValue = ToolUtils.formatDate1(fieldValue);
+							}
+							try {
+								if(null!=fieldValue&&!"".equals(fieldValue)){
+									fieldValue=fieldValue.replaceAll(",", "-");
+								}
+								//非定长用竖线分割
+								value=ToolUtils.formatString(tableName,fieldName,fieldType, fieldValue, Integer.parseInt(fieldLength),specflag,Integer.parseInt(fieldLength2),Integer.parseInt(fieldSetFlag),"|");
+							} catch (Exception e) {
+								break;
+							}
+							//定长 line.append(new String(value,"GBK"));
+							//非定长
+							line.append(value);
+						}
+						//非定长需要长度减1
+						line.deleteCharAt(line.length()-1);
+						bw.write(line + "\n");
+						bw.flush();
+					}
+					else
+					{
+						System.err.println("tableName:["+tableName + "]FIELD_INFO is wrong!");
+					}
+				}
+			}
+		} catch (SQLException e) {
+			throw new Exception("tableName:["+tableName + "] query! error!" + e.getMessage(), e);
+		} finally{
+			DBUtil.close(conn, pstmt, rs);
+		}
+		return ret;
+	}
 	/**
 	 * insert field info
 	 * @param fieldList
@@ -250,6 +342,28 @@ public class BaseDao {
 		}
 		return map;
 		
+	}
+	
+	public static String getJBBankCode() throws Exception{
+
+		Connection conn = DBUtil.getConnection();
+		Statement stmt = null;
+		ResultSet rs = null;
+		String bankReport_bankCode = "";
+		try {
+			stmt = conn.createStatement();
+			StringBuffer query = new StringBuffer();
+			query.append("select jbcode from BRNO_JBCD_LINK where brlevel = '1' ");
+			rs = stmt.executeQuery(query.toString());
+			while(rs.next()){
+				bankReport_bankCode = rs.getString("jbcode");
+			}
+			return bankReport_bankCode;
+		} catch (SQLException e) {
+			throw new Exception("获取总行金融机构编码出错！===" + e.getMessage(), e);
+		} finally{
+			DBUtil.close(conn, stmt, rs);
+		}
 	}
 	
 	/**
@@ -356,7 +470,7 @@ public class BaseDao {
 						||"0930".equals(tbsdy.substring(4)) || "1231".equals(tbsdy.substring(4))){
 					retFlag = true;
 				}	
-			}else if("M".equals(retType)){
+			}else if("M".equals(retType) || "J".equals(retType)){
 				//shaomy
 				c.setTime(dt); 
 				c.set(Calendar.DATE, (c.get(Calendar.DATE) + 1));
@@ -374,8 +488,8 @@ public class BaseDao {
 				retFlag = true;
 				
 			}else{
-				System.out.println("field_table配置错误：表["+tableName+"]对应的类型["+retType+"]配置错误！只能为：Y、Q、M、W、D三者之一。");
-				throw new CommonException("field_table配置错误：表["+tableName+"]对应的类型["+retType+"]配置错误！只能为：Y、Q、M、W、D三者之一。");
+				System.out.println("field_table配置错误：表["+tableName+"]对应的类型["+retType+"]配置错误！只能为：Y、Q、M、W、D、J之一。");
+				throw new CommonException("field_table配置错误：表["+tableName+"]对应的类型["+retType+"]配置错误！只能为：Y、Q、M、W、D、J之一。");
 			}
 		}
 		retMap.put("retType", retType);

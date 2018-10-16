@@ -53,6 +53,7 @@ window.onload=function(){
 			EastYgb_dataset.setRecord(record);
 		}
 	}
+	
 	//系统刷新单元格
 	function datatable1_operation_onRefresh(cell,value,record) {
 		if(record) {
@@ -159,9 +160,13 @@ window.onload=function(){
 	
 	function btDel_onClickCheck(button) {
 		var rec = EastYgb_dataset.firstUnit;
+		var id;
+		var records = new Array();
 		var f = false;
 		while(rec) {
 			if (rec.getValue('select')) {
+				id=rec.getValue('id');
+				locate(id);
 				f = true;
 			}
 			rec = rec.nextUnit;

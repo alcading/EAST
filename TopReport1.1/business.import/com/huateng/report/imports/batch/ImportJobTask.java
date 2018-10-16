@@ -42,6 +42,17 @@ public class ImportJobTask {
 	public void doBiz() throws CommonException {
 		String workdate = DataFormat.dateToNumber(DateUtil.getTbsDay());
 		
+		try {
+			System.out.println("生成金标数据开始:"+ReportConstant.IMP_FILE_IS_AUTO_ANALY);
+			if (ReportConstant.IMP_FILE_IS_AUTO_ANALY) {
+				//生成金标数据
+				ReportProcessJB jbReport = new ReportProcessJB();
+				jbReport.generateData();
+			}
+		} catch (Exception e) {
+			ExceptionUtil.throwCommonException(workdate + "生成金标数据：" + e.getMessage());
+		}
+		
 		//1：检查后台导数是否执行
 		StringBuffer checkSql = new StringBuffer();
 		checkSql.append("select * from BH_PROC_LOG where 1=1 ");
@@ -154,7 +165,7 @@ public class ImportJobTask {
 		} catch (Exception e) {
 			ExceptionUtil.throwCommonException(workdate + "执行数据分析：" + e.getMessage());
 		}
-
+		
 		logger.info("end import " + workdate + "'s files");
 	}
 }

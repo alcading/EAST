@@ -121,7 +121,7 @@ public class ToolUtils {
 	 * @throws Exception
 	 */
 	public static String formatString(String tableName, String fieldName, String fieldType, String fieldValue,
-			int fieldLength, String specflag, int fieldLength2,int fieldSetFlag)
+			int fieldLength, String specflag, int fieldLength2,int fieldSetFlag,String separator)
 			throws Exception {
 		if (fieldValue == null || "".equals(fieldValue.trim())) {
 			if (fieldType.startsWith("DECIMAL")) {
@@ -133,9 +133,6 @@ public class ToolUtils {
 			}
 		}
 		
-		byte  b2[] = {0x01};
-		String str2 = new String(b2);
-		
 		// 处理金额
 		if (fieldType.equals("DECIMAL")) {
 			BigDecimal money = new BigDecimal(fieldValue);
@@ -145,7 +142,7 @@ public class ToolUtils {
 				money = money.setScale(2, BigDecimal.ROUND_HALF_UP);
 			}
 			fieldValue = money.toString();
-			return fieldValue.trim()+str2;
+			return fieldValue.trim()+separator;
 		}else {
 			if(fieldSetFlag!=0&&!"".equals(fieldValue)){// 非金额处理
 				//为股东信息中的股东证件号码特殊处理
@@ -177,7 +174,7 @@ public class ToolUtils {
 		if ("CJRQ".equals(fieldName)){
 			return fieldValue.trim();
 		}else{
-			return fieldValue.trim()+str2;
+			return fieldValue.trim()+separator;
 		}
 		
 	}	
@@ -195,16 +192,13 @@ public class ToolUtils {
 			}
 			return fieldValue.trim();		
 		case 2:
-			int len1 = fieldValue.trim().length();
-			if (len1>2){
-				if (fieldValue.trim().length()!=fieldValue.trim().getBytes().length){
-					fieldValue=fieldValue.trim().substring(0, 2) + EncoderByMd5(fieldValue.trim());;
-				}else{
-					if (len1>6){
-						fieldValue=fieldValue.trim().substring(0, 6) + objMd5.getMD5ofStr(fieldValue.trim());	
-					}
-				}
+			
+			if (fieldValue.trim().length()!=fieldValue.trim().getBytes().length){
+				fieldValue=fieldValue.trim().substring(0, 2) + EncoderByMd5(fieldValue.trim());;
+			}else{
+				fieldValue=fieldValue.trim().substring(0, 6) + objMd5.getMD5ofStr(fieldValue.trim());	
 			}
+	        
 			return fieldValue.trim();		
 			
 		case 3:
@@ -231,7 +225,7 @@ public class ToolUtils {
 			if (len>7){
 				fieldValue=fieldValue.trim().substring(0, 1) + fieldValue.trim().substring(1, 7) + objMd5.getMD5ofStr(fieldValue.trim().substring(1, len));
 			}
-			return fieldValue.trim();
+		
 		case 7:
 			if (fieldValue.trim().length()==19){
 				fieldValue=fieldValue.trim().substring(0, 1) + fieldValue.trim().substring(1, 7) + objMd5.getMD5ofStr(fieldValue.trim().substring(1, 19));	
@@ -375,7 +369,43 @@ public class ToolUtils {
 			return "";
 		}
 	}
-
+	
+	/**
+	 * 处理日期
+	 * 返回yyyy-MM-dd
+	 * @param strDate
+	 * @return
+	 */
+	public static String formatDate1(String strDate) {
+		if (strDate == null || "".equals(strDate.trim()))
+			return "";
+		Date date = null;
+		boolean isSuccess = false;
+		try {
+			date = new SimpleDateFormat("yyyy-MM-dd").parse(strDate);
+			isSuccess = true;
+		} catch (ParseException e) {
+		}
+		if (!isSuccess) {
+			try {
+				date = new SimpleDateFormat("yyyyMMdd").parse(strDate);
+				isSuccess = true;
+			} catch (ParseException e) {
+			}
+		}
+		if (!isSuccess) {
+			try {
+				date = new SimpleDateFormat("yyyy/MM/dd").parse(strDate);
+				isSuccess = true;
+			} catch (ParseException e) {
+			}
+		}
+		if (isSuccess) {
+			return new SimpleDateFormat("yyyy-MM-dd").format(date);
+		} else {
+			return "";
+		}
+	}
 	/**
 	 * 处理时间戳
 	 * 

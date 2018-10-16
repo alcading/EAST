@@ -16,6 +16,7 @@ import com.huateng.ebank.framework.exceptions.CommonException;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
+import east.utils.tools.DBUtil;
 import resources.finstandard.data.service.DepositBalanceService;
 
 public class DepositBalanceGetter extends BaseGetter {
@@ -55,6 +56,7 @@ public class DepositBalanceGetter extends BaseGetter {
 		String khlx = (String) paramsMap.get("khlx");
 		String ckzhdm = (String) paramsMap.get("ckzhdm");
 		StringBuffer hql=new StringBuffer(" from DepositBalance la where 1=1");
+		hql.append("and rownum<="+DBUtil.ROWNUM);
 		if (StringUtils.isNotBlank(sjrq)) {
 			hql.append(" and la.sjrq=to_date('"+sjrq+"','yyyy-mm-dd')");
 		} else {

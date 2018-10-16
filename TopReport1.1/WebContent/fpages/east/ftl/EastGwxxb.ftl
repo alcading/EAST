@@ -112,9 +112,12 @@ window.onload=function(){
 	
 	function btDel_onClickCheck(button) {
 		var rec = EastGwxxb_dataset.firstUnit;
+		var id;
 		var f = false;
 		while(rec) {
 			if (rec.getValue('select')) {
+				id=rec.getValue('id');
+				locate(id);
 				f = true;
 			}
 			rec = rec.nextUnit;

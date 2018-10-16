@@ -1575,7 +1575,29 @@ private static String Part2CN(String partValue,boolean bInsertZero) {
 			return null;
 		}
 	}
-
+	
+	/**
+	 * 将字符日期格式 yyyyMMdd 转为 Date格式 YYYYMMDD
+	 * @author wuzhiwei @ 方法里MM 一定要大写
+	 * @param String
+	 * @return Date
+	 */
+	public static Date ConvertDate1(String param) {
+		if (param == null || param.trim().length() < 1) {
+			return null;
+		}
+		SimpleDateFormat convertDate = new SimpleDateFormat("yyyyMMdd");
+		java.util.Date cDate;
+		java.sql.Date date;
+		try {
+			cDate = convertDate.parse(param);
+			date = new java.sql.Date(cDate.getTime());
+			return date;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return null;
+		}
+	}
 	/**
 	 * 将日期格式 Tue Feb 01 00:00:00 CST 2005 转为 Date格式 YYYY-MM-DD 2005-02-01
 	 *

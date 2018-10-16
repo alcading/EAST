@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "/WEB-INF/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- bcms 商行信息表-->
+	<bean id="BcmsBankInfo" class="resources.bcms.data.pub.BcmsBankInfo">
+	</bean>
+	<!-- bcms 报送信息表-->
+	<bean id="BcmsRequestInfo" class="resources.bcms.data.pub.BcmsRequestInfo">
+	</bean>
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry title="DepositBalanceEntry.title" navigate="接口报送  &gt; BCMS_商行数据填报"
+	type="call" interface="false" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do" txnlogflag="true" >
+	<Include id="BankParam" />
+	<Where>
+		<Option id="deliveryType" desc="报送类别" translated="DATA_DIC.300035" size="30" require="true" index="0" />
+	</Where>
+	<Operations>
+		<Button id="btSave" name="btSave" desc="报送" 
+			operation="asysubmit" url="#" txn=""  icon="icon-expout"/>
+	</Operations>
+</CommQry>

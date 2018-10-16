@@ -384,6 +384,16 @@
         <servlet-name>EastGlobalinfoUpdate</servlet-name>
         <url-pattern>/EastGlobalinfoUpdate</url-pattern>
     </servlet-mapping>
+    
+    <!-- BCMS_商行数据填报 -->
+	<servlet>
+        <servlet-name>BcmsRequestInfo</servlet-name>
+        <servlet-class>resources.bcms.data.update.BankInterface</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BcmsRequestInfo</servlet-name>
+        <url-pattern>/BcmsRequestInfo</url-pattern>
+    </servlet-mapping>
 
 	<servlet>
 		<servlet-name>ProcessImageServlet</servlet-name>
