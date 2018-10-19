@@ -86,12 +86,15 @@ public abstract class BaseLoanBalance implements Serializable{
 	private String dkdbfs;
 	private String dkzl;
 	private String dkzt;
-	
+	private BigDecimal sxje;
+	private String sxbz;
+
+
 
 	public BaseLoanBalance(Date sjrq, String jrjgbm, String khlx, String jkrbm, String dkzthylx, String jkrzcdbm,
 			String qyczrjjcf, String qygm, String dkjjbh, String cplb, String dksjtx, Date dkffrq, Date dkdqrq,
 			Date zqdqrq, String dkbz, BigDecimal dkye, String llsfgd, BigDecimal llsp, String dkdbfs, String dkzl,
-			String dkzt) {
+			String dkzt, BigDecimal sxje, String sxbz) {
 		super();
 		this.sjrq = sjrq;
 		this.jrjgbm = jrjgbm;
@@ -114,6 +117,8 @@ public abstract class BaseLoanBalance implements Serializable{
 		this.dkdbfs = dkdbfs;
 		this.dkzl = dkzl;
 		this.dkzt = dkzt;
+		this.sxje = sxje;
+		this.sxbz = sxbz;
 	}
 
 	public Date getSjrq() {
@@ -283,4 +288,22 @@ public abstract class BaseLoanBalance implements Serializable{
 	public void setDkzt(String dkzt) {
 		this.dkzt = dkzt;
 	}
+
+	public BigDecimal getSxje() {
+		return sxje;
+	}
+
+	public void setSxje(BigDecimal sxje) {
+		this.sxje = sxje;
+	}
+
+	public String getSxbz() {
+		return sxbz;
+	}
+
+	public void setSxbz(String sxbz) {
+		this.sxbz = sxbz;
+	}
+
+	
 }

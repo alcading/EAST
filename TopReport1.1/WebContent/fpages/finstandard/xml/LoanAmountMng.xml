@@ -70,8 +70,8 @@
 			size="4" default="" xpath="/llsfgd" tip="利率是否固定" />
 
 		<Field id="llsp" desc="利率水平" require="true" errmsg="利率水平不能为空！"
-			edittype="double" scale="5" rules="isRate_13_5" datatype="string"
-			method="None" readonly="false" size="13" status="F" default="" xpath="/llsp" />
+			edittype="text" rules="isRate_13_5" datatype="string"
+			 readonly="true" size="13" status="N" default="" xpath="/llsp" />
 
 		<Field id="dkdbfs" desc="贷款担保方式" require="true" errmsg="贷款担保方式不能为空！"
 			edittype="select" status="F" translated="DATA_DIC.20028" datatype="string"
@@ -84,6 +84,13 @@
 		<Field id="dkffshbz" desc="贷款发放收回标志" require="true" errmsg="贷款发放收回标志不能为空！"
 			edittype="select" status="F" translated="DATA_DIC.20031" datatype="string"
 			size="10" default="" xpath="/dkffshbz" tip="贷款发放收回标志" />
+			
+		<Field id="sxje" desc="授信金额" require="false"	
+			edittype="text" datatype="currency" size="20" status="N" xpath="/sxje" />
+			
+		<Field id="sxbz" desc="授信标志" require="false"
+			edittype="select" translated="DATA_DIC.300002" datatype="string"
+			size="4" xpath="/sxbz" tip="授信标志" />
 	</Fields>
 
 	<Where>

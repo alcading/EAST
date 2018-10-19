@@ -6,7 +6,7 @@
 	<tr>
 		<td  align="left">
 				<@CommonQueryMacro.Group id ="LoanBalanceEditGroup" label="´û¿îÓà¶îÐÞ¸Ä" 
-				fieldStr="sjrq,jrjgbm,khlx,jkrbm,dkzthylx,jkrzcdbm,qyczrjjcf,qygm,dkjjbh,cplb,dksjtx,dkffrq,dkdqrq,zqdqrq,dkbz,dkye,llsfgd,llsp,dkdbfs,dkzl,dkzt" 
+				fieldStr="sjrq,jrjgbm,khlx,jkrbm,dkzthylx,jkrzcdbm,qyczrjjcf,qygm,dkjjbh,cplb,dksjtx,dkffrq,dkdqrq,zqdqrq,dkbz,dkye,llsfgd,llsp,dkdbfs,dkzl,dkzt,sxje,sxbz" 
         	    colNm=4/>
 		</td>
 	</tr>

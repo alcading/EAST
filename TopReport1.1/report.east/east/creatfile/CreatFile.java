@@ -69,8 +69,6 @@ public class CreatFile {
 		double end ;
 		//金融机构代号
 		Bctl bctl=ROOTDAOUtils.getBctlDAO().query("9999");
-		//金标-金融机构编码
-		String jbBankCode = BaseDao.getJBBankCode();
 		
 		//生成文件路径加年月路径
 		String filePath = ReportUtils.getSysParamsValue(Constants.PARAM_DIR,
@@ -81,16 +79,6 @@ public class CreatFile {
 			path.mkdir();
 		}
 		
-		//生成金标文件路径加年月日路径
-		String jbFilePath = ReportUtils.getSysParamsValue(Constants.PARAM_DIR,
-				Constants.PARAM_DIR_0104, "");
-//		String jbFilePath = "C:\\Project\\EAST"; //本地测试
-		jbFilePath = jbFilePath + File.separator + args[0].substring(0, 6) + File.separator;
-		File jbPath = new File(jbFilePath);
-		if(!jbPath.exists()){
-			jbPath.mkdir();
-		}
-				
 		Map retMap;
 		Boolean retFlag = false;
 		String retType = "";
@@ -138,24 +126,6 @@ public class CreatFile {
 			if("Y".equals(retType)){
 				yearSet.add(tableName);
 			}
-			if("J".equals(retType)){
-				jbSet.add(tableName);
-			}	
-		}
-		//跑金标报送的数据
-		for(String tableName : jbSet){
-			try{
-				start=System.currentTimeMillis();
-				System.out.println("star===tableName:"+tableName);
-				
-				writeJBFile(tableName, args[0], sqlMap, tableInfoMap, jbFilePath, jbBankCode);
-				
-				end=System.currentTimeMillis();
-				System.out.println("end===time(s):["+(end-start)/1000+"]!");
-			}catch(Exception e) {
-				System.err.println(e.getMessage());
-				continue;
-			}			
 		}
 		
 		//备份cpwj到cpwj_bak
@@ -295,26 +265,6 @@ public class CreatFile {
 		System.out.println(tableName + "file***over,sum:"+ count +"！");
 		//end=System.currentTimeMillis();
 		//System.out.println("end===time(s):["+(end-start)/1000+"]!");
-	}
-	
-	/*
-	 * 生成金标报送文件 
-	 */
-	public static void writeJBFile(String tableName, String workdate, Map sqlMap, Map tableInfoMap
-			, String filePath, String bankCode )throws Exception{
-		String fileName=null;	
-		fileName = filePath + tableName + bankCode.trim() +  ToolUtils.formatDate(workdate);
-		File datFile = new File(fileName + ".dat");
-		BufferedWriter bw = new BufferedWriter(new FileWriter(datFile));
-		
-		int count = BaseDao.queryAndWriteJBFile(tableName, workdate, sqlMap, tableInfoMap, bw);
-	
-		bw.close();
-		
-		PackZipUtil zipUtil = new PackZipUtil();
-		String zipFileName = fileName + ReportConstant.DOWN_LOAD_PACK_ZIP_EXT;
-		zipUtil.zip(zipFileName, datFile);
-		System.out.println(tableName + "file***over,sum:"+ count +"！");
 	}
 	
 	public static void generateJBData() throws Exception {

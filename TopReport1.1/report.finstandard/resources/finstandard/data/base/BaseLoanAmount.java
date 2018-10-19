@@ -41,7 +41,7 @@ public abstract class BaseLoanAmount implements Serializable {
 	 * Constructor for required fields
 	 */
 	public BaseLoanAmount(String jrjgbm, String khlx, String jkrbm, String dkzthylx, String dkjjbh, String cplb,
-			Date dkffrq, Date dkdqrq, String dkbz, BigDecimal dkfsje, String llsfgd, BigDecimal llsp, String dkdbfs,
+			Date dkffrq, Date dkdqrq, String dkbz, BigDecimal dkfsje, String llsfgd, String llsp, String dkdbfs,
 			String dkzt, String dkffshbz) {
 		this.setJrjgbm(jrjgbm);
 		this.setKhlx(khlx);
@@ -81,15 +81,18 @@ public abstract class BaseLoanAmount implements Serializable {
 	private String dkbz;
 	private BigDecimal dkfsje;
 	private String llsfgd;
-	private BigDecimal llsp;
+	private String llsp;
 	private String dkdbfs;
 	private String dkzt;
 	private String dkffshbz;
+	private BigDecimal sxje;
+	private String sxbz;
+
 
 	public BaseLoanAmount(Date sjrq, String jrjgbm, String khlx, String jkrbm, String dkzthylx, String jkrzcdbm,
 			String qyczrjjcf, String qygm, String dkjjbh, String cplb, String dksjtx, Date dkffrq, Date dkdqrq,
-			Date dksjzzrq, String dkbz, BigDecimal dkfsje, String llsfgd, BigDecimal llsp, String dkdbfs, String dkzt,
-			String dkffshbz) {
+			Date dksjzzrq, String dkbz, BigDecimal dkfsje, String llsfgd, String llsp, String dkdbfs, String dkzt,
+			String dkffshbz, BigDecimal sxje, String sxbz) {
 		super();
 		this.sjrq = sjrq;
 		this.jrjgbm = jrjgbm;
@@ -112,6 +115,8 @@ public abstract class BaseLoanAmount implements Serializable {
 		this.dkdbfs = dkdbfs;
 		this.dkzt = dkzt;
 		this.dkffshbz = dkffshbz;
+		this.sxje = sxje;
+		this.sxbz = sxbz;
 	}
 
 	public Date getSjrq() {
@@ -250,11 +255,11 @@ public abstract class BaseLoanAmount implements Serializable {
 		this.llsfgd = llsfgd;
 	}
 
-	public BigDecimal getLlsp() {
+	public String getLlsp() {
 		return llsp;
 	}
 
-	public void setLlsp(BigDecimal llsp) {
+	public void setLlsp(String llsp) {
 		this.llsp = llsp;
 	}
 
@@ -281,4 +286,22 @@ public abstract class BaseLoanAmount implements Serializable {
 	public void setDkffshbz(String dkffshbz) {
 		this.dkffshbz = dkffshbz;
 	}
+
+	public BigDecimal getSxje() {
+		return sxje;
+	}
+
+	public void setSxje(BigDecimal sxje) {
+		this.sxje = sxje;
+	}
+
+	public String getSxbz() {
+		return sxbz;
+	}
+
+	public void setSxbz(String sxbz) {
+		this.sxbz = sxbz;
+	}
+
+	
 }

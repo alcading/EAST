@@ -1,5 +1,6 @@
 package resources.finstandard.data.getter;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
@@ -13,6 +14,7 @@ import com.huateng.ebank.framework.util.DateUtil;
 import com.huateng.ebank.framework.web.commQuery.BaseGetter;
 import com.huateng.exception.AppException;
 
+import resources.finstandard.data.pub.LoanAmount;
 import resources.finstandard.data.service.LoanAmountService;
 
 public class LoanAmountMngGetter extends BaseGetter {

@@ -201,7 +201,7 @@ public class BaseDao {
 	}
 	
     public static int queryAndWriteJBFile(String tableName, String sjrq, Map<String, String> sqlMap, Map<String, List<String>> tableInfoMap, 
-    		BufferedWriter bw) throws Exception{
+    		BufferedWriter bw, boolean md) throws Exception{
     	int ret = 0;
     	int count = 0;
 		Connection conn = DBUtil.getConnection();
@@ -234,6 +234,7 @@ public class BaseDao {
 					line = new StringBuilder();
 					if(count == fieldInfoList.size())
 					{
+						String khlx = "";
 						for (int i = 0; i < count; i++) 
 						{
 							String fieldInfo = fieldInfoList.get(i);
@@ -250,8 +251,14 @@ public class BaseDao {
 							fieldLength2= temAry[4];
 							//变形字段标记  '不变形-0,名称变形-1,身份证变形-2,名称暂时不取-3,身份证暂时不取-4,其他暂不取-5,其他暂时不变形-6'
 							fieldSetFlag= temAry[5];
+							
 							//sql中查出对应字段值
 							fieldValue = rs.getString(fieldName);
+							
+							if("KHLX".equals(fieldName)){
+								khlx = fieldValue;
+							}
+							
 							if(fieldType.startsWith("TIMESTAMP")) {
 								fieldValue = ToolUtils.formatTimestamp(fieldValue);
 							}else if(fieldType.startsWith("DATE")){
@@ -262,7 +269,7 @@ public class BaseDao {
 									fieldValue=fieldValue.replaceAll(",", "-");
 								}
 								//非定长用竖线分割
-								value=ToolUtils.formatString(tableName,fieldName,fieldType, fieldValue, Integer.parseInt(fieldLength),specflag,Integer.parseInt(fieldLength2),Integer.parseInt(fieldSetFlag),"|");
+								value=ToolUtils.JBformatString(tableName,fieldName,fieldType, fieldValue, Integer.parseInt(fieldLength),specflag,Integer.parseInt(fieldLength2),Integer.parseInt(fieldSetFlag),"|",md,khlx);
 							} catch (Exception e) {
 								break;
 							}

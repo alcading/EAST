@@ -95,6 +95,13 @@
 		<Field id="dkzt" desc="贷款状态" require="true" errmsg="贷款状态不能为空！"
 			edittype="select" status="F" translated="DATA_DIC.20030" datatype="string"
 			size="4" default="" xpath="/dkzt" tip="贷款状态" readonly="true" />
+			
+		<Field id="sxje" desc="授信金额" require="false"	
+			edittype="text" datatype="currency" size="20" status="N" xpath="/sxje" readonly="true"/>
+			
+		<Field id="sxbz" desc="授信标志" require="false"
+			edittype="select" translated="DATA_DIC.300002" datatype="string"
+			size="4" xpath="/sxbz" tip="授信标志" readonly="true"/>
 	</Fields>
 
 	<Where>

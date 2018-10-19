@@ -1,5 +1,6 @@
 package east.utils.tools;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.net.URLDecoder;
@@ -10,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -179,6 +181,126 @@ public class ToolUtils {
 		
 	}	
 
+	/**
+	 * 
+	 * @param fieldType
+	 *            字段类型
+	 * @param fieldValue
+	 *            字段值
+	 * @return
+	 * @throws Exception
+	 */
+	public static String JBformatString(String tableName, String fieldName, String fieldType, String fieldValue,
+			int fieldLength, String specflag, int fieldLength2,int fieldSetFlag,String separator, boolean md, String khlx)
+			throws Exception {
+		if (fieldValue == null || "".equals(fieldValue.trim())) {
+			if (fieldType.startsWith("DECIMAL")) {
+				fieldValue = "0";
+			}else if(fieldType.startsWith("INTEGER")) {
+				fieldValue = "0";
+			} else {
+				fieldValue = "";
+			}
+		}
+		
+		//利率水平字段保留五位小数
+		if("LLSP".equals(fieldName)){
+			DecimalFormat df = new DecimalFormat("#.00000");
+			fieldValue = df.format(Double.parseDouble(fieldValue)).toString();
+		}
+		
+		//个人身份证件信息进行MD5加密处理
+		if(md&&"1".equals(khlx)){
+			if("DEPB".equals(tableName)&&"CKZHDM".equals(fieldName)){
+				fieldValue = ICMD5(fieldValue);
+			}else if("JKRBM".equals(fieldName)){
+				fieldValue = ICMD5(fieldValue);
+			}
+		}else{
+			//将身份证件号码中的英文字母转换成大写
+			if("DEPB".equals(tableName)&&"CKZHDM".equals(fieldName)){
+				fieldValue = fieldValue.toUpperCase();
+			}else if("JKRBM".equals(fieldName)){
+				fieldValue = fieldValue.toUpperCase();
+			}
+		}
+		
+		// 处理金额
+		if (fieldType.equals("DECIMAL")&&!"LLSP".equals(fieldName)) {
+			BigDecimal money = new BigDecimal(fieldValue);
+			if (specflag.equals("1")) {
+				money = money.setScale(fieldLength2, BigDecimal.ROUND_HALF_UP);
+			} else {
+				money = money.setScale(2, BigDecimal.ROUND_HALF_UP);
+			}
+			fieldValue = money.toString();
+			return fieldValue.trim()+separator;
+		}else {
+			if(fieldSetFlag!=0&&!"".equals(fieldValue)){// 非金额处理
+				//为股东信息中的股东证件号码特殊处理
+				if("GDXX".equals(tableName)){
+					Connection conn = DBUtil.getConnection();
+					Statement stmt = null;
+					stmt = conn.createStatement();
+					ResultSet rs = stmt.executeQuery("select distinct GDZJLB from EAST_GDXX where GDZJHM ='" + fieldValue.trim() + "'");  
+				    while (rs.next()) {  
+				        Object note[] = new Object[50];  
+				        for (int i = 0; i < note.length; i++) {  
+				            note[i] = rs.getObject(i + 1);  
+				            if("身份证".equals(note[i])){
+				            	fieldValue=changData(fieldValue,fieldSetFlag);	
+				            	break;
+				            }else{
+				            	fieldValue=changData(fieldValue,8);	//股东信息中除了身份证，其他的都不加密
+				            	break;
+				            }
+				        }  
+				    }  
+				    
+				}else{
+					fieldValue=changData(fieldValue,fieldSetFlag);	
+				}
+				
+			}
+		}
+		
+		if ("CJRQ".equals(fieldName)){
+			return fieldValue.trim();
+		}else{
+			return fieldValue.trim()+separator;
+		}
+		
+	}
+	
+	private static String ICMD5(String fieldValue) throws IOException{
+		if(fieldValue.length()>0){
+			String da = cutStringByU8(fieldValue,6);
+			fieldValue = da+EncoderByMd5(fieldValue.substring(da.length()).trim());
+		}
+		return fieldValue;
+	}
+	
+	// 使用UTF-8编码表进行截取字符串，一个汉字对应三个负数，一个英文字符对应一个正数
+	private static String cutStringByU8(String str, int len) throws IOException {
+
+        byte[] buf = str.getBytes("utf-8");
+        int count = 0;
+        for (int x = len - 1; x >= 0; x--) {
+            if (buf[x] < 0) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        if (count % 3 == 0) {
+            return new String(buf, 0, len, "utf-8");
+        } else if (count % 3 == 1) {
+            return new String(buf, 0, len - 1, "utf-8");
+        } else {
+            return new String(buf, 0, len - 2, "utf-8");
+        }
+    }
+	
 	//名称变形,身份证变形 '不变形-0,名称变形-1,对私表身份证变形-2,含对公对私表身份证变形-3,身份证暂时不取-4,其他暂不取-5,对私客户统一编号变形-6,含对私与对公的客户统一编号变形-7,其他暂时不变形-8'
 	public static String changData(String fieldValue,int fieldSetFlag) throws UnsupportedEncodingException {
 		switch (fieldSetFlag) {
@@ -194,7 +316,7 @@ public class ToolUtils {
 		case 2:
 			
 			if (fieldValue.trim().length()!=fieldValue.trim().getBytes().length){
-				fieldValue=fieldValue.trim().substring(0, 2) + EncoderByMd5(fieldValue.trim());;
+				fieldValue=fieldValue.trim().substring(0, 2) + EncoderByMd5(fieldValue.trim());
 			}else{
 				fieldValue=fieldValue.trim().substring(0, 6) + objMd5.getMD5ofStr(fieldValue.trim());	
 			}

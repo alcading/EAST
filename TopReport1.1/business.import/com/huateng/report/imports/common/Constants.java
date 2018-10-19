@@ -10,7 +10,8 @@ public interface Constants {
 	String PARAM_DIR = "DIR";
 	String PARAM_DIR_0001 = "0001";
 	String PARAM_DIR_0103 = "0103";
-	String PARAM_DIR_0104 = "0104"; //金标报送文件路径
+	String PARAM_DIR_0104 = "0104"; //金标报送文件路径(个人证件号码md5加密)
+	String PARAM_DIR_0105 = "0105"; //金标报送文件路径(个人证件号码不加密)
 
 	String IMPORT_SUBJECT = "/import/subject1";
 

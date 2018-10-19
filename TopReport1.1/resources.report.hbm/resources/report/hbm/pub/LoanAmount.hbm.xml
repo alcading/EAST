@@ -57,7 +57,7 @@
 		<property name="llsfgd" column="LLSFGD" type="string"
 			not-null="true" length="4" />
 		<!-- 利率水平 -->
-		<property name="llsp" column="LLSP" type="big_decimal"
+		<property name="llsp" column="LLSP" type="string"
 			not-null="true" length="13" />
 		<!-- 贷款担保方式 -->
 		<property name="dkdbfs" column="DKDBFS" type="string"
@@ -68,5 +68,11 @@
 		<!-- 贷款发放收回标志 -->
 		<property name="dkffshbz" column="DKFFSHBZ" type="string"
 			not-null="true" length="1" />
+		<!-- 授信金额 -->
+		<property name="sxje" column="SXJE" type="big_decimal" 
+			length="20" />
+		<!-- 属性标识 -->
+		<property name="sxbz" column="SXBZ" type="string" 
+			length="4" />
 	</class>
 </hibernate-mapping>

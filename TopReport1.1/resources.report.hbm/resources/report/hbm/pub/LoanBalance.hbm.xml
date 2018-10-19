@@ -68,5 +68,11 @@
 		<!-- 贷款状态 -->
 		<property name="dkzt" column="DKZT" type="string" not-null="true"
 			length="4" />
+		<!-- 授信金额 -->
+		<property name="sxje" column="SXJE" type="big_decimal" 
+			length="20" />
+		<!-- 属性标识 -->
+		<property name="sxbz" column="SXBZ" type="string" 
+			length="4" />
 	</class>
 </hibernate-mapping>

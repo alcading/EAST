@@ -16,7 +16,7 @@ public class LoanAmount extends BaseLoanAmount {
 	 * Constructor for required fields
 	 */
 	public LoanAmount(String jrjgbm, String khlx, String jkrbm, String dkzthylx, String dkjjbh, String cplb,
-			Date dkffrq, Date dkdqrq, String dkbz, BigDecimal dkfsje, String llsfgd, BigDecimal llsp, String dkdbfs,
+			Date dkffrq, Date dkdqrq, String dkbz, BigDecimal dkfsje, String llsfgd, String llsp, String dkdbfs,
 			String dkzt, String dkffshbz) {
 		super(jrjgbm, khlx, jkrbm, dkzthylx, dkjjbh, cplb, dkffrq, dkdqrq, dkbz, dkfsje, llsfgd, llsp, dkdbfs, dkzt,
 				dkffshbz);
