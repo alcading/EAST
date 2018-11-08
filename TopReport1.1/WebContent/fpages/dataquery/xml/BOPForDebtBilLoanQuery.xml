@@ -6,7 +6,7 @@
 
 	<Include id="BankParam" />
 
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-外债双边贷款签约信息" />
+	<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="批量下载-外债双边贷款签约信息" />
 
 	<Fields>
 

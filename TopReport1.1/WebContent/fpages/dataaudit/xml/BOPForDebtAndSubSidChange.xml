@@ -10,7 +10,7 @@ databusid=""
 transdataactionurl="/trans/TransDataAction.do"
 getterclassname="com.huateng.report.getter.BOPForDebtAndSubSidChangeGetter">
 	<Include id="BankParam" />
-	<!-- <PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" directory="D:/templet"/> -->
+	<!-- <PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" directory="D:/templet"/> -->
 	<Fields>
 		<Field id="select" desc="选择" edittype="checkbox" datatype="boolean" xpath="" />
 	

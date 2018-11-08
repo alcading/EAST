@@ -8,7 +8,7 @@
 	pagesize="10" async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
 	txnlogflag="true" getterclassname="com.huateng.report.imports.getter.SubFileInfoGetter">
 	<Include id="BankParam" />
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="数据导出-回执导入文件信息" perfetch="100" />
+	<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="数据导出-回执导入文件信息" perfetch="100" />
 	<Fields>
 		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
 		<!-- primary : true-作为表单项记录上传 false-不作为表单项上传 -->

@@ -211,16 +211,13 @@ public class ToolUtils {
 		
 		//个人身份证件信息进行MD5加密处理
 		if(md&&"1".equals(khlx)){
-			if("DEPB".equals(tableName)&&"CKZHDM".equals(fieldName)){
-				fieldValue = ICMD5(fieldValue);
-			}else if("JKRBM".equals(fieldName)){
+			if("JKRBM".equals(fieldName)){
 				fieldValue = ICMD5(fieldValue);
 			}
-		}else{
-			//将身份证件号码中的英文字母转换成大写
-			if("DEPB".equals(tableName)&&"CKZHDM".equals(fieldName)){
-				fieldValue = fieldValue.toUpperCase();
-			}else if("JKRBM".equals(fieldName)){
+		}
+		//将(个人)身份证件号码中的英文字母转换成大写
+		if(!md&&"1".equals(khlx)){
+			if("JKRBM".equals(fieldName)){
 				fieldValue = fieldValue.toUpperCase();
 			}
 		}

@@ -10,7 +10,7 @@ databusid=""
 transdataactionurl="/trans/TransDataAction.do"
 getterclassname="com.huateng.report.dataquery.getter.BopForDebtYinTuanSignedQueryGetter">
 	<Include id="BankParam" />
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-外债银团贷款签约信息"  />
+	<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="批量下载-外债银团贷款签约信息"  />
 	<Fields>
 		<Field id="id" desc="记录主键" require="" edittype="text" datatype="string" method="None"
 			readonly="false" size="32" status="N" default="" primary="true" xpath="/id" />

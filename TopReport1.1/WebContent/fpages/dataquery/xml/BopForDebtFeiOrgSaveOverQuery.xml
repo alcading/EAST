@@ -9,7 +9,7 @@ async="true"
 databusid=""
 transdataactionurl="/trans/TransDataAction.do"
 getterclassname="com.huateng.report.dataquery.getter.BopForDebtFeiOrgSaveOverQueryGetter">
-<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="非居民机构存款-余额信息"  />
+<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="非居民机构存款-余额信息"  />
 	<Include id="BankParam" />
 	<Fields>
 		<Field id="id" desc="记录主键" require="" edittype="text" datatype="string" method="None"

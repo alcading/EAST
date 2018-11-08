@@ -11,7 +11,7 @@ transdataactionurl="/trans/TransDataAction.do"
 getterclassname="com.huateng.report.dataquery.getter.BOPForDebtChangeInfoQueryGetter">
 	<Include id="BankParam" />
 
-    <PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-外债变动信息" />
+    <PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="批量下载-外债变动信息" />
 
 	<Fields>
 

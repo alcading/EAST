@@ -20,7 +20,7 @@
 	<!--
 	<PageQryExp type="CSV" limit="true" encoding="GBK" url="/trans/qryExp.do" directory="F:/upload"/>
 	-->
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-股东信息" />
+	<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="批量下载-股东信息" />
 	<Fields>
 		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
@@ -33,8 +33,8 @@
 		<Field id="nbjgh" desc="内部机构号"  require="true" status="F"  edittype="text"  datatype="string" size="30" xpath="/nbjgh"></Field>
 		<Field id="gdmc" desc="股东名称"  require="true" status="F"  edittype="text"  datatype="string" size="200" xpath="/gdmc" />
 		<Field id="gdzjlb" desc="股东证件类别 "  require="true" status="F"  edittype="select" translated="DATA_DIC.20041"  datatype="string" size="60" xpath="/gdzjlb" />
-		<Field id="gdzjhm" desc="股东证件号码" require="true"  status="F"  edittype="select" translated="DATA_DIC.20050"  datatype="string" size="60" xpath="/id/gdzjhm" />
-		<Field id="gdzt" desc="股东状态" require="true"  status="F"  edittype="text"  datatype="string" size="6" xpath="/gdzt" />
+		<Field id="gdzjhm" desc="股东证件号码" require="true"  status="F"  edittype="text" datatype="string" size="60" xpath="/id/gdzjhm" />
+		<Field id="gdzt" desc="股东状态" require="true"  status="F"  edittype="select" translated="DATA_DIC.20050" size="6" xpath="/gdzt" />
 		<Field id="cgbl" desc="持股比例" require="true"  status="F"  edittype="text"  datatype="big_decimal" size="10" xpath="/cgbl" />
 		<Field id="rgsj" desc="入股时间" require="true"  status="F"  edittype="text"  datatype="string" size="8" xpath="/rgsj" />
 		<Field id="cjrq" desc="采集日期" require="true"  status="F"  edittype="text"  datatype="string" size="8" xpath="/id/cjrq" />

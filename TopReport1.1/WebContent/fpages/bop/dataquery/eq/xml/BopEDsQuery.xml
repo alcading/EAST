@@ -18,7 +18,7 @@
 	transdataactionurl="/trans/TransDataAction.do"
 	getterclassname="com.huateng.report.bop.dataquery.getter.BopEDsQueryGetter">
 	<Include id="BankParam" />
-    <PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-境内汇款申请书信息"  />
+    <PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="批量下载-境内汇款申请书信息"  />
 	<Fields>
 		<Field id="id" desc="记录主键" require="" edittype="text" datatype="string" method="None"
  		  readonly="false" size="32" status="F" default="" primary="true" xpath="/id" />

@@ -5,7 +5,7 @@
 	getterclassname="com.huateng.report.dataquery.getter.BopForSameInduDepositDataQueryGetter">
 	<Include id="BankParam" />
 
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-境外同业存放签约信息"  />
+	<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="批量下载-境外同业存放签约信息"  />
 	<Fields>
 
 		<Field id="id" desc="记录主键" require="" edittype="text" datatype="string"

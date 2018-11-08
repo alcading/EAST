@@ -195,97 +195,91 @@ window.onload=function(){
 			alert("字段[内部机构号]不能为空");
 			return false;
 		}
-		var yxjgdm = EastYgb_dataset.getValue("yxjgdm");
+		var yxjgdm = EastJgxxb_dataset.getValue("yxjgdm");
 		if (yxjgdm == null || "" == yxjgdm) {
 			alert("字段[银行机构代码]不能为空");
 			return false;
 		}
 
-		var nbjgh = EastYgb_dataset.getValue("nbjgh");
-		if (nbjgh == null || "" == nbjgh) {
-			alert("字段[内部机构号]不能为空");
-			return false;
-		}
-
-		var jrxkzh = EastYgb_dataset.getValue("jrxkzh");
+		var jrxkzh = EastJgxxb_dataset.getValue("jrxkzh");
 		if (jrxkzh == null || "" == jrxkzh) {
 			alert("字段[金融许可证号]不能为空");
 			return false;
 		}
 
-		var yxjgmc = EastYgb_dataset.getValue("yxjgmc");
+		var yxjgmc = EastJgxxb_dataset.getValue("yxjgmc");
 		if (yxjgmc == null || "" == yxjgmc) {
 			alert("字段[银行机构名称]不能为空");
 			return false;
 		}
 
-		var jglb = EastYgb_dataset.getValue("jglb");
+		var jglb = EastJgxxb_dataset.getValue("jglb");
 		if (jglb == null || "" == jglb) {
 			alert("字段[机构类别]不能为空");
 			return false;
 		}
 
-		var yzbm = EastYgb_dataset.getValue("yzbm");
+		var yzbm = EastJgxxb_dataset.getValue("yzbm");
 		if (yzbm == null || "" == yzbm) {
 			alert("字段[邮政编码]不能为空");
 			return false;
 		}
 
-		var wdh = EastYgb_dataset.getValue("wdh");
+		var wdh = EastJgxxb_dataset.getValue("wdh");
 		if (wdh == null || "" == wdh) {
 			alert("字段[网点号]不能为空");
 			return false;
 		}
 
-		var yyzt = EastYgb_dataset.getValue("yyzt");
+		var yyzt = EastJgxxb_dataset.getValue("yyzt");
 		if (yyzt == null || "" == yyzt) {
 			alert("字段[营业状态]不能为空");
 			return false;
 		}
 
-		var clsj = EastYgb_dataset.getValue("clsj");
+		var clsj = EastJgxxb_dataset.getValue("clsj");
 		if (clsj == null || "" == clsj) {
 			alert("字段[成立时间]不能为空");
 			return false;
 		}
 
-		var jggzkssj = EastYgb_dataset.getValue("jggzkssj");
+		var jggzkssj = EastJgxxb_dataset.getValue("jggzkssj");
 		if (jggzkssj == null || "" == jggzkssj) {
 			alert("字段[机构工作开始时间]不能为空");
 			return false;
 		}
 
-		var jggzzzsj = EastYgb_dataset.getValue("jggzzzsj");
+		var jggzzzsj = EastJgxxb_dataset.getValue("jggzzzsj");
 		if (jggzzzsj == null || "" == jggzzzsj) {
 			alert("字段[机构工作终止时间]不能为空");
 			return false;
 		}
 
-		var jgdz = EastYgb_dataset.getValue("jgdz");
+		var jgdz = EastJgxxb_dataset.getValue("jgdz");
 		if (jgdz == null || "" == jgdz) {
 			alert("字段[机构地址]不能为空");
 			return false;
 		}
 
-		var fzrxm = EastYgb_dataset.getValue("fzrxm");
+		var fzrxm = EastJgxxb_dataset.getValue("fzrxm");
 		if (fzrxm == null || "" == fzrxm) {
 			alert("字段[负责人姓名]不能为空");
 			return false;
 		}
 
-		var fzrzw = EastYgb_dataset.getValue("fzrzw");
+		var fzrzw = EastJgxxb_dataset.getValue("fzrzw");
 		if (fzrzw == null || "" == fzrzw) {
 			alert("字段[负责人职务]不能为空");
 			return false;
 		}
 
-		var fzrlxdh = EastYgb_dataset.getValue("fzrlxdh");
+		var fzrlxdh = EastJgxxb_dataset.getValue("fzrlxdh");
 		if (fzrlxdh == null || "" == fzrlxdh) {
 			alert("字段[负责人联系电话]不能为空");
 			return false;
 		}
 
-		var cjrq = EastYgb_dataset.getValue("cjrq");
+		var cjrq = EastJgxxb_dataset.getValue("cjrq");
 		if (cjrq == null || "" == cjrq) {
 			alert("字段[采集日期]不能为空");
 			return false;

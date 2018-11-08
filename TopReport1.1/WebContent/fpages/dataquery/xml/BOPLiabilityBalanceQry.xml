@@ -10,7 +10,7 @@ databusid=""
 transdataactionurl="/trans/TransDataAction.do"
 getterclassname="com.huateng.report.dataquery.getter.BOPLiabilityBalanceQryGetter">
 	<Include id="BankParam" />
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-对外担保责任余额信息" />
+	<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="批量下载-对外担保责任余额信息" />
 
 	<Fields>
 

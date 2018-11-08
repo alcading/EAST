@@ -18,7 +18,7 @@
 	getterclassname="com.huateng.report.dataquery.getter.ExecuteStateQueryEntryGetter">
 	<Include id="BankParam" />
 	
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-业务操作日志" perfetch="15"  directory="E:/upload1"/>
+	<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="批量下载-业务操作日志" perfetch="15"  directory="E:/upload1"/>
 	
 	<Fields>
 		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->

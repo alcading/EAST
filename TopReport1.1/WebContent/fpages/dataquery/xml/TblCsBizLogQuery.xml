@@ -9,7 +9,7 @@
 		/fpages/management/ftl/TblCsBizLogQuery.ftl
 	</ResultViewParam>
 	
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-系统操作日志" perfetch="15"  directory="E:/upload1" />
+	<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="批量下载-系统操作日志" perfetch="15"  directory="E:/upload1" />
 	
 	<Fields>
 		<!-- 日志信息 -->

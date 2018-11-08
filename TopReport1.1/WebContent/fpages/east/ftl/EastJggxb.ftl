@@ -134,12 +134,6 @@ window.onload=function(){
 			return false;
 		}
 
-		var nbjgh = EastJggxb_dataset.getValue("nbjgh");
-		if (nbjgh == null || "" == nbjgh) {
-			alert("字段[内部机构号]不能为空");
-			return false;
-		}
-
 		var jrxkzh = EastJggxb_dataset.getValue("jrxkzh");
 		if (jrxkzh == null || "" == jrxkzh) {
 			alert("字段[金融许可证号]不能为空");

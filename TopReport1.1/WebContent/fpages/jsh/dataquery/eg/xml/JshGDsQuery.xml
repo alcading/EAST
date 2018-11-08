@@ -19,7 +19,7 @@
 	getterclassname="com.huateng.report.jsh.dataquery.getter.JshGDsQueryGetter">
 	<Include id="BankParam" />
 		<Include id="BankParam" />
-    <PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-外汇账户内购汇管理信息查询"  />
+    <PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="批量下载-外汇账户内购汇管理信息查询"  />
 	<Fields>
 		<!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
 		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->

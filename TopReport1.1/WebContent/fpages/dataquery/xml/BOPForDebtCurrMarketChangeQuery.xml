@@ -3,7 +3,7 @@
 	interface="true" pagesize="10" async="true" databusid=""
 	transdataactionurl="/trans/TransDataAction.do"
 	getterclassname="com.huateng.report.dataquery.getter.BOPForDebtCurrMarketChangeQueryGetter">
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="货币市场工具—变动信息"  />
+	<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="货币市场工具—变动信息"  />
 	<Include id="BankParam" />
 	<Fields>
 

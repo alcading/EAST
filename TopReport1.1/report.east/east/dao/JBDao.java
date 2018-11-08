@@ -48,7 +48,7 @@ public class JBDao {
 			query.append("insert into DEPB( ");
 			//利率取llb内的执行利率  距离起息日期最近的利率
 			// 活期对公  
-			// 单位活期存款汇总报送  D011 D013
+			// 单位活期存款汇总报送  D011单位活期存款   D013活期储蓄存款
 			query.append(
 					"select sjrq,JRJGBM,KHLX,CKZHDM,CKXYDM,CPLB,CKXYQSRQ,CKXYDQRQ,CKBZ,sum(CKYE),LLSFGD,LLSP from ( ");
 			query.append("select to_date('" + monthEndDate
@@ -124,7 +124,7 @@ public class JBDao {
 			query.append("and llb.sxrq = (select max(x.sxrq) from llb x where x.sxrq <= hq.qxrq and hq.lldh=x.hbzl||x.llzl||x.ckqx  and x.jlzt = '1') ");
 			
 			query.append("union all ");
-			// --对公协定存款 D051 D052
+			// --对公协定存款   D051结算户存款    D052协定户存款
 			query.append("select to_date('" + monthEndDate
 					+ "','yyyymmdd'),case when li.jbcode is not null then li.jbcode else '" + bankReport_bankCode
 					+ "' end,'0',hq.zhdh,hq.zhdh,'D051', ");
@@ -186,7 +186,7 @@ public class JBDao {
 			// query.append("where hq.jlzt not in ('0','2') and hq.kmdh <>
 			// '211110' and hq.zhye > 0 ");
 			// query.append("union all ");
-			// 定期 D012
+			// 单位定期存款 D012
 			query.append("select to_date('" + monthEndDate
 					+ "','yyyy-mm-dd'),case when li.jbcode is not null then li.jbcode else '" + bankReport_bankCode
 					+ "' end,case when dq.ywdh='002' then '0' else '1' end, ");
@@ -220,7 +220,7 @@ public class JBDao {
 			query.append(
 					"where dq.jlzt not in ('0','2') and dq.kmdh='211130' and dq.zhye > 0 ");		
 			query.append("union all ");
-			// 通知存款 D014定期储蓄存款
+			// 通知存款   D014定期储蓄存款
 			query.append("select to_date('" + monthEndDate
 					+ "','yyyy-mm-dd'),case when li.jbcode is not null then li.jbcode else '" + bankReport_bankCode
 					+ "' end,case when dq.ywdh='002' then '0' else '1' end, ");
@@ -239,7 +239,7 @@ public class JBDao {
 			
 			query.append("union all ");
 
-			// 保证金存款2204 D061 D069
+			// 保证金存款2204 D061银行承兑汇票保证金存款     D069其他保证金存款
 			query.append("select to_date('" + monthEndDate
 					+ "','yyyymmdd'),case when li.jbcode is not null then li.jbcode else '" + bankReport_bankCode
 					+ "' end,'0',hq.zhdh,hq.zhdh, ");
@@ -1069,7 +1069,7 @@ public class JBDao {
 			// when length(b.zjhm) = 18 then substr(b.zjhm,3,6) else
 			// substr(b.zjhm,1,6) end, ");
 			query.append(
-					"b.zjhm,upper(b.hy1),case when length(b.zjhm) = 18 then substr(b.zjhm,3,6) else substr(b.zjhm,1,6) end, ");
+					"b.zjhm,upper(b.hy1),case when length(b.zjhm) = 18 then substr(b.zjhm,3,6)||'000000' else substr(b.zjhm,1,6)||'000000' end, ");
 			query.append(
 					"case when b.org_level2 is not null then b.org_level2 when b.qysyzxz='1' then 'A01' when b.qysyzxz='2' then 'A01' when b.qysyzxz='3' then 'A02' when b.qysyzxz='4' then 'A02' ");
 			query.append(
@@ -1082,11 +1082,6 @@ public class JBDao {
 					"case when b.qygm='0' then 'CS01' when b.qygm='1' then 'CS01' when b.qygm='2' then 'CS02' when b.qygm='3' then 'CS03' when b.qygm='5' then 'CS04' else 'CS05' end, ");
 			query.append(
 					"trim(d.duebillno), case when b.dklx＝'1' then 'F022' when b.dklx＝'2' then 'F023' when b.dklb＝'37' then 'F99' else 'F05' end, ");
-			// query.append("upper(substr(nvl(b.dktx2,b.hy2),1,3)),
-			// to_date(b.dksq,'yyyymmdd'), to_date(b.dkzq,'yyyymmdd'),
-			// to_date(d.extensiondate,'yyyymmdd'), 'CNY',
-			// ''||round(d.dbrestsum,2)||'', case when b.fdb is null or b.fdb＝0
-			// then 'RF01' else 'RF02' end, ");
 			query.append(
 					"substr(t.columnvalue,2,4), to_date(d.duebilldate,'yyyymmdd'), to_date(d.dbmaturedate,'yyyymmdd'), to_date(d.extensiondate,'yyyymmdd'), 'CNY', ''||round(d.dbrestsum,2)||'', case  when b.fdb is null or b.fdb＝0 then 'RF01' else 'RF02' end, ");
 			query.append(
@@ -1129,7 +1124,7 @@ public class JBDao {
 			// when length(b.zjhm) = 18 then substr(b.zjhm,3,6) else
 			// substr(b.zjhm,1,6) end, ");
 			query.append(
-					"b.zjhm,upper(b.hy1),case when length(b.zjhm) = 18 then substr(b.zjhm,3,6) else substr(b.zjhm,1,6) end, ");
+					"b.zjhm,upper(b.hy1),case when length(b.zjhm) = 18 then substr(b.zjhm,3,6)||'000000' else substr(b.zjhm,1,6)||'000000' end, ");
 			query.append(
 					"case when b.org_level2 is not null then b.org_level2 when b.qysyzxz='1' then 'A01' when b.qysyzxz='2' then 'A01' when b.qysyzxz='3' then 'A02' when b.qysyzxz='4' then 'A02' ");
 			query.append(

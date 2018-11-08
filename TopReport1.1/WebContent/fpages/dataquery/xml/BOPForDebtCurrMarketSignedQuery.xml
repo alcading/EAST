@@ -10,7 +10,7 @@ databusid=""
 transdataactionurl="/trans/TransDataAction.do"
 getterclassname="com.huateng.report.dataquery.getter.BOPForDebtCurrMarketSignedQueryGetter">
 
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="批量下载-货币市场工具签约信息"  />
+	<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="批量下载-货币市场工具签约信息"  />
 
 	<Include id="BankParam" />
 	<Fields>

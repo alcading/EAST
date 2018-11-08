@@ -4,7 +4,7 @@
 	transdataactionurl="/trans/TransDataAction.do"
 	getterclassname="com.huateng.report.dataquery.getter.BopForSameInduDepositChangeDataQueryGetter">
 	<Include id="BankParam" />
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="境外同业存放导出-余额信息"  />
+	<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="境外同业存放导出-余额信息"  />
 	<Fields>
 
 		<Field id="id" desc="记录主键" require="" edittype="text" datatype="string"

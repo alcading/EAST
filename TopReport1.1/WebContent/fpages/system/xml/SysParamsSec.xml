@@ -3,7 +3,7 @@
 async="true" databusid="" transdataactionurl="/trans/TransDataAction.do" pagesize="50"
 	 getterclassname="com.huateng.report.system.getter.SecParameterGetter" >
 	<Include id="BankParam" />
-	<PageQryExp type="XLS" limit="true" encoding="GBK" url="/trans/qryExp.do" desc="系统安全参数" perfetch="100" />
+	<PageQryExp type="XLS" limit="true" encoding="" url="/trans/qryExp.do" desc="系统安全参数" perfetch="100" />
 	<Fields>
 	    <Field id="magicId" desc="参数标识" status="F" readonly="true"
 			require="" method="None" primary="true" type="String" size="20"
